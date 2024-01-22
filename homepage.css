@@ -3,6 +3,8 @@
 * {
     box-sizing: border-box;
     font-family: 'Lexend Deca', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 html {
     scroll-behavior: smooth;
@@ -24,7 +26,7 @@ body {
     width: 100px;
     border-radius: 50%;
     background-color: rgb(223, 218, 218);
-    margin: 10px;
+    margin: 10px 5px 10px 25px;
 }
 
 .pic-container img {
@@ -48,10 +50,18 @@ body {
 .support {
     position: absolute;
     display: block;
-    margin-left: 8em;
+    margin-left: 11.6em;
+}
+.support svg {
+    display: flex;
+    position: relative;
+    margin: auto;
 }
 .support p span {
     font-size: 15px;
+}
+.support p span a {
+    text-decoration: none;
 }
 .profile-info {
     position: absolute;
@@ -66,45 +76,62 @@ body {
 .profile-info-content {
     display: block;
     position: relative;
-    color: antiquewhite;
+    color: white;
 }
 
 .profile-info-content .wallet {
     display: flex;
     margin: 8px 13px;
     position: relative;
-    color: antiquewhite;
+    color: white;
 }
 
-.profile-info-content .wallet i {
+.profile-info-content .wallet svg {
     margin-top: 20px;
-    color: antiquewhite;
+    color: white;
 }
 .profile-info-content .wallet #wallet {
     margin-right: 5px;
     padding-right: 5px;
 }
+.icon-container {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
 
 .profile-info-content .wallet #eye-slash {
+    padding-top: 20px;
+    padding-left: 8px;
+    display: inline-block;
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+}
+.profile-info-content .wallet #eye {
+    padding-top: 20px;
     padding-left: 8px;
     cursor: pointer;
+    display: none;
 }
 .profile-info-content .wallet p {
     font-weight: 300;
     font-size: 17px;
+    margin-top: 15px;
 }
 .profile-info-content .balance {
     font-weight: bold;
     font-size: 27px;
     letter-spacing: 15px;
-    margin: 8px 13px 0px 13px;
+    margin: 20px 13px 0px 13px;
 }
 
 .profile-info-content .add-cash {
     width: 150px;
     height: 40px;
-    background-color: antiquewhite;
-    margin: 8px 13px;
+    background-color: white;
+    margin: 15px 13px;
     border-radius: 30px;
     display: flex;
 }
@@ -121,23 +148,153 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
-
-.section h1 {
-    font-weight: bold;
-    margin: 12.7em 0 .5em 5em;
-    display: flex;
-    margin-left: 0;
-}
-.content-box .main-service {
-    width: 100%;
-    height: 40px;
-    box-shadow: ;
-    position: relative;
-    display: inline-flex;
-    margin-top: 1em;
-    flex-direction: row;
-}
-.content-box .main-service .data-section {
+.section-main {
     display: block;
+    flex-direction: column;
+    position: absolute;
+}
+.section-main h1 {
+    font-weight: bold;
+    margin: 12.7em 0 .5em .8em;
+    display: flex;
+}
+
+.content-box .main-service {
+    background-color: rgb(235, 235, 235);
+    width: 90%;
+    height: 120px;
+    box-shadow:
+  6.3px 6.2px 4.1px rgba(0, 0, 0, 0.038),
+  17.5px 17.3px 11.4px rgba(0, 0, 0, 0.055),
+  42.2px 41.6px 27.4px rgba(0, 0, 0, 0.072),
+  140px 138px 91px rgba(0, 0, 0, 0.11)
+;
+    box-sizing: border-box;
+    border-top: none;
+    border-left: none;
+    border-right: 1px solid blueviolet;
+    border-bottom: 1px solid blueviolet;
+    border-radius: 8px;
+    display: inline-flex;
+    margin: 2em;
+}
+.content-box .main-service .section {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content-box .main-service .section i {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    justify-content: center;
+    padding: 5px;
+    margin: auto;
+    display: flex;
+}
+
+.content-box .main-service .section svg {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 100px;
+    justify-content: center;
+    padding: 5px;
+    margin: auto;
+    display: flex;
+}
+.content-box .main-service .section .get-data{  
+    display: flex;
+    width: 60px;
+    height: 60px;
+    background-color: blueviolet;
+    border-radius: 8px;
+    margin-right: 30px;
+}
+
+.content-box .main-service .section .get-airtime{  
+    display: flex;
+    width: 60px;
+    height: 60px;
+    background-color: blueviolet;
+    border-radius: 8px;
+    margin-left: 30px;
+}
+
+.content-box .main-service .section .for-padi{  
+    display: flex;
+    width: 60px;
+    height: 60px;
+    background-color: blueviolet;
+    border-radius: 8px;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+.content-box .main-service .section p {
+    padding: 5px;
+}
+.other-services-container {
+    position: absolute;
+    margin: 40em 3em 3em 0em;
+    width: 60%;
+    display: block;
+}
+.other-services {
+    background-color: rgb(235, 235, 235);
+    width: 75%;
+    height: 155px;
+    box-shadow:
+  6.3px 6.2px 4.1px rgba(0, 0, 0, 0.038),
+  17.5px 17.3px 11.4px rgba(0, 0, 0, 0.055),
+  42.2px 41.6px 27.4px rgba(0, 0, 0, 0.072),
+  140px 138px 91px rgba(0, 0, 0, 0.11)
+;
+    box-sizing: border-box;
+    border-top: none;
+    border-left: none;
+    border-right: 1px solid blueviolet;
+    border-bottom: 1px solid blueviolet;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 2em;
+    padding: 20px;
     
+}
+
+.other-services  .others {
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    border-bottom: 3px solid blueviolet; 
+    padding-bottom: 7px;
+}
+
+.other-services .see-more {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    background-color: blueviolet;
+    border-radius: 8px;
+    margin: 10px 10px 10px 5px;
+}
+.other-services .see-more a {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 100px;
+    justify-content: center;
+    padding: 5px;
+    margin: auto;
+    display: flex;
+}
+.other-services .more-services {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: flex-start;
 }

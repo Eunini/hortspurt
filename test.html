@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Icons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+        .icon-container {
+            display: inline-block;
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .icon-hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="iconContainer" class="icon-container" onclick="toggleIcons()">
+        <!-- Initial icon (displayed first) -->
+        <i id="eye-slash" class="fas fa-eye-slash"></i>
+
+        <!-- Second icon (initially hidden) -->
+        <i id="eye" class="fas fa-eye icon-hidden"></i>
+    </div>
+
+    <script>
+        function toggleIcons() {
+            // Toggle visibility of the icons
+            document.getElementById('eye-slash').classList.toggle('icon-hidden');
+            document.getElementById('eye').classList.toggle('icon-hidden');
+        }
+    </script>
+
+</body>
+</html>
