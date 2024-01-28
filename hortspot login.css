@@ -144,6 +144,8 @@ p.bottom a {
     text-align: center;
     justify-content: center;
     color: #8a38f5;
+    font-weight: bold;
+
 }
 .input-control i {
     position: absolute;
@@ -152,6 +154,7 @@ p.bottom a {
     margin-top: 15px;
     padding-right: 15px;
     margin-right: 1rem;
+    color: #999;
 }
 
 .eye {
