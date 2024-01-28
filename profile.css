@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: auto;
+    background-color: black;
+}
+.background {
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 50%;
+    height: 120vh;
+}
+.my-profile-pic {
+    margin: 3em 15em 2em 13em;
+    display: block;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+.pic-container {
+    position: relative;
+    display: flex;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(225, 225, 225);
+    margin: auto;
+    margin-top: 3em;
+}
+
+.pic-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.my-profile-pic h3 {
+    margin: auto;
+    display: flex;
+    position: relative;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+.table {
+    display: inline-table;
+    position: relative;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 16em;
+}
+
+td {
+    padding: 15px;
+    padding-right: 13px;
+    margin-left: 20px ;
+    margin-right: 20px;
+    text-align: left;
+    border: 1px solid transparent;
+    width: 14em;
+}
+td span {
+    text-align: right;
+    float: right;
+    font-weight: 800;
+}
+tr svg {
+    background-color: purple;
+    font-size: 5px;
+    display: flex;
+    position: relative;
+}
+
+.content-container p.head {
+    position: relative;
+    font-size: 20px;
+    font-weight: bolder;
+    color: var(--color-bg-background);
+    margin-left: 10px;
+}
+
+.content-container p.head span{
+   font-size: 17px;
+   font-weight: lighter;
+}

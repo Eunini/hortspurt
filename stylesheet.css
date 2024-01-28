@@ -1,0 +1,76 @@
+.form_box{
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 50px, 60px 70px;
+    text-align: center;
+}
+
+.form_box h1{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    opacity: 70%;
+}
+
+.input_field{
+    background: #cac9c9;
+    margin: 15px 0;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 00;
+    padding: 18px 15px;
+}
+
+button{
+    width: 100%;
+    background-color: #9955bc;
+    border-radius: 30px;
+    transition-duration: 0.4s;
+    color: white;
+    font-size: 15px;
+    border: 0;
+    padding: 17px 15px;
+}
+
+.button :hover{
+    background-color: #cac9c9;
+    border-radius: 30px;
+}
+ 
+.Save_info input{
+    position: absolute;
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+}
+
+.Save_info{
+    display: block;
+    position: relative;
+    opacity: 70%;
+    padding-left: 35px;
+    padding-top: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    position: relative;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
