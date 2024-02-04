@@ -18,7 +18,7 @@ body {
     display: flex;
     background-color: white;
     width: 50%;
-    height: 200vh;
+    height: 190vh;
 }
 .pic-container {
     position: relative;
@@ -106,14 +106,17 @@ body {
     padding-left: 8px;
     display: inline-block;
             cursor: pointer;
-            font-size: 24px;
-            color: #333;
+            font-size: 15px;
+            color: white;
 }
 .profile-info-content .wallet #eye {
     padding-top: 20px;
     padding-left: 8px;
     cursor: pointer;
     display: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
 }
 .profile-info-content .wallet p {
     font-weight: 300;
@@ -160,7 +163,7 @@ body {
 }
 
 .content-box .main-service {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(249, 236, 253);
     width: 90%;
     height: 120px;
     box-shadow:
@@ -196,17 +199,18 @@ body {
     padding: 5px;
     margin: auto;
     display: flex;
+    cursor: pointer;
 }
 
-.content-box .main-service .section svg {
+.content-box .main-service .section a {
     position: relative;
     text-align: center;
     color: white;
-    font-size: 100px;
     justify-content: center;
     padding: 5px;
     margin: auto;
     display: flex;
+    cursor: pointer;
 }
 .content-box .main-service .section .get-data{  
     display: flex;
@@ -215,6 +219,7 @@ body {
     background-color: blueviolet;
     border-radius: 8px;
     margin-right: 30px;
+    cursor: pointer;
 }
 
 .content-box .main-service .section .get-airtime{  
@@ -224,6 +229,7 @@ body {
     background-color: blueviolet;
     border-radius: 8px;
     margin-left: 30px;
+    cursor: pointer;
 }
 
 .content-box .main-service .section .for-padi{  
@@ -234,9 +240,33 @@ body {
     border-radius: 8px;
     margin-left: 30px;
     margin-right: 10px;
+    cursor: pointer;
 }
 .content-box .main-service .section p {
     padding: 5px;
+    font-size: 13px;
+}
+
+.content-box .main-service .section .p1 {
+    display: flex;
+    margin-right: 26px;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+.content-box .main-service .section .p2 {
+    display: flex;
+    margin-left: 22px;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+.content-box .main-service .section .p3 {
+    display: flex;
+    margin-left: 24px;
+    position: relative;
+    text-align: center;
+    justify-content: center;
 }
 .other-services-container {
     position: absolute;
@@ -245,7 +275,7 @@ body {
     display: block;
 }
 .other-services {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(249, 236, 253);
     width: 75%;
     height: 155px;
     box-shadow:
@@ -297,4 +327,97 @@ body {
     flex-direction: column;
     justify-items: center;
     align-items: flex-start;
+}
+.other-services .more-services p {
+    text-align: center;
+    margin-left: 15px;
+}
+.refer {
+    display: flex;
+    position: relative;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding:15px 10px;
+}
+.refer .head {
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.refer .head span{
+    font-size: 13px;
+    padding-top: 10px;
+}
+.refer #person-add {
+    font-size: 40px;
+    margin-top: 15px;
+    padding-left: 10px;
+}
+
+.refer-get-container {
+    position: absolute;
+    margin: 55em 3em 3em 2em;
+    background-color: rgb(249, 236, 253);
+    width: 45%;
+    height: 155px;
+    box-shadow:
+  6.3px 6.2px 4.1px rgba(0, 0, 0, 0.038),
+  17.5px 17.3px 11.4px rgba(0, 0, 0, 0.055),
+  42.2px 41.6px 27.4px rgba(0, 0, 0, 0.072),
+  140px 138px 91px rgba(0, 0, 0, 0.11)
+;
+    box-sizing: border-box;
+    border-top: none;
+    border-left: none;
+    border-right: 1px solid blueviolet;
+    border-bottom: 1px solid blueviolet;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 20px;
+    
+}
+
+footer{
+    margin-top: 72em; /* Push the footer to the bottom */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    box-shadow:
+  -8.8px -13.1px 41.8px -4px rgba(0, 0, 0, 0.09),
+  -12.3px -18.1px 58.7px -4px rgba(0, 0, 0, 0.087),
+  39.7px 58.8px 70.3px -4px rgba(0, 0, 0, 0.082),
+  182.4px 269.8px 77.7px -4px rgba(0, 0, 0, 0.069),
+  219.2px 324.2px 80.2px -4px rgba(0, 0, 0, 0.02),
+  244px 361px 61px -4px #00000002
+;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    width: 50%;
+}
+footer .bottom {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    justify-content: center;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+footer .bottom i, footer .bottom p {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    cursor: pointer;
+}
+footer .bottom i {
+    font-size: 20px;
+}
+footer .bottom p {
+    font-size: 16px;
+    margin-top: 8px;
 }
