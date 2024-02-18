@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="profile.css">
     <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
 </head>
 <body>
     <div class="background">
-        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg></a>
         <div class="my-profile-pic">
+            <a href="#"><img src="images/Vector.png" alt=""></a>  
             <h3><b>My profile</b></h3>
+        </div>
             <div class="pic-container">
                 <img src="profile image hortspurt.png" alt="user profile image">
             </div>
-        </div>
         <div class="table-content">
             <table>
                 <tr>
@@ -50,37 +51,78 @@
         </div>
         <div class="refer">
             <p class="head"> Refer & Get Free Data<br> <span>  Earn 1gb on Every One Person you refer</span></p>
-           <ion-icon id="person-add" name="person-add-outline"></ion-icon>
+           <img src="images/acct-outline.png" alt="account-outline">
         </div>
-        <p class="log-out"><a href="">Log out</a></p>
+        <span><a href="">log out</a></span>
         <footer>
             <div class="bottom">
-                <i><ion-icon name="home-outline"></ion-icon></i>
-                <p>Home</p>
+                <a href="default.html" class="icon" id="icon1"><img src="images/Frame 25.svg" alt="" width="40px" height="40px"></a>
+        
             </div>
 
             <div class="bottom">
-                <i><ion-icon name="megaphone-outline"></ion-icon></i>
-                <p>Shoutout</p>
+                <a href="default.html" class="icon" id="icon2"><img src="images/Frame 22.svg" alt="" width="40px" height="40px"></a>
+              
             </div>
 
             <div class="bottom">
-                <i><ion-icon name="gift-outline"></ion-icon></i>
-                <p>Bonus</p>
+                <a href="default.html" class="icon" id="icon3"><img src="images/Frame 23.svg" alt="" width="40px" height="40px"></a>
+          
+            </div>
+o
+            <div class="bottom">
+                <a href="default.html" class="icon" id="icon4"><img src="images/Frame 24.svg" alt="" width="40px" height="40px"></a>
+            
             </div>
 
             <div class="bottom">
-                <i><ion-icon name="time-outline"></ion-icon></i>
-                <p>Hisory</p>
-            </div>
-
-            <div class="bottom">
-                <i><ion-icon name="person-circle-outline"></ion-icon></i>
-                <p>Me</p>
+                <a href="profile.html" class="icon" id="icon5"><img src="images/Frame 26.svg" alt="" width="40px" height="40px"></a>
+            
             </div>
         </footer>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
+    <script>
+        function handleIconClick(event, linkId) {
+            event.preventDefault();
+            window.location.href = document.getElementById(linkId).getAttribute("href");
+        }
+
+        // Add event listeners for each icon
+        document.getElementById("icon1").addEventListener("click", function (event) {
+            handleIconClick(event, "icon1");
+        });
+
+        document.getElementById("icon2").addEventListener("click", function (event) {
+            handleIconClick(event, "icon2");
+        });
+
+        document.getElementById("icon3").addEventListener("click", function (event) {
+            handleIconClick(event, "icon3");
+        });
+
+        document.getElementById("icon4").addEventListener("click", function (event) {
+            handleIconClick(event, "icon4");
+        });
+
+        document.getElementById("icon5").addEventListener("click", function (event) {
+            handleIconClick(event, "icon5");
+        });
+
+        // Check if the current page matches the linked page and add active class
+        var currentPage = window.location.pathname.split("/").pop();
+        if (currentPage === "page1.html") {
+            document.getElementById("icon1").classList.add("active");
+        } else if (currentPage === "page2.html") {
+            document.getElementById("icon2").classList.add("active");
+        } else if (currentPage === "page3.html") {
+            document.getElementById("icon3").classList.add("active");
+        } else if (currentPage === "page4.html") {
+            document.getElementById("icon4").classList.add("active");
+        } else if (currentPage === "page5.html") {
+            document.getElementById("icon5").classList.add("active");
+        }
+    </script>
 </body>
 </html>

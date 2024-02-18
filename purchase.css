@@ -1,0 +1,310 @@
+@import "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap";
+* {
+  box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: auto;
+  background-color: #9955BB;
+}
+
+.content-box {
+  margin: auto;
+  display: flex;
+  background-color: white;
+  width: 430px;
+  flex-direction: column;
+}
+.content-box .main-service {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  background-image: url("images/Rectangle 5.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 5px;
+  display: flex;
+}
+.content-box .main-service .main-content {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.pic-container {
+  display: flex;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgb(223, 218, 218);
+}
+.pic-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-head {
+  display: flex;
+  margin: 20px auto;
+  align-items: center;
+  width: 370px;
+  justify-content: space-between;
+}
+
+.intro {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bolder;
+  margin: 20px 8px;
+}
+
+a #img {
+  display: flex;
+  position: relative;
+  margin: auto;
+  cursor: pointer;
+}
+
+.profile-info {
+  width: 383px;
+  height: 170px;
+  margin: 20px auto;
+  border: none;
+  border-radius: 10px;
+  background: #9955BB;
+}
+.profile-info #circle1 {
+  position: absolute;
+  margin-left: 270px;
+  margin-top: 30px;
+}
+.profile-info #circle2 {
+  position: absolute;
+  margin-left: 240px;
+  margin-top: 16px;
+}
+
+.profile-info-content {
+  display: block;
+  position: relative;
+  color: white;
+}
+.profile-info-content .wallet {
+  display: flex;
+  margin: 8px 13px;
+  position: relative;
+  color: white;
+}
+.profile-info-content .wallet svg {
+  margin-top: 20px;
+  color: white;
+}
+.profile-info-content .wallet #wallet {
+  margin-right: 5px;
+  padding-right: 5px;
+}
+.profile-info-content .wallet #eye-slash {
+  padding-top: 20px;
+  padding-left: 8px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 15px;
+  color: white;
+}
+.profile-info-content .wallet #eye {
+  padding-top: 20px;
+  padding-left: 8px;
+  cursor: pointer;
+  display: none;
+  cursor: pointer;
+  font-size: 15px;
+  color: white;
+}
+.profile-info-content .wallet p {
+  font-weight: 300;
+  font-size: 17px;
+  margin-top: 15px;
+}
+.profile-info-content .balance {
+  font-weight: bold;
+  font-size: 27px;
+  letter-spacing: 15px;
+  margin: 20px 13px 0px 13px;
+}
+.profile-info-content a {
+  text-decoration: none;
+}
+.profile-info-content .add-cash {
+  width: 150px;
+  height: 40px;
+  background-color: white;
+  margin: 15px 13px;
+  border-radius: 30px;
+  display: flex;
+}
+.profile-info-content .add-cash p {
+  color: blueviolet;
+  font-size: 15px;
+  display: flex;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+}
+.profile-info-content .add-cash p a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.icon-container {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+}
+
+.section-main {
+  display: block;
+  flex-direction: column;
+  width: 370px;
+  margin: 10px 19px;
+}
+.section-main h2 {
+  position: relative;
+  font-weight: bold;
+  margin: 10px;
+}
+
+#others {
+  display: block;
+}
+
+.other-services-container {
+  width: 85%;
+  background-image: url("images/Rectangle 5.png");
+  background-size: cover;
+  background-position: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+.other-services-container p {
+  padding: 7px;
+  font-size: 15px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: black;
+  margin: 5px 10px;
+}
+.other-services-container .line {
+  width: 90%;
+  height: 3px;
+  background-color: #9955BB;
+}
+
+.other-container {
+  width: 100%;
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.refer {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  padding: 15px 10px;
+  gap: 10px;
+  width: 100%;
+}
+.refer .head {
+  font-size: 20px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+.refer .head span {
+  font-size: 13px;
+  padding-top: 10px;
+}
+.refer #person-add {
+  font-size: 40px;
+}
+
+.refer-get-container {
+  background: rgba(245, 225, 255, 0.6117647059);
+  width: 85%;
+  height: 155px;
+  box-sizing: border-box;
+  border-top: none;
+  border-left: none;
+  border-right: 1px solid blueviolet;
+  border-bottom: 1px solid blueviolet;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
+  padding: 20px;
+  margin: 20px auto;
+}
+
+footer {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: #FFFFFF;
+  width: 85%;
+}
+footer .bottom {
+  margin: 0 auto;
+  padding: 0 auto;
+  display: block;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+footer .bottom a {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  cursor: pointer;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+footer .bottom a svg {
+  fill: red;
+}
+footer .bottom p {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 8px;
+  color: #a7a7a7;
+}
+
+.active {
+  color: blueviolet;
+}/*# sourceMappingURL=purchase.css.map */

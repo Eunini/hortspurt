@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: auto;
+    position: relative;
+}
+.background {
+    position: relative;
+    background-color: #9955BB;
+    margin: 20px;
+}
+.background .done {
+    position: relative;
+    text-align: right;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*The subtle urge to disrupt this code so you can start all over again so you will feel pains too eh?*/
+/*You're still talking*/
+/*Back to business :) */
+
+.background .confirmed{
+    display: flex;
+    width: 300px;
+    margin: 30px auto 0;
+    align-items: center;
+    justify-content: center;   
+}
+.background #mark {
+    /* display: flex; */
+    margin: auto;
+    /* position: absolute; */
+    /* top: 50%; Position the top edge at 50% of the parent container's height */
+    /* left: 50%; Position the left edge at 50% of the parent container's width */
+    /* transform: translate(-50%, -50%); */
+}
+.content-holder {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+}
+.background #mark1 {
+    z-index: 100;
+    display: flex;
+    margin: auto;
+    position: absolute;
+    /* top: 50%; Position the top edge at 50% of the parent container's height */
+    /* left: 50%; Position the left edge at 50% of the parent container's width */
+    /* transform: translate(-50%, -50%); */
+}
+.background .trans {
+    /* position: relative; */
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 900;
+    top: 260px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.background #party {
+    z-index: 100;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    /* top: 12em;
+    left: 6px; */
+    align-items: center;
+}
+
+.background #myimage {
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform: translate(140%, 140%);
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+.network-amount {
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    bottom: 80px;
+}
+.network-amount img {
+    display: flex;
+    left: 120px;
+    top: 256px;
+}
+.background .aaa {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    top: 170px;
+}
+
+.network-amount .data {
+    position: relative;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 900;
+    top: 255px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+.network-amount .data span {
+    font-weight: 900;
+    line-height: 20px;
+    margin-left: 10px;
+}
+.price {
+    z-index: 300;
+    position: relative;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    top: 180px;
+}
+.price .amount {
+    font-weight: 800;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 26px;
+    color: #FFFFFF;
+}
+.receipt {
+    display: flex;
+    width: 380px;
+    height: 50px;
+    border-radius: 30px;
+    background: rgba(153, 85, 187, 1);
+    box-shadow: 8px 8px 8px 0px rgba(153, 85, 187, 0.1);
+    animation-duration: 0ms;
+    cursor: pointer;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-align: center;
+    top: 80px;
+    margin: auto;
+    align-items: center;
+    font-size: 14px;
+    line-height: 17.7px;
+    justify-content: center;
+}
+.receipt img {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.receipt p {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    justify-content: center;
+}
+/* For desktop */
+@media (min-width: 768px) {
+    body {
+        background-color: #ffffff;
+    }
+    .background {
+        position: relative;
+        background-color: #9955BB;
+        margin: auto;
+        width: 400px;
+        height: 602px;
+        top: 40px;   
+        border: 0;
+    }
+    
+}
+
+/* For mobile */
+@media (max-width: 767px) {
+    body {
+        background: #9955BB;
+    }
+
+    .background #mark {
+        display: flex;
+        margin: auto;
+        /* position: absolute; */
+        /* top: 50%; Position the top edge at 50% of the parent container's height */
+        /* left: 50%; Position the left edge at 50% of the parent container's width */
+        /* transform: translate(-50%, -30%); */
+    }
+
+    .background #mark1 {
+        z-index: 1;
+        display: flex;
+        margin: auto;
+        position: absolute;
+        top: 50%; /* Position the top edge at 50% of the parent container's height */
+        left: 50%; /* Position the left edge at 50% of the parent container's width */
+        transform: translate(-50%, -15%);
+    }
+    .background p {
+        top: 18em;
+    }
+
+    .background #party {
+        top: 14em;
+        left: 6px;
+    }
+    .background #myimage {
+        transform: translate(140%, 180%);
+    }
+    .content-holder{
+        padding: 5px;
+    }
+    .network-amount img {
+        display: flex;
+        left: 115px;
+        top: 289px;
+    }
+    .background .aaa{
+        top: 200px;
+    }
+}
