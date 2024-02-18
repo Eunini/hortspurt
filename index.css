@@ -56,24 +56,22 @@ div.links a:nth-child(2) {
   margin-left: 10px;
 }
 
-header.header img {
-  width: 600px;
+.welcome {
+  position: relative;
 }
-
-header.header {
-  display: flex;
-}
-.welcome
 .welcome .intro {
-
+   display: block;
+   flex-direction: column;
+   padding: 10px;
+   margin: 20px;
 }
 .rectangles {
   display: flex;
   position: relative;
 }
-div.intro h1 {
+
+.intro h1 {
   color: #000;
-  margin-bottom: 8px;
   font-size: 48px;
   font-style: normal;
   font-weight: 600;
@@ -82,7 +80,6 @@ div.intro h1 {
 
 div.intro h3 {
   color: #000;
-  margin-bottom: 8px;
   font-size: 30px;
   font-style: normal;
   font-weight: 600;
@@ -94,8 +91,6 @@ div.intro p {
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  width: 550px;
-  margin-bottom: 30px;
   line-height: 30px;
 }
 
