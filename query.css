@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+body {
+  background-color: whitesmoke;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #95b;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+header.query {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: white;
+}
+
+header.query a img,
+header.query h2,
+header.query div.drop img,
+header.query div.drop p {
+  background-color: white;
+}
+
+header a img {
+  width: 80px;
+}
+
+header div.drop img {
+  width: 50px;
+}
+
+div.drop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+div.drop p {
+  font-weight: 700;
+}
+
+.query h2 {
+  color: #9955bb;
+  font-size: 22px;
+}
+
+section.query,
+section.congrat {
+  border-radius: 20px;
+  padding: 20px;
+  background-color: white;
+  margin: 50px auto;
+  width: 60%;
+}
+
+section.query h3,
+section.query textarea,
+section.congrat img,
+section.congrat div.message p, div.drop {
+  background-color: white;
+}
+
+section.query h3 {
+  border-bottom: 2px solid #9955bb;
+  padding-bottom: 20px;
+}
+
+section.query textarea {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  border: 2px solid #9955bb;
+  padding: 10px;
+  resize: none;
+  border-radius: 10px;
+  position: relative;
+}
+
+div.icon {
+  position: absolute;
+  top: 420px;
+  left: 1105px;
+}
+
+div.icon img {
+  background-color: white;
+  width: 70px;
+}
+
+div.link {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 25px;
+  margin-left: 640px;
+}
+
+div.link button {
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  background-color: #95b;
+  border-radius: 20px;
+  padding: 9px 30px;
+  cursor: pointer;
+}
+div.link button a {
+  text-decoration: none;
+}
+div.link button.cancel {
+  background-color: whitesmoke;
+  color: black;
+}
+
+section.congrat {
+  text-align: center;
+}
+
+div.message {
+  border: 2px solid #9955bb;
+  border-radius: 20px;
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+}
+
+div.message p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+  header.query {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header.query a img {
+    margin-bottom: 10px;
+  }
+
+  header.query div.drop {
+    margin-top: 10px;
+  }
+
+  div.icon {
+    position: static;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  section.query,
+  section.congrat {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  div.link {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

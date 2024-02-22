@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: auto;
+    background-color: #9955BB;
+}
+.content-box {
+    margin: auto;
+    display: flex;
+    background-color: white;
+    width: 430px;
+    flex-direction: column;
+}
+
+.profile-info {
+    width: 383px;
+    height: 170px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 10px;
+    background: #9955BB;
+}
+.profile-info #circle1 {
+    position: absolute;
+    margin-left: 270px;
+    margin-top: 30px;
+}
+.profile-info #circle2 {
+    position: absolute;
+    margin-left: 240px;
+    margin-top: 16px;
+}
+.profile-info-content {
+    display: block;
+    position: relative;
+    color: white;
+}
+
+.profile-info-content .wallet {
+    display: flex;
+    margin: 8px 13px;
+    position: relative;
+    color: white;
+}
+
+.profile-info-content .wallet svg {
+    margin-top: 20px;
+    color: white;
+}
+.profile-info-content .wallet #wallet {
+    margin-right: 5px;
+    padding-right: 5px;
+}
+.icon-container {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+.profile-info-content .wallet #eye-slash {
+    padding-top: 20px;
+    padding-left: 8px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+}
+.profile-info-content .wallet #eye {
+    padding-top: 20px;
+    padding-left: 8px;
+    cursor: pointer;
+    display: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+}
+.profile-info-content .wallet p {
+    font-weight: 300;
+    font-size: 17px;
+    margin-top: 15px;
+}
+.profile-info-content .balance {
+    font-weight: bold;
+    font-size: 27px;
+    letter-spacing: 15px;
+    margin: 20px 13px 0px 13px;
+}
+
+.profile-info-content a {
+    text-decoration: none;
+}
+.profile-info-content .add-cash {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    margin: 15px 13px;
+    border-radius: 30px;
+    display: flex;
+}
+.profile-info-content .add-cash p {
+    color: blueviolet;
+    font-size: 15px;
+    display: flex;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+.profile-info-content .add-cash p a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.send-data {
+    display: block;
+    flex-direction: column;
+    margin: 2px auto;
+}
+.send-data p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin: 10px auto;
+}
+.send-data .number-box{
+    margin: auto;
+    display: flex;
+    position: relative;
+    width: 380px;
+    height: 51px;
+    border-radius: 5px;
+    background: linear-gradient(0deg, rgba(153, 85, 187, 0.61)),
+linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    border: 1px solid #9955BB9C
+}
+.send-data .number-box img{
+    width: 25px;
+    height: 16.5px;
+    position: relative;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.send-data .number-box h4{
+    margin-top: 13px;
+    margin-left: 8px;
+}
+
+.send-data .number-box .short-division {
+    width: 4px;
+    height: 20px;
+    background-color: #D9D9D9;
+    margin: 15px 5px;
+}
+
+.send-data .number-box input{
+    border: none;
+    outline: 0;
+    background: transparent;
+    color: #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.type p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 10px;
+    margin: 10px;
+}
+
+.type .sme {
+    width: 380px;
+    height: 50px;
+    border-radius: 30px;
+    border: 0;
+    background: rgba(212, 212, 212, 1);
+    box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.25);
+    border: 2px;
+    margin: 10px 20px;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+.type input:active {
+    border: 1.5px solid #9955BB;
+}
+
+.type .proceed {
+    display: flex;
+    width: 380px;
+    height: 50px;
+    border-radius: 30px;
+    background: rgba(153, 85, 187, 1);
+    box-shadow: 8px 8px 8px 0px rgba(153, 85, 187, 0.1);
+    animation-duration: 0ms;
+    cursor: pointer;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-align: center;
+    margin: 10px 20px;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 17.7px;
+}
+input[type="submit"] {
+    margin: 20px;
+}
+input[type="submit"]:hover {
+    transform: scale(1.02);
+    transition: 2s ease-out;
+}
+
+@media screen and (min-width: 768px) {
+    .content-box {
+        max-width: 768px; /* Adjust max-width for desktop */
+    }
+
+    .profile-info {
+        width: 50%; /* Adjust width for desktop */
+        max-width: none;
+        margin: 20px auto;
+    }
+}
+
+.profile-info-content {
+    display: block;
+    position: relative;
+    color: white;
+}
+
+/* Add media query for smaller screens */
+@media screen and (max-width: 767px) {
+    body {
+        background-color: #FFFFFF;
+    }
+    .profile-info-content .wallet p {
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+    .type .sme, .type .proceed {
+        width: 87%;
+        margin: 8px;
+    }
+    .send-data .number-box {
+        width: 350px;
+        margin: 10px;
+    }
+    .profile-info {
+        width: 383px;
+    }
+}
+
+/* Add media query for even smaller screens */
+@media screen and (max-width: 480px) {
+    .content-box {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}

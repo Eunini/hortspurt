@@ -10,15 +10,17 @@
     <link rel="stylesheet" href="profile.css">
     <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
 </head>
 <body>
     <div class="background">
         <div class="my-profile-pic">
+            <a href="#"><img src="images/Vector.png" alt=""></a>  
             <h3><b>My profile</b></h3>
+        </div>
             <div class="pic-container">
                 <img src="profile image hortspurt.png" alt="user profile image">
             </div>
-        </div>
         <div class="table-content">
             <table>
                 <tr>
@@ -31,11 +33,10 @@
                 </tr>
                 <tr>
                     <td>Gender</td>
-                    <td><span>Male</span></td>
+                    <td><span>Female</span></td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M19.965 8.521C19.988 8.347 20 8.173 20 8c0-2.379-2.143-4.288-4.521-3.965C14.786 2.802 13.466 2 12 2s-2.786.802-3.479 2.035C6.138 3.712 4 5.621 4 8c0 .173.012.347.035.521C2.802 9.215 2 10.535 2 12s.802 2.785 2.035 3.479A3.976 3.976 0 0 0 4 16c0 2.379 2.138 4.283 4.521 3.965C9.214 21.198 10.534 22 12 22s2.786-.802 3.479-2.035C17.857 20.283 20 18.379 20 16c0-.173-.012-.347-.035-.521C21.198 14.785 22 13.465 22 12s-.802-2.785-2.035-3.479zm-9.01 7.895-3.667-3.714 1.424-1.404 2.257 2.286 4.327-4.294 1.408 1.42-5.749 5.706z"></path></svg>
                     <td><span>B*@gmail.com</span></td>
                 </tr>
                 <tr>
@@ -50,7 +51,78 @@
         </div>
         <div class="refer">
             <p class="head"> Refer & Get Free Data<br> <span>  Earn 1gb on Every One Person you refer</span></p>
+           <img src="images/acct-outline.png" alt="account-outline">
         </div>
+        <span><a href="">log out</a></span>
+        <footer>
+            <div class="bottom">
+                <a href="default.html" class="icon" id="icon1"><img src="images/Frame 25.svg" alt="" width="40px" height="40px"></a>
+        
+            </div>
+
+            <div class="bottom">
+                <a href="default.html" class="icon" id="icon2"><img src="images/Frame 22.svg" alt="" width="40px" height="40px"></a>
+              
+            </div>
+
+            <div class="bottom">
+                <a href="default.html" class="icon" id="icon3"><img src="images/Frame 23.svg" alt="" width="40px" height="40px"></a>
+          
+            </div>
+o
+            <div class="bottom">
+                <a href="default.html" class="icon" id="icon4"><img src="images/Frame 24.svg" alt="" width="40px" height="40px"></a>
+            
+            </div>
+
+            <div class="bottom">
+                <a href="profile.html" class="icon" id="icon5"><img src="images/Frame 26.svg" alt="" width="40px" height="40px"></a>
+            
+            </div>
+        </footer>
     </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
+    <script>
+        function handleIconClick(event, linkId) {
+            event.preventDefault();
+            window.location.href = document.getElementById(linkId).getAttribute("href");
+        }
+
+        // Add event listeners for each icon
+        document.getElementById("icon1").addEventListener("click", function (event) {
+            handleIconClick(event, "icon1");
+        });
+
+        document.getElementById("icon2").addEventListener("click", function (event) {
+            handleIconClick(event, "icon2");
+        });
+
+        document.getElementById("icon3").addEventListener("click", function (event) {
+            handleIconClick(event, "icon3");
+        });
+
+        document.getElementById("icon4").addEventListener("click", function (event) {
+            handleIconClick(event, "icon4");
+        });
+
+        document.getElementById("icon5").addEventListener("click", function (event) {
+            handleIconClick(event, "icon5");
+        });
+
+        // Check if the current page matches the linked page and add active class
+        var currentPage = window.location.pathname.split("/").pop();
+        if (currentPage === "page1.html") {
+            document.getElementById("icon1").classList.add("active");
+        } else if (currentPage === "page2.html") {
+            document.getElementById("icon2").classList.add("active");
+        } else if (currentPage === "page3.html") {
+            document.getElementById("icon3").classList.add("active");
+        } else if (currentPage === "page4.html") {
+            document.getElementById("icon4").classList.add("active");
+        } else if (currentPage === "page5.html") {
+            document.getElementById("icon5").classList.add("active");
+        }
+    </script>
 </body>
 </html>

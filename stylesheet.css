@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap');
+body {
+    font-family: 'Lexend Deca', sans-serif;
+}
 .form_box{
     width: 90%;
     max-width: 450px;
@@ -24,7 +28,11 @@
     display: flex;
     align-items: center;
 }
-
+.input_field i {
+    color: #999;
+    margin-left: 10px;
+    font-size: 1.4em;
+}
 input{
     width: 100%;
     background: transparent;
@@ -48,29 +56,43 @@ button{
     background-color: #cac9c9;
     border-radius: 30px;
 }
- 
 .Save_info input{
     position: absolute;
     cursor: pointer;
-    height: 10px;
-    width: 10px;
+    height: 12px;
+    width: 12px;
 }
 
 .Save_info{
     display: block;
     position: relative;
     opacity: 70%;
-    padding-left: 35px;
-    padding-top: 15px;
+    padding: 20px;
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 15px;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
+
 }
 
 p{
     position: relative;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    font-weight: bolder;
+}
+
+section .no-acct {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    margin-top: 35em;
+    display: flex;
+}
+section .no-acct a {
+    text-decoration: none;
+    font-size: large;
+    font-weight: bolder;
 }
