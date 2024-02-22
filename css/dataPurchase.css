@@ -1,0 +1,272 @@
+*{
+    box-sizing: border-box;
+    font-family:  Arial, sans-serif;
+}
+
+.cancelBtn{
+    font-weight: 700;
+    color: #000000;
+    font-size: 30px;
+    margin: 30px 30px 50px 30px;
+    text-decoration-line: none;
+}
+
+.cancelBtn:hover{
+    cursor: pointer;
+}
+
+.amountInNaira{
+    text-align: center;
+    font-weight: 700;
+    color: #000000;
+    font-size: 26px;
+    margin: 30px 0px;
+}
+
+.networkType{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 30px;
+    font-size: 20px;
+}
+
+.mb{
+    font-weight: 400;
+}
+
+.amountToBuy{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 30px;
+    font-size: 20px;
+}
+
+.amt{
+    font-weight: 700; 
+}
+
+.dataToPurchase{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 30px;
+    font-size: 20px;
+}
+
+.gb{
+    color: #9955BB;
+    font-weight: 700; 
+}
+
+.paymentHeading{
+    padding: 50px 30px;
+    font-size: 20px;
+    font-weight: 700; 
+}
+
+.walletBox{
+    border-radius: 10px;
+    background-color: #9955BB;
+    padding: 25px 15px;
+    margin: 2px 26px;
+    color: white;
+}
+
+#walletBalanceHidden{
+    display: none;
+}
+
+#visible{
+    display: none;
+}
+
+.walletB{
+    display: flex;
+    padding: 15px 5px;
+}
+
+.wb{
+    padding: 0px 6px;
+    font-size: 20px;
+}
+
+#invisible:hover, #visible:hover{
+    cursor: pointer;
+}
+
+.walletBalance{
+    font-size: 20px;
+    padding: 15px 5px;
+    font-weight: 700;
+}
+
+.walletBalanceHidden{
+    padding: 15px 5px;
+}
+
+.approval{
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid white;
+    margin: 5px 5px;
+    padding: 7px 24px;
+    border-radius: 22px;
+    color: #9955BB;
+    max-width: max-content;
+}
+
+.bhr{
+    margin-top: 6px;
+    border-bottom: 1px solid grey;
+    padding: 30px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.numbbox{
+    display: flex;
+    align-content: center;
+    border: 1px solid #9955BB;
+    width: 95%;
+    padding: 10px 5px;
+    margin-top: 40px;
+    margin-left: 30px;
+    border-radius: 5px;
+}
+
+.netimg{
+    padding: 0px 15px;
+}
+
+.phonenumb{
+    margin-left: 10px;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    width: 70%;
+}
+
+.phonenumb:hover{
+    border-color: none;
+    outline-style: none;
+}
+
+.phonenumb:focus{
+    border-color: none;
+    outline-style: none;
+}
+
+
+
+.proceed{
+    text-decoration-line: none;
+    color: white;
+    box-shadow: 0px 2px 7px rgba(0,0,0,0.1);
+    font-weight: 600;
+    border: 1px solid #9955BB;
+    background-color: #9955BB;
+    border-radius: 32px;
+    padding: 25px 20px;
+    margin: 26px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proceed:hover{
+    opacity: 0.5;
+    transition: 500ms;
+}
+
+
+
+
+@media screen and (max-width:600px){
+
+    .cancelBtn{
+        font-size: 15px;
+        margin: 17px 30px 50px 12px;
+    }
+
+    .networkType{
+        padding: 25px 12px;
+        font-size: 14px;
+    }
+
+    .amountToBuy{
+        padding: 25px 12px;
+        font-size: 14px;
+    }
+    
+    .dataToPurchase{
+        padding: 25px 12px;
+        font-size: 14px;
+    }
+
+    .paymentHeading{
+        padding: 30px 12px 15px 12px;
+        font-size: 16px;
+        font-weight: 700; 
+    }
+
+    .walletBox{
+        padding: 25px 12px;
+        margin: 2px 12px;
+    }
+
+    .wb{
+        padding: 0px 6px;
+        font-size: 14px;
+    }
+
+    .approval{
+        font-size: 14px;
+    }
+
+    .netimg{
+        padding: 5px 5px 0px 5px;
+    }
+
+    .phonenumb{
+        margin-left: 4px;
+        border: none;
+        font-size: 14px;
+        width: 80%;
+    }
+
+    .numbbox{
+        width: 93%;
+        padding: 10px 5px;
+        margin-top: 40px;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+    
+    .proceed{
+        border-radius: 32px;
+        padding: 19px 20px;
+        margin: 15px 12px;
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
