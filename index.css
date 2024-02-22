@@ -62,8 +62,7 @@ div.links a:nth-child(2) {
 .welcome .intro {
    display: block;
    flex-direction: column;
-   padding: 10px;
-   margin: 20px;
+   
 }
 .rectangles {
   display: flex;
