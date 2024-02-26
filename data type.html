@@ -45,8 +45,28 @@
 
         <div class="type">
             <p>Data Type</p>
-            <input type="submit" value="SME" class="sme">
-            <input type="submit" value="Corporate" class="sme">
+            <input type="checkbox" id="checkbox1" class="custom-checkbox">
+            <label for="checkbox1">SME</label>
+
+            <input type="checkbox" id="checkbox2" class="custom-checkbox">
+            <label for="checkbox2"> Corporate</label>
+
             <input type="submit" value="Proceed to pay" class="proceed">
         </div>
     </div>
+    <script>
+       const checkboxes = document.querySelectorAll('.custom-checkbox');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('click', function() {
+                // Uncheck siblings
+                checkboxes.forEach(sibling => {
+                    if (sibling !== checkbox) {
+                        sibling.checked = false;
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>

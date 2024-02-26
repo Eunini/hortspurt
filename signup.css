@@ -58,7 +58,7 @@
     border-radius: 30px;
 }
 input {
-    background-color: #c0c0c0;;
+    background-color: #D4D4D4;
     border: none;
     color: var(--color-bg-background);
     box-shadow:
@@ -71,7 +71,7 @@ input {
 .input::placeholder {
     padding: 10px;
     margin: 3px;
-    color: #5e5a5a;
+    color: #9C9C9C;
 }
 /* Styling for the dropdown */
 .dropdown {
@@ -107,7 +107,7 @@ input {
     margin: 10px;
     height: 50px;
     border-radius: 20px;
-    background-color: #8a38f5;
+    background-color: #9955BB;
     color: var(--color-bg-background);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px;

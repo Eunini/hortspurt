@@ -242,6 +242,10 @@ linear-gradient(0deg, #FFFFFF, #FFFFFF);
 .choose-network img:nth-of-type(4) {
     margin: 0;
 }
+
+.choose-network a {
+    text-decoration: none;
+}
 .choose-network .proceed {
     display: flex;
     width: 380px;

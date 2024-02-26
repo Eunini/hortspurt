@@ -22,6 +22,8 @@ body {
 .background .done {
     position: relative;
     text-align: right;
+    margin: 10px;
+    padding: 20px;
     color: #ffffff;
     font-size: 16px;
     font-weight: 900;
@@ -39,12 +41,7 @@ body {
     justify-content: center;   
 }
 .background #mark {
-    /* display: flex; */
     margin: auto;
-    /* position: absolute; */
-    /* top: 50%; Position the top edge at 50% of the parent container's height */
-    /* left: 50%; Position the left edge at 50% of the parent container's width */
-    /* transform: translate(-50%, -50%); */
 }
 .content-holder {
     display: block;
@@ -58,20 +55,16 @@ body {
     display: flex;
     margin: auto;
     position: absolute;
-    /* top: 50%; Position the top edge at 50% of the parent container's height */
-    /* left: 50%; Position the left edge at 50% of the parent container's width */
-    /* transform: translate(-50%, -50%); */
 }
 .background .trans {
-    /* position: relative; */
     color: #ffffff;
     text-align: center;
+    top: 40px;
     display: flex;
     justify-content: center;
     font-size: 16px;
     line-height: 20px;
     font-weight: 900;
-    top: 260px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -88,55 +81,48 @@ body {
 
 .background #myimage {
     z-index: 200;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    transform: translate(140%, 140%);
+    left: 150px;
+    bottom: 20px;
+    position: absolute;
     margin: auto;
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: #ffffff;
 }
-.network-amount {
-    margin: auto;
-    position: relative;
-    display: flex;
+.content-holder .network-amount {
     align-items: center;
-    bottom: 80px;
-}
-.network-amount img {
     display: flex;
-    left: 120px;
-    top: 256px;
+    top: 80px;
 }
+
 .background .aaa {
     color: #ffffff;
     font-size: 16px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    justify-content: center;
+    top: 80px;
     position: relative;
     text-align: center;
-    align-items: center;
-    top: 170px;
 }
-
-.network-amount .data {
-    position: relative;
+a{
+    text-decoration: none;
+}
+.network-amount p {
     color: #ffffff;
     font-size: 16px;
-    font-weight: 900;
-    top: 255px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: flex;
-    text-align: center;
+    font-weight: 700;
+    font-family: 'Lexend',sans-serif;
+    display: flex;  
     align-items: center;
     margin: auto;
 }
-.network-amount .data span {
+.network-amount .data img{
+    margin: 5px;
+}
+.network-amount p span {
     font-weight: 900;
     line-height: 20px;
-    margin-left: 10px;
+    margin: 10px;
 }
 .price {
     z-index: 300;
@@ -146,7 +132,7 @@ body {
     text-align: center;
     justify-content: center;
     align-items: center;
-    top: 180px;
+    top: 100px;
 }
 .price .amount {
     font-weight: 800;
@@ -156,12 +142,13 @@ body {
 }
 .receipt {
     display: flex;
-    width: 380px;
+    width: 400px;
     height: 50px;
-    border-radius: 30px;
+    border-radius: 20px;
     background: rgba(153, 85, 187, 1);
     box-shadow: 8px 8px 8px 0px rgba(153, 85, 187, 0.1);
     animation-duration: 0ms;
+    transition: 2s ease-in-out;
     cursor: pointer;
     border: none;
     color: #FFFFFF;
@@ -170,22 +157,21 @@ body {
     top: 80px;
     margin: auto;
     align-items: center;
-    font-size: 14px;
-    line-height: 17.7px;
     justify-content: center;
+    margin-bottom: 10px;
+}
+.receipt:hover {
+    transform: scale(1.013);
 }
 .receipt img {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 8px;
 }
 .receipt p {
     color: #FFFFFF;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    justify-content: center;
+  
 }
 /* For desktop */
 @media (min-width: 768px) {
@@ -213,41 +199,51 @@ body {
     .background #mark {
         display: flex;
         margin: auto;
-        /* position: absolute; */
-        /* top: 50%; Position the top edge at 50% of the parent container's height */
-        /* left: 50%; Position the left edge at 50% of the parent container's width */
-        /* transform: translate(-50%, -30%); */
+
     }
 
     .background #mark1 {
         z-index: 1;
         display: flex;
         margin: auto;
-        position: absolute;
-        top: 50%; /* Position the top edge at 50% of the parent container's height */
-        left: 50%; /* Position the left edge at 50% of the parent container's width */
-        transform: translate(-50%, -15%);
-    }
-    .background p {
-        top: 18em;
+
     }
 
     .background #party {
-        top: 14em;
-        left: 6px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .background #myimage {
-        transform: translate(140%, 180%);
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        left: 120px;
     }
-    .content-holder{
+    .content-holder .network-amount {
         padding: 5px;
+        position: relative;
+        margin: auto;
+        top: 0;
     }
     .network-amount img {
         display: flex;
-        left: 115px;
-        top: 289px;
+      
     }
-    .background .aaa{
-        top: 200px;
+    .receipt {
+        background: #FFFFFF;
+        width: 90%;
+        margin: 20px;
+    }
+    .receipt img {
+        background-color: #9955BB;
+    }
+    .receipt p {
+        color: #9955BB;
+        font-weight: 900;
+    }
+    .price {
+        top: 60px;
     }
 }

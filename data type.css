@@ -21,9 +21,8 @@ body {
     flex-direction: column;
 }
 
-.profile-info {
-    width: 383px;
-    height: 170px;
+.content-box .profile-info {
+    width: 380px;
     margin: 20px auto;
     border: none;
     border-radius: 10px;
@@ -186,23 +185,40 @@ linear-gradient(0deg, #FFFFFF, #FFFFFF);
     margin: 10px;
 }
 
-.type .sme {
-    width: 380px;
-    height: 50px;
-    border-radius: 30px;
-    border: 0;
-    background: rgba(212, 212, 212, 1);
-    box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.25);
-    border: 2px;
-    margin: 10px 20px;
-    text-align: left;
-    padding: 15px;
-    font-weight: 600;
-}
-.type input:active {
-    border: 1.5px solid #9955BB;
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    display: none;
+  /*when you comment and uncomment the display property and see what happens*/
 }
 
+/* Styling the label to mimic a checkbox */
+label {
+    display: block;
+    width: 380px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    cursor: pointer;
+    margin:20px auto;
+    background: #D4D4D4;
+    color: #000000;
+    transition: .2s linear all;
+    font-family: 'Lexend', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+/* Style the label when the checkbox is checked */
+input[type="checkbox"]:checked + label {
+    border: 2px solid #9955BB;
+}
+
+  
 .type .proceed {
     display: flex;
     width: 380px;
@@ -221,14 +237,10 @@ linear-gradient(0deg, #FFFFFF, #FFFFFF);
     font-size: 14px;
     line-height: 17.7px;
 }
-input[type="submit"] {
-    margin: 20px;
-}
-input[type="submit"]:hover {
+.type .proceed:hover {
     transform: scale(1.02);
-    transition: 2s ease-out;
+    transition: 2s ease-in-out;
 }
-
 @media screen and (min-width: 768px) {
     .content-box {
         max-width: 768px; /* Adjust max-width for desktop */
@@ -252,8 +264,18 @@ input[type="submit"]:hover {
     body {
         background-color: #FFFFFF;
     }
+    .content-box .profile-info {
+        width: 370px;
+        margin: 0;
+    }
     .profile-info-content .wallet p {
         margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+    .send-data {
+        margin: 0;
+    }
+    .send-data p {
+        padding: 10px;
     }
     .type .sme, .type .proceed {
         width: 87%;
@@ -265,6 +287,9 @@ input[type="submit"]:hover {
     }
     .profile-info {
         width: 383px;
+    }
+    .profile-info-content .wallet p {
+        margin: 20px 5px;
     }
 }
 

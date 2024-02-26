@@ -5,17 +5,11 @@
   font-family: "Lexend Deca", sans-serif;
   padding: 0;
   margin: 0;
-  position: relative;
 }
-
 html {
   scroll-behavior: smooth;
 }
 
-.logo {
-  display: flex;
-  margin: 20px;
-}
 a {
   text-decoration: none;
   color: #95b;
@@ -27,25 +21,31 @@ a {
 }
 
 header {
-  position: relative;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  width: 95%;
+  margin: 20px auto;
+  padding: 20px 70px;
 }
 
-header .query{
+header.query{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 30px;
 }
 header img.circle {
-  width: 200px;
-  margin-top: -30px;
+  margin: 0 auto;
+  width: auto;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
 }
 
-.links {
-  margin: 30px;
-  padding: 15px;
+div.links a {
+  margin-right: 25px;
 }
 
 div.links a:nth-child(2) {
@@ -53,24 +53,32 @@ div.links a:nth-child(2) {
   background-color: #95b;
   border-radius: 20px;
   padding: 8px 25px;
-  margin-left: 10px;
 }
 
-.welcome {
-  position: relative;
+header.header img {
+  width: 600px;
 }
-.welcome .intro {
-   display: block;
-   flex-direction: column;
-   
-}
-.rectangles {
+
+header.header {
   display: flex;
-  position: relative;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-.intro h1 {
+div.intro {
+  flex-wrap: wrap;
+  margin-top: 100px;
+  flex: 1 1 40rem;
+}
+
+div.image {
+  flex-wrap: wrap;
+  flex: 1 1 40rem;
+}
+
+div.intro h1 {
   color: #000;
+  margin-bottom: 8px;
   font-size: 48px;
   font-style: normal;
   font-weight: 600;
@@ -79,6 +87,7 @@ div.links a:nth-child(2) {
 
 div.intro h3 {
   color: #000;
+  margin-bottom: 8px;
   font-size: 30px;
   font-style: normal;
   font-weight: 600;
@@ -90,6 +99,8 @@ div.intro p {
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
+  width: 550px;
+  margin-bottom: 30px;
   line-height: 30px;
 }
 
@@ -108,6 +119,7 @@ div.image-1 {
 }
 
 section.why_us {
+  width: 95%;
   margin-top: 70px;
   position: relative;
   text-align: center;
@@ -129,6 +141,7 @@ img.up {
 }
 
 div.box{
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -139,11 +152,12 @@ div.box div.item{
  border-radius: 10px;
 background: #F5F5F5;
 padding: 30px;
-height: 240px;
+height: 380px;
 line-height: 25px;
 margin: 30px;
 flex-wrap: wrap;
 flex: 1 1 40rem;
+background: transparent;
 }
 
 div.box div.item p{
@@ -154,8 +168,7 @@ div.box div.item p{
 
 div.box div.item:nth-child(2){
   background: linear-gradient(45deg, #95B 31.26%, rgba(153, 85, 187, 0.00) 112.69%);
-
-
+  height: 380px;
 }
 
 img.left {
@@ -236,7 +249,7 @@ div.image-4 img{
 
 section.about-us{
   background-color: #95B;
-  height: 600px;
+  height: 800px;
   width: 100%;
   margin-top: -34px;
   text-align: center;
@@ -369,29 +382,32 @@ div.intro p {
 
 }
 
-@media screen and (max-width: 800px) {
-  div.outer {
-      margin-left: -400px;
-      margin-top: 100px;
-  }
+@media screen and (max-width:800px) {
+ .outer{
+  margin-left: -400px;
+  margin-top: 100px;
+  
+} 
 
-  div.big {
-      margin-top: -200px;
-      margin-right: -700px;
-  }
-
-  div.inner {
-      position: absolute;
-      top: 650px;
-      left: -100px;
-  }
-
-  div.galaxy {
-      position: absolute;
-      top: 1720px;
-      right: 0;
-  }
+.big{
+  margin-top: -200px;
+  margin-right: -700px;
 }
+.inner{
+    position: absolute;
+  top: 650px;
+  left: -100px; 
+}
+
+.galaxy{
+
+  position: absolute;
+  top: 1720px;
+  right: 0; 
+
+}
+}
+
 
 
 
