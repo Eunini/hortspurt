@@ -11,5 +11,5 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     wallet_balance = models.PositiveIntegerField(default=0)
-    pin = models.CharField(max_length=4, default='0000')
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, default='P')
+    # phone_no = models.CharField(max_length=11)
