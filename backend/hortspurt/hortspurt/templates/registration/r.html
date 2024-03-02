@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
     <meta charset="UTF-8" />
     <title>Log In and Sign Up page</title>
-    <link href="stylesheet.css" rel="stylesheet"/>
+    <link rel="stylesheet" href='{% static "stylesheet.css" %}'/>
     <script src="https://kit.fontawesome.com/05c18b0994.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -34,7 +35,7 @@
 
     <section>
         <div>
-         <p>Don't have an account? <a href="">Click here to sign up</a></p>
+         <p>Don't have an account? <a href="/accounts/login/">Click here to sign up</a></p>
         </div>
     </section>    
 </body>
