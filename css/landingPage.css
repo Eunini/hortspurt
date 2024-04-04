@@ -1,0 +1,302 @@
+.firstPhase{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.getIn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.getIn a{
+    text-decoration-line: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    
+}
+
+.signup{
+    color: #95b;
+    padding-right: 17px;
+}
+
+.signup:hover{
+    letter-spacing: 2px;
+    transition: 410ms;
+}
+
+.login{
+    color: white;
+    background-color: #95b;
+    border-radius: 25px;
+    padding: 10px 30px;
+    text-align: center;
+}
+
+.login:hover{
+    background-color: transparent;
+    color: #95b;
+    transition: 410ms;
+    border: 0.2px solid #95b;
+}
+
+
+/*  second phase  */
+
+.heroSection{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pColor{
+    color: #95b;
+}
+
+.welcome, .worry, .heroText{
+    padding-left: 30px;
+}
+
+.cta{
+    text-decoration-line: none;
+    font-size: 18px;
+    margin-left: 30px;
+    background-color: #95b;
+    color: white;
+    padding: 15px 55px;
+    border-radius: 20px;
+}
+
+.cta:hover{
+    color: #9955BB;
+    background: transparent;
+    border: 0.1px solid #9955BB;
+    transition: 450ms;
+}
+
+.networkImages{
+    position: relative;
+}
+
+.outer{
+    width: 100%;
+}
+
+.inner{
+    position: absolute;
+    top: 120px;
+    left: 250px;
+    
+}
+
+.hero1{
+    margin-top: 32px;
+    width: 100%;
+}
+
+.hero2{
+    position: relative;
+    width: 100%;
+}
+
+.big{
+    width: 100%;
+}
+
+.small{
+    position: absolute;
+    top: 22%;
+    left: 25%;
+}
+
+.welcome{
+    font-size: 50px;
+}
+
+.worry{
+    font-size: 40px;
+}
+
+.heroText{
+    font-size: 22px;
+}
+
+
+
+/*  Third Phase */
+
+.whyUs{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+
+
+.reasons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./images/Group\ 1222.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-top: 30px;
+}
+
+.spacetaker{
+    visibility: hidden;
+}
+
+.greybox{
+    text-align: center;
+    border-radius: 10px;
+    background: #F5F5F5;
+    padding: 30px;
+    height: 250px;
+    width: 330px;
+    line-height: 25px;
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.purplebox{
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #95B 31.26%, rgba(153, 85, 187, 0.00) 112.69%);
+    padding: 30px;
+    height: 250px;
+    width: 300px;
+    line-height: 25px;
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.our{
+    font-size: 20px;
+}
+
+.our2{
+    font-size: 18px;
+}
+
+
+
+/*  FOURTH Phase */
+
+.services{
+    padding: 160px 270px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('images/Group 1214.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+
+.list{
+    width: 100%;
+}
+
+.item{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+/*  Fifth Phase */
+
+.mainCanopy{
+    background-color: #9955BB;
+    padding: 30px 0px;
+}
+
+.aboutUs{
+    text-align: center;
+    width: 100%;
+    padding-top: 50px;
+    color: white;
+}
+
+.canopyContent1{
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.aboutContent{
+    width: 71%;
+    background-color: white;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    padding: 40px 15px 10px 30px;
+}
+
+.aboutText{
+    width: 100%;
+    font-size: 24px;
+    line-height: 45px;
+    color: black;
+    right: 0px;
+    
+}
+
+.break{
+    display: none;
+}
+
+.aboutImage{
+    padding-left: 130px;
+}
+
+.wavyImg{
+    width: 100%;
+    margin-top: 60px;
+}
+
+
+/*  Sixth Phase */
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 130px;
+    background-color: #9955BB;
+    color: white;
+}
+
+.foott{
+    text-decoration-line: none;
+    text-decoration-color: white;
+    color: white;
+}
+
+.foott:hover{
+    transition: 600ms;
+    letter-spacing: 1.2px;  
+}
+
+.email{
+    text-decoration-line: underline;
+    text-decoration-color: white;
+    color: white;
+}
+
+.email:hover{
+    transition: 600ms;
+    letter-spacing: 1.2px;
+}
