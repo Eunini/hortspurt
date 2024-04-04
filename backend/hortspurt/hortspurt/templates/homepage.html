@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapicss2?famoda:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href='{% static "purchase.css" %}'>
+    <link rel="stylesheet" href='{% static "homepage.css" %}'>
     <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
@@ -20,7 +20,7 @@
                 <img src='{% static "images/profile image hortspurt.png" %}' alt="user profile image">
                 <h1 class="intro">Hi, {{ user.first_name }}</h1>
             </div>
-               <a href="query.html"><img src='{% static "images/Frame 28.png" %}' id="img" id="mysupport"></a>
+               <a href="./query.html"><img src='{% static "images/Frame 28.png" %}' id="img" id="mysupport"></a>
         </div>
 
         <div class="profile-info">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <p class="balance">****</p>
-                <a href="#"><div class="add-cash"><p>+ add money</p></div></a>
+                <a href="#" id="add-money"><div class="add-cash"><p>+ add money</p></div></a>
             </div>
         </div>
         <!--Services offered-->
@@ -47,9 +47,10 @@
         <b><h2>Available services</h2></b>
         <div class="main-service">
            <div class="main-content">
-            <a href="#"><img src='{% static "images/Frame 8.png" %}' id="wifi"></a>
+            <a href="/purchase/data/"><img src='{% static "images/Frame 8.png" %}' id="wifi"></a>
                     <a href="#"><img src='{% static "images/Frame 9.png" %}' id="add"></a>                
                         <a href="#"><img src='{% static "images/Frame 10.png" %}' id="call"></a>
+                        <a href=""><div class="social-media"><p>social media</p></div></a>
            </div>
         </div><!--first service section ends here-->
         </div>
@@ -60,7 +61,7 @@
             <div class="line"></div>
           <img src='{% static "images/Frame 20.png" %}' id="others" onclick="view_more()">
           <div class="other-container" id="other_container">
-            <img src='{% static "./images/Frame 11.png" %}' alt=""><img src='{% static "./images/Frame 12.png" %}' alt=""><img src='{% static "./images/Frame 13.png" %}' alt=""><img src='{% static "./images/Frame 14.png" %}' alt=""><img src='{% static "./images/Frame 15.png" %}' alt=""><img src='{% static "./images/Frame 16.png" %}' alt=""><img src='{% static "./images/Frame 17.png" %}' alt=""><img src='{% static "./images/f" %}' alt="">
+            <img src='{% static "images/Frame 11.png" %}' alt=""><img src='{% static "images/Frame 12.png" %}' alt=""><img src='{% static "images/Frame 13.png" %}' alt=""><img src='{% static "images/Frame 14.png" %}' alt=""><img src='{% static "images/Frame 15.png" %}' alt=""><img src='{% static "images/Frame 16.png" %}' alt=""><img src='{% static "images/Frame 17.png" %}' alt=""><img src='{% static "./images/f" %}' alt="">
         </div>
         </div>
 <!-- You still have the guts to talk back at me eh? Mo ma ko ba e o. wa kan je gbese ni. /:-) -->
@@ -126,6 +127,32 @@ else{
     other_container.style.display ="flex";
     others.style.display = 'none';
 }
+        }
+    </script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script>
+        const paymentForm = document.getElementById('add-money');
+        paymentForm.addEventListener("click", payWithPaystack, false);
+        
+        function payWithPaystack(e) {
+          e.preventDefault();
+        
+          let handler = PaystackPop.setup({
+            key: 'pk_test_907b85a89cf388c541c3b3fa262585f4a8d893bd', // Replace with your public key
+            email: '{{user.email}}',
+            amount: 800*100,
+            // ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+            // label: "Optional string that replaces customer email"
+            onClose: function(){
+              alert('Window closed.');
+            },
+            callback: function(response){
+              let message = 'Payment complete! Reference: ' + response.reference;
+              alert(message);
+            }
+          });
+        
+          handler.openIframe();
         }
     </script>
 </body>

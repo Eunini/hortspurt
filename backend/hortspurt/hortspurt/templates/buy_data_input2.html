@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hortspot login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapicss2?famoda:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='{% static "buy_data_input2.css" %}'>
+    <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body>
+    <div class="content-box">
+        <div class="profile-info">
+            <img src='{% static "images/Ellipse 9.png" %}' id="circle1">
+            <img src='{% static "images/Ellipse 10.png" %}' id="circle2" >
+            <div class="profile-info-content">
+                <div class="wallet">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="fill: white;"><path d="M16 12h2v4h-2z"></path><path d="M20 7V5c0-1.103-.897-2-2-2H5C3.346 3 2 4.346 2 6v12c0 2.201 1.794 3 3 3h15c1.103 0 2-.897 2-2V9c0-1.103-.897-2-2-2zM5 5h13v2H5a1.001 1.001 0 0 1 0-2zm15 14H5.012C4.55 18.988 4 18.805 4 18V8.815c.314.113.647.185 1 .185h15v10z"></path></svg>
+                    <p>wallet balance</p>
+                    <div id="iconContainer" class="icon-container" onclick="toggleIcons()">
+                        <!-- Initial icon (displayed first) -->
+                        <i id="eye-slash" class="fas fa-eye-slash"></i>
+                
+                        <!-- Second icon (initially hidden) -->
+                        <i id="eye" class="fas fa-eye icon-hidden"></i>
+                    </div>
+                </div>
+                <p class="balance">****</p>
+                <a href="#"><div class="add-cash"><p>+ add money</p></div></a>
+            </div>
+        </div>
+
+            <div class="send-data">
+                <p>Kindly enter the number you want to send data to</p>
+                <div class="number-box">
+                    <img src='{% static "images/Group 18/Group.jpg" %}' alt="">
+                    <h4>+234</h4>
+                    <div class="short-division"></div>
+                    <input type="text">
+                </div>
+            </div>
+
+        <form class="type" method="post" url="">
+            {% csrf_token %}
+            <p>Data Type</p>
+            <input type="checkbox" id="checkbox1" class="custom-checkbox">
+            <label for="checkbox1">SME</label>
+
+            <input type="checkbox" id="checkbox2" class="custom-checkbox">
+            <label for="checkbox2"> Corporate</label>
+
+            <input type="submit" value="Proceed to pay" class="proceed">
+        </form>
+    </div>
+    <script>
+       const checkboxes = document.querySelectorAll('.custom-checkbox');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('click', function() {
+                // Uncheck siblings
+                checkboxes.forEach(sibling => {
+                    if (sibling !== checkbox) {
+                        sibling.checked = false;
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
