@@ -4,29 +4,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hortspot login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapicss2?famoda:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapicss2?famoda:ital@1&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="login.css">
     <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> 
 </head>
 <body>
     <div class="form_box">
         <section>
-         <h1>Welcome back</h1> <i class="fa-solid fa-user" style="color: #9955bc;"></i>
+         <div class="head-container">
+            <h1>Welcome back</h1>
+          <i class="fa-solid fa-user" style="color: #9955bc;"></i>
+         </div>
             <form>
-             <div class="input_group"></div>
+                <span>we miss you!!!</span>
+
                 <div class="input_field">
                     <i class="fa-solid fa-user" style="color: #999;"></i>
-                    <input type="text", placeholder="Name">
+                    <input type="text" placeholder="Name">
                 </div>
+
                 <div class="input_field">
                     <i><ion-icon name="lock-closed-outline" color="#999" ></ion-icon></i>
-                    <input type="password", placeholder="Pin">
+                    <input type="password" id="password" placeholder="Pin" oninput="onPasswordInput(false)">
+                    <span class="eye" onclick="passwordVisibility(false)">
+                        <i id="hide1" class="fa-regular fa-eye"></i>
+                        <i id="hide2" class="fa-regular fa-eye-slash disabled-icon"></i>
+                    </span> 
+                  
                 </div>
-               <a href="./purchase.html"> <div class="button">
+
+              <a href="./purchase.html"> 
+                <div class="button">
                 <button type="submit">Sign In</button>
-            </div></a>
+                </div>
+              </a>
                 
                     <label class="Save_info">Save login info
                         <input type="checkbox">
@@ -39,11 +53,20 @@
     </div>    
 
     <section>
+        <div class="forgot">
+            <p style="color: #9955bc; text-align: center;">Forgot password?</p>
+        </div>
         <div class="no-acct">
          <p>Don't have an account? <a href="purchase.html">Click here to sign up</a></p>
         </div>
     </section>    
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    
+    
+  </script>
+  
 </body>
 </html>
