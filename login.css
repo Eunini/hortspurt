@@ -2,6 +2,10 @@
 body {
     font-family: 'Lexend Deca', sans-serif;
 }
+*{
+    position: relative;
+}
+
 .form_box{
     width: 90%;
     max-width: 450px;
@@ -13,16 +17,27 @@ body {
     padding: 50px, 60px 70px;
     text-align: center;
 }
-
+.head-container {
+    display: inline-flex;
+    margin: 0 auto;
+}
 .form_box h1{
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
     opacity: 70%;
 }
-
+.head-container i {
+    margin: auto;
+    margin-left: 10px;
+    font-size: 20px;
+}
+span {
+    font-size: 15px;
+    font-weight: 600;
+}
 .input_field{
-    background: #cac9c9;
+    background: #ccc;
     margin: 15px 0;
     border-radius: 30px;
     display: flex;
@@ -30,14 +45,23 @@ body {
 }
 .input_field i {
     color: #999;
-    margin-left: 10px;
+    margin-left: 15px;
     font-size: 1.4em;
+}
+.eye {
+    position: absolute;
+    margin-left: 25rem;
+    cursor: pointer;
+}
+
+#hide1 {
+    display: none;
 }
 input{
     width: 100%;
     background: transparent;
-    border: 0;
-    outline: 00;
+    border: none;
+    outline: 0;
     padding: 18px 15px;
 }
 
@@ -59,8 +83,8 @@ button{
 .Save_info input{
     position: absolute;
     cursor: pointer;
-    height: 12px;
-    width: 12px;
+    height: 14px;
+    width: 14px;
 }
 
 .Save_info{
@@ -83,7 +107,11 @@ p{
     font-size: large;
     font-weight: bolder;
 }
-
+section .forgot {
+    position: relative;
+    justify-content: center;
+    top: 34em;
+}
 section .no-acct {
     position: relative;
     text-align: center;
@@ -95,4 +123,5 @@ section .no-acct a {
     text-decoration: none;
     font-size: large;
     font-weight: bolder;
+    color: #9955bc;
 }
