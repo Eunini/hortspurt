@@ -4,94 +4,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hortspot login</title>
+    <link rel="stylesheet" href="signup.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapicss2?famoda:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="signup.css">
+
     <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
 </head>
 <body>
    <div class="body">
       <div class="content-container">
         <form id="form" action="/">
-        <p class="head"> Almost there! <br> <span>  Quickly set up your account in a second... </span></p>  
-        <div class="input-control">
-          <input type="text" id="firstname" placeholder="First Name" class="input" required>
-          <i class="fa-regular fa-user"></i>
-        </div>
-
-        <div class="input-control">
-          <input type="text" name="" id="lastname" placeholder="Last Name" class="input" required>
-          <i class="fa-regular fa-user"></i>    
-        </div>
-
-        <div class="input-control">
-          <input type="email" name="" id="gmail" placeholder="@Email" class="input" required>
-          <i class="fa-regular fa-envelope"></i>
-        </div>
-
-        <div class="input-control">
-          <input type="text" name="" id="phonenumber" placeholder="Phone" class="input"required>
-          <i class="fa-regular fa-phone"></i>
-        </div>
-
-        <!--The option to select gender-->
-        
-        <div class="dropdown">
+          <p class="head"> Almost there! <br> <span>  Quickly set up your account in a second... </span></p>  
           <div class="input-control">
-            <input type="text" class="input" id="myGender" placeholder="Gender" onclick="toggleOptions()">
-            <i class="fa-solid fa-angle-down"></i>
+            <input type="text" id="firstname" placeholder="First Name" class="input" required>
+            <i class="fa-regular fa-user"></i>
           </div>
-            <div class="options" id="dropdownOptions">
-              <select onchange="updateInputValue()">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="I don't prefer to say">I don't prefer to say</option>
-              </select>
-            </div>
+
+          <div class="input-control">
+            <input type="text" name="" id="lastname" placeholder="Last Name" class="input" required>
+            <i class="fa-regular fa-user"></i>    
           </div>
-        
-        <div class="input-control pin-container">
-          <input type="password" name="" id="pin" placeholder="Pin" class="input" oninput="onPasswordInput(false)">
-          <span class="eye" onclick="passwordVisibility(false)">
-            <i id="hide1" class="fa-regular fa-eye"></i>
-            <i id="hide2" class="fa-regular fa-eye-slash disabled-icon"></i>
-          </span>
-        </div>
 
-        <div class="input-control pin-container">
-          <input type="password" name="" id="confirm-pin" placeholder="Confirm Pin" class="input" oninput="onPasswordInput(true)">
-          <span class="eye" onclick="passwordVisibility(true)">
-            <i id="confirm-hide1" class="fa-regular fa-eye disabled-icon"></i>
-            <i id="confirm-hide2" class="fa-regular fa-eye-slash disabled-icon"></i>
-          </span>
-        </div>
-        
+          <div class="input-control">
+            <input type="text" name="" id="lastname" placeholder="Username" class="input" required>
+            <i class="fa-regular fa-user"></i>    
+          </div>
 
-        <button type="submit" class="submit-button" id="btn"><a href=""><b>Sign Up</b></a></button>
-        <div class="text-container">
-          <p class="bottom">Have an account before? <a href="./login.html">Click here to sign in</a></p>
-        </div>
+          <div class="input-control">
+            <input type="email" name="" id="gmail" placeholder="Email" class="input" required>
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+
+          <div class="input-control">
+            <input type="text" name="" id="phonenumber" placeholder="Phone" class="input"required>
+            <i class="fa-solid fa-phone"></i>
+          </div>
+
+          <!--The option to select gender-->
+        
+          <div class="input-control">
+            <label for="gender" value="gender" placeholder="gender"></label>
+              <select id="gender" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+          </div>
+              
+          <br>
+          <div class="input-control">
+            <input type="password" name="" id="pin" placeholder="Pin" class="input" oninput="onPasswordInput(false)">
+            <span class="eye" onclick="passwordVisibility(false)">
+              <i id="hide1" class="fa-regular fa-eye"></i>
+              <i id="hide2" class="fa-regular fa-eye-slash disabled-icon"></i>
+            </span>
+          </div>
+
+          <div class="input-control">
+            <input type="password" name="" id="confirm-pin" placeholder="Confirm Pin" class="input" oninput="onPasswordInput(true)">
+            <span class="eye" onclick="passwordVisibility(true)">
+              <i id="confirm-hide1" class="fa-regular fa-eye disabled-icon"></i>
+              <i id="confirm-hide2" class="fa-regular fa-eye-slash disabled-icon"></i>
+            </span>
+          </div>
+          
+
+          <button type="submit" class="submit-button" id="btn"><a href=""><b>Sign Up</b></a></button>
+          <div class="text-container">
+            <p class="bottom">Have an account before? <a href="./login.html">Click here to sign in</a></p>
+          </div>
       </form>
       </div>
    </div>
    <script>
-    function toggleOptions() {
-      var options = document.getElementById("dropdownOptions");
-      options.style.display = (options.style.display === "block") ? "none" : "block";
-    }
 
-    function updateInputValue() {
-      var input = document.getElementById('myGender');
-      var select = document.querySelector('#dropdownOptions select');
-      input.value = select.value;
-      // Optionally hide the options after selection
-      toggleOptions();
-    }
-
-    /**
-     * Diasbles Eye Icons For Password And Confirm Password Field Based On Pin Input
-     */
     const onPasswordInput = (isConfirmPassword) => {
       if(!isConfirmPassword){
         const pin = document.getElementById("pin");
@@ -155,8 +141,8 @@
         }
       }
     }
-    
-    
+    //for the dropdown
+    $('#normalize').selectize();
   </script>
 </body>
 </html>
