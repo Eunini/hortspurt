@@ -7,66 +7,99 @@
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapicss2?famoda:ital@1&display=swap" rel="stylesheet"> -->
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="./login.css">
     <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> 
 </head>
 <body>
-    <div class="form_box">
-        <section>
-         <div class="head-container">
-            <h1>Welcome back</h1>
-          <i class="fa-solid fa-user" style="color: #9955bc;"></i>
-         </div>
-            <form>
-                <span>we miss you!!!</span>
+    <div class="container">
+        <div class="signin-signup">
+            <form action="" class="sign-in-form">
+                <div class="head-container">
+                    <h1>Welcome back</h1>
+                    <i class="fa-solid fa-user" style="color: #9955bc; padding: 10px;"></i>
+                 </div>
+                 <p class="miss"> we miss you!!! </p>
 
-                <div class="input_field">
-                    <i class="fa-solid fa-user" style="color: #999;"></i>
-                    <input type="text" placeholder="Name">
+                <div class="input-field">
+                    <i class="fa-solid fa-user" style="color: #999; padding: 10px;"></i>
+                    <input type="text" placeholder="username">
                 </div>
 
-                <div class="input_field">
-                    <i><ion-icon name="lock-closed-outline" color="#999" ></ion-icon></i>
-                    <input type="password" id="password" placeholder="Pin" oninput="onPasswordInput(false)">
-                    <span class="eye" onclick="passwordVisibility(false)">
-                        <i id="hide1" class="fa-regular fa-eye"></i>
-                        <i id="hide2" class="fa-regular fa-eye-slash disabled-icon"></i>
-                    </span> 
-                  
+                 <div class="input-field">
+                        <i class="fa-solid fa-lock" style="color: #999;"></i>
+                        <input type="password" name="" id="pin" placeholder="Pin" class="input" oninput="onPasswordInput(false)">
+                        <span class="eye" onclick="passwordVisibility(false)">
+                          <i id="hide1" class="fa-regular fa-eye"></i>
+                          <i id="hide2" class="fa-regular fa-eye-slash disabled-icon"></i>
+                        </span>
                 </div>
 
-              <a href="./purchase.html"> 
-                <div class="button">
-                <button type="submit">Sign In</button>
+                <a href="./purchase.html"><input type="submit" value="Login" class="btn"></a>
+
+                <p class="social-text"> Or sign in with social platform</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+
                 </div>
-              </a>
-                
-                    <label class="Save_info">Save login info
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-        
-                </div>    
+
+                <div class="forgot">
+                    <p style="color: #9955bc; text-align: center;">Forgot password?</p>
+                </div>
+                <div class="no-acct">
+                 <p>Don't have an account? <a href="./purchase.html">Click here to sign up</a></p>
+                </div>
             </form>
-        </section>
-    </div>    
-
-    <section>
-        <div class="forgot">
-            <p style="color: #9955bc; text-align: center;">Forgot password?</p>
         </div>
-        <div class="no-acct">
-         <p>Don't have an account? <a href="purchase.html">Click here to sign up</a></p>
-        </div>
-    </section>    
+    </div>
+    
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script>
-    
-    
-  </script>
-  
-</body>
-</html>
+
+    <script>
+        function passwordVisibility(isConfirmPassword) {
+      const pin = document.getElementById("pin");
+      const confirmPin = document.getElementById("confirm-pin");
+      //const button = document.getElementById("btn");
+      const pinEye = document.getElementById("hide1");
+      const pinEyeSlash = document.getElementById("hide2");
+      
+      if(!isConfirmPassword){
+        if(pin.type === 'password') {
+          pinEye.style.display = 'block';
+          pinEyeSlash.style.display = 'none';
+          pin.type = 'text';
+        }
+        else {
+          pinEye.style.display = 'none';
+          pinEyeSlash.style.display = 'block';
+          pin.type = 'password';
+        }
+      } else {
+        const pinEyeConfirm = document.getElementById("confirm-hide1");
+        const pinEyeSlashConfirm = document.getElementById("confirm-hide2");
+        
+        if(confirmPin.type === 'password') {
+          confirmPin.type = 'text';
+          pinEyeConfirm.style.display = 'block';
+          pinEyeSlashConfirm.style.display = 'none';
+        }
+        else {
+          confirmPin.type = 'password';
+          pinEyeConfirm.style.display = 'none';
+          pinEyeSlashConfirm.style.display = 'block';
+        }
+      }
+    }
+    </script>
