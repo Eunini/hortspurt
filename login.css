@@ -168,6 +168,12 @@ a {
     form {
         width: 100%;
     }
+    .input-field{
+        margin: 10px auto;
+    }
+    .input-field input{
+        width: 100%;
+    }
     .container-head {
         font-size: 20px;
     }
