@@ -13,101 +13,80 @@ html {
 
 body {
   margin: auto;
-  background-color: #9955BB;
+  background-color: #ffffff;
 }
-
 .content-box {
-  margin: auto;
+  width: 80%;
+  justify-content: center;
   display: flex;
-  background-color: white;
-  width: 430px;
   flex-direction: column;
+  margin: 10px auto;
 }
-.content-box .main-service {
-  position: relative;
-  width: 100%;
-  height: 120px;
-  background-image: url("images/Rectangle 5.png");
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  justify-content: space-between;
-  align-items: center;
-  margin: 15px 5px;
-  display: flex;
-}
-.content-box .main-service .main-content {
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-}
-
 .pic-container {
+  margin: 20px 0;
   display: flex;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
   background-color: rgb(223, 218, 218);
 }
 .pic-container img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
-
+.intro {
+  margin: 30px 20px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.pic-container {
+  display: flex;
+  justify-content: space-around;
+}
 .profile-head {
   display: flex;
-  margin: 20px auto;
-  align-items: center;
-  width: 370px;
   justify-content: space-between;
 }
-
-.intro {
-  position: relative;
+.profile-head #mysupport{
+  width: 50px;
+  height: 50px;
+  margin: 50px auto;
   justify-content: center;
-  display: flex;
-  font-size: 24px;
-  font-weight: 700;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: bolder;
-  margin: 20px 8px;
-}
-
-a #img {
-  display: flex;
-  position: relative;
-  margin: auto;
-  cursor: pointer;
 }
 
 .profile-info {
-  width: 383px;
-  height: 170px;
-  margin: 20px auto;
-  border: none;
   border-radius: 10px;
-  background: #9955BB;
+  background-color: #9955BB;
+  height: 240px;
+  padding: 25px 15px;
+  margin: 2px 26px;
+  color: white;
 }
 .profile-info #circle1 {
   position: absolute;
-  margin-left: 270px;
+  width: 150px;
+  width: 150px;
+  margin-left: 480px;
   margin-top: 30px;
 }
 .profile-info #circle2 {
   position: absolute;
-  margin-left: 240px;
-  margin-top: 16px;
+  width: 150px;
+  width: 150px;
+  margin-left: 600px;
+  margin-top: 10px;
 }
-
 .profile-info-content {
   display: block;
   position: relative;
   color: white;
 }
+
 .profile-info-content .wallet {
   display: flex;
-  margin: 8px 13px;
+  margin: 20px;
   position: relative;
   color: white;
 }
@@ -115,44 +94,55 @@ a #img {
   margin-top: 20px;
   color: white;
 }
-.profile-info-content .wallet #wallet {
-  margin-right: 5px;
-  padding-right: 5px;
-}
-.profile-info-content .wallet #eye-slash {
-  padding-top: 20px;
-  padding-left: 8px;
-  display: inline-block;
+.icon-container {
+  display: flex;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 18px;
   color: white;
+  background: #9955BB;
 }
-.profile-info-content .wallet #eye {
-  padding-top: 20px;
-  padding-left: 8px;
-  cursor: pointer;
+#walletbalance {
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+}
+#walletBalanceHidden{
+  padding: 10px;
+  margin: 10px;
   display: none;
-  cursor: pointer;
-  font-size: 15px;
-  color: white;
 }
+#visible, #invisible {
+  display: flex;
+  margin-top: 12px;
+  width: 30px;
+  height: 30px;
+}
+#visible{
+ display: none;
+}
+#invisble {
+  display: block;
+}
+
 .profile-info-content .wallet p {
   font-weight: 300;
-  font-size: 17px;
-  margin-top: 15px;
+  font-size: 25px;
+  margin-top:5px;
+  padding: 5px;
 }
-.profile-info-content .balance {
+.profile-info-content .wallet-balance {
   font-weight: bold;
-  font-size: 27px;
+  font-size: 30px;
   letter-spacing: 15px;
   margin: 20px 13px 0px 13px;
 }
+
 .profile-info-content a {
   text-decoration: none;
 }
 .profile-info-content .add-cash {
-  width: 150px;
-  height: 40px;
+  width: 170px;
+  height: 50px;
   background-color: white;
   margin: 15px 13px;
   border-radius: 30px;
@@ -160,7 +150,7 @@ a #img {
 }
 .profile-info-content .add-cash p {
   color: blueviolet;
-  font-size: 15px;
+  font-size: 18px;
   display: flex;
   margin: auto;
   position: relative;
@@ -171,85 +161,89 @@ a #img {
   text-decoration: none;
   cursor: pointer;
 }
-
-.icon-container {
-  display: inline-block;
-  cursor: pointer;
-  font-size: 24px;
-  color: white;
-}
-
-.section-main {
-  display: block;
-  flex-direction: column;
-  width: 370px;
-  margin: 10px 19px;
-}
 .section-main h2 {
-  position: relative;
-  font-weight: bold;
-  margin: 10px;
+  font-size: 28px;
+  margin: 30px;
+  /* border-bottom: 4px solid #9955BB; */
+}
+.main-service {
+  width: 95%;
+  height: 170px;
+  background-image: url("images/Rectangle 5.png");
+  background-size: cover;
+  background-position: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+.main-content {
+  justify-content: space-around;
+}
+.main-content .data {
+  height: 160px;
+  width: 160px;
+  margin: 0 50px;
 }
 
 #others {
-  display: block;
+  display: none;
 }
 
 .other-services-container {
-  width: 85%;
+  width: 95%;
   background-image: url("images/Rectangle 5.png");
   background-size: cover;
   background-position: center;
   justify-content: space-between;
-  border-radius: 10px;
+  padding: 20px;
   margin: 20px auto;
 }
 .other-services-container p {
-  padding: 7px;
-  font-size: 15px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 10px;
+  font-size: 20px;
   color: black;
-  margin: 5px 10px;
-}
-.other-services-container .line {
-  width: 90%;
-  height: 3px;
-  background-color: #9955BB;
+  margin: 15px 10px;
+  border-bottom: 4px solid #9955BB;
 }
 
 .other-container {
   width: 100%;
-  display: none;
+  display: block;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
 }
-
+.other-container img {
+  width: 160px;
+  height: 160px;
+}
 .refer {
   display: flex;
   margin: auto;
+  justify-content: center;
   align-items: center;
   padding: 15px 10px;
+  margin: 0 auto;
   gap: 10px;
   width: 100%;
 }
 .refer .head {
-  font-size: 20px;
+  font-size: 30px;
   margin-top: 15px;
   font-weight: bold;
 }
 .refer .head span {
-  font-size: 13px;
+  font-size: 20px;
   padding-top: 10px;
 }
 .refer #person-add {
-  font-size: 40px;
+  font-size: 60px;
 }
 
 .refer-get-container {
   background: rgba(245, 225, 255, 0.6117647059);
-  width: 85%;
+  width: 95%;
   height: 155px;
   box-sizing: border-box;
   border-top: none;
@@ -264,17 +258,17 @@ a #img {
 
 footer {
   display: inline-flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin: 0 auto;
   background: #FFFFFF;
-  width: 85%;
+  width: 95%;
 }
 footer .bottom {
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 0 auto;
   display: block;
-  justify-content: center;
+  justify-content: space-between;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -289,9 +283,7 @@ footer .bottom a {
   text-decoration: none;
   color: black;
 }
-footer .bottom a svg {
-  fill: red;
-}
+
 footer .bottom p {
   text-align: center;
   display: flex;
@@ -305,6 +297,218 @@ footer .bottom p {
   color: #a7a7a7;
 }
 
-.active {
+@media  screen and (max-width: 600px) {
+  .content-box{
+    width: 100%;
+  }
+  .profile-info {
+    width: 383px;
+    height: 200px;
+    margin: 20px auto;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: #9955BB;
+}
+.profile-info #circle1 {
+    position: absolute;
+    margin-left: 270px;
+    width: 80px;
+    height: 80px;
+    margin-top: 30px;
+}
+.profile-info #circle2 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    margin-left: 240px;
+    margin-top: 16px;
+}
+.profile-info-content {
+    display: block;
+    position: relative;
+    color: white;
+}
+
+.profile-info-content .wallet {
+    display: flex;
+    margin: 0 auto 10px 10px;
+ 
+    position: relative;
+    color: white;
+}
+
+.icon-container {
+    display: flex;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    background: #9955BB;
+}
+#walletbalance {
+    margin: 10px;  
+    font-size: 20px;
+}
+#walletBalanceHidden{
+    margin: 15px;
+    display: none;
+}
+#visible, #invisible {
+    display: flex;
+    margin-top: 17px;
+    padding-left: 5px;
+    width: 25px;
+    height: 25px;
+}
+#visible{
+   display: none;
+}
+#invisble {
+    display: block;
+}
+
+.profile-info-content .wallet p {
+    font-weight: 300;
+    font-size: 17px;
+    margin-top: 15px;
+}
+.profile-info-content .balance {
+    font-weight: bold;
+    font-size: 27px;
+    letter-spacing: 15px;
+}
+
+.profile-info-content a {
+    text-decoration: none;
+}
+.profile-info-content .add-cash {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    margin: 15px 13px;
+    border-radius: 30px;
+    display: flex;
+}
+.profile-info-content .add-cash p {
   color: blueviolet;
-}/*# sourceMappingURL=purchase.css.map */
+  font-size: 15px;
+  display: flex;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+}
+.profile-info-content .add-cash p a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.pic-container {
+  margin: 20px 0;
+  display: flex;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgb(223, 218, 218);
+}
+.pic-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-head {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  width: 370px;
+  justify-content: space-between;
+}
+
+.intro {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  font-size: 24px;
+  font-weight: 700;
+  font-weight: bolder;
+  margin: 20px 8px;
+}
+
+a #img {
+  display: flex;
+  position: relative;
+  margin: auto;
+  cursor: pointer;
+}
+.main-service {
+  width: 95%;
+  height: 130px;
+  display: flex;
+  margin: 10px auto;
+  justify-content: center;
+}
+.main-content{
+  width: 100%;
+
+}
+.main-content .data {
+  width: 120px;
+  height: 120px;
+  margin: 2px auto;
+}
+#others {
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+
+.other-services-container {
+  width: 95%;
+  padding: 2px 0 20px 0;
+  margin: 2px auto;
+}
+.other-services-container p {
+  padding: 10px;
+  font-size: 20px;
+  color: black;
+  margin: 10px auto;
+  border-bottom: 4px solid #9955BB;
+}
+
+.other-container {
+  width: 100%;
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.other-container img {
+  width: 120px;
+  height: 120px;
+}
+.refer {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 0 auto;
+  gap: 10px;
+  width: 100%;
+}
+.refer .head {
+  font-size: 20px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+.refer .head span {
+  font-size: 14px;
+  padding-top: 10px;
+}
+.refer #person-add {
+  font-size: 50px;
+  margin: 10px;
+}
+
+}
