@@ -10,8 +10,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    margin: auto;
-    background-color: black;
+    margin: 0;
 }
 .background {
     position: relative;
@@ -19,7 +18,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 40%;
+    width: 80%;
     background-color: white;
     margin: 0 auto;
     padding: 20px;
@@ -29,19 +28,39 @@ body {
     position: relative;
     min-height: 145vh;
   }
-  
-.my-profile-pic {
-    justify-content: space-around;
-    margin-bottom: 30px;
+.profile-header{
+    width: 100%;
     display: flex;
+    justify-content:space-between;
+    padding: 20px;
 }
-.my-profile-pic h3 {
+
+.profile-header .my-profile-pic{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-header .edit{
+    display: none;
+    margin: 0 0 10px 250px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #9955BB;
+
+}
+.pic-container h3 {
     text-align: center;
-    bottom: 10px;
+    margin: 20px auto;
+    letter-spacing: 2px;
+    font-size: 23px;
 }
 .my-profile-pic img {
-    left: 0;
-    translate: -135px;
+    margin: 0 250px 0 0;
+    padding: 0 40px;
     font-size: 20px;
 }
 .pic-cotnainer {
@@ -52,7 +71,6 @@ body {
 }
 
 .pic-container img {
-    margin-bottom: 10px;
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -62,11 +80,9 @@ body {
 
 .my-profile-pic h3 {
     font-weight: 900;
-    margin-bottom: 10px;
 }
 .table-content {
     width: 100%;
-    margin-bottom: 20px;
     overflow-x: auto;
     -ms-overflow-style: none; /* for Internet Explorer/Edge */
     scrollbar-width: none; /* for Firefox */
@@ -104,7 +120,7 @@ td {
     padding: 20px 0;
     text-align: left;
     border-bottom: 1px solid transparent;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 td span {
@@ -112,6 +128,20 @@ td span {
     font-size: 15px;
     text-align: right;
     display: block;
+}
+td span input{
+    text-align: end;
+    border: none;
+    color: black;
+    font-weight: 800;
+    font-size: 16px;
+    outline: none;
+}
+
+td span input::placeholder{
+    color: black;
+    font-weight: 800;
+    font-size: 16px;
 }
 
 .content-container p.head {
@@ -128,35 +158,35 @@ td span {
 }
 
 .refer {
+    width: 85%;
+    height: 150px;
     border: 1px solid #9955BB;
     border-radius: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin: 20px auto;
     padding: 20px;
   }
   
   .refer .head {
     margin-right: 10px;
+    font-size: 17px;
   }
   
 
 .refer .head span{
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 900;
 }
 .refer img{
-    width: 48px;
-    height: 48px;
+    width: 55px;
+    height: 55px;
     padding: 2px, 2px, 4px, 2px;
-    rotate: -180 deg;
-
 }
 span a {
     text-decoration: none;
-    font-size: 16px;
-    text-align: left;
+    font-size: 18px;
     margin: auto;
     z-index: 100;
     padding: 20px;
@@ -173,9 +203,9 @@ footer {
 ;
     border-top: 1px solid #9955BB;
     height: 70px;
-
-    display: flex;
-    justify-content: space-between;
+    margin: 0 auto;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
     color: white;
     align-items: center;
@@ -183,22 +213,41 @@ footer {
     position: absolute;
     bottom: 0; /* Position the footer at the bottom */
     background-color: white;
-    border-top: 1px solid #9955BB;
+    border-top: 1px solid #ddd;
     padding: auto; /* Adjust padding as needed */
 }
 
-footer .bottom {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+  footer .bottom {
+    margin: 0 auto;
+    padding: 0 auto;
+    display: block;
+    justify-content: center;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  footer .bottom a {
     text-align: center;
-    flex-direction: row;
-    align-items: center; 
-    margin: auto;
-    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    cursor: pointer;
+    font-size: 20px;
     text-decoration: none;
+    color: black;
+  }
+footer .bottom p {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 12px;
+    margin-top: 8px;
+    color: #a7a7a7;
 }
-
 .active {
     color: blueviolet;
 }
@@ -209,7 +258,16 @@ footer .bottom {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
     }
-    
+    .profile-header{
+        margin: 10px;
+    }
+    b{
+        display: flex;
+        align-items: center;
+        letter-spacing: 1px;
+        justify-content: center;
+        margin: 10px auto;
+    }
     .my-profile-pic {
         width: 100%;
     }
@@ -217,16 +275,59 @@ footer .bottom {
     .pic-container img {
         width: 80px;
         height: 80px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin: auto;
     }
     
     .table {
         margin-top: 1em;
     }
-    
-    .refer {
-        margin-top: 1em;
+    .table-content{
+        margin-top: 20px;
+    }
+    td {
+        padding: 10px 0;
+        font-size: 13px;
     }
     
+    td span {
+        font-weight: 600;
+        font-size: 15px;
+        text-align: right;
+    }
+    td span input{
+        text-align: end;
+        border: none;
+        color: black;
+        font-weight: 800;
+        font-size: 15px;
+        outline: none;
+    }
+    td span input::placeholder {
+        font-size: 15px;
+    }
+    .refer {
+        width: 100%;
+        margin-top: 1em;
+        margin-bottom: 4rem;
+    }
+    .refer .head {
+       padding: 10px 0;
+        font-size: 14px;
+      }
+      
+    
+    .refer .head span{
+        font-size: 18px;
+        font-weight: 900;
+    }
+    .refer img{
+        width: 50px;
+        height: 50px;
+        padding: 2px, 2px, 4px, 2px;
+    }
     .span a {
         translate: -20px;
     }
