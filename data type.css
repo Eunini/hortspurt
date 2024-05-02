@@ -493,3 +493,10 @@ html {
         margin-top: 10px; /* Adjust margin for smaller screens */
     } 
 }
+* For screens with a width of 915 pixels or smaller-for tablets */
+@media (max-width: 915px) {
+    .content-box, .profile-info, .send-data .number-box , .number-box,label, .type .proceed{
+        margin: 20px auto;
+        width: 100%;
+    }
+  }
