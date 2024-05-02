@@ -163,7 +163,7 @@ a {
 @media (max-width: 768px) {
     /* CSS rules for smaller screens */
     .head-container{
-        margin-top: 150px;
+        margin-top: 10px;
     }
     .my-inputs{
         margin-top: 30px;
