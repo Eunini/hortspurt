@@ -52,18 +52,18 @@
     border: 1.8px solid #9955BB;
 }
 label{
-    width: 100%;
+    display: none;
+    width: 0;
 }
 /* Style the dropdown box */
 select {
-    width: 95%;
+    width: 98%;
     height: 55px;
-    position: relative;
     background-color: #D4D4D4;
     position: relative;
     display: flex;
-    margin: 15px auto;
-    padding: 6px;
+    margin: 5px auto;
+    padding: 0px;
     justify-content: end;
     border: none;
     outline: none;
@@ -240,5 +240,12 @@ p.bottom a {
     }
     #circle1, #circle2 {
         display: none;
+    }
+    select{
+        width: 95%;
+    }
+    .submit-button{
+        margin: 15px;
+        width: 90%;
     }
 }
