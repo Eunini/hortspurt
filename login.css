@@ -14,7 +14,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height: 100vh;
     background: #fff;
 }
 .container {
@@ -77,7 +77,7 @@ form {
     width: 100%;
     font-size: 18px;
     padding: 15px;
-    font-weight: 600;
+    font-weight: 400;
 }
 .input-field:hover {
     border: 1.8px solid #9955bc;
@@ -160,24 +160,30 @@ a {
     color: #9955bc;
 }
 /* Example of a media query for screens smaller than 600px */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     /* CSS rules for smaller screens */
+    .head-container{
+        margin-top: 150px;
+    }
+    .my-inputs{
+        margin-top: 30px;
+    }
+    h1{
+        font-size:30px;
+    }
+    .head-container i{
+        margin: 0px;
+    }
     .container {
         width: 100%;
     }
     form {
         width: 100%;
     }
-    .input-field{
-        margin: 10px auto;
-    }
-    .input-field input{
-        width: 400px;
-    }
     .container-head {
         font-size: 20px;
     }
      a input {
-        width: 370px;
+        width: 300px;
      }
 }
