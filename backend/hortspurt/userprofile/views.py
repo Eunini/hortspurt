@@ -3,7 +3,7 @@ from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from userprofile.models import Profile
 from django.contrib.auth.models import User
-from .forms import UserCreationForm, ProfileForm
+from .forms import UserCreationForm, ProfileForm, RegisterForm
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from django.http import JsonResponse
@@ -15,30 +15,26 @@ class RegisterView(View):
         return render(request, 'registration/registration.html')
     
     def post(self, request):
-        new_user_form = UserCreationForm(request.POST)
-        gender = request.POST.get('gender')[0]
-        print(gender)
+        new_user_form = RegisterForm(request.POST)
+
         if new_user_form.is_valid():
-            new_user = new_user_form.save()
+            gender = request.POST.get('gender')[0]
             new_profile_form = ProfileForm({'gender':gender})
             if new_profile_form.is_valid():
+                new_user = new_user_form.save()
                 new_profile = new_profile_form.save(commit=False)
                 new_profile.user = new_user
                 new_profile.save()
-                print("b4 authentication")
                 username = new_user.username
                 password = request.POST.get("password1")
                 user = authenticate(request, username=username, password=password)
-                print("after auth")
-                print(user)
                 if user is not None:
-                    print('logged in')
                     login(request, user)
-                    
                     return redirect("/")
+                else:
+                    return render(request, 'registration/registration.html')
             else:
                 print(new_profile_form.errors)
-                new_user.delete()
                 return render(request, 'registration/registration.html')
         else:
             print(new_user_form.errors)
