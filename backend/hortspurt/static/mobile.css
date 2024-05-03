@@ -1,0 +1,313 @@
+@media screen and (max-width:600px){
+
+    .firstPhase{
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 10px;
+    }
+
+    .logo img{
+        width: 50%;
+        padding-top: 15px;
+    }
+
+    .topDesign{
+        text-align: center;
+    }
+
+    .topDesign img{
+        width: 50%;
+    }
+
+    .getIn{
+        padding-top: 15px;
+    }
+    
+    .getIn a{
+        font-size: 10px;
+    }
+
+    .signup{
+        padding-right: 5px;
+    }
+
+        
+    .login{
+     border-radius: 25px;
+     padding: 7.5px 22.5px;
+     text-align: center;
+    }
+
+
+    /*  second phase  */
+
+    .hero1{
+        text-align: center;
+    }
+
+    .welcome, .worry, .heroText{
+        padding-left: 0px;
+    }
+
+    .welcome{
+        font-size: 22px;
+    }
+
+    .worry{
+        font-size: 17px;
+    }
+
+    .heroText{
+        font-size: 12px;
+    }
+    
+    .cta{
+        font-size: 16px;
+        margin-left: 0px;
+        padding: 9px 30px;
+        border-radius: 12px;
+    }
+
+    .drp1{
+        display: none;
+    }
+
+    .networkImages, .hero2{
+        display: none;
+    }
+
+ 
+    .mobileHero1{
+        display: block;
+      }
+
+    .Mobilehero2{
+      display: block;
+      position: relative;
+      width: 100%;
+    }
+
+    .big{
+        width: 73%;
+        margin-right: -110px;
+    }
+    
+    .small{
+        position: absolute;
+        width: 50%;
+        top: 19%;
+        left: 24%;
+    }
+
+    .Inner{
+        position: absolute;
+        padding-top: 60px;
+        left: 50px;
+        width: 45%;
+    }
+
+
+
+    /* third phase */
+
+    .reasons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        background-image: none;
+    }
+
+    .whyUs, .why{
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .up{
+        display: none;
+    }
+
+    .greybox{
+        text-align: center;
+        border-radius: 10px;
+        background: #F5F5F5;
+        padding: 30px;
+        height: 205px;
+        width: 250px;
+        line-height: 25px;
+        font-size: 11px;
+        margin-bottom: 25px;
+        margin-left: 0px;
+    }
+
+
+    .purplebox{
+        text-align: center;
+        border-radius: 10px;
+        background: #F5F5F5;
+        padding: 30px;
+        height: 205px;
+        width: 250px;
+        line-height: 25px;
+        font-size: 11px;
+        background: linear-gradient(45deg, #95B 31.26%, rgba(153, 85, 187, 0.00) 112.69%);
+        margin-bottom: 25px;
+        margin-left: 0px;
+    }
+    
+
+    .our, .our2{
+        font-size: 13px;
+    }
+
+
+    
+/*  FOURTH Phase */
+
+.services{
+    padding: 10px;
+    display: block;
+    align-items: center;
+    background-image: url('images/Group 1214.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    margin-bottom: 0px;
+}
+
+.serviceList{
+    display: none;
+}
+
+.serv{
+    width: 83%;
+}
+
+.mobileServices{
+    display: block;
+    padding-bottom: 20px;
+}
+
+.serviceImg{
+    text-align: center;
+    margin-bottom: -12px;
+    padding-top: 60px;
+}
+
+.otherServHeader{
+   position: relative;
+}
+
+.otherServBottom{
+    position: relative;
+}
+
+.servhead{
+    padding: 40px;
+    text-align: center;
+}
+
+.servbottom{
+    padding: 40px;
+    text-align: center;
+}
+
+.ballon1{
+    position: absolute;
+    text-align: left;
+}
+
+.list2{
+    width: 100%;  
+    text-align: center;
+    margin-left: 80px;
+}
+
+.item{
+    width: 100%;
+    display: flex;
+}
+
+
+/*  Fifth Phase */
+
+.aboutImage{
+    padding-left: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.aboutContent{
+    display: none;
+}
+
+.Aboutcontent2{
+    display: block;
+    padding: 12px;
+    text-align: center;
+}
+
+.AboutText2{
+    width: 100%;
+    font-size: 12px;
+    line-height: 25px;
+    color: black;
+}
+
+.wavyLine{
+    display: none;
+}
+
+
+/*  Sixth Phase */
+
+.footer{
+    display: block;
+    text-align: center;
+    background-color: #9955BB;
+    color: white;
+}
+
+.wavyLine2{
+    display: block;
+    width: 100%;
+    background-color: #9955BB;
+    margin-bottom: -10px;
+}
+
+.wavyImg2{
+    display: block;
+    width: 100%;
+    padding-top: 60px;
+}
+
+.contact{
+    margin-bottom: 25px;
+}
+
+.mail{
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
