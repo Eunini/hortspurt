@@ -1,6 +1,8 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap");
-
+body{
+    margin-top: -10px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
 
 .firstPhase{
     display: flex;
@@ -114,6 +116,10 @@
     width: 100%;
 }
 
+.Mobilehero2, .mobileHero1{
+    display: none;
+  }
+
 .big{
     width: 100%;
 }
@@ -156,7 +162,7 @@
     align-items: center;
     background-image: url('./images/Group\ 1222.png');
     background-repeat: no-repeat;
-    background-position: left;
+    background-position:left;
     padding-top: 30px;
 }
 
@@ -202,6 +208,7 @@
 
 .services{
     padding: 160px 270px 0px;
+    display: block;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -212,6 +219,7 @@
 }
 
 .list{
+    display: block;
     width: 100%;
 }
 
@@ -221,6 +229,9 @@
     margin-bottom: 20px;
 }
 
+.mobileServices{
+    display: none;
+}
 
 /*  Fifth Phase */
 
@@ -249,6 +260,11 @@
     border-top-left-radius: 35px;
     border-bottom-left-radius: 35px;
     padding: 40px 15px 10px 30px;
+    display: block;
+}
+
+.Aboutcontent2{
+    display: none;
 }
 
 .aboutText{
@@ -268,9 +284,22 @@
     padding-left: 130px;
 }
 
+.wavyLine{
+    display: block;
+}
+
+.wavyLine2{
+    display: none;
+}
+
 .wavyImg{
+    display: block;
     width: 100%;
     margin-top: 60px;
+}
+
+.wavyImg2{
+    display: none;
 }
 
 
