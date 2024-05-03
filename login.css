@@ -178,6 +178,9 @@ a {
     .head-container i{
         margin: 0px;
     }
+    .input-field {
+        width: 80%;
+    }
     .container {
         width: 100%;
     }
