@@ -162,6 +162,10 @@ a {
 /* Example of a media query for screens smaller than 600px */
 @media (max-width: 768px) {
     /* CSS rules for smaller screens */
+    body{
+    padding-left: 12px;
+    padding-right: 12px;
+    }
     .head-container{
         margin-top: 10px;
     }
