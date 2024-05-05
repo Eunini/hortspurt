@@ -17,11 +17,11 @@
   
         <div class="profile-header">    
             <a href="#"><img src="images/Vector.png" alt=""></a>
-            <a href="edit" class="edit">Delete Account</a>
+            <h3><b>My profile</b></h3>
+            <a href="edit" class="edit">Delete</a>
         </div>
         
         <div class="pic-container">
-            <h3><b>My profile</b></h3>
             <img src="profile image hortspurt.png" alt="user profile image">
         </div>
 
@@ -58,70 +58,35 @@
            <img src="images/acct-outline.png" alt="account-outline">
         </div>
         <span><a href=".index.html">log out</a></span>
+
+        <!-- footer navigation -->
         <footer>
             <div class="bottom">
-                <a href="purchase.html" class="icon" id="myLink"><img src="./images/Group.svg"></a>
+                <a href="purchase.html" class="icon" id="myLink"><img src="./images/Group (1).png"></a>
                 <p>Home</p>
             </div>
 
             <div class="bottom">
-                <a href="shoutout.html" class="icon" id="myLink"><img src="./images/Vector (1).svg"></a>
+                <a href="shoutout.html" class="icon" id="myLink"><img src="./images/gift-outline.png"></a>
                 <p>Shoutout</p>
             </div>
             
             <div class="bottom">
-                <a href="default.html" class="icon" id="myLink"><img src="./images/gift-outline.svg"></a>
+                <a href="shoutout.html" class="icon" id="myLink"><img src="./images/account-tie-voice-outline.png"></a>
                 <p>Bonus</p>
             </div>
 
+
             <div class="bottom">
-                <a href="./profile.html" class="icon" id="myLink"><img src="./images/face-man.svg"></a>
-                <p>Me</p>
+                <a href="default.html" class="icon" id="myLink"><img src="./images/clock.png"></a>
+                <p>History</p>
+            </div>
+
+            <div class="bottom">
+                <a href="./profile.html" class="icon" id="myLink"><img src="./images/face-man.png"></a>
+                <p style="color:#9955BB;">Me</p>
             </div>
         </footer>
     </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
-    <script>
-        function handleIconClick(event, linkId) {
-            event.preventDefault();
-            window.location.href = document.getElementById(linkId).getAttribute("href");
-        }
-
-        // Add event listeners for each icon
-        document.getElementById("icon1").addEventListener("click", function (event) {
-            handleIconClick(event, "icon1");
-        });
-
-        document.getElementById("icon2").addEventListener("click", function (event) {
-            handleIconClick(event, "icon2");
-        });
-
-        document.getElementById("icon3").addEventListener("click", function (event) {
-            handleIconClick(event, "icon3");
-        });
-
-        document.getElementById("icon4").addEventListener("click", function (event) {
-            handleIconClick(event, "icon4");
-        });
-
-        document.getElementById("icon5").addEventListener("click", function (event) {
-            handleIconClick(event, "icon5");
-        });
-
-        // Check if the current page matches the linked page and add active class
-        var currentPage = window.location.pathname.split("/").pop();
-        if (currentPage === "page1.html") {
-            document.getElementById("icon1").classList.add("active");
-        } else if (currentPage === "page2.html") {
-            document.getElementById("icon2").classList.add("active");
-        } else if (currentPage === "page3.html") {
-            document.getElementById("icon3").classList.add("active");
-        } else if (currentPage === "page4.html") {
-            document.getElementById("icon4").classList.add("active");
-        } else if (currentPage === "page5.html") {
-            document.getElementById("icon5").classList.add("active");
-        }
-    </script>
 </body>
 </html>
