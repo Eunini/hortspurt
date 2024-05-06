@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap");
-
 * {
   box-sizing: border-box;
-  font-family: "Lexend Deca", sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 0;
   margin: 0;
   position: relative;
@@ -15,8 +13,9 @@ html {
     justify-content: center;
     position: relative;
 }
-
-@media  (min-width:768px) {
+a {
+  text-decoration: none;
+}
   .holder {
     width: 80%;
     justify-content: center;
@@ -38,17 +37,21 @@ html {
     border-radius: 50%;
   }
   .intro {
-    margin: 30px 20px;
+    font-size: 24px;
+    font-weight: 400;
+    margin: auto;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     padding: 10px;
   }
   .pic-container {
     display: flex;
     justify-content: space-around;
   }
+
   .profile-head {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
   .profile-head #img{
@@ -65,10 +68,6 @@ html {
     border-radius: 25px;
     border: 1px solid #95f;
 }
-  /* This only changes this particular animation duration */
-  .animate__animated.animate__bounce {
-    --animate-duration: 2s;
-  }
   section p {
     text-align: center;
     font-size: 20px;
@@ -101,14 +100,14 @@ label {
   cursor: pointer;
   margin:25px auto;
   background: #D4D4D4;
-  color: black;
+  color: #808080;
   transition: .2s linear all;
 }
 
 /* Style the label when the checkbox is checked */
 input[type="radio"]:checked + label {
   border: 2px solid #95F; 
-  color: black;
+  color: #808080;
 
 }
 .note {
@@ -155,7 +154,8 @@ input[type="radio"]:checked + label {
   border-radius: 20px;
   background-color: #9955BB;
   color: var(--color-bg-background);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  outline: 0;
   padding: 10px;
   text-align: center;
   justify-content: center;
@@ -163,36 +163,35 @@ input[type="radio"]:checked + label {
   font-weight: 700;
   font-size: 20px;
 }
-}
 
 
 @media  (max-width:768px) {
   .holder {
+    width: 95%;
+    margin: 0 auto;
     justify-content: center;
     position: relative;
     margin: auto;
     background:#ffff;
 }
 .pic-container {
-    margin: 20px 0;
+    margin: 10px 0;
     display: flex;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     background-color: rgb(223, 218, 218);
   }
   .pic-container img {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
   }
   
   .profile-head {
     display: flex;
-    margin: 0 auto;
     align-items: center;
-    width: 370px;
-    justify-content: space-between;
+    width: 100%;
   }
   
   .intro {
@@ -200,13 +199,14 @@ input[type="radio"]:checked + label {
     justify-content: center;
     display: flex;
     font-size: 24px;
-    font-weight: 700;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-weight: bolder;
-    margin: 20px 8px;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
+    margin: 0;
   }
   
   a #img {
+    width: 35px;
+    height: 35px;
     display: flex;
     position: relative;
     margin: auto;
@@ -216,12 +216,10 @@ input[type="radio"]:checked + label {
 section {
     justify-content: center;
     border-radius: 25px;
-    border: 1px solid #95f;
+    border-top: 1.5px solid #9955BB;
+    outline: 0;
 }
-/* This only changes this particular animation duration */
-.animate__animated.animate__backInUp {
-  --animate-duration: 2s;
-}
+
  section p {
     text-align: center;
     font-size: 16px;
@@ -231,7 +229,7 @@ section {
  }
  section h6 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 900;
     line-height: 15px;
     letter-spacing: 0em;
@@ -246,7 +244,10 @@ section {
 
 /* Styling the label to mimic a checkbox */
  label { 
-    display: block;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
     width: 90%;
     height: 55px;
     padding: 15px;
@@ -255,14 +256,14 @@ section {
     cursor: pointer;
     margin:25px auto;
     background: #D4D4D4;
-    color: black;
+    color: #808080;
     transition: .2s linear all;
 }
 
 /* Style the label when the checkbox is checked */
 input[type="radio"]:checked + label {
     border: 2px solid #95F; 
-    color: black;
+    color: #808080;
   
 }
 .note {
@@ -281,7 +282,7 @@ input[type="radio"]:checked + label {
   border-radius: 10px;
   background-color: #d9d9d9;
   padding: 10px;
-  width: 300px;
+  width: 90%;
   font-weight: 600;
   color: #808080;
   font-size: 17px;
