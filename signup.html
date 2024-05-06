@@ -3,13 +3,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hortspot login</title>
+    <title>Get started</title>
     <link rel="stylesheet" href="signup.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapicss2?famoda:ital@1&display=swap" rel="stylesheet">
-
-    <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
 </head>
 <body>
    <div class="body">
@@ -28,50 +23,44 @@
                 <p class="head"> Almost there! <br> <span>  Quickly set up your account in a second... </span></p>  
               <div class="input-control">
                 <input type="text" id="fullname" placeholder="First Name" class="input" required>
-                <i class="fa-regular fa-user"></i>
+                <img src="images/Group 16 (1).png" alt="">
               </div>
     
               <div class="input-control">
                 <input type="text" name="" id="lastname" placeholder="Username" class="input" required>
-                <i class="fa-regular fa-user"></i>    
+                <img src="images/Group 16 (1).png" alt="">    
               </div>
     
               <div class="input-control">
                 <input type="email" name="" id="gmail" placeholder="Email" class="input" required>
-                <i class="fa-solid fa-envelope"></i>
+                <img src="images/email-edit-outline.png" alt="">
               </div>
     
               <div class="input-control">
                 <input type="text" name="" id="phonenumber" placeholder="Phone" class="input"required>
-                <i class="fa-solid fa-phone"></i>
+                <img src="images/call.png" alt="">
               </div>
     
               <!--The option to select gender-->
             
-              <div class="input-control">
+             
                 <label for="gender"></label>
                 <select id="gender" name="gender" required>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="other">Other</option>
                 </select>
-              </div>
+          
                   
               <br>
               <div class="input-control">
-                <input type="password" name="" id="pin" placeholder="Pin" class="input" oninput="onPasswordInput(false)">
-                <span class="eye" onclick="passwordVisibility(false)">
-                  <i id="hide1" class="fa-regular fa-eye"></i>
-                  <i id="hide2" class="fa-regular fa-eye-slash disabled-icon"></i>
-                </span>
+                <input type="password" name="" id="pin" placeholder="Pin" class="input">               
+                  <img src="images/Show.png" alt="" id="visible" class="eye"  onclick="toggleIcons()">
               </div>
     
               <div class="input-control">
-                <input type="password" name="" id="confirm-pin" placeholder="Confirm Pin" class="input" oninput="onPasswordInput(true)">
-                <span class="eye" onclick="passwordVisibility(true)">
-                  <i id="confirm-hide1" class="fa-regular fa-eye disabled-icon"></i>
-                  <i id="confirm-hide2" class="fa-regular fa-eye-slash disabled-icon"></i>
-                </span>
+                <input type="password" name="" id="confirm-pin" placeholder="Confirm Pin" class="input"> 
+                  <img src="images/Show.png" alt="" id="visible" class="eye"  onclick="toggleIcons()">
               </div> 
     
               <button type="submit" class="submit-button" id="btn"><a href="./purchase.html"><b>Sign Up</b></a></button>            
@@ -85,70 +74,19 @@
    </div>
    <script>
 
-    const onPasswordInput = (isConfirmPassword) => {
-      if(!isConfirmPassword){
-        const pin = document.getElementById("pin");
-        const pinEye = document.getElementById("hide1");
-        const pinEyeSlash = document.getElementById("hide2");
-        if(pin.value === ''){
-          pinEye.classList.add('disabled-icon')
-          pinEyeSlash.classList.add('disabled-icon')
-        } else {
-          pinEye.classList.remove('disabled-icon')
-          pinEyeSlash.classList.remove('disabled-icon')
-        }
-      } else {
-        const confirmPin = document.getElementById("confirm-pin");
-        const pinEye2 = document.getElementById("confirm-hide1");
-        const pinEyeSlash2 = document.getElementById("confirm-hide2");
-        if(confirmPin.value === ''){
-          pinEye2.classList.add('disabled-icon')
-          pinEyeSlash2.classList.add('disabled-icon')
-        } else {
-          pinEye2.classList.remove('disabled-icon')
-          pinEyeSlash2.classList.remove('disabled-icon')
-        }
+    var a;
+    function toggleIcons() {
+      if(a ==1) {
+        document.getElementById('password').type = 'password';
+        document.getElementById('visible').src = 'images/Show (1).png';
+        a = 0
+      }
+      else{
+        document.getElementById('password').type = 'text';
+        document.getElementById('visible').src = 'images/Show.png';
+        a = 1
       }
     }
-    
-    /**
-     * Will Toggle Password Eye Icon For Password And Confirm Password Input Field
-    */
-    function passwordVisibility(isConfirmPassword) {
-      const pin = document.getElementById("pin");
-      const confirmPin = document.getElementById("confirm-pin");
-      //const button = document.getElementById("btn");
-      const pinEye = document.getElementById("hide1");
-      const pinEyeSlash = document.getElementById("hide2");
-      
-      if(!isConfirmPassword){
-        if(pin.type === 'password') {
-          pinEye.style.display = 'block';
-          pinEyeSlash.style.display = 'none';
-          pin.type = 'text';
-        }
-        else {
-          pinEye.style.display = 'none';
-          pinEyeSlash.style.display = 'block';
-          pin.type = 'password';
-        }
-      } else {
-        const pinEyeConfirm = document.getElementById("confirm-hide1");
-        const pinEyeSlashConfirm = document.getElementById("confirm-hide2");
-        
-        if(confirmPin.type === 'password') {
-          confirmPin.type = 'text';
-          pinEyeConfirm.style.display = 'block';
-          pinEyeSlashConfirm.style.display = 'none';
-        }
-        else {
-          confirmPin.type = 'password';
-          pinEyeConfirm.style.display = 'none';
-          pinEyeSlashConfirm.style.display = 'block';
-        }
-      }
-    }
-
-  </script>
-</body>
-</html>
+    </script>
+  </body>
+  </html>
