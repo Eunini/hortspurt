@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap");
-
 * {
   box-sizing: border-box;
-  font-family: "Lexend Deca", sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 0;
   margin: 0;
   position: relative;
@@ -11,9 +9,11 @@ html {
   scroll-behavior: smooth;
 }
  body {
-    margin: auto;
-    justify-content: center;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .holder {
@@ -23,51 +23,48 @@ html {
     flex-direction: column;
     margin: 10px auto;
   }
-  .pic-container {
-    margin: 20px 0;
-    display: flex;
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    background-color: rgb(223, 218, 218);
-  }
-  .pic-container img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-  }
-  .intro {
-    margin: 30px 20px;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-  }
-  .pic-container {
-    display: flex;
-    justify-content: space-around;
-  }
-  .profile-head {
-    display: flex;
-    justify-content: space-between;
-  }
-  .profile-head #img{
-    width: 50px;
-    height: 50px;
-    margin: 50px auto;
-    justify-content: center;
-  }
-  section {
-    margin: 40px auto;
-    justify-content: center;
-    width: 100%;
-    min-height: 100vh;
-    border-radius: 25px;
-    border: 1px solid #95f;
+.pic-container {
+  margin: 20px 0;
+  display: flex;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgb(223, 218, 218);
 }
-  /* This only changes this particular animation duration */
-  .animate__animated.animate__bounce {
-    --animate-duration: 2s;
-  }
+.pic-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.intro {
+    font-size: 24px;
+    font-weight: 400;
+    margin: auto;
+    display: flex;
+    justify-content: start;
+    padding: 10px;
+}
+.pic-container {
+  display: flex;
+}
+.profile-head {
+  display: flex;
+  justify-content: space-between;
+}
+.profile-head #img{
+  width: 50px;
+  height: 50px;
+  margin: 50px auto;
+  justify-content: center;
+}
+section {
+  margin: 40px auto;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  border-radius: 25px;
+  border: 1px solid #95f;
+}
 section img {
     width: 80px;
     height: 80px;
@@ -114,98 +111,91 @@ section .container {
 }
 
 @media  (max-width:768px) {
-    .holder {
-        width: 100%;
-        justify-content: center;
-        position: relative;
-        margin: auto;
-        background:#ffff;
-    }
-    .pic-container {
-        margin: 20px 0;
-        display: flex;
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        background-color: rgb(223, 218, 218);
-      }
-      .pic-container img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-      }
-      
-      .profile-head {
-        display: flex;
-        margin: 10px;
-        align-items: center;
-        width: 300px;
-        justify-content: space-between;
-      }
-      
-      .intro {
-        position: relative;
-        justify-content: center;
-        display: flex;
-        font-size: 24px;
-        font-weight: 700;
-        font-weight: bolder;
-        margin: 10px;
-      }
-      
-      a #img {
-        display: flex;
-        position: relative;
-        margin: auto;
-        cursor: pointer;
-        width: 80px;
-        height: 80px;
-        margin: 10px;
-      }
+  
+  .holder {
+    width: 95%;
+}
+.pic-container {
+    margin: 10px 0;
+    display: flex;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: rgb(223, 218, 218);
+  }
+  .pic-container img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  
+  .profile-head {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .intro {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
     
-    section {
-        width: 95%;
-        justify-content: center;
-        border-radius: 25px;
-       border: none;
+    .profile-head #img{
+      display: flex;
+      width: 35px;
+      height: 35px;
+      margin: 10px; 
     }
-    section img {
-        width: 80px;
-        height: 80px;
-        justify-content: center;
-        position: relative;
-        display: flex;
-        margin: 50px auto 30px auto;
-    }
-    section .container {
-        border: 2px solid #d9d9d9;
-        border-radius: 25px;
-        height: 350px;
-        width: 300px;
-        margin: auto;
-    }
-    .container .congrat-box {
-        width: 260px;
-        height: 100px;
-        margin: 50px auto 15px auto;
-        padding: 10px;
-    }
-    .container .congrat-box h2 {
-        color: #712199;
-        text-align: center;
-        padding: 10px;
-        margin: 20px auto;
-        justify-content: center;
-    }
-    .container p {
-        color: black;
-        text-align: center;
-        margin: 20px auto;
-        padding: 10px;
-        display: flex;
-        letter-spacing: .3px;
-        font-size: 18px;
-        line-height: 27px;
-        font-weight: 700;
-    }
+  
+  section {
+      width: 95%;
+      justify-content: center;
+      border-radius: 25px;
+      border: none;
+  }
+  section img {
+      width: 80px;
+      height: 80px;
+      justify-content: center;
+      position: relative;
+      display: flex;
+      margin: 50px auto 30px auto;
+  }
+  section .container {
+      border: 2px solid #d9d9d9;
+      border-radius: 25px;
+      height: 350px;
+      width: 100%;
+      margin: auto;
+  }
+  .container .congrat-box {
+      width: 260px;
+      height: 100px;
+      margin: 50px auto 15px auto;
+      padding: 10px;
+  }
+  .container .congrat-box h2 {
+      color: #712199;
+      text-align: center;
+      padding: 10px;
+      margin: 20px auto;
+      justify-content: center;
+  }
+  .container p {
+      color: #141414;
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px;
+      display: flex;
+      letter-spacing: .3px;
+      font-size: 18px;
+      line-height: 27px;
+      font-weight: 700;
+  }
 }
