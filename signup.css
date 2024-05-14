@@ -156,7 +156,13 @@ p.bottom a {
     margin-right: 10px;
     color: #999;
 }
-
+.input-control .eye{
+    position:absolute;
+    margin: 0px 40px 20px 0;
+}
+.input-control #hide1, .input-control #confirm-hide1 {
+    display: none;
+}
 .eye {
     color: #D4D4D4;
     position: absolute;
