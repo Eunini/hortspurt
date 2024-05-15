@@ -23,12 +23,12 @@
                 <p class="head"> Almost there! <br> <span>  Quickly set up your account in a second... </span></p>  
               <div class="input-control">
                 <input type="text" id="fullname" placeholder="First Name" class="input" required>
-                <img src="images/Group 16 (1).png" alt="">
+                <img src="images/face-man.svg" alt="">
               </div>
     
               <div class="input-control">
                 <input type="text" name="" id="lastname" placeholder="Username" class="input" required>
-                <img src="images/Group 16 (1).png" alt="">    
+                <img src="images/face-man.svg" alt="">    
               </div>
     
               <div class="input-control">
@@ -38,35 +38,30 @@
     
               <div class="input-control">
                 <input type="text" name="" id="phonenumber" placeholder="Phone" class="input"required>
-                <img src="images/call.png" alt="">
+                <img src="images/call.png" alt="" class="phoneImg" style="width:2%; padding-right: 2px;">
               </div>
     
               <!--The option to select gender-->
             
              
                 <label for="gender"></label>
-                <select id="gender" name="gender" required>
+                <select id="gender" name="gender"  required>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="other">Other</option>
                 </select>
+
           
                   
               <br>
               <div class="input-control">
                 <input type="password" name="" id="pin" placeholder="Pin" class="input">               
-                <span class="eye" onclick="passwordVisibility(false)">
-                  <img src="images/icons8-eye-24.png"  class="eye" id="hide1">
-                  <img src="images/login show.png"  class="eye"id="hide2"style="width: 25px; height: 25px;">
-                </span>
+                  <img src="images/Show.png" alt="" id="visible" class="eye"  onclick="toggleIcons()">
               </div>
     
               <div class="input-control">
                 <input type="password" name="" id="confirm-pin" placeholder="Confirm Pin" class="input"> 
-                <span class="eye" onclick="passwordVisibility(true)">
-                  <img src="images/icons8-eye-24.png" alt="" id="confirm-hide1" class="eye">
-                  <img src="images/login show.png"  class="eye" id="confirm-hide2" style="width: 25px; height: 25px;">
-                </span>
+                  <img src="images/Show.png" alt="" id="visible" class="eye"  onclick="toggleIcons()">
               </div> 
     
               <button type="submit" class="submit-button" id="btn"><a href="./purchase.html"><b>Sign Up</b></a></button>            
@@ -81,38 +76,16 @@
    <script>
 
     var a;
-    function passwordVisibility(isConfirmPassword) {
-      const pin = document.getElementById("pin");
-      const confirmPin = document.getElementById("confirm-pin");
-      //const button = document.getElementById("btn");
-      const pinEye = document.getElementById("hide1");
-      const pinEyeSlash = document.getElementById("hide2");
-      
-      if(!isConfirmPassword){
-        if(pin.type === 'password') {
-          pinEye.style.display = 'block';
-          pinEyeSlash.style.display = 'none';
-          pin.type = 'text';
-        }
-        else {
-          pinEye.style.display = 'none';
-          pinEyeSlash.style.display = 'block';
-          pin.type = 'password';
-        }
-      } else {
-        const pinEyeConfirm = document.getElementById("confirm-hide1");
-        const pinEyeSlashConfirm = document.getElementById("confirm-hide2");
-        
-        if(confirmPin.type === 'password') {
-          confirmPin.type = 'text';
-          pinEyeConfirm.style.display = 'block';
-          pinEyeSlashConfirm.style.display = 'none';
-        }
-        else {
-          confirmPin.type = 'password';
-          pinEyeConfirm.style.display = 'none';
-          pinEyeSlashConfirm.style.display = 'block';
-        }
+    function toggleIcons() {
+      if(a ==1) {
+        document.getElementById('password').type = 'password';
+        document.getElementById('visible').src = 'images/Show (1).png';
+        a = 0
+      }
+      else{
+        document.getElementById('password').type = 'text';
+        document.getElementById('visible').src = 'images/Show.png';
+        a = 1
       }
     }
     </script>

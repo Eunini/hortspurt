@@ -39,6 +39,7 @@ form {
 }
 .head-container {
     display: flex;
+    align-items: center;
     margin: 10px;
     padding: 10px;
 }
@@ -51,6 +52,40 @@ form {
     font-size: 18px;
     padding: 0 10px;
 }
+
+
+.smiley{
+    -webkit-animation: rotateBox 1s normal linear infinite;
+    animation: rotateBox 1s normal linear infinite;
+}
+
+@keyframes rotateBox{
+    0%{
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    25%{
+        -webkit-transform: rotate3d(0, 0, 1, 13deg);
+        transform: rotate3d(0, 0, 1, 13deg);
+    }
+
+    50%{
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    75%{
+        -webkit-transform: rotate3d(0, 0, 1, -13deg);
+        transform: rotate3d(0, 0, 1, -13deg);
+    }
+
+    100%{
+        -webkit-transform: rotate3d(0, 0, 1,0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+
 .input-field {
     width: 100%;
     height: 60px;
@@ -76,11 +111,36 @@ form {
     font-weight: 400;
 }
 .input-field:hover {
-    border: 1.8px solid #9955bc;
+    border: 1px solid #9955bc;
 }
 .submit {
     width: 100%;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
+
+.loginBtn{
+    background-color: #9955bc;
+    padding: 10px 30px;
+    border-radius: 30px;
+    text-decoration-line: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#username{
+    padding-left: 13px;
+    margin-right: 19px;
+    background-color: transparent;
+    color: rgba(0,0,0,0.8);
+}
+
+#pin{
+    color: rgba(0,0,0,0.8); 
+}
+
 a input {
     background: #9955bc;
     border: 2px solid transparent;
@@ -137,9 +197,18 @@ a {
     font-weight: 600;
     color: #9955bc;
 }
+
+
+
+
 /* Example of a media query for screens smaller than 600px */
 @media (max-width: 768px) {
     /* CSS rules for smaller screens */
+
+    body{
+        margin: 15px 20px;
+    }
+
     h1{
         font-size:30px;
     }
@@ -155,4 +224,25 @@ a {
      a input {
         width: 100%;
      }
+
+     .head-container h1{
+        font-size: 20px;
+     }
+
+     .miss{
+        display: none;
+        font-size: 14px;
+        margin-top: 0px;
+     }
+
+     .forgot p {
+        font-size: 14px;
+    }
+
+    .no-acct p{
+        font-size: 14px;
+    }
+
+    
+
 }

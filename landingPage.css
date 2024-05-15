@@ -8,7 +8,39 @@ body{
     display: flex;
     justify-content: space-between;
     padding: 10px 30px;
+}
 
+.rotateLogo{
+    padding-right: 2px;
+    -webkit-animation: rotate 2s normal linear infinite;
+    animation: rotate 2s normal linear infinite;
+}
+
+@keyframes rotate{
+    0%{
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    25%{
+        -webkit-transform: rotate3d(0, 0, 1, 90deg);
+        transform: rotate3d(0, 0, 1, 90deg);
+    }
+
+    50%{
+        -webkit-transform: rotate3d(0, 0, 1, 180deg);
+        transform: rotate3d(0, 0, 1, 180deg);
+    }
+
+    75%{
+        -webkit-transform: rotate3d(0, 0, 1, 270deg);
+        transform: rotate3d(0, 0, 1, 270deg);
+    }
+
+    100%{
+        -webkit-transform: rotate3d(0, 0, 1, 360deg);
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
 }
 
 .logo{
@@ -111,6 +143,8 @@ body{
     width: 100%;
 }
 
+
+
 .hero2{
     position: relative;
     width: 100%;
@@ -129,6 +163,7 @@ body{
     top: 22%;
     left: 25%;
 }
+
 
 .welcome{
     font-size: 50px;
@@ -170,7 +205,84 @@ body{
     visibility: hidden;
 }
 
+.noData{
+    -webkit-animation: moveBox 2s normal linear infinite;
+    animation: moveBox 2s normal linear infinite;
+}
+
+@keyframes moveBox{
+    0%{
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    25%{
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+
+    50%{
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+
+    75%{
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+
+    100%{
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+.zeroData{
+    -webkit-animation: rotateBox 2s normal linear infinite;
+    animation: rotateBox 2s normal linear infinite;
+}
+
+@keyframes rotateBox{
+    0%{
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    25%{
+        -webkit-transform: rotate3d(0, 0, 1, 13deg);
+        transform: rotate3d(0, 0, 1, 13deg);
+    }
+
+    50%{
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    75%{
+        -webkit-transform: rotate3d(0, 0, 1, -13deg);
+        transform: rotate3d(0, 0, 1, -13deg);
+    }
+
+    100%{
+        -webkit-transform: rotate3d(0, 0, 1,0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+
 .greybox{
+    text-align: center;
+    border-radius: 10px;
+    background: #F5F5F5;
+    padding: 30px;
+    height: 250px;
+    width: 330px;
+    line-height: 25px;
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.greybox2{
     text-align: center;
     border-radius: 10px;
     background: #F5F5F5;
@@ -304,11 +416,15 @@ body{
 
 
 /*  Sixth Phase */
+.foooter{
+    background-color: #9955BB;
+    width: 100%; 
+}
+
 .footer{
     display: flex;
     justify-content: space-between;
     padding: 30px 130px;
-    background-color: #9955BB;
     color: white;
 }
 

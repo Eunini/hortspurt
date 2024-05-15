@@ -59,13 +59,13 @@ label{
 }
 /* Style the dropdown box */
 select {
-    width: 97%;
+    width: 97.3%;
     height: 55px;
     background-color: #D4D4D4;
     position: relative;
     display: flex;
     margin: 15px auto 0 10px;
-    padding: 10px;
+    padding: 20px;
     justify-content: end;
     border: none;
     outline: none;
@@ -99,11 +99,14 @@ select {
     border-radius: 30px;
 }
 
+
 .input::placeholder {
     padding: 10px;
     margin: 3px;
     color: #9C9C9C;
 }
+
+
 
 .submit-button {
     cursor: pointer;
@@ -156,13 +159,7 @@ p.bottom a {
     margin-right: 10px;
     color: #999;
 }
-.input-control .eye{
-    position:absolute;
-    margin: 0px 40px 20px 0;
-}
-.input-control #hide1, .input-control #confirm-hide1 {
-    display: none;
-}
+
 .eye {
     color: #D4D4D4;
     position: absolute;
@@ -248,5 +245,9 @@ p.bottom a {
     .submit-button{
         margin: 15px;
         width: 90%;
+    }
+
+    .phoneImg{
+        width: 5%!important;
     }
 }

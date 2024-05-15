@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Data</title>
+
+    <link rel="stylesheet" href="./BuyData.css">
+    <link rel="stylesheet" href="./BuyDataMobile.css">
+</head>
+<body>
+    
+    <!--first phase-->
+    <a href="./purchase.html" class="backArrow">
+       <span class="arrow">&lt;</span> Back
+    </a>
+
+    <!--second phase-->
+    <div class="walletBox">
+        <div class="walletB">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" style="fill: white;"><path d="M16 12h2v4h-2z"></path><path d="M20 7V5c0-1.103-.897-2-2-2H5C3.346 3 2 4.346 2 6v12c0 2.201 1.794 3 3 3h15c1.103 0 2-.897 2-2V9c0-1.103-.897-2-2-2zM5 5h13v2H5a1.001 1.001 0 0 1 0-2zm15 14H5.012C4.55 18.988 4 18.805 4 18V8.815c.314.113.647.185 1 .185h15v10z"></path></svg>
+            <span class="wb">
+               Wallet Balance
+            </span>
+            <img src="images/Show.png" alt="" id="invisible" onclick="hideBalance()">
+            <img src="images/Show (1).png" alt="" id="visible" onclick="showBalance()">
+        </div>
+    
+        <div class="walletBalance" id="walletBalance">
+            NGN 150,000
+        </div>
+    
+        <div class="walletBalanceHidden" id="walletBalanceHidden">
+           <img src="images/hid.png" alt="">
+           <img src="images/hid.png" alt="">
+           <img src="images/hid.png" alt="">
+           <img src="images/hid.png" alt="">
+        </div>
+        <a href="#" class="addMoney">+ add money</a>  
+    </div>
+
+    <!--envelope -->
+    <div class="bigEnvelope" id="bigEnvelope">
+    <!--Third phase-->
+    <div class="instruct">
+        <b>Kindly Enter The Designated Phone Number</b>
+    </div>
+    <div class="numbbox">
+        <div class="netimg">
+            <img src="images/Group.jpg" alt="" class="naija">
+            <div class="countryCode">+234</div>
+            <img src="images/Line 5.png" alt="">
+        </div>
+        <input type="text" class="phonenumb" value="08039263055">
+    </div>
+
+
+    <!--Fourth phase-->
+    <div class="instruct2">
+        <b>Kindly Choose Your Network Type</b>
+    </div>
+    <div class="networkType">
+        <div class="HexContainer" onclick="change1()">
+            <div class="hexagon">
+                <div class="shape">
+                    <img src="images/mtn.svg" alt="">
+                    <div class="overlay" id="overlay1">
+                        <img src="images/NEW2 2.png" alt="" class="logO">
+                    </div>
+               </div>
+             </div>
+
+        </div>
+    
+        <div class="HexContainer" onclick="change2()">
+            <div class="hexagon">
+                <div class="shape">
+                    <img src="images/globacom-limited.svg" alt="">
+                    <div class="overlay" id="overlay2">
+                        <img src="images/NEW2 2.png" alt="" class="logO">
+                    </div>
+               </div>
+             </div>
+
+        </div>
+    
+        <div class="HexContainer" onclick="change3()">
+            <div class="hexagon">
+                <div class="shape">
+                    <img src="images/9mobile.svg" alt="">
+                    <div class="overlay" id="overlay3">
+                        <img src="images/NEW2 2.png" alt="" class="logO">
+                    </div>
+               </div>
+             </div>
+
+        </div>
+    
+        <div class="HexContainer" onclick="change4()">
+            <div class="hexagon">
+                <div class="shape">
+                    <img src="images/airtel-nigeria.svg" alt="">
+                    <div class="overlay" id="overlay4">
+                        <img src="images/NEW2 2.png" alt="" class="logO">
+                    </div>
+               </div>
+             </div>
+
+        </div>
+    </div>
+
+    <!--Fifth phase-->
+    <a class="proceed"  onclick="revealProviderPlans()"   href="#">Proceed</a>
+    </div>
+
+    <!--Sixth Phase || ---API PHASE FOR DATA PLANS--- || -->
+    <div class="dataPlans" id="dataPlans">
+        <div class="selectHeader">
+            <h1 class="spp">Select Provider Plan</h1>
+            <h3 class="cancelBtn" id="cancelBtn" onclick="cancelPlan()">cancel</h3>
+        </div>
+        <div class="providerPlans">
+            <div class="providerPlanX" id="providerPlan1">
+                <div class="pp">
+                    <a href="./checkoutPage.html" class="">Airtel Data - 50 Naira - 40MB - 1Day</a>
+                    <p class="dataPrice" id=" ">N50</p>
+                </div>
+                <img src="images/lamp.png" alt="" class="pImg">
+            </div>
+            <div class="providerPlanX" id="providerPlan2">
+                <div class="pp">
+                    <a href="./checkoutPage.html" class="">Airtel Data - 100MB - CG - 7Days</a>
+                    <p class="dataPrice" id=" ">N50</p>
+                </div>
+                <img src="images/lamp.png" alt="" class="pImg">
+            </div>
+            <div class="providerPlanX" id="providerPlan3">
+                <div class="pp">
+                    <a href="./checkoutPage.html" class=" ">Airtel Data - 100 Naira - 100MB - 1Day</a>
+                    <p class="dataPrice" id=" ">N100</p>
+                </div>
+                <img src="images/lamp.png" alt="" class="pImg">
+            </div>
+            <div class="providerPlanX" id="providerPlan4">
+                <div class="pp">
+                    <a href="./checkOutPage.css" class="">Airtel Data - 300MB - CG - 30Days</a>
+                    <p class="dataPrice" id=" ">N100</p>
+                </div>
+                <img src="images/lamp.png" alt="" class="pImg">
+            </div>
+            <div class="providerPlanX" id="providerPlan5">
+                <div class="pp">
+                    <a href="./checkoutPage.html" class="">Airtel Data - 500MB - CG - 30Days</a>
+                    <p class="dataPrice" id=" ">N150</p>
+                </div>
+                <img src="images/lamp.png" alt="" class="pImg">
+            </div>
+        </div>
+    </div>
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function showBalance(){
+            document.getElementById("walletBalance").style.display = "block";
+            document.getElementById("walletBalanceHidden").style.display = "none";
+            document.getElementById("invisible").style.display = "block";
+            document.getElementById("visible").style.display = "none";
+        }
+    
+        function hideBalance(){
+            document.getElementById("walletBalance").style.display = "none";
+            document.getElementById("walletBalanceHidden").style.display = "block";
+            document.getElementById("invisible").style.display = "none";
+            document.getElementById("visible").style.display = "block";
+        }
+    
+        function viewMore(){
+            document.getElementById("moreServices").style.display = "flex";
+            document.getElementById("others").style.display = "none";
+        }
+    
+
+        function change1(){
+           
+            document.getElementById("overlay1").style.opacity = 0.8;
+            document.getElementById("overlay2").style.opacity = 0;
+            document.getElementById("overlay3").style.opacity = 0;
+            document.getElementById("overlay4").style.opacity = 0;
+        }
+
+        function change2(){
+          
+            document.getElementById("overlay2").style.opacity = 0.8;
+            document.getElementById("overlay1").style.opacity = 0;
+            document.getElementById("overlay3").style.opacity = 0;
+            document.getElementById("overlay4").style.opacity = 0;
+        }
+
+        function change3(){ 
+            document.getElementById("overlay3").style.opacity = 0.8;
+            document.getElementById("overlay1").style.opacity = 0;
+            document.getElementById("overlay2").style.opacity = 0;
+            document.getElementById("overlay4").style.opacity = 0;
+        }
+
+        function change4(){
+            
+            document.getElementById("overlay4").style.opacity = 0.8;
+            document.getElementById("overlay1").style.opacity = 0;
+            document.getElementById("overlay2").style.opacity = 0;
+            document.getElementById("overlay3").style.opacity = 0;
+        }
+
+        function revealProviderPlans(){
+            document.getElementById("dataPlans").style.display = 'block';
+            document.getElementById("bigEnvelope").style.display = 'none';
+            document.getElementById("dataPlans").style.transitionDuration = '1000ms';
+            document.getElementById("bigEnvelope").style.transitionDuration = '1000ms';
+        }
+        
+        function cancelPlan(){
+            document.getElementById("bigEnvelope").style.display = 'block';
+            document.getElementById("dataPlans").style.display = 'none';
+        }
+
+    </script>
+</body>
+</html>
