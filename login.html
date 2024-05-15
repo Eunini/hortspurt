@@ -12,14 +12,14 @@
             <form action="" class="sign-in-form">
                 <div class="head-container">
                     <h1>Welcome back</h1>
-                    <img src="images/Group 15.png" alt="">
+                    <img src="images/smileys.png" alt="" class="smiley">
                  </div>
-                 <p class="miss"> we miss you!!! </p>
+                <!--<p class="miss"> we miss you!! </p>--> 
 
                 <div class="my-inputs">
                     <div class="input-field">
-                      <img src="images/Group 16 (1).png" alt="">
-                      <input type="text" placeholder="username">
+                      <img src="images/face-man.svg" alt="">
+                      <input type="text" placeholder="username" id="username">
                     </div>
 
                     <div class="input-field">
@@ -27,12 +27,13 @@
                             <input type="password" name="" id="pin" placeholder="Pin" class="input" oninput="onPasswordInput(false)">
                             <span class="eye" onclick="passwordVisibility(false)">
                               <img src="images/icons8-eye-24.png" alt="" id="hide1">
-                              <img src="images/login show.png" alt="" id="hide2" style="width: 45px; height: 45px;">
+                              <img src="images/login show.png" alt="" id="hide2">
                             </span>
                     </div>
 
                     <div class="submit">
-                      <a href="./purchase.html"><input type="submit" value="Login" class="btn"></a>
+                      <a href="./purchase.html" class="loginBtn">Login</a>
+                      <!---<input type="submit" value="Login" class="btn">-->
                     </div>
                 </div>         
 
@@ -40,15 +41,13 @@
                     <p style="color: #9955bc; text-align: center;">Forgot password?</p>
                 </div>
                 <div class="no-acct">
-                 <p>Don't have an account? <a href="./purchase.html">Click here to sign up</a></p>
+                 <p>Don't have an account? <a href="./signup.html">Click here to sign up</a></p>
                 </div>
             </form>
         </div>
     </div>
     
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <script>
         function passwordVisibility(isConfirmPassword) {
