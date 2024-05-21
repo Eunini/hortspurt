@@ -11,7 +11,7 @@ class AddMoneyTransaction(models.Model):
     PAYMENT_STATUS = [
         ('P', 'PENDING'),
     ]
-    user = models.OneToOneField(User, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
     tr_id = models.CharField(max_length=200)
     amount = models.PositiveIntegerField()
     method = models.CharField(max_length=1, choices=PAYMENT_METHODS, default='U')
