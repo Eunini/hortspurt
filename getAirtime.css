@@ -1,0 +1,403 @@
+
+body{
+    font-family: sans-serif;
+    padding-top: 10px;
+}
+
+.arrow{
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.backArrow{
+    text-decoration-line: none;
+    color: white;
+    font-weight: 400;
+    margin-left: 30px;
+    padding: 7px 20px;
+    border-radius: 11px;
+    background-color: #9955BB;
+}
+
+.backArrow:hover{
+    cursor: pointer;
+    transition: 500ms;
+    padding-right: 25px;
+    opacity: 0.7;
+}
+
+/* second phase */
+
+.walletBox{
+    border-radius: 10px;
+    background-color: #9955BB;
+    padding: 25px 15px;
+    margin: 2px 26px;
+    color: white;
+    margin-top: 30px;
+}
+
+#walletBalanceHidden{
+    display: none;
+}
+
+#invisible{
+    display: block;
+}
+
+#visible{
+    display: none;
+}
+
+.walletB{
+    display: flex;
+    padding: 15px 5px;
+    align-items: center;
+}
+
+.walletImg{
+    width: 0.2%;
+}
+
+.wb{
+    padding: 0px 8px;
+    font-size: 22px;
+}
+
+#invisible:hover, #visible:hover{
+    cursor: pointer;
+}
+
+.walletBalance{
+    font-size: 20px;
+    padding: 15px 5px;
+    font-weight: 700;
+}
+
+.walletBalanceHidden{
+    padding: 15px 5px;
+}
+
+.addMoney{
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid white;
+    margin: 20px 2.5px;
+    padding: 7px 20px 7px 10px;
+    border-radius: 22px;
+    color: #9955BB;
+    max-width: max-content;
+    text-decoration-line: none;
+}
+
+.addMoney:hover{
+    transition: 400ms;
+    opacity: 0.8;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+
+
+/* third phase */
+.instruct{
+    margin-top: 40px;
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+.numbbox{
+    display: flex;
+    align-content: center;
+    border: 1px solid #9955BB;
+    width: 95.3%;
+    padding: 10px 5px;
+    margin-left: 28px;
+    border-radius: 5px;
+    margin-top: 6px;
+}
+
+
+.netimg{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px;
+}
+
+.naija{
+    width: 100%;
+}
+
+.countryCode{
+    padding: 0px 5px;
+}
+
+.phonenumb{
+    margin-left: 0px;
+    border: none;
+    font-size: 20px;
+    width: 70%;
+}
+
+.phonenumb:hover{
+    border-color: none;
+    outline-style: none;
+}
+
+.phonenumb:focus{
+    border-color: none;
+    outline-style: none;
+}
+
+/* fourth phase */
+
+.instruct2{
+    margin-top: 40px;
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+.networkType{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+
+.HexContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tickBox{
+    border: 1px solid rgb(200, 197, 197);
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+    margin-top: -2px;
+}
+
+.tnImg{
+    display: flex;
+    align-items: center;
+}
+
+
+.hexagon{
+    position:relative;
+    width: 125px; 
+    height: 115px;
+    margin: 50px 20px 10px;
+    transition:2s;
+}
+
+.hexagon:hover{
+    cursor: pointer;
+}
+
+.shape{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.1);
+    clip-path: polygon( 25% 0, 75% 0, 100% 50%, 75% 100% , 25% 100%, 0 50%); 
+}
+
+.shape:hover{
+    transition: 500ms;
+    transform: translateY(-5px);
+}
+
+.shape img{
+    position:absolute;
+    width: 50%;
+}
+
+.overlay{
+    position: absolute;
+    background-color: white;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay:hover{
+    opacity: 0.7;
+    transition: 500ms;
+}
+
+/* fifth phase */
+
+.proceed{
+    text-decoration-line: none;
+    color: white;
+    box-shadow: 0px 2px 7px rgba(0,0,0,0.1);
+    font-weight: 600;
+    border: 1px solid #9955BB;
+    background-color: #9955BB;
+    border-radius: 32px;
+    padding: 25px 20px;
+    margin: 26px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proceed:hover{
+    opacity: 0.5;
+    transition: 500ms;
+}
+
+/* sixth phase */
+
+.dataPlans{
+    background-color: rgba(0,0,0,0.03);
+    border-top-right-radius: 80px;
+    border-top-left-radius: 80px;
+    padding-top: 30px;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    display:none;
+}
+
+.selectHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 35px;
+}
+
+.cancelBtn{
+    background-color: #9955BB;
+    border-radius: 20px;
+    padding: 7px 22px;
+    color:white;
+}
+
+.cancelBtn:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    padding: 7px 25px;
+    transition: 500ms;
+}
+
+.providerPlans{
+    padding: 20px 30px 5px 30px;
+}
+
+.providerPlanX{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+
+.providerPlanX:hover{
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.dataPrice{
+    color: grey;
+}
+
+.pImg{
+    width: max-content;
+}
+.input-airtime {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px;
+}
+.input-airtime span {
+    font-size: 25px;
+   margin: 20px ;
+   padding: 10px;
+   font-weight: 400;
+}
+.input-airtime p {
+    font-size: 18px;
+}
+.input-airtime .myInput {
+    margin: 20px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.input-airtime .input {
+    width: 200px;
+    background: transparent;
+    height: 18px;
+    padding: 10px;
+    border-bottom: 2px solid #9955BB;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    outline: 0;
+    margin: 0 10px;
+    font-size: 20px;
+}
+.input-airtime #submitBtn{
+    width: 150px;
+    height: 50px;
+    background: #9955BB;
+    outline: 0;
+    border: 0;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0.5;
+}
+
+#submitBtn.active {
+    opacity: 1;
+}
+
+@media screen and (max-width:768px) {
+    .input-airtime {
+        margin: 10px;
+        padding: 10px;
+    }
+    .input-airtime span {
+        font-size: 18px;
+       margin: 2px ;
+       padding: 5px;
+       font-weight: 400;
+      
+    }
+    .input-airtime p {
+        font-size: 18px;
+    }
+    .input-airtime .myInput {
+        margin: 10px;
+        padding-top: 10px;
+    }
+    .input-airtime .input {
+        width: 150px;
+        margin: 0;
+        margin-right: 10px;
+        font-size: 17px;
+    }
+    .input-airtime #submitBtn{
+        width: 300px;
+        height: 40px;
+        margin: auto;
+        border-radius: 25px;
+        font-size: 17px;
+    }
+}

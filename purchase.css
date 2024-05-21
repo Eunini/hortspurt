@@ -1,5 +1,9 @@
 /* first phase */
 
+body{
+    font-family: sans-serif;
+}
+
 .profileHead{
     display: flex;
     justify-content: space-between;
@@ -40,11 +44,16 @@
 .walletB{
     display: flex;
     padding: 15px 5px;
+    align-items: center;
+}
+
+.walletImg{
+    width: 2.3%;
 }
 
 .wb{
-    padding: 0px 6px;
-    font-size: 20px;
+    padding: 0px 8px;
+    font-size: 22px;
 }
 
 #invisible:hover, #visible:hover{
@@ -61,15 +70,23 @@
     padding: 15px 5px;
 }
 
-.approval{
+.addMoney{
     font-size: 18px;
     background-color: white;
     border: 1px solid white;
-    margin: 5px 5px;
-    padding: 7px 24px;
+    margin: 20px 2.5px;
+    padding: 7px 20px 7px 10px;
     border-radius: 22px;
     color: #9955BB;
     max-width: max-content;
+    text-decoration-line: none;
+}
+
+.addMoney:hover{
+    transition: 400ms;
+    opacity: 0.8;
+    padding-right: 30px;
+    cursor: pointer;
 }
 
 /* third phase */
@@ -97,10 +114,12 @@
 }
 
 .otherServices{
-    background-image: url("images/Rectangle 5.png");
-    background-size: cover;
-    padding: 18px;
-    margin: 0px 20px 15px 20px;
+    background: rgba(245, 225, 255, 0.6117647059);
+    border-bottom: 1px solid blueviolet;
+    border-radius: 8px;
+    box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
+    padding: 10px 0px;
+    margin: 50px 37px 30px 30px;
 }
 
 .moreServices{
@@ -124,7 +143,8 @@
     margin: 50px 37px 30px 30px;
 }
 
-.referimg{
+.rImg{
+    padding-top: 20px;
     padding-left: 30px;
 }
 
@@ -141,4 +161,10 @@
 
 .bottom{
     text-align: center;
+}
+
+.bottom:hover{
+    transition: 500ms;
+    transform: translateY(-10px);
+    cursor: pointer;
 }

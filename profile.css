@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap');
-
 * {
     box-sizing: border-box;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -18,20 +16,24 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
-    background-color: white;
-    margin: 0 auto;
+    width: 90%;
+    background-color: #f5f5f5;
+    margin:  auto;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-    min-height: 145vh;
+    border: none;
+    outline: none;
+    height: 150vh;
   }
 .profile-header{
+    height: 100px;
     width: 100%;
+    background: white;
+    border-radius:25px;
     display: flex;
-    justify-content:space-between;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content:space-around;
     padding: 20px;
 }
 
@@ -40,49 +42,58 @@ body {
     margin: 0 auto;
     display: flex;
     padding: 20px;
-    justify-content: space-between;
     align-items: center;
 }
-
+.profile-header h3 {
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    margin: auto;
+}
 .profile-header .edit{
-    margin: 0 0 10px 250px;
     text-decoration: none;
     font-weight: 600;
     color: #9955BB;
 
 }
-.pic-container h3 {
-    text-align: center;
-    margin: 20px auto;
-    letter-spacing: 2px;
-    font-size: 23px;
-}
+
 .my-profile-pic img {
     margin: 0 250px 0 0;
     padding: 0 40px;
     font-size: 20px;
 }
-.pic-cotnainer {
+.pic-container {
     position: relative;
-    background-color: rgb(225, 225, 225);
+    background: white;
+    width: 100%;
     margin: auto;
-    
+    border-radius: 25px;
+    height: 130px;
+    padding: 10px;
 }
 
 .pic-container img {
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    justify-content: center;
+    display: flex;
+    margin: 5px auto;
     object-fit: cover;
     border: 1px solid #ddd;
 }
 
-.my-profile-pic h3 {
-    font-weight: 900;
-}
+
 .table-content {
     width: 100%;
-    overflow-x: auto;
+    background: white;
+    border-radius: 25px;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 20px;
     -ms-overflow-style: none; /* for Internet Explorer/Edge */
     scrollbar-width: none; /* for Firefox */
   }
@@ -157,10 +168,12 @@ td span input::placeholder{
 }
 
 .refer {
-    width: 85%;
+    width: 100%;
     height: 150px;
-    border: 1px solid #9955BB;
-    border-radius: 1em;
+    border: 0;
+    outline: 0;
+    background: white;
+    border-radius: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,6 +209,7 @@ span a {
 }
 footer {
     position: relative;
+    pointer-events: all;
     box-shadow:
   13.4px 15.5px 35.4px rgba(0, 0, 0, 0.007),
   19px 22px 80px rgba(0, 0, 0, 0.07)
@@ -233,7 +247,6 @@ footer {
     cursor: pointer;
     font-size: 20px;
     text-decoration: none;
-    color: black;
   }
 footer .bottom p {
     text-align: center;
@@ -253,12 +266,16 @@ footer .bottom p {
 
 @media (max-width: 768px) {
     .background {
+        height: 180vh;
         width: 100%;
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
     }
     .profile-header{
         margin: 10px;
+    }
+    .profile-header h3, .profile-header .edit{
+        font-size: 16px;
     }
     b{
         display: flex;
@@ -284,19 +301,21 @@ footer .bottom p {
         margin-top: 1em;
     }
     .table-content{
+        height: 100vh;
         margin-top: 20px;
     }
     td {
         padding: 10px 0;
-        font-size: 13px;
+        font-size: 12px;
     }
     
     td span {
         font-weight: 600;
-        font-size: 15px;
+        font-size: 14px;
         text-align: right;
     }
     td span input{
+        width: 100%;
         text-align: end;
         border: none;
         color: black;
@@ -306,6 +325,7 @@ footer .bottom p {
     }
     td span input::placeholder {
         font-size: 15px;
+        text-align: end;
     }
     .refer {
         width: 100%;
@@ -314,29 +334,33 @@ footer .bottom p {
     }
     .refer .head {
        padding: 10px 0;
-        font-size: 14px;
+        font-size: 12px;
       }
       
     
     .refer .head span{
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 900;
     }
     .refer img{
         width: 50px;
         height: 50px;
-        padding: 2px, 2px, 4px, 2px;
+       
     }
     .span a {
         translate: -20px;
     }
     
     footer .bottom {
+        padding-left: 5px;
+        padding-right: 5px;
         margin-top: 1em;
         justify-content: space-around;
-        left: 10px;
     }
-
+    footer .bottom p{
+        font-size: 11px;
+        padding: 5px;
+    }
     .my-profile-pic {
         justify-content: space-around;
         margin-bottom: 30px;
@@ -353,5 +377,16 @@ footer .bottom p {
     .my-profile-pic img {
         translate: -4px;
         font-size: 20px;
+    }
+    .profile-header h3 {
+        font-weight: 800;
+        font-size: 16px;
+    }
+    .profile-header .edit{
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 500;
+        color: #9955BB;
+    
     }
 }

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap');
 
 * {
     box-sizing: border-box;
@@ -11,6 +10,20 @@ html {
     scroll-behavior: smooth;
 }
 @media  screen and (min-width:768px) {
+    .home-cont{
+        height: 50px;
+        width: 100%;
+        position: relative;
+    }
+    .homeicon {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 0; 
+        bottom: 0; 
+        margin-right: 70px;
+        margin-bottom: 20px;
+    }
     .content-box {
         width: 85%;
         margin: 10px auto;
@@ -255,17 +268,35 @@ html {
         opacity: 0.5;
         transition: 500ms;
     }
+    a {
+        text-decoration: none;
+    }
 }
 
 /* mobile responsive view */
 @media screen and (max-width: 768px) {
-
+    .home-cont{
+        height: 30px;
+        width: 100%;
+        position: relative;
+    }
+    .homeicon {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 0;
+        margin-top: 20px;
+        margin-right: 15px; /* Add margin for spacing */
+        margin-bottom: 15px; /* Add margin for spacing */
+        bottom: 0; 
+    }
     .content-box {
-        width: 40%;
+        width: 95%;
+        margin: 10px auto;
     }
     .profile-info {
-        width: 300px;
-        margin: 10px;
+        width: 95%;
+        margin: auto;
         border: none;
         border-radius: 10px;
         background: #9955BB;
@@ -281,12 +312,15 @@ html {
         margin-top: 16px;
     }
     .profile-info-content {
+        width: 100%;
         display: flex;
         flex-direction: column;
         position: relative;
         color: white;
     }
-    
+    a {
+        text-decoration: none;
+    }
     .profile-info-content .wallet {
         display: flex;
         margin: 10px;
@@ -371,7 +405,7 @@ html {
     }
     .send-data p {
         display: flex;
-        width: 300px;
+        width: 95%;
         font-family: inherit;
         font-weight: 400;
         font-size: 16px;
@@ -380,10 +414,10 @@ html {
         margin: 10px;
     }
     .send-data .number-box{
-        margin: 10px;
+        margin: auto;
         display: flex;
         position: relative;
-        width: 300px;
+        width: 95%;
         height: 51px;
         border-radius: 5px;
         background: linear-gradient(0deg, rgba(153, 85, 187, 0.61)),
@@ -428,7 +462,7 @@ html {
         letter-spacing: 0em;
         text-align: left;
         padding: 10px;
-    
+        width: 95%;
     }
 
     /* Hide the default checkbox */
@@ -442,7 +476,7 @@ html {
         flex-direction: column;
         text-align: center;
         padding: 10px;
-        width: 300px;
+        width: 95%;
         height: 50px;
         margin: 10px 10px 20px 10px;
         padding: 10px;
@@ -469,7 +503,7 @@ html {
     
     .type .proceed {
         display: flex;
-        width: 300px;
+        width: 95%;
         height: 50px;
         border-radius: 30px;
         background: rgba(153, 85, 187, 1);
@@ -493,10 +527,3 @@ html {
         margin-top: 10px; /* Adjust margin for smaller screens */
     } 
 }
-* For screens with a width of 915 pixels or smaller-for tablets */
-@media (max-width: 915px) {
-    .content-box, .profile-info, .send-data .number-box , .number-box,label, .type .proceed{
-        margin: 20px auto;
-        width: 100%;
-    }
-  }

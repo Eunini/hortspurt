@@ -1,0 +1,145 @@
+@media screen and (max-width:600px){
+
+    /* first phase */
+
+    .profileHead{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px 20px 10px;
+    }
+
+    .profileAndName{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .userProfileImage{
+        width: 40px;
+        height: 50px;
+    }
+
+    .intro{
+        font-size: 12px;
+    }
+
+    
+    /* second phase */
+
+    .walletBox{
+        border-radius: 10px;
+        background-color: #9955BB;
+        padding:15px 15px 30px 10px;
+        margin: 2px 7px;
+        color: white;
+    }
+
+    .walletImg{
+        width: 8%;
+    }
+
+    .wb{
+        font-size: 14px;
+        padding: 0px 6px;
+    }
+
+    .walletB{
+        display: flex;
+        align-items: center;
+    }
+
+    .walletBalance{
+        font-size: 18px;
+        font-weight: 700;
+        padding-left: 7px;
+    }
+
+    .addMoney{
+        font-size: 17px;
+        padding: 6px 17px 7px 10px;
+    }    
+
+
+
+    /* third phase */
+
+    .avail{
+        padding-left: 10px;
+        padding-top: 25px;
+        font-size: 17px;
+    }
+
+    .mainServices{
+        background: rgba(245, 225, 255, 0.6117647059);
+        border-bottom: 1px solid blueviolet;
+        border-radius: 8px;
+        box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
+        padding: 0px;
+        margin: 10px 7px;
+        flex-wrap: wrap;
+        align-items:baseline;
+    }
+
+
+    /* fourth phase */
+    .otherServ{
+        padding-left: 10px;
+        padding-top: 35px;
+        font-size: 17px;
+    }
+
+    
+    .otherServices{
+        background: rgba(245, 225, 255, 0.6117647059);
+        border-bottom: 1px solid blueviolet;
+        border-radius: 8px;
+        box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
+        padding: 0px;
+        margin: 10px 7px;
+    }
+
+
+    /* fifth phase */
+    .referral{
+        display: flex;
+        background: rgba(245, 225, 255, 0.6117647059);
+        border-bottom: 1px solid blueviolet;
+        border-radius: 8px;
+        box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
+        padding: 10px 29px;
+        margin: 50px 7px 10px 7px;
+    }
+
+    .refertext h3{
+        font-size: 15px;
+    }
+
+    .refertext p{
+        font-size: 12px;
+    }
+
+    /* sixth phase */
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 60px 0px 0px 0px;
+        padding: 13px 5px 0px 5px;
+        background-color: white;
+       /* box-shadow: 0px -5px 5px -5px ; */
+        border-top: 1px solid #9955BB;
+        box-shadow: none;
+    }
+
+    .bottom p{
+        font-size: 12px;
+    }
+
+    .bottom:hover{
+        transform: none;
+    }
+
+
+
+}    
