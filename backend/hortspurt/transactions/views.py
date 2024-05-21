@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -12,8 +14,9 @@ import requests, json
 from .utils import generateTransactionReference
 from .models import AddMoneyTransaction
 from .forms import AddMoneyTrForm
-
+load_dotenv()
 # Create your views here.
+
 class BuyDataView(View):
     def get(self, request):
         return render(request, 'buy_data_input1.html')
@@ -39,9 +42,10 @@ class PayWithUssdView(LoginRequiredMixin, View):
         amount = request.POST.get("amount")
         tx_ref = generateTransactionReference('100580192')
         data = {"account_bank": account_bank, "amount":int(amount), "currency":'NGN', "email":email, "fullname": full_name, "tx_ref": tx_ref}
+        bearer_token = 'Bearer ' + os.getenv('FLW_SECRET_KEY')
         headers = {
             "Content-Type": "application/json",
-            "Authorization": "Bearer FLWSECK_TEST-cebd2c035d2c4171c12eb4025245458b-X"
+            "Authorization": bearer_token
         }
         #print(data)
         res = requests.post('https://api.flutterwave.com/v3/charges?type=ussd', json=data, headers=headers)
@@ -67,7 +71,7 @@ class FlwWebhook(LoginRequiredMixin, View):
         return render(request, 'pay_with_ussd.html')
 
     def post(self, request):
-        secret_hash = '4%l)3wut(r$^n+dufl1%@!+n*w==5bbg_rv+9t0_#)4i5eq8s'
+        secret_hash = os.getenv("FLW_SECRET_HASH")
         signature = request.headers['verif-hash']
         if (not signature or (signature != secret_hash)):
             return HttpResponse(status=401)
@@ -91,7 +95,3 @@ class FlwWebhook(LoginRequiredMixin, View):
                 tr_obj.save()
                 return HttpResponse(status=200)
         return HttpResponse(status=400)
-            
-
-        
-        
