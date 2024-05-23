@@ -57,7 +57,7 @@ class PayWithUssdView(LoginRequiredMixin, View):
         #print(data)
         res = requests.post('https://api.flutterwave.com/v3/charges?type=ussd', json=data, headers=headers)
         res_data = res.json()
-        #print(res_data)
+        print(res_data)
         if (not res_data.get('status') or res_data['status'] != 'success'):
             msg = 'something went wrong, please try again'
         else:
