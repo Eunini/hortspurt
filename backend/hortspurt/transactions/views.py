@@ -31,6 +31,13 @@ class PayWithPaystackView(View):
     def post(self, request):
         return render(request, 'pay_with_paystack.html')
 
+class PayWithFlwView(View):
+    def get(self, request):
+        return render(request, 'pay_with_flw.html')
+
+    def post(self, request):
+        return render(request, 'pay_with_flw.html')
+
 class PayWithUssdView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'pay_with_ussd.html')
@@ -66,7 +73,7 @@ class PayWithUssdView(LoginRequiredMixin, View):
         ctx = {'msg': msg}
         return render(request, 'dial_ussd_code.html', ctx)
 
-class FlwWebhook(LoginRequiredMixin, View):
+class FlwWebhook(View):
     def get(self, request):
         return render(request, 'pay_with_ussd.html')
 

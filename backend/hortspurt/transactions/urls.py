@@ -7,6 +7,7 @@ app_name = 'transactions'
 urlpatterns = [
     path('data/', views.BuyDataView.as_view(), name='buy_data'),
     path('paywithpaystack/', views.PayWithPaystackView.as_view(), name='pay_with_paystack'),
+    path('paywithflw/', views.PayWithFlwView.as_view(), name='pay_with_flw'),
     path('paywithussd/', views.PayWithUssdView.as_view(), name='pay_with_ussd'),
     path('flw-webhook/', views.FlwWebhook.as_view(), name='flw_webhook'),
 ]
