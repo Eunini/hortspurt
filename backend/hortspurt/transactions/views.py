@@ -38,6 +38,13 @@ class PayWithFlwView(View):
     def post(self, request):
         return render(request, 'pay_with_flw.html')
 
+class PayWithMonView(View):
+    def get(self, request):
+        return render(request, 'pay_with_mon.html')
+
+    def post(self, request):
+        return render(request, 'pay_with_mon.html')
+
 class PayWithUssdView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'pay_with_ussd.html')

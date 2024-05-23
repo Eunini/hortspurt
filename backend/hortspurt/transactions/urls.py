@@ -9,5 +9,6 @@ urlpatterns = [
     path('paywithpaystack/', views.PayWithPaystackView.as_view(), name='pay_with_paystack'),
     path('paywithflw/', views.PayWithFlwView.as_view(), name='pay_with_flw'),
     path('paywithussd/', views.PayWithUssdView.as_view(), name='pay_with_ussd'),
+    path('paywithmon/', views.PayWithMonView.as_view(), name='pay_with_mon'),
     path('flw-webhook/', views.FlwWebhook.as_view(), name='flw_webhook'),
 ]
