@@ -14,6 +14,7 @@ import requests, json
 from .utils import generateTransactionReference
 from .models import AddMoneyTransaction
 from .forms import AddMoneyTrForm
+from django.views.decorators.csrf import csrf_exempt
 load_dotenv()
 # Create your views here.
 
@@ -80,6 +81,7 @@ class PayWithUssdView(LoginRequiredMixin, View):
         ctx = {'msg': msg}
         return render(request, 'dial_ussd_code.html', ctx)
 
+@csrf_exempt
 class FlwWebhook(View):
     def get(self, request):
         return render(request, 'pay_with_ussd.html')
