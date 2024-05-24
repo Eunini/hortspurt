@@ -15,6 +15,7 @@ from .utils import generateTransactionReference
 from .models import AddMoneyTransaction
 from .forms import AddMoneyTrForm
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.views import APIView
 load_dotenv()
 # Create your views here.
 
@@ -81,11 +82,10 @@ class PayWithUssdView(LoginRequiredMixin, View):
         ctx = {'msg': msg}
         return render(request, 'dial_ussd_code.html', ctx)
 
-class FlwWebhook(View):
+class FlwWebhook(APIView):
     def get(self, request):
         return render(request, 'pay_with_ussd.html')
 
-    @csrf_exempt
     def post(self, request):
         secret_hash = os.getenv("FLW_SECRET_HASH")
         signature = request.headers['verif-hash']
