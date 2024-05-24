@@ -81,11 +81,11 @@ class PayWithUssdView(LoginRequiredMixin, View):
         ctx = {'msg': msg}
         return render(request, 'dial_ussd_code.html', ctx)
 
-@csrf_exempt
 class FlwWebhook(View):
     def get(self, request):
         return render(request, 'pay_with_ussd.html')
 
+    @csrf_exempt
     def post(self, request):
         secret_hash = os.getenv("FLW_SECRET_HASH")
         signature = request.headers['verif-hash']
