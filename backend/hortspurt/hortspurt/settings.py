@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'transactions.apps.TransactionsConfig',
     'userprofile.apps.UserprofileConfig',
+    'buy.apps.BuyConfig',
     'hortspurt',
     'rest_framework',
 ]
@@ -125,6 +126,14 @@ USE_I18N = True
 
 USE_TZ = True
 
+# set the celery broker url 
+CELERY_BROKER_URL = 'redis://default:5A8GGQYEW8r8w2HZj4VR33sUcGbWMGYs@redis-14475.c261.us-east-1-4.ec2.redns.redis-cloud.com:14475'
+
+# set the celery result backend 
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
+# set the celery timezone 
+CELERY_TIMEZONE = 'UTC'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/

@@ -17,8 +17,15 @@ from .forms import AddMoneyTrForm
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.views import APIView
 from django.utils.decorators import method_decorator
+from .tasks import confirm_transaction
 load_dotenv()
 # Create your views here.
+
+bearer_token = 'Bearer ' + os.getenv('FLW_SECRET_KEY')
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": bearer_token
+}
 
 class BuyDataView(View):
     def get(self, request):
@@ -59,11 +66,7 @@ class PayWithUssdView(LoginRequiredMixin, View):
         amount = request.POST.get("amount")
         tx_ref = generateTransactionReference('100580192')
         data = {"account_bank": account_bank, "amount":int(amount), "currency":'NGN', "email":email, "fullname": full_name, "tx_ref": tx_ref}
-        bearer_token = 'Bearer ' + os.getenv('FLW_SECRET_KEY')
-        headers = {
-            "Content-Type": "application/json",
-            "Authorization": bearer_token
-        }
+ 
         #print(data)
         res = requests.post('https://api.flutterwave.com/v3/charges?type=ussd', json=data, headers=headers)
         res_data = res.json()
@@ -90,26 +93,18 @@ class FlwWebhook(View):
 
     def post(self, request):
         secret_hash = os.getenv("FLW_SECRET_HASH")
-        signature = request.headers['verif-hash']
+        signature = request.headers.get('verif-hash')
         if (not signature or (signature != secret_hash)):
             return HttpResponse(status=401)
         payload = request.POST
         print("payload: ", payload)
         #event = payload.get('event')
         if payload:
-            try:
-                status = payload.get('status')
-                tr_id = payload.get('id')
-                amount = int(payload.get('amount'))
-            except Exception:
-                return HttpResponse(status=400)
+            status = payload.get('status')
+            tr_id = payload.get('id')
 
-            if (not status or not tr_id or not amount):
+            if (not status or not tr_id):
                 return HttpResponse(status=400)
-            
-            if (status == 'successful'):
-                tr_obj = AddMoneyTransaction.objects.get(tr_id=tr_id)
-                tr_obj.status = 'S'
-                tr_obj.save()
-                return HttpResponse(status=200)
+            confirm_transaction.delay(tr_id)
+            return HttpResponse(status=200)
         return HttpResponse(status=400)
