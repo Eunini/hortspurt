@@ -3,157 +3,152 @@
 {% load static %}
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hortspot login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapicss2?famoda:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href='{% static "homepage.css" %}'>
-    <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Document</title>
+
+    <link rel="stylesheet" href='{% static "./purchase.css" %}'>
+    <link rel="stylesheet" href='{% static "./purchaseMobile.css" %}'>
 </head>
 <body>
-    <div class="content-box">
-        <div class="profile-head">
-            <div class="pic-container">
-                <img src='{% static "images/profile image hortspurt.png" %}' alt="user profile image">
-                <h1 class="intro">Hi, {{ user.first_name }}</h1>
-            </div>
-               <a href="./query.html"><img src='{% static "images/Frame 28.png" %}' id="img" id="mysupport"></a>
+    
+    <!--First phase--->
+    <div class="profileHead">
+        <div class="profileAndName">
+            <img src='{% static "images/Ellipse 177.png" %}' alt="user profile image" class="userProfileImage">
+            <h1 class="intro">
+                <span>Hi,</span>
+                <span class="customerName">Johnson</span>
+            </h1>
         </div>
-
-        <div class="profile-info">
-            <img src='{% static "images/Ellipse 9.png" %}' id="circle1">
-            <img src='{% static "images/Ellipse 10.png" %}' id="circle2" >
-            <div class="profile-info-content">
-                <div class="wallet">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" style="fill: white;"><path d="M16 12h2v4h-2z"></path><path d="M20 7V5c0-1.103-.897-2-2-2H5C3.346 3 2 4.346 2 6v12c0 2.201 1.794 3 3 3h15c1.103 0 2-.897 2-2V9c0-1.103-.897-2-2-2zM5 5h13v2H5a1.001 1.001 0 0 1 0-2zm15 14H5.012C4.55 18.988 4 18.805 4 18V8.815c.314.113.647.185 1 .185h15v10z"></path></svg>
-                    <p>wallet balance</p>
-                    <div id="iconContainer" class="icon-container" onclick="toggleIcons()">
-                        <!-- Initial icon (displayed first) -->
-                        <i id="eye-slash" class="fas fa-eye-slash"></i>
-                
-                        <!-- Second icon (initially hidden) -->
-                        <i id="eye" class="fas fa-eye icon-hidden"></i>
-                    </div>
-                </div>
-                <p class="balance">****</p>
-                <a href="#" id="add-money"><div class="add-cash"><p>+ add money</p></div></a>
-            </div>
+        <div class="supportLogo">
+            <a href='{% static "./let us know.html" %}' class=""><img src='{% static "images/Frame 28.png" %}' alt="" class="support"></a>
         </div>
-        <!--Services offered-->
-        <div class="section-main"> <!--first service section-->
-        <b><h2>Available services</h2></b>
-        <div class="main-service">
-           <div class="main-content">
-            <a href="/purchase/data/"><img src='{% static "images/Frame 8.png" %}' id="wifi"></a>
-                    <a href="#"><img src='{% static "images/Frame 9.png" %}' id="add"></a>                
-                        <a href="#"><img src='{% static "images/Frame 10.png" %}' id="call"></a>
-                        <a href=""><div class="social-media"><p>social media</p></div></a>
-           </div>
-        </div><!--first service section ends here-->
-        </div>
-
-        <!--other services section-->
-        <div class="other-services-container">
-            <p>Other Services</p>
-            <div class="line"></div>
-          <img src='{% static "images/Frame 20.png" %}' id="others" onclick="view_more()">
-          <div class="other-container" id="other_container">
-            <img src='{% static "images/Frame 11.png" %}' alt=""><img src='{% static "images/Frame 12.png" %}' alt=""><img src='{% static "images/Frame 13.png" %}' alt=""><img src='{% static "images/Frame 14.png" %}' alt=""><img src='{% static "images/Frame 15.png" %}' alt=""><img src='{% static "images/Frame 16.png" %}' alt=""><img src='{% static "images/Frame 17.png" %}' alt=""><img src='{% static "./images/f" %}' alt="">
-        </div>
-        </div>
-<!-- You still have the guts to talk back at me eh? Mo ma ko ba e o. wa kan je gbese ni. /:-) -->
-        <!-- WHat yo're gonna do now is add an "id" to it so you can call it in js -->
-        <!-- where's the other continaer? -->
-        <!-- DO you have the elements for it yet? not really... -->
-      
-        <div class="refer-get-container">
-            <div class="refer">
-                    <p class="head"> Refer & Get Free Data<br> <span>  Earn 1gb on Every One Person you refer</span></p>
-                   <img src='{% static "images/account-tie-voice-outline.png" %}'>
-            </div>
-        </div>
-
-        <footer>
-            <div class="bottom">
-                <a href="default.html" class="icon" id="myLink"><img src='{% static "./images/Group.svg" %}'></a>
-                <p>Home</p>
-            </div>
-
-            <div class="bottom">
-                <a href="default.html" class="icon" id="myLink"><img src='{% static "./images/Vector (1).svg" %}'></a>
-                <p>Shoutout</p>
-            </div>
-
-            <div class="bottom">
-                <a href="default.html" class="icon" id="myLink"><img src='{% static "./images/gift-outline.svg" %}'></a>
-                <p>Bonus</p>
-            </div>
-
-            <div class="bottom">
-                <a href="default.html" class="icon" id="myLink"><img src='{% static "./images/clock.svg" %}'></a>
-                <p>History</p>
-            </div>
-
-            <div class="bottom">
-                <a href="profile.html" class="icon" id="myLink"><img src='{% static "./images/face-man.svg" %}'></a>
-                <p>Me</p>
-            </div>
-        </footer>
     </div>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
+    <!--second phase-->
+    <div class="walletBox">
+        <div class="walletB">
+            <img src='{% static "images/Group.png" %}' alt=" " class="walletImg">
+            <span class="wb">
+               Wallet Balance
+            </span>
+            <img src='{% static "images/Show.png" %}' alt="" id="invisible" onclick="hideBalance()">
+            <img src='{% static "images/Show (1).png" %}' alt="" id="visible" onclick="showBalance()">
+        </div>
     
-    <script>
-        // Get the toggle icon element
-        function toggleIcons() {
-            // Toggle visibility of the icons
-            document.getElementById('eye-slash').classList.toggle('icon-hidden');
-            document.getElementById('eye').classList.toggle('icon-hidden');
-        }
+        <div class="walletBalance" id="walletBalance">
+            NGN 150,000
+        </div>
     
-        function view_more() {
-const others = document.getElementById("others");
-const  other_container = document.getElementById("other_container")
+        <div class="walletBalanceHidden" id="walletBalanceHidden">
+           <img src='{% static "images/hid.png" %}' alt="">
+           <img src='{% static "images/hid.png" %}' alt="">
+           <img src='{% static "images/hid.png" %}' alt="">
+           <img src='{% static "images/hid.png" %}' alt="">
+        </div>
+        
+        <a href='{% static "#" %}' class="addMoney">+ add money</a>  
+    </div>
 
-if(others.style.display==="block"){
-    other_container.style.display="none";
-    others.style.display=="block";
-}
-else{
-    other_container.style.display ="flex";
-    others.style.display = 'none';
-}
-        }
-    </script>
-    <script src="https://js.paystack.co/v1/inline.js"></script>
+     <!--Third phase-->
+     <h1 class="avail">Available Services</h1>
+     <div class="mainServices">
+        <a href='/buy/data'><img src='{% static "images/Frame 8.png" %}' class="data"></a>
+        <a href='/buy/airtime'><img src='{% static "images/Frame 10.png" %}' class="call"></a>
+        <a href='{% static "#" %}'><img src='{% static "images/Frame 9.png" %}' class="add"></a>
+     </div>
+
+     <!--Fourth phase-->
+     <h2 class="otherServ">Other Services(Coming Soon..)</h2>
+     <div class="otherServices">
+        <a href='{% static "#" %}'><img src='{% static "images/Frame 20.png" %}' id="others" onclick="viewMore()"></a>
+
+        <div class="moreServices" id="moreServices">
+            <a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 11.png" %}' alt=""></a>
+
+<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 12.png" %}' alt=""></a>
+
+<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 13.png" %}' alt=""></a>
+
+<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 14.png" %}' alt=""></a>
+
+<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 15.png" %}' alt=""></a>
+
+<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 16.png" %}' alt=""></a>
+
+<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 17.png" %}' alt=""></a>
+
+<img src='{% static "./images/f" %}' alt="">
+         
+        </div>
+     </div>
+
+
+    <!--Fifth phase-->
+    <div class="referral">
+        <div class="refertext">
+            <h3>Refer & Get Free Data</h3>
+            <p> Earn 1gb on Every One Person you refer</p>
+        </div>
+        <div class="rImg">
+            <img src='{% static "images/account-tie-voice-outline.png" %}' alt=" " class="referimg">
+        </div>
+    </div>
+
+    <!--Sixth phase-->
+    <div class="buttons">
+        <div class="bottom">
+            <a href='{% static "./index.html" %}' class="icon" id="myLink"><img src='{% static "./images/Group.svg" %}'></a>
+            <p>Home</p>
+        </div>
+
+        <div class="bottom">
+            <a href='{% static "./shoutout.html" %}' class="icon" id="myLink"><img src='{% static "./images/Vector (1).svg" %}'></a>
+            <p>Shoutout</p>
+        </div>
+
+        <div class="bottom">
+            <a href='{% static "error 404.html" %}' class="icon" id="myLink"><img src='{% static "./images/gift-outline.svg" %}'></a>
+            <p>Bonus</p>
+        </div>
+
+        <div class="bottom">
+            <a href='{% static "#" %}' class="icon" id="myLink"><img src='{% static "./images/clock.svg" %}'></a>
+            <p>History</p>
+        </div>
+
+        <div class="bottom">
+            <a href='{% static "./profile.html" %}' class="icon" id="myLink"><img src='{% static "./images/face-man.svg" %}'></a>
+            <p>Me</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
     <script>
-        const paymentForm = document.getElementById('add-money');
-        paymentForm.addEventListener("click", payWithPaystack, false);
-        
-        function payWithPaystack(e) {
-          e.preventDefault();
-        
-          let handler = PaystackPop.setup({
-            key: 'pk_live_70b94c275ae77d6821bd7fcbeae69459614b24af', // Replace with your public key
-            email: '{{user.email}}',
-            amount: 800*100,
-            // ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-            // label: "Optional string that replaces customer email"
-            onClose: function(){
-              alert('Window closed.');
-            },
-            callback: function(response){
-              let message = 'Payment complete! Reference: ' + response.reference;
-              alert(message);
-            }
-          });
-        
-          handler.openIframe();
+        function showBalance(){
+            document.getElementById("walletBalance").style.display = "block";
+            document.getElementById("walletBalanceHidden").style.display = "none";
+            document.getElementById("invisible").style.display = "block";
+            document.getElementById("visible").style.display = "none";
         }
+    
+        function hideBalance(){
+            document.getElementById("walletBalance").style.display = "none";
+            document.getElementById("walletBalanceHidden").style.display = "block";
+            document.getElementById("invisible").style.display = "none";
+            document.getElementById("visible").style.display = "block";
+        }
+    
+        function viewMore(){
+            document.getElementById("moreServices").style.display = "flex";
+            document.getElementById("others").style.display = "none";
+        }
+    
     </script>
 </body>
 </html>
