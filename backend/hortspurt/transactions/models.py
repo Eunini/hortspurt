@@ -10,6 +10,8 @@ class AddMoneyTransaction(models.Model):
     ]
     PAYMENT_STATUS = [
         ('P', 'PENDING'),
+        ('S', 'SUCCESSFUL'),
+        ('F', 'FAILED')
     ]
     user = models.ForeignKey(User, on_delete=models.PROTECT)
     tr_id = models.CharField(max_length=200)

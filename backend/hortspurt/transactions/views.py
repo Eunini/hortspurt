@@ -16,6 +16,7 @@ from .models import AddMoneyTransaction
 from .forms import AddMoneyTrForm
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.views import APIView
+from django.utils.decorators import method_decorator
 load_dotenv()
 # Create your views here.
 
@@ -82,7 +83,8 @@ class PayWithUssdView(LoginRequiredMixin, View):
         ctx = {'msg': msg}
         return render(request, 'dial_ussd_code.html', ctx)
 
-class FlwWebhook(APIView):
+@method_decorator(csrf_exempt, name='dispatch')
+class FlwWebhook(View):
     def get(self, request):
         return render(request, 'pay_with_ussd.html')
 
@@ -92,21 +94,21 @@ class FlwWebhook(APIView):
         if (not signature or (signature != secret_hash)):
             return HttpResponse(status=401)
         payload = request.POST
-        print(payload)
-        event = payload.get('event')
-        if payload.get('data'):
+        print("payload: ", payload)
+        #event = payload.get('event')
+        if payload:
             try:
-                status = payload['data'].get('status')
-                tr_id = payload['data'].get('id')
-                amount = int(payload['data'].get('amount'))
+                status = payload.get('status')
+                tr_id = payload.get('id')
+                amount = int(payload.get('amount'))
             except Exception:
                 return HttpResponse(status=400)
 
-            if (not status or not tr_id or not event or not amount):
+            if (not status or not tr_id or not amount):
                 return HttpResponse(status=400)
             
-            if (event == 'charge.completed' and status == 'successful'):
-                tr_obj = AddMoneyTransaction.objects.filter(tr_id=tr_id)
+            if (status == 'successful'):
+                tr_obj = AddMoneyTransaction.objects.get(tr_id=tr_id)
                 tr_obj.status = 'S'
                 tr_obj.save()
                 return HttpResponse(status=200)
