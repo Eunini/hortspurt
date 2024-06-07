@@ -4,6 +4,7 @@ from celery import shared_task
 import requests, json
 from django.http import JsonResponse, HttpResponse
 from .models import AddMoneyTransaction
+import logging
 load_dotenv()
 
 bearer_token = 'Bearer ' + os.getenv('FLW_SECRET_KEY')
@@ -12,16 +13,24 @@ headers = {
     "Authorization": bearer_token
 }
 
+@shared_task(bind=True)
+def test(self):
+    for i in range(10):
+        print(i)
+    return 'Done'
+
 @shared_task
 def confirm_transaction(tr_id):
+    requests.get("http://127.0.0.1:8000/purchase/test/")
     try:
+        print('LETS POP THIS')
         confirmation_url = f'https://api.flutterwave.com/v3/transactions/{tr_id}/verify'
         try:
-            tr_obj = AddMoneyTransaction.objects.get(id=tr_id)
+            tr_obj = AddMoneyTransaction.objects.get(tr_id=tr_id)
             print(f"Transaction with ID {tr_id} found: {tr_obj}")
 
             try:
-                response = requests.post(confirmation_url, headers=headers)
+                response = requests.get(confirmation_url, headers=headers)
                 response.raise_for_status()
 
                 try:
@@ -48,3 +57,6 @@ def confirm_transaction(tr_id):
             print(f"Transaction with ID {tr_id} not found.")
     except Exception as e:
         print(f"An error occurred: {e}")
+
+test.delay()
+#requests.get("http://127.0.0.1:8000/purchase/test/")

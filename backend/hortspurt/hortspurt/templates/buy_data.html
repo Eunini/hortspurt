@@ -52,7 +52,7 @@
             <div class="countryCode">+234</div>
             <img src='{% static "images/Line 5.png" %}' alt="">
         </div>
-        <input type="text" class="phonenumb" value="08039263055">
+        <input id="phoneno" type="text" class="phonenumb" value="8039263055">
     </div>
 
 
@@ -61,7 +61,7 @@
         <b>Kindly Choose Your Network Type</b>
     </div>
     <div class="networkType">
-        <div class="HexContainer" onclick="change1()">
+        <div class="HexContainer" onclick="change1()" id="MTN">
             <div class="hexagon">
                 <div class="shape">
                     <img src='{% static "images/mtn.svg" %}' alt="">
@@ -73,7 +73,7 @@
 
         </div>
     
-        <div class="HexContainer" onclick="change2()">
+        <div class="HexContainer" onclick="change2()" id="GLO">
             <div class="hexagon">
                 <div class="shape">
                     <img src='{% static "images/globacom-limited.svg" %}' alt="">
@@ -85,7 +85,7 @@
 
         </div>
     
-        <div class="HexContainer" onclick="change3()">
+        <div class="HexContainer" onclick="change3()" id="9MOBILE">
             <div class="hexagon">
                 <div class="shape">
                     <img src='{% static "images/9mobile.svg" %}' alt="">
@@ -97,7 +97,7 @@
 
         </div>
     
-        <div class="HexContainer" onclick="change4()">
+        <div class="HexContainer" onclick="change4()" id="AIRTEL">
             <div class="hexagon">
                 <div class="shape">
                     <img src='{% static "images/airtel-nigeria.svg" %}' alt="">
@@ -111,7 +111,7 @@
     </div>
 
     <!--Fifth phase-->
-    <a class="proceed"  onclick="revealProviderPlans()"   href='{% static "#" %}'>Proceed</a>
+    <a class="proceed"  onclick="revealProviderPlans()">Proceed</a>
     </div>
 
     <!--Sixth Phase || ---API PHASE FOR DATA PLANS--- || -->
@@ -120,44 +120,57 @@
             <h1 class="spp">Select Provider Plan</h1>
             <h3 class="cancelBtn" id="cancelBtn" onclick="cancelPlan()">cancel</h3>
         </div>
-        <div class="providerPlans">
+        <div id="MTN_plans"class="providerPlans" style="display:none;">
+            {% for mtn_plan in MTN_PLANS %}
+            <div class="providerPlanX" id="providerPlan{{mtn_plan.code}}">
+                <div class="pp">
+                    <a href="#" onclick="submit('{{mtn_plan.data_id}}')" class="">{{mtn_plan.type}} N{{mtn_plan.amount}} {{mtn_plan.size}} {{mtn_plan.validity}}</a>
+                    <p class="dataPrice" id=" ">N{{mtn_plan.amount}}</p>
+                </div>
+                <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
+            </div>
+            {% endfor %}
+        </div>
+        <div id="GLO_plans"class="providerPlans" style="display:none;">
+            {% for glo_plan in GLO_PLANS %}
             <div class="providerPlanX" id="providerPlan1">
                 <div class="pp">
-                    <a href='{% static "./checkoutPage.html" %}' class="">Airtel Data - 50 Naira - 40MB - 1Day</a>
-                    <p class="dataPrice" id=" ">N50</p>
+                    <a href="#" onclick="submit('{{glo_plan.data_id}}')" class="">{{glo_plan.type}} N{{glo_plan.amount}} {{glo_plan.size}} {{glo_plan.validity}}</a>
+                    <p class="dataPrice" id=" ">N{{glo_plan.amount}}</p>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
-            <div class="providerPlanX" id="providerPlan2">
+            {% endfor %}
+        </div>
+        <div id="9MOBILE_plans"class="providerPlans" style="display:none;">
+            {% for mobile9_plan in MOBILE9_PLANS %}
+            <div class="providerPlanX" id="providerPlan{{mobile9_plan.code}}">
                 <div class="pp">
-                    <a href='{% static "./checkoutPage.html" %}' class="">Airtel Data - 100MB - CG - 7Days</a>
-                    <p class="dataPrice" id=" ">N50</p>
+                    <a href="#" onclick="submit('{{mobile9_plan.data_id}}')" class="">{{mobile9_plan.type}} N{{mobile9_plan.amount}} {{mobile9_plan.size}} {{mobile9_plan.validity}}</a>
+                    <p class="dataPrice" id=" ">N{{mobile9_plan.amount}}</p>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
-            <div class="providerPlanX" id="providerPlan3">
+            {% endfor %}
+        </div>
+        <div id="AIRTEL_plans"class="providerPlans" style="display:none;">
+            {% for airtel_plan in AIRTEL_PLANS %}
+            <div class="providerPlanX" id="providerPlan{{airtel_plan.code}}">
                 <div class="pp">
-                    <a href='{% static "./checkoutPage.html" %}' class=" ">Airtel Data - 100 Naira - 100MB - 1Day</a>
-                    <p class="dataPrice" id=" ">N100</p>
+                    <a href="#" onclick="submit('{{airtel_plan.data_id}}')" class="">{{airtel_plan.type}} N{{airtel_plan.amount}} {{airtel_plan.size}} {{airtel_plan.validity}}</a>
+                    <p class="dataPrice" id=" ">N{{airtel_plan.amount}}</p>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
-            <div class="providerPlanX" id="providerPlan4">
-                <div class="pp">
-                    <a href='{% static "./checkoutPage.html" %}' class="">Airtel Data - 300MB - CG - 30Days</a>
-                    <p class="dataPrice" id=" ">N100</p>
-                </div>
-                <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
-            </div>
-            <div class="providerPlanX" id="providerPlan5">
-                <div class="pp">
-                    <a href='{% static "./checkoutPage.html" %}' class="">Airtel Data - 500MB - CG - 30Days</a>
-                    <p class="dataPrice" id=" ">N150</p>
-                </div>
-                <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
-            </div>
+            {% endfor %}
         </div>
     </div>
+    <form method="post" url="" id="buy_data_form">
+        {% csrf_token %}
+        <input type="hidden" id="NP" name="NP" value="">
+        <input type="hidden" id="code" name="code" value="">
+        <input type="hidden" id="phonenofield" name="phonenofield" value="">
+    </form>
 
     <script>
         function showBalance(){
@@ -186,6 +199,7 @@
             document.getElementById("overlay2").style.opacity = 0;
             document.getElementById("overlay3").style.opacity = 0;
             document.getElementById("overlay4").style.opacity = 0;
+            document.getElementById("NP").value = "MTN";
         }
 
         function change2(){
@@ -194,6 +208,7 @@
             document.getElementById("overlay1").style.opacity = 0;
             document.getElementById("overlay3").style.opacity = 0;
             document.getElementById("overlay4").style.opacity = 0;
+            document.getElementById("NP").value = "GLO";
         }
 
         function change3(){ 
@@ -201,6 +216,7 @@
             document.getElementById("overlay1").style.opacity = 0;
             document.getElementById("overlay2").style.opacity = 0;
             document.getElementById("overlay4").style.opacity = 0;
+            document.getElementById("NP").value = "9MOBILE";
         }
 
         function change4(){
@@ -209,9 +225,12 @@
             document.getElementById("overlay1").style.opacity = 0;
             document.getElementById("overlay2").style.opacity = 0;
             document.getElementById("overlay3").style.opacity = 0;
+            document.getElementById("NP").value = "AIRTEL";
         }
 
         function revealProviderPlans(){
+            providerPlan = document.getElementById("NP").value;
+            document.getElementById(providerPlan+"_plans").style.display = 'block';
             document.getElementById("dataPlans").style.display = 'block';
             document.getElementById("bigEnvelope").style.display = 'none';
             document.getElementById("dataPlans").style.transitionDuration = '1000ms';
@@ -221,8 +240,16 @@
         function cancelPlan(){
             document.getElementById("bigEnvelope").style.display = 'block';
             document.getElementById("dataPlans").style.display = 'none';
+            providerPlan = document.getElementById("NP").value;
+            document.getElementById(providerPlan+"_plans").style.display = 'none';
         }
 
+        function submit(code){
+            phoneno = '0' + document.getElementById("phoneno").value;
+            document.getElementById("code").value = code;
+            document.getElementById("phonenofield").value = phoneno;
+            document.getElementById("buy_data_form").submit();
+        }
     </script>
 </body>
 </html>

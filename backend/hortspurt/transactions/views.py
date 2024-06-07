@@ -17,7 +17,7 @@ from .forms import AddMoneyTrForm
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.views import APIView
 from django.utils.decorators import method_decorator
-from .tasks import confirm_transaction
+from .tasks import confirm_transaction, test
 load_dotenv()
 # Create your views here.
 
@@ -102,3 +102,13 @@ class FlwWebhook(View):
             confirm_transaction.delay(tr_id)
             return HttpResponse(status=200)
         return HttpResponse(status=400)
+
+class FlwWebhookTest(View):
+    def get(self, request):
+        print("Testing task...")
+        #ct_task  = confirm_transaction.delay('1414862545')
+        test.delay()
+        # res = ct_task.get()
+        # print(res)
+        # print("Testing task...2")
+        return HttpResponse('Done')

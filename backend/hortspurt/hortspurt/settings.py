@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'buy.apps.BuyConfig',
     'hortspurt',
     'rest_framework',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -127,14 +128,17 @@ USE_I18N = True
 USE_TZ = True
 
 # set the celery broker url 
-CELERY_BROKER_URL = 'redis://default:5A8GGQYEW8r8w2HZj4VR33sUcGbWMGYs@redis-14475.c261.us-east-1-4.ec2.redns.redis-cloud.com:14475'
-
+#CELERY_BROKER_URL = 'redis://:5A8GGQYEW8r8w2HZj4VR33sUcGbWMGYs@redis-14475.c261.us-east-1-4.ec2.redns.redis-cloud.com:14475/0'
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
 # set the celery result backend 
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+#CELERY_RESULT_BACKEND = 'redis://:5A8GGQYEW8r8w2HZj4VR33sUcGbWMGYs@redis-14475.c261.us-east-1-4.ec2.redns.redis-cloud.com:14475/0'
 
 # set the celery timezone 
-CELERY_TIMEZONE = 'UTC'
-
+timezone = 'UTC'
+result_backend = 'django-db'
+accept_content = ['application/json']
+result_serializer = 'json'
+task_serializer = 'json'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 STATIC_URL = "/static/"
