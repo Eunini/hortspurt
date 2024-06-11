@@ -269,4 +269,7 @@ option[value="gender"] {
     .text-container p.bottom a {
         font-size: 20px;
     }
+    .sign-up {
+        width: 100%;
+    }
 }
