@@ -128,8 +128,8 @@ USE_I18N = True
 USE_TZ = True
 
 # set the celery broker url 
-#CELERY_BROKER_URL = 'redis://:5A8GGQYEW8r8w2HZj4VR33sUcGbWMGYs@redis-14475.c261.us-east-1-4.ec2.redns.redis-cloud.com:14475/0'
-CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_BROKER_URL = 'redis://:5A8GGQYEW8r8w2HZj4VR33sUcGbWMGYs@redis-14475.c261.us-east-1-4.ec2.redns.redis-cloud.com:14475/0'
+#CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
 # set the celery result backend 
 #CELERY_RESULT_BACKEND = 'redis://:5A8GGQYEW8r8w2HZj4VR33sUcGbWMGYs@redis-14475.c261.us-east-1-4.ec2.redns.redis-cloud.com:14475/0'
 
