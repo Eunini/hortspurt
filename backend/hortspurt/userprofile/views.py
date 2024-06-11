@@ -46,7 +46,7 @@ class LandingView(View):
             return render(request, "homepage.html")
         return render(request, 'index.html')
 
-class DataView(APIView):
+class DataView(LoginRequiredMixin, APIView):
     def get(self, request):
         return JsonResponse({'ok':'very ok'})
 
@@ -58,10 +58,10 @@ class ComingSoonView(View):
     def get(self, request):
         return render(request, 'error404.html')
 
-class ShoutOutView(View):
+class ShoutOutView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'shoutout.html')
 
-class ProfileView(View):
+class ProfileView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'profile.html')

@@ -30,19 +30,19 @@
             <table>
                 <tr>
                     <td>Full Name</td>
-                    <td><span>BECCA WILLIAMS</span></td>
+                    <td><span>{{user.get_full_name}}</span></td>
                 </tr>
                 <tr>
                     <td>Phone Number</td>
-                    <td><span>+2368039213244</span></td>
+                    <td><span>{{user.username}}</span></td>
                 </tr>
                 <tr>
                     <td>Gender</td>
-                    <td><span>Female</span></td>
+                    <td><span>{{user.profile.gender}}</span></td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td><span><input type="text" placeholder="B*@gmail.com"></span></td>
+                    <td><span><input type="text" placeholder="B*@gmail.com">{{user.email}}</span></td>
                 </tr>
                 <tr>
                     <td>Address</td>
@@ -63,28 +63,28 @@
         <!-- footer navigation -->
         <footer>
             <div class="bottom">
-                <a href="purchase.html" class="icon" id="myLink"><img src='{% static "images/Group (1).png" %}'></a>
+                <a href="/" class="icon" id="myLink"><img src='{% static "images/Group (1).png" %}'></a>
                 <p>Home</p>
             </div>
 
             <div class="bottom">
-                <a href="./shoutout.html" class="icon" id="myLink"><img src='{% static "images/gift-outline.svg" %}'></a>
+                <a href="/shoutout" class="icon" id="myLink"><img src='{% static "images/gift-outline.svg" %}'></a>
                 <p>Shoutout</p>
             </div>
             
             <div class="bottom">
-                <a href="#" class="icon" id="myLink"><img src='{% static "images/Vector (1).svg" %}'></a>
+                <a href="/bonus" class="icon" id="myLink"><img src='{% static "images/Vector (1).svg" %}'></a>
                 <p>Bonus</p>
             </div>
 
 
             <div class="bottom">
-                <a href="#" class="icon" id="myLink"><img src='{% static "images/clock.svg" %}'></a>
+                <a href="/history" class="icon" id="myLink"><img src='{% static "images/clock.svg" %}'></a>
                 <p>History</p>
             </div>
 
             <div class="bottom">
-                <a href="./profile.html" class="icon" id="myLink"><img src='{% static "images/face-man.png" %}'></a>
+                <a href="#" class="icon" id="myLink"><img src='{% static "images/face-man.png" %}'></a>
                 <p style="color:#9955BB;">Me</p>
             </div>
         </footer>
