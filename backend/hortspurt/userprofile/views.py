@@ -65,3 +65,10 @@ class ShoutOutView(LoginRequiredMixin, View):
 class ProfileView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'profile.html')
+
+class SupportView(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'let_us_know.html')
+    
+    def post(self, request):
+        return render(request, 'we_know.html')
