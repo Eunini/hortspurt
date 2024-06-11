@@ -77,8 +77,17 @@ class PayWithUssdView(LoginRequiredMixin, View):
             else:
                 print("form errors: ", new_add_money_tr_form.errors)
                 msg = 'something went wrong, please try again'
-        ctx = {'msg': msg}
+        ctx = {'msg': msg, 'tr_id':res_data['data'].get("id")}
         return render(request, 'dial_ussd_code.html', ctx)
+
+class UssdVerifyView(LoginRequiredMixin, View):
+    def get(self, request, tr_id):
+        status = confirm_transaction(tr_id)
+        print(status)
+        if (status):
+            return render(request, 'success.html')
+        else:
+            return HttpResponse('Transaction unsuccessful')
 
 @method_decorator(csrf_exempt, name='dispatch')
 class FlwWebhook(View):
