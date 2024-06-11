@@ -34,13 +34,13 @@
     flex: 1;
     border: 0;
     outline: 0;
-    background-color: #D4D4D4;
+    background-color: rgba(0,0,0,.2);
 }
 .input-control {
     z-index: 1;
     width: 100%;
     display: flex;
-    margin: 5px auto;
+    margin: 10px auto;
     padding: 6px;
     justify-content: end;
     align-items: center;
@@ -77,17 +77,21 @@ select {
     color: #9C9C9C;
   }
   select:hover {
-    border: 2px solid #9955BB;
+    border: 1.8px solid #9955BB;
   }
   /* Style the dropdown arrow */
+
   select:after {
     content: "\25BC"; /* Unicode character for down arrow */
     position: absolute;
     top: 50%;
-    right: 100px;
-    transform: translate(-50%, -50%); 
-    pointer-events: none; 
+    right: 10px; /* Adjust the right position as needed */
+    transform: translateY(-50%);
+    pointer-events: none;
   }
+  option[value="gender"] {
+    color: #9C9C9C;
+}
   input{
     padding: 10px;
   }
@@ -108,7 +112,7 @@ select {
 .submit-button {
     cursor: pointer;
     margin: 10px;
-    height: 50px;
+    height: 55px;
     border-radius: 20px;
     background-color: #9955BB;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -189,7 +193,7 @@ p.bottom a {
     width: 180px;
     height: 100vh;
     background-color: #fafafa;
-    box-shadow: rgba(0, 0, 0, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.7);
     box-sizing: border-box;
     border-radius: 20px;
     margin: 0;
@@ -207,8 +211,8 @@ p.bottom a {
   }
   h2 span {
     color: #9955BB;
-    font-size: 35px;
-    height: 60px;
+    font-size: 45px;
+    height: 100px;
     padding: 30px 0 50px 10px;
     border-left: 5px solid #9955BB;
     margin: auto
@@ -241,8 +245,8 @@ p.bottom a {
         display: none;
     }
     select{
-        width: 95%;
-        margin: 15px auto 0 10px;
+        width: 97%;
+        margin: 15px auto 0 5px;
         padding: 10px;
     }
     .submit-button{
