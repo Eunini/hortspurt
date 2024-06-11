@@ -23,12 +23,12 @@
                 <p class="head"> Almost there! <br> <span>  Quickly set up your account in a second... </span></p>  
               <div class="input-control">
                 <input type="text" id="fullname" placeholder="First Name" class="input" required>
-                <img src="images/face-man.svg" alt="">
+                <img src="images/Group 16 (1).png" alt="">
               </div>
     
               <div class="input-control">
                 <input type="text" name="" id="lastname" placeholder="Username" class="input" required>
-                <img src="images/face-man.svg" alt="">    
+                <img src="images/Group 16 (1).png" alt="">    
               </div>
     
               <div class="input-control">
@@ -41,17 +41,17 @@
                 <img src="images/call.png" alt="">
               </div>
     
-              <!--The option to select gender-->
-            
-             
+              <!-- The option to select gender-->
+                          
                 <label for="gender"></label>
                 <select id="gender" name="gender" required>
+                  <option value="gender"> Select gender</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="other">Other</option>
                 </select>
           
-                  
+        
               <br>
               <div class="input-control">
                 <input type="password" name="" id="pin" placeholder="Pin" class="input">               
@@ -79,7 +79,22 @@
       </div>
    </div>
    <script>
+// Set initial color if "Gender" is selected by default
+const genderSelect = document.getElementById('gender');
 
+        function updateColor() {
+            const selectedOption = genderSelect.options[genderSelect.selectedIndex];
+            if (selectedOption.value === 'gender') {
+                genderSelect.style.color = '#9C9C9C';
+            } else {
+                genderSelect.style.color = 'black'; // or any other color you prefer
+            }
+        }
+
+        genderSelect.addEventListener('change', updateColor);
+
+        // Set initial color if "Gender" is selected by default
+        updateColor();
     var a;
     function passwordVisibility(isConfirmPassword) {
       const pin = document.getElementById("pin");
