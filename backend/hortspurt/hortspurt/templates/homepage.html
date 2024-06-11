@@ -17,7 +17,7 @@
             <img src='{% static "images/Ellipse 177.png" %}' alt="user profile image" class="userProfileImage">
             <h1 class="intro">
                 <span>Hi,</span>
-                <span class="customerName">Johnson</span>
+                <span class="customerName">{{user.first_name}}</span>
             </h1>
         </div>
         <div class="supportLogo">
@@ -37,7 +37,7 @@
         </div>
     
         <div class="walletBalance" id="walletBalance">
-            NGN 150,000
+            NGN {{user.profile.wallet_balance}}
         </div>
     
         <div class="walletBalanceHidden" id="walletBalanceHidden">
@@ -61,22 +61,22 @@
      <!--Fourth phase-->
      <h2 class="otherServ">Other Services(Coming Soon..)</h2>
      <div class="otherServices">
-        <a href='{% static "#" %}'><img src='{% static "images/Frame 20.png" %}' id="others" onclick="viewMore()"></a>
+        <a href='#'><img src='{% static "images/Frame 20.png" %}' id="others" onclick="viewMore()"></a>
 
         <div class="moreServices" id="moreServices">
-            <a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 11.png" %}' alt=""></a>
+            <a href='/coming-soon'><img src='{% static "./images/Frame 11.png" %}' alt=""></a>
 
-<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 12.png" %}' alt=""></a>
+<a href='/coming-soon'><img src='{% static "./images/Frame 12.png" %}' alt=""></a>
 
-<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 13.png" %}' alt=""></a>
+<a href='/coming-soon'><img src='{% static "./images/Frame 13.png" %}' alt=""></a>
 
-<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 14.png" %}' alt=""></a>
+<a href='/coming-soon'><img src='{% static "./images/Frame 14.png" %}' alt=""></a>
 
-<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 15.png" %}' alt=""></a>
+<a href='/coming-soon'><img src='{% static "./images/Frame 15.png" %}' alt=""></a>
 
-<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 16.png" %}' alt=""></a>
+<a href='/coming-soon'><img src='{% static "./images/Frame 16.png" %}' alt=""></a>
 
-<a href='{% static "error 404.html" %}'><img src='{% static "./images/Frame 17.png" %}' alt=""></a>
+<a href='/coming-soon'><img src='{% static "./images/Frame 17.png" %}' alt=""></a>
 
 <img src='{% static "./images/f" %}' alt="">
          
@@ -103,7 +103,7 @@
         </div>
 
         <div class="bottom">
-            <a href='{% static "./shoutout.html" %}' class="icon" id="myLink"><img src='{% static "./images/Vector (1).svg" %}'></a>
+            <a href="/shoutout" class="icon" id="myLink"><img src='{% static "./images/Vector (1).svg" %}'></a>
             <p>Shoutout</p>
         </div>
 
@@ -118,7 +118,7 @@
         </div>
 
         <div class="bottom">
-            <a href='{% static "./profile.html" %}' class="icon" id="myLink"><img src='{% static "./images/face-man.svg" %}'></a>
+            <a href='/my-profile' class="icon" id="myLink"><img src='{% static "./images/face-man.svg" %}'></a>
             <p>Me</p>
         </div>
     </div>

@@ -53,3 +53,15 @@ class DataView(APIView):
     def post(self, request):
         print(request.data)
         return JsonResponse({'ok':'very ok'})
+
+class ComingSoonView(View):
+    def get(self, request):
+        return render(request, 'error404.html')
+
+class ShoutOutView(View):
+    def get(self, request):
+        return render(request, 'shoutout.html')
+
+class ProfileView(View):
+    def get(self, request):
+        return render(request, 'profile.html')

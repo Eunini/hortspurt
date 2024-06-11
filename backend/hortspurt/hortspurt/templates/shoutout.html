@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href='{% static "./shoutout.css" %}'>
+</head>
+<body>
+    <div class="mainbox">
+        <div class="shouterDetails">
+            <span class="shouterNameAnGb">
+                Esquire gifted you 3GB
+            </span>
+            <span class="shouterPhoneNo">
+                08039263055
+            </span>
+            <span class="shouterDate">
+                7th Nov, 2023
+            </span>
+        </div>
+        <div class="shoutImg">
+            <img src='{% static "images/Frame 42.png" %}' alt="">
+        </div>
+    </div>
+
+    <div class="shoutNotif">
+        <img src='{% static "images/Frame 42.png" %}' alt="">
+        <span>You received shoutout</span>
+    </div>
+
+
+</body>
+</html>
