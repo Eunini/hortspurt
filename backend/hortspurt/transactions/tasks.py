@@ -25,7 +25,7 @@ def confirm_transaction(tr_id):
         confirmation_url = f'https://api.flutterwave.com/v3/transactions/{tr_id}/verify'
         try:
             tr_obj = AddMoneyTransaction.objects.get(tr_id=tr_id)
-            if (AddMoneyTransaction.status == 'S'):
+            if (tr_obj.status == 'S'):
                 return True
 
             print(f"Transaction with ID {tr_id} found: {tr_obj}")
