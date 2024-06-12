@@ -1,0 +1,42 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://sdk.monnify.com/plugin/monnify.js"></script>
+    <script>
+        function payWithMonnify() {
+            MonnifySDK.initialize({
+                amount: 10,
+                currency: "NGN",
+                reference: new String((new Date()).getTime()),
+                customerFullName: "Damilare Ogunnaike",
+                customerEmail: "ogunnaike.damilare@gmail.com",
+                apiKey: "MK_TEST_PC0Z687DS5",
+                contractCode: "626609763141",
+                paymentDescription: "Lahray World",
+                metadata: {
+                    "name": "Damilare",
+                    "age": 45
+                },
+                onLoadStart: () => {
+                    console.log("loading has started");
+                },
+                onLoadComplete: () => {
+                    console.log("SDK is UP");
+                },
+                onComplete: function(response) {
+                    //Implement what happens when the transaction is completed.
+                    console.log(response);
+                },
+                onClose: function(data) {
+                    //Implement what should happen when the modal is closed here
+                    console.log(data);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button type="button" onclick="payWithMonnify()">Pay With Monnify</button>
+    </div>
+</body>
+</html>

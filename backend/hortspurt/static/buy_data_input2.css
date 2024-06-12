@@ -1,0 +1,757 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+html {
+    scroll-behavior: smooth;
+}
+<<<<<<< HEAD:recent.css
+@media  screen and (min-width:768px) {
+    body{
+        margin: 0 auto;
+    }
+    .content-box {
+        width: 90%;
+        margin: 10px auto;
+        background-color: white;
+        display: flex;
+        background-color: white;
+        flex-direction: column;
+    }
+    .content-box .back{
+        margin: 10px;
+        width: 85%;
+        justify-content: start;
+        width: 25px;
+        height: 35px;
+    }
+    .content-box a img{
+        margin: 25px;
+        width: 20px;
+        height: 40px;
+    }
+    .profile-info {
+        border-radius: 10px;
+        background-color: #9955BB;
+        width: 85%;
+        height: 240px;
+        padding: 25px 15px;
+        margin: 10px auto;
+        color: white;
+    }
+    .profile-info #circle1 {
+        position: absolute;
+        width: 150px;
+        width: 150px;
+        margin-left: 480px;
+        margin-top: 30px;
+    }
+    .profile-info #circle2 {
+        position: absolute;
+        width: 150px;
+        width: 150px;
+        margin-left: 600px;
+        margin-top: 10px;
+    }
+
+    .profile-info-content {
+        display: block;
+        position: relative;
+        color: white;
+    }
+    
+    .profile-info-content .wallet {
+        display: flex;
+        margin: 20px;
+        position: relative;
+        color: white;
+    }
+    
+    .icon-container {
+        display: flex;
+        cursor: pointer;
+        font-size: 18px;
+        color: white;
+        background: #9955BB;
+    }
+    #walletbalance {
+        margin: 10px;
+        padding: 10px;
+        font-size: 20px;
+    }
+    #walletBalanceHidden{
+        padding: 10px;
+        margin: 10px;
+        display: none;
+    }
+    #visible, #invisible {
+        display: flex;
+        margin-top: 12px;
+        width: 30px;
+        height: 30px;
+    }
+    #visible{
+       display: none;
+    }
+    #invisble {
+        display: block;
+    }
+    
+    .profile-info-content .wallet p {
+        font-weight: 300;
+        font-size: 25px;
+        margin-top:5px;
+        padding: 5px;
+    }
+    .profile-info-content .wallet-balance {
+        font-weight: bold;
+        font-size: 30px;
+        letter-spacing: 15px;
+        margin: 20px 13px 0px 13px;
+    }
+    
+    .profile-info-content a {
+        text-decoration: none;
+    }
+    .profile-info-content .add-cash {
+        width: 170px;
+        height: 50px;
+        background-color: white;
+        margin: 15px 13px;
+        border-radius: 30px;
+        display: flex;
+    }
+    .profile-info-content .add-cash p {
+        color: blueviolet;
+        font-size: 18px;
+        display: flex;
+        margin: auto;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+    }
+    .profile-info-content .add-cash p a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .send-data {
+        width: 100%;
+        margin: 10px auto;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .send-data p {
+        font-family: inherit;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: #000000;
+        margin: 10px
+    }
+    .send-data .number-box{
+        display: flex;
+        position: relative;
+        width:85%;
+        margin: 10px;
+        height: 58px;
+        border-radius: 8px;
+        background: linear-gradient(0deg, rgba(153, 85, 187, 0.61)),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+        border: 1px solid #9955BB9C
+    }
+
+    .send-data .number-box img{
+        width: 25px;
+        height: 20px;
+        position: relative;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    .send-data .number-box h4{
+        font-size: 20px;
+        margin-top: 15px;
+        margin-left: 8px;
+        pad: 10px;
+    }
+    .send-data .number-box .short-division {
+        width: 6px;
+        height: 35px;
+        background-color: #D9D9D9;
+        margin: 10px;
+    }
+    
+    .send-data .number-box input{
+        border: none;
+        outline: 0;
+        background: transparent;
+        color: #000000;
+        font-family: 'Lexend', sans-serif;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    .typeof {
+        display: flex;
+        width: 90%;
+        padding: 10px;
+        margin: auto;
+    }
+    .type p {
+        margin: auto;
+        margin-left: 5rem;
+        font-size: 20px;
+    }
+    .recents {
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        margin: 25px;
+        padding: 10px;
+        width: 85%;
+        height: 270px;
+        border-radius: 5px;
+        border: 1px;
+        background: linear-gradient(0deg, rgba(153, 85, 187, 0.61)),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+        border: 1px solid #9955BB9C;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .recents p span {
+        position: relative;
+        margin: 30px 5px;
+        font-size: 14px;
+       font-weight: 600;
+       font-family: inherit;
+    }
+    .recents .recent-1 {
+        width: 200px;
+        background-color: #D9D9D9;
+        margin: 10px;
+        display: flex;
+        border-radius: 30px;
+        padding: 15px;
+    }
+    .recents .recent-1 p {
+        font-size: 18x;
+        padding: 5px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+}
+/* mobile responsive view */
+@media screen and (max-width: 768px) {
+
+    .content-box {
+        width: 40%;
+    }
+    .profile-info {
+        width: 300px;
+        margin: 10px;
+        border: none;
+        border-radius: 10px;
+        background: #9955BB;
+    }
+    .profile-info #circle1 {
+        position: absolute;
+        margin-left: 240px;
+        margin-top: 30px;
+    }
+    .profile-info #circle2 {
+        position: absolute;
+        margin-left: 200px;
+        margin-top: 16px;
+    }
+    .profile-info-content {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        color: white;
+    }
+    
+    .profile-info-content .wallet {
+        display: flex;
+        margin: 10px;
+        padding: 5px;
+    }
+    
+    .profile-info-content .wallet svg {
+        margin-top: 1rem;
+        color: white;
+    }
+    .profile-info-content .wallet #wallet {
+        margin: 10px;
+    }
+    .icon-container {
+        display: flex;
+        cursor: pointer;
+        font-size: 18px;
+        color: white;
+        background: #9955BB;
+    }
+    #walletbalance {
+        margin: 10px;  
+        font-size: 20px;
+    }
+    #walletBalanceHidden{
+        margin: 15px;
+        display: none;
+    }
+    #visible, #invisible {
+        display: flex;
+        margin: 10px 0 0 5px;
+        width: 25px;
+        height: 25px;
+    }
+    #visible{
+       display: none;
+    }
+    #invisble {
+        display: block;
+    }
+    
+    .profile-info-content .wallet p {
+        font-weight: 300;
+        font-size: 17px;
+        margin-top: 15px;
+    }
+    .profile-info-content .balance {
+        font-weight: bold;
+        font-size: 27px;
+        letter-spacing: 15px;
+        margin: 20px 13px 0px 13px;
+    }
+    
+    .profile-info-content a {
+        text-decoration: none;
+    }
+    .profile-info-content .add-cash {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        margin: 15px 13px;
+        border-radius: 30px;
+        display: flex;
+    }
+    .profile-info-content .add-cash p {
+        color: blueviolet;
+        font-size: 15px;
+        display: flex;
+        margin: auto;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+    }
+    .profile-info-content .add-cash p a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .send-data {
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto;
+    }
+    .send-data p {
+        display: flex;
+        width: 300px;
+        font-family: inherit;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+        margin: 10px;
+=======
+body {
+    margin: auto;
+    background-color: #9955BB;
+}
+.content-box {
+    margin: auto;
+    display: flex;
+    background-color: white;
+    width: 430px;
+    flex-direction: column;
+}
+
+.content-box .profile-info {
+    width: 380px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 10px;
+    background: #9955BB;
+}
+.profile-info #circle1 {
+    position: absolute;
+    margin-left: 270px;
+    margin-top: 30px;
+}
+.profile-info #circle2 {
+    position: absolute;
+    margin-left: 240px;
+    margin-top: 16px;
+}
+.profile-info-content {
+    display: block;
+    position: relative;
+    color: white;
+}
+
+.profile-info-content .wallet {
+    display: flex;
+    margin: 8px 13px;
+    position: relative;
+    color: white;
+}
+
+.profile-info-content .wallet svg {
+    margin-top: 20px;
+    color: white;
+}
+.profile-info-content .wallet #wallet {
+    margin-right: 5px;
+    padding-right: 5px;
+}
+.icon-container {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+.profile-info-content .wallet #eye-slash {
+    padding-top: 20px;
+    padding-left: 8px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+}
+.profile-info-content .wallet #eye {
+    padding-top: 20px;
+    padding-left: 8px;
+    cursor: pointer;
+    display: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+}
+.profile-info-content .wallet p {
+    font-weight: 300;
+    font-size: 17px;
+    margin-top: 15px;
+}
+.profile-info-content .balance {
+    font-weight: bold;
+    font-size: 27px;
+    letter-spacing: 15px;
+    margin: 20px 13px 0px 13px;
+}
+
+.profile-info-content a {
+    text-decoration: none;
+}
+.profile-info-content .add-cash {
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    margin: 15px 13px;
+    border-radius: 30px;
+    display: flex;
+}
+.profile-info-content .add-cash p {
+    color: blueviolet;
+    font-size: 15px;
+    display: flex;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+.profile-info-content .add-cash p a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.send-data {
+    display: block;
+    flex-direction: column;
+    margin: 2px auto;
+}
+.send-data p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin: 10px auto;
+}
+.send-data .number-box{
+    margin: auto;
+    display: flex;
+    position: relative;
+    width: 380px;
+    height: 51px;
+    border-radius: 5px;
+    background: linear-gradient(0deg, rgba(153, 85, 187, 0.61)),
+linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    border: 1px solid #9955BB9C
+}
+.send-data .number-box img{
+    width: 25px;
+    height: 16.5px;
+    position: relative;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.send-data .number-box h4{
+    margin-top: 13px;
+    margin-left: 8px;
+}
+
+.send-data .number-box .short-division {
+    width: 4px;
+    height: 20px;
+    background-color: #D9D9D9;
+    margin: 15px 5px;
+}
+
+.send-data .number-box input{
+    border: none;
+    outline: 0;
+    background: transparent;
+    color: #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.type p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    display: none;
+  /*when you comment and uncomment the display property and see what happens*/
+}
+
+/* Styling the label to mimic a checkbox */
+label {
+    display: block;
+    width: 380px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    cursor: pointer;
+    margin:20px auto;
+    background: #D4D4D4;
+    color: #000000;
+    transition: .2s linear all;
+    font-family: 'Lexend', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+/* Style the label when the checkbox is checked */
+input[type="checkbox"]:checked + label {
+    border: 2px solid #9955BB;
+}
+
+  
+.type .proceed {
+    display: flex;
+    width: 380px;
+    height: 50px;
+    border-radius: 30px;
+    background: rgba(153, 85, 187, 1);
+    box-shadow: 8px 8px 8px 0px rgba(153, 85, 187, 0.1);
+    animation-duration: 0ms;
+    cursor: pointer;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-align: center;
+    margin: 10px 20px;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 17.7px;
+}
+.type .proceed:hover {
+    transform: scale(1.02);
+    transition: 2s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+    .content-box {
+        max-width: 768px; /* Adjust max-width for desktop */
+    }
+
+    .profile-info {
+        width: 50%; /* Adjust width for desktop */
+        max-width: none;
+        margin: 20px auto;
+    }
+}
+
+.profile-info-content {
+    display: block;
+    position: relative;
+    color: white;
+}
+
+/* Add media query for smaller screens */
+@media screen and (max-width: 767px) {
+    body {
+        background-color: #FFFFFF;
+    }
+    .content-box .profile-info {
+        width: 370px;
+        margin: 0;
+    }
+    .profile-info-content .wallet p {
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+    .send-data {
+        margin: 0;
+    }
+    .send-data p {
+        padding: 10px;
+    }
+    .type .sme, .type .proceed {
+        width: 87%;
+        margin: 8px;
+    }
+    .send-data .number-box {
+        width: 350px;
+        margin: 10px;
+    }
+    .profile-info {
+        width: 383px;
+    }
+    .profile-info-content .wallet p {
+        margin: 20px 5px;
+    }
+}
+
+/* Add media query for even smaller screens */
+@media screen and (max-width: 480px) {
+    .content-box {
+        padding: 10px; /* Adjust padding for smaller screens */
+>>>>>>> f2f2d6c85de296d9b0c1f955e4fe4135b938a46e:backend/hortspurt/static/buy_data_input2.css
+    }
+    .send-data .number-box{
+        margin: 10px;
+        display: flex;
+        position: relative;
+        width: 300px;
+        height: 51px;
+        border-radius: 5px;
+        background: linear-gradient(0deg, rgba(153, 85, 187, 0.61)),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+        border: 1px solid #9955BB9C
+    }
+    .send-data .number-box img{
+        width: 25px;
+        height: 16.5px;
+        position: relative;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    .send-data .number-box h4{
+        margin-top: 13px;
+        margin-left: 8px;
+    }
+
+    .send-data .number-box .short-division {
+        width: 4px;
+        height: 20px;
+        background-color: #D9D9D9;
+        margin: 15px 5px;
+    }
+
+    .send-data .number-box input{
+        border: none;
+        outline: 0;
+        background: transparent;
+        color: #000000;
+        font-family: inherit;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    .type p {
+        font-family:  inherit;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+        padding: 10px;
+    }
+
+
+    
+    .profile-info-content .wallet p {
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    } 
+
+    .recents {
+        margin: auto;
+        margin: 10px;
+        padding: 10px;
+        width: 300px;
+        height: 260px;
+        border-radius: 5px;
+        border: 1px;
+        background: linear-gradient(0deg, rgba(153, 85, 187, 0.61)),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+        border: 1px solid #9955BB9C;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .recents p span {
+        position: relative;
+        margin: 30px 5px;
+        font-size: 14px;
+       font-weight: 600;
+       font-family: inherit;
+    }
+    .recents .recent-1 {
+        width: 180px;
+        background-color: #D9D9D9;
+        margin: 10px;
+        display: flex;
+        border-radius: 30px;
+        padding: 10px;
+    }
+    .recents .recent-1 p {
+        font-size: 16px;
+        padding: 5px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+}

@@ -1,0 +1,166 @@
+@media screen and (max-width:1020px){
+
+
+    .arrow{
+        font-weight: 900;
+        font-size: 15px;
+    }
+    
+    .backArrow{
+        text-decoration-line: none;
+        color: white;
+        font-weight: 400;
+        margin-left: 3px;
+        padding: 7px 15px;
+        border-radius: 10px;
+        background-color: #9955BB;
+    }
+
+
+ /* second phase */
+
+ .walletBox{
+    border-radius: 10px;
+    background-color: #9955BB;
+    padding:15px 15px 30px 7px;
+    margin: 2px 1px;
+    color: white;
+    margin-top: 10px;
+}
+
+.walletImg{
+    width: 8%;
+}
+
+.wb{
+    font-size: 14px;
+    padding: 0px 6px;
+}
+
+.walletB{
+    display: flex;
+    align-items: center;
+}
+
+.walletBalance{
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 7px;
+}
+
+.addMoney{
+    font-size: 17px;
+    padding: 6px 17px 7px 10px;
+}  
+
+.addMoney:hover{
+    padding-right: 30px;
+}
+
+
+
+/* third phase */
+
+.instruct{
+   font-size: 13px;
+   padding: 3px;
+   padding-left: 5px;
+   margin-top: 20px;
+}
+
+.numbbox{
+    width: 93.4%;
+    padding: 10px 7px;
+    margin-left: 2px;
+    margin-right: 5px;
+}
+
+.netimg{
+    padding: 5px 5px 0px 5px;
+}
+
+.phonenumb{
+    margin-left: 5px;
+    border: none;
+    font-size: 14px;
+    width: 80%;
+    padding-top: 5px;
+}
+
+
+/* fourth phase */
+.instruct2{
+    margin-top: 40px;
+    padding-left: 5px;
+    font-size: 13px;
+}
+
+.networkType{
+    padding: 10px 7px;
+}
+
+.hexagon{
+    width: 100px; 
+    height: 92px;
+    margin: 20px 10px 10px;
+}
+
+.proceed{
+    border-radius: 32px;
+    padding: 19px 20px;
+    margin: 15px 12px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* sixth phase */
+
+.selectHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+.dataPlans{
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    padding-top: 10px;
+}
+
+.spp{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cancelBtn{
+    font-size: 11px;
+    padding: 7px 15px;
+}
+
+.pp h3{
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.providerPlans{
+    padding: 20px 10px 5px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>receipt</title>
+    <link rel="stylesheet" href='{% static "./success.css" %}'> 
+</head>
+<body>
+    <div class="background">
+        <a href='/'><p class="done">Done</p></a>
+        <div class="content-holder">       
+            <div class="confirmed">
+                <img src='{% static "images/Group 748.png" %}' id="mark">
+                <img src='{% static "images/Group 747.png" %}' id="mark1">
+            </div>
+
+            <p class="trans">Transaction Successful</p>
+            <img src='{% static "images/party 1.png" %}' id="party">
+            <img src='{% static "images/profile image hortspurt.png" %}' id="myimage">
+
+
+            <div class="content">
+                <p class="aaa">Data To Purchase</p>
+                <div class="network-amount"> 
+                    <p class="data"><img src='{% static "images/image 7.png" %}'>MobileData<span>1GB</span></p>
+                </div>
+
+                <div class="price">
+                    <img src='{% static "images/NGN.png" %}'>
+                    <h3 class="amount">500</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <a href='#'>
+        <div class="receipt">
+            <img src='{% static "images/card-send.png" %}'>
+            <p>Share receipt</p>
+        </div>
+    </a>
+    
+</body>

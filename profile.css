@@ -302,16 +302,13 @@ footer .bottom p {
     }
     .table-content{
         height: 100vh;
-        margin-top: 10px;
-        padding: 10px;
+        margin-top: 20px;
     }
     td {
         padding: 10px 0;
         font-size: 12px;
     }
-    tr {
-        padding: 10px;
-    }
+    
     td span {
         font-weight: 600;
         font-size: 14px;
@@ -359,10 +356,6 @@ footer .bottom p {
         padding-right: 5px;
         margin-top: 1em;
         justify-content: space-around;
-    }
-    footer .bottom a {
-        width: 33px;
-        height: 42px;
     }
     footer .bottom p{
         font-size: 11px;

@@ -228,9 +228,6 @@ option[value="gender"] {
     .welcome {
         display: none;
     }
-    .sign-up {
-        width: 100%;
-    }
     .input-control {
         margin: 10px 0;
         font-size: 18px;
@@ -271,5 +268,8 @@ option[value="gender"] {
     }
     .text-container p.bottom a {
         font-size: 20px;
+    }
+    .sign-up {
+        width: 100%;
     }
 }

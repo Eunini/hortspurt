@@ -1,0 +1,529 @@
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+html {
+    scroll-behavior: smooth;
+}
+@media  screen and (min-width:768px) {
+    .home-cont{
+        height: 50px;
+        width: 100%;
+        position: relative;
+    }
+    .homeicon {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 0; 
+        bottom: 0; 
+        margin-right: 70px;
+        margin-bottom: 20px;
+    }
+    .content-box {
+        width: 85%;
+        margin: 10px auto;
+        background-color: white;
+        display: flex;
+        background-color: white;
+        flex-direction: column;
+    }
+    .content-box a img{
+        margin: 25px;
+        width: 20px;
+        height: 40px;
+    }
+    .profile-info {
+        border-radius: 10px;
+        background-color: #9955BB;
+        width: 85%;
+        height: 240px;
+        padding: 25px 15px;
+        margin: 10px auto;
+        color: white;
+    }
+    .profile-info #circle1 {
+        position: absolute;
+        width: 150px;
+        width: 150px;
+        margin-left: 480px;
+        margin-top: 30px;
+    }
+    .profile-info #circle2 {
+        position: absolute;
+        width: 150px;
+        width: 150px;
+        margin-left: 600px;
+        margin-top: 10px;
+    }
+    .profile-info-content {
+        display: block;
+        position: relative;
+        color: white;
+    }
+    
+    .profile-info-content .wallet {
+        display: flex;
+        margin: 20px;
+        position: relative;
+        color: white;
+    }
+    .profile-info-content .wallet svg {
+        margin-top: 20px;
+        color: white;
+    }
+    
+    .icon-container {
+        display: flex;
+        cursor: pointer;
+        font-size: 18px;
+        color: white;
+        background: #9955BB;
+    }
+    #walletbalance {
+        margin: 10px;
+        padding: 10px;
+        font-size: 20px;
+    }
+    #walletBalanceHidden{
+        padding: 10px;
+        margin: 10px;
+        display: none;
+    }
+    #visible, #invisible {
+        display: flex;
+        margin-top: 12px;
+        width: 30px;
+        height: 30px;
+    }
+    #visible{
+       display: none;
+    }
+    #invisble {
+        display: block;
+    }
+    
+    .profile-info-content .wallet p {
+        font-weight: 300;
+        font-size: 25px;
+        margin-top:5px;
+        padding: 5px;
+    }
+    .profile-info-content .wallet-balance {
+        font-weight: bold;
+        font-size: 30px;
+        letter-spacing: 15px;
+        margin: 20px 13px 0px 13px;
+    }
+    
+    .profile-info-content a {
+        text-decoration: none;
+    }
+    .profile-info-content .add-cash {
+        width: 170px;
+        height: 50px;
+        background-color: white;
+        margin: 15px 13px;
+        border-radius: 30px;
+        display: flex;
+    }
+    .profile-info-content .add-cash p {
+        color: blueviolet;
+        font-size: 18px;
+        display: flex;
+        margin: auto;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+    }
+    .profile-info-content .add-cash p a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .send-data {
+        display: block;
+        flex-direction: column;
+        margin: 15px ;
+    }
+    .send-data p {
+        font-family: inherit;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: #000000;
+        margin: 10px 0 30px 55px;
+    }
+    .send-data .number-box{
+        margin: auto;
+        display: flex;
+        position: relative;
+        width: 85%;
+        margin: 10px auto;
+        height: 58px;
+        border-radius: 8px;
+        background: linear-gradient(0deg, rgba(153, 85, 187, 0.61)),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+        border: 1px solid #9955BB9C
+    }
+    .send-data .number-box img{
+        width: 25px;
+        height: 20px;
+        position: relative;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    .send-data .number-box h4{
+        font-size: 20px;
+        margin-top: 15px;
+        margin-left: 8px;
+        pad: 10px;
+    }
+    .send-data .number-box .short-division {
+        width: 6px;
+        height: 35px;
+        background-color: #D9D9D9;
+        margin: 10px;
+    }
+    
+    .send-data .number-box input{
+        border: none;
+        outline: 0;
+        background: transparent;
+        color: #000000;
+        font-family: 'Lexend', sans-serif;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    .typeof {
+        display: flex;
+        width: 90%;
+        padding: 10px;
+        margin: auto;
+    }
+    .type p {
+        margin: auto;
+        margin-left: 5rem;
+        font-size: 20px;
+    }
+    label {
+        display: flex;
+        width: 50%;       
+        height: 65px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        cursor: pointer;
+        margin:20px 30px 10px 10px;
+        background: #D4D4D4;
+        color: #000000;
+        transition: .2s linear all;
+        font-family: 'Lexend', Arial, sans-serif;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+        font-size: 20px;
+        text-align: center;
+        justify-content: center;
+        transition: 500ms;
+    }
+    
+    /* Style the label when the checkbox is checked */
+    input[type="checkbox"]:checked + label {
+        border: 2.5px solid #9955BB;
+    }
+    
+    
+    .type .proceed {
+        display: flex;
+        width: 87%;
+        height: 58px;
+        border-radius: 30px;
+        background: rgba(153, 85, 187, 1);
+        box-shadow: 8px 8px 8px 0px rgba(153, 85, 187, 0.1);
+        animation-duration: 0ms;
+        cursor: pointer;
+        border: none;
+        color: #FFFFFF;
+        font-weight: 700;
+        text-align: center;
+        margin: auto;
+        justify-content: center;
+        font-size: 20px;
+        line-height: 17.7px;
+    }
+    input[type="submit"] {
+        margin: 30px;
+    }
+    input[type="submit"]:hover {
+        opacity: 0.5;
+        transition: 500ms;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+/* mobile responsive view */
+@media screen and (max-width: 768px) {
+    .home-cont{
+        height: 30px;
+        width: 100%;
+        position: relative;
+    }
+    .homeicon {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 0;
+        margin-top: 20px;
+        margin-right: 15px; /* Add margin for spacing */
+        margin-bottom: 15px; /* Add margin for spacing */
+        bottom: 0; 
+    }
+    .content-box {
+        width: 95%;
+        margin: 10px auto;
+    }
+    .profile-info {
+        width: 95%;
+        margin: auto;
+        border: none;
+        border-radius: 10px;
+        background: #9955BB;
+    }
+    .profile-info #circle1 {
+        position: absolute;
+        margin-left: 240px;
+        margin-top: 30px;
+    }
+    .profile-info #circle2 {
+        position: absolute;
+        margin-left: 200px;
+        margin-top: 16px;
+    }
+    .profile-info-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        color: white;
+    }
+    a {
+        text-decoration: none;
+    }
+    .profile-info-content .wallet {
+        display: flex;
+        margin: 10px;
+        padding: 5px;
+    }
+    
+    .profile-info-content .wallet svg {
+        margin-top: 1rem;
+        color: white;
+    }
+    .profile-info-content .wallet #wallet {
+        margin: 10px;
+    }
+    .icon-container {
+        display: flex;
+        cursor: pointer;
+        font-size: 18px;
+        color: white;
+        background: #9955BB;
+    }
+    #walletbalance {
+        margin: 10px;  
+        font-size: 20px;
+    }
+    #walletBalanceHidden{
+        margin: 15px;
+        display: none;
+    }
+    #visible, #invisible {
+        display: flex;
+        margin: 10px 0 0 5px;
+        width: 25px;
+        height: 25px;
+    }
+    #visible{
+       display: none;
+    }
+    #invisble {
+        display: block;
+    }
+    
+    .profile-info-content .wallet p {
+        font-weight: 300;
+        font-size: 17px;
+        margin-top: 15px;
+    }
+    .profile-info-content .balance {
+        font-weight: bold;
+        font-size: 27px;
+        letter-spacing: 15px;
+        margin: 20px 13px 0px 13px;
+    }
+    
+    .profile-info-content a {
+        text-decoration: none;
+    }
+    .profile-info-content .add-cash {
+        width: 150px;
+        height: 40px;
+        background-color: white;
+        margin: 15px 13px;
+        border-radius: 30px;
+        display: flex;
+    }
+    .profile-info-content .add-cash p {
+        color: blueviolet;
+        font-size: 15px;
+        display: flex;
+        margin: auto;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+    }
+    .profile-info-content .add-cash p a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .send-data {
+        display: flex;
+        flex-direction: column;
+        margin: 2px auto;
+    }
+    .send-data p {
+        display: flex;
+        width: 95%;
+        font-family: inherit;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+        margin: 10px;
+    }
+    .send-data .number-box{
+        margin: auto;
+        display: flex;
+        position: relative;
+        width: 95%;
+        height: 51px;
+        border-radius: 5px;
+        background: linear-gradient(0deg, rgba(153, 85, 187, 0.61)),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+        border: 1px solid #9955BB9C
+    }
+    .send-data .number-box img{
+        width: 25px;
+        height: 16.5px;
+        position: relative;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+    .send-data .number-box h4{
+        margin-top: 13px;
+        margin-left: 8px;
+    }
+
+    .send-data .number-box .short-division {
+        width: 4px;
+        height: 20px;
+        background-color: #D9D9D9;
+        margin: 15px 5px;
+    }
+
+    .send-data .number-box input{
+        border: none;
+        outline: 0;
+        background: transparent;
+        color: #000000;
+        font-family: inherit;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    .type p {
+        font-family:  inherit;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+        padding: 10px;
+        width: 95%;
+    }
+
+    /* Hide the default checkbox */
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    /* Styling the label to mimic a checkbox */
+    label {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        width: 95%;
+        height: 50px;
+        margin: 10px 10px 20px 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        cursor: pointer;
+        background: #D4D4D4;
+        color: #000000;
+        transition: .2s linear all;
+        font-family: 'Lexend', Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    }
+
+    /* Style the label when the checkbox is checked */
+    input[type="checkbox"]:checked + label {
+        border: 2px solid #9955BB;
+    }
+    
+    
+    .type .proceed {
+        display: flex;
+        width: 95%;
+        height: 50px;
+        border-radius: 30px;
+        background: rgba(153, 85, 187, 1);
+        box-shadow: 8px 8px 8px 0px rgba(153, 85, 187, 0.1);
+        animation-duration: 1ms;
+        cursor: pointer;
+        border: none;
+        color: #FFFFFF;
+        font-weight: 700;
+        text-align: center;
+        margin: 20px 10px 10px 10px;
+        justify-content: center;
+        font-size: 14px;
+        line-height: 17.7px;
+    }
+    .type .proceed:hover {
+        opacity: 0.5;
+        transition: 500ms;
+    }
+    .profile-info-content .wallet p {
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    } 
+}

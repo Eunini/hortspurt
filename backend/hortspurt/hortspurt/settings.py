@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+import dj_database_url
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%d(kact^(nmdo_oz@s*!xump40rs$etnsvc7fyf4t6-gh-zkp1'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG") == "True"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
@@ -39,10 +47,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'transactions.apps.TransactionsConfig',
     'userprofile.apps.UserprofileConfig',
+    'buy.apps.BuyConfig',
+    'hortspurt',
+    'rest_framework',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -76,30 +89,31 @@ WSGI_APPLICATION = 'hortspurt.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        default=os.getenv("DB_URL"),
+        conn_max_age=600
+    )
 }
 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
+# AUTH_PASSWORD_VALIDATORS = [
+#     {
+#         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+#     },
+#     {
+#         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+#     },
+#     {
+#         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+#     },
+#     {
+#         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+#     },
+# ]
 
 
 # Internationalization
@@ -113,13 +127,38 @@ USE_I18N = True
 
 USE_TZ = True
 
+# set the celery broker url 
+CELERY_BROKER_URL = 'redis://:5A8GGQYEW8r8w2HZj4VR33sUcGbWMGYs@redis-14475.c261.us-east-1-4.ec2.redns.redis-cloud.com:14475/0'
+#CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+# set the celery result backend 
+#CELERY_RESULT_BACKEND = 'redis://:5A8GGQYEW8r8w2HZj4VR33sUcGbWMGYs@redis-14475.c261.us-east-1-4.ec2.redns.redis-cloud.com:14475/0'
 
+# set the celery timezone 
+timezone = 'UTC'
+result_backend = 'django-db'
+accept_content = ['application/json']
+result_serializer = 'json'
+task_serializer = 'json'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+STATIC_URL = "/static/"
+DEV = os.getenv("DEV")
+if DEV == "True":
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+else:
+    
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# if not DEBUG:
+#     #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_URL = 'static/'
-
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+#LOGIN_URL = "/login"

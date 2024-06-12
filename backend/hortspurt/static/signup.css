@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+    position: relative;
+}
+.body {
+    width: 100%;
+    display: flex;
+}
+
+.content-container {
+    
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+}
+.content-container p.head {
+    position: relative;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+.content-container p.head span{
+   font-size: 17px;
+   font-weight: lighter;
+}
+
+.input{
+    width: 100%;
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background-color: #D4D4D4;
+}
+.input-control {
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    margin: 5px auto;
+    padding: 6px;
+    justify-content: end;
+    align-items: center;
+}
+
+.input::placeholder{
+    text-align: start;
+}
+
+.input-control input:hover {
+    border: 1.8px solid #9955BB;
+}
+label{
+    display: none;
+    width: 0;
+}
+/* Style the dropdown box */
+select {
+    width: 97%;
+    height: 55px;
+    background-color: #D4D4D4;
+    position: relative;
+    display: flex;
+    margin: 15px auto 0 10px;
+    padding: 10px;
+    justify-content: end;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+  }
+  select::placeholder{
+    padding: 10px;
+    margin: 3px;
+    color: #9C9C9C;
+  }
+  select:hover {
+    border: 2px solid #9955BB;
+  }
+  /* Style the dropdown arrow */
+  select:after {
+    content: "\25BC"; /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    transform: translate(-50%, -50%); 
+    pointer-events: none; 
+  }
+  input{
+    padding: 10px;
+  }
+.input {
+    background-color: #D4D4D4;
+    border: none;
+    cursor: pointer;
+    height: 55px;
+    border-radius: 30px;
+}
+
+.input::placeholder {
+    padding: 10px;
+    margin: 3px;
+    color: #9C9C9C;
+}
+
+.submit-button {
+    cursor: pointer;
+    margin: 10px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #9955BB;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    font-size: large;
+    width: 95%;
+    border: none;
+}
+button a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+}
+.submit-button:hover {
+    transform: scale(1.03);
+    transition: 2s ease-out;
+}
+
+.submit-button:focus {
+    transform: scale(1.03);
+    transition: 2s ease-out;
+}
+p.buttom {
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 15px;
+}
+p.bottom a {
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    color: #9955BB;
+    font-weight: bold;
+
+}
+.input-control img {
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    margin-right: 10px;
+    color: #999;
+}
+.input-control .eye{
+    position:absolute;
+    margin: 0px 40px 20px 0;
+}
+.input-control #hide1, .input-control #confirm-hide1 {
+    display: none;
+}
+.eye {
+    color: #D4D4D4;
+    position: absolute;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+
+
+.text-container {
+    text-align: center;
+}
+
+  .content-container {
+    width: 100%; /* Added media query for larger screens */
+  }
+  .division {
+    display: flex;
+  }
+  .sign-up {
+    flex: 1; /* Each child takes up equal space */
+    padding: 10px;
+  }
+  #welcome {
+    width: 180px;
+    height: 100vh;
+    background-color: #fafafa;
+    box-shadow: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  #welcome h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 150px auto;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    line-height: 40px;
+  }
+  h2 span {
+    color: #9955BB;
+    font-size: 35px;
+    height: 60px;
+    padding: 30px 0 50px 10px;
+    border-left: 5px solid #9955BB;
+    margin: auto
+}
+#circle1, #circle2 {
+    width: 60px;
+    height: 60px;
+}
+
+
+.submit-button {
+    cursor: pointer;
+    margin: 10px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #9955BB;
+    color: var(--color-bg-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .content-container{
+        width: 100%;
+    }
+    #welcome {
+        display: none;
+    }
+    #circle1, #circle2 {
+        display: none;
+    }
+    select{
+        width: 95%;
+        margin: 15px auto 0 10px;
+        padding: 10px;
+    }
+    .submit-button{
+        margin: 15px;
+        width: 90%;
+    }
+}

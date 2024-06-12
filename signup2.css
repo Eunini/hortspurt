@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap');
+:root {
+    --color-bg-background: #000;
+    --color-bg-background-container: #fff;
+    --color-input-boxes: rgba(0,0,0,.2);
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+}
+.body {
+    background-color: var(--color-bg-background);
+    height: 120vh;
+    width: 100%;
+    display: flex;
+}
+
+.content-container {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+    border: 3px solid var(--color-bg-background);
+    background-color: var(--color-bg-background-container);
+}
+.content-container p.head {
+    position: relative;
+    font-size: 20px;
+    font-weight: bolder;
+    color: var(--color-bg-background);
+    margin-left: 10px;
+}
+
+.content-container p.head span{
+   font-size: 17px;
+   font-weight: lighter;
+}
+
+.input-control input{
+    width: 100%;
+    flex-direction: column;
+    margin: 1.5px 7px;
+    padding-left:  10px;
+}
+.input-control {
+    display: flex;
+    margin: 3px auto;
+    padding: 6px;
+    width: 100%;
+    justify-content: end;
+}
+.input {
+    cursor: pointer;
+    height: 55px;
+    border-radius: 30px;
+}
+input {
+    background-color: #D4D4D4;
+    border: none;
+    color: var(--color-bg-background);
+    box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+;
+    
+}
+.input::placeholder {
+    padding: 10px;
+    margin: 3px;
+    color: #9C9C9C;
+}
+/* Styling for the dropdown */
+.dropdown {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+.dropdown input {
+    width: 100%;
+}
+  /* Style for the options */
+.dropdown .options {
+    width: 25px;
+    height: 5px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 11px;
+}
+
+.dropdown:hover .options {
+    display: block;
+  }
+
+.submit-button {
+    cursor: pointer;
+    margin: 10px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #9955BB;
+    color: var(--color-bg-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    font-size: large;
+    width: 95%;
+    border: none;
+}
+button a {
+    text-decoration: none;
+    color: var(--color-bg-background-container);
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+}
+.submit-button:hover {
+    transform: scale(1.03);
+    transition: 2s ease-out;
+}
+
+.submit-button:focus {
+    transform: scale(1.03);
+    transition: 2s ease-out;
+}
+p.buttom {
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 15px;
+}
+p.bottom a {
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    color: #8a38f5;
+    font-weight: bold;
+
+}
+.input-control i {
+    position: absolute;
+    /* margin-left: 22em; */
+    font-size: 20px;
+    margin-top: 15px;
+    padding-right: 15px;
+    margin-right: 1rem;
+    color: #999;
+}
+
+.eye {
+    position: absolute;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+#hide1 {
+    display: none;
+}
+
+.text-container {
+    text-align: center;
+}
+
+.disabled-icon {
+    color: #999;
+    pointer-events: none;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+}
+body {
+    background-color: var(--color-bg-background);
+    height: 100vh; /* Adjusted to 100vh for better responsiveness */
+    width: 100%;
+    display: flex;
+}
+
+.content-container {
+    height: 100%;
+    width: 100%; /* Changed to 100% for better responsiveness */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+    border: 3px solid var(--color-bg-background);
+    background-color: var(--color-bg-background-container);
+    padding: 20px; /* Added padding for better responsiveness */
+}
+
+@media (min-width: 768px) {
+  .content-container {
+    width: 45%; /* Added media query for larger screens */
+  }
+}
+
+.content-container p.head {
+    position: relative;
+    font-size: 20px;
+    font-weight: bolder;
+    color: var(--color-bg-background);
+    margin-left: 10px;
+}
+
+.content-container p.head span{
+   font-size: 17px;
+   font-weight: lighter;
+}
+
+.input-control {
+    display: flex;
+    margin: 3px auto;
+    padding: 6px;
+    width: 100%;
+    justify-content: end;
+}
+
+.input {
+    cursor: pointer;
+    height: 55px;
+    border-radius: 30px;
+}
+
+input {
+    background-color: #c0c0c0;;
+    border: none;
+    color: var(--color-bg-background);
+    box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+;
+    width: 100%; /* Added width property for better responsiveness */
+    padding-left:  10px;
+}
+
+.input::placeholder {
+    padding: 10px;
+    margin: 3px;
+    color: #5e5a5a;
+}
+
+/* Styling for the dropdown */
+.dropdown {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.dropdown input {
+    width: 100%;
+}
+
+/* Style for the options */
+.dropdown .options {
+    width: 100%; /* Changed width to 100% for better responsiveness */
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 11px;
+}
+
+.dropdown:hover .options {
+    display: block;
+}
+
+.submit-button {
+    cursor: pointer;
+    margin: 10px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #8a38f5;
+    color: var(--color-bg-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
