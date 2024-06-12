@@ -162,7 +162,10 @@ body{
 .bottom{
   text-align: center;
 }
-
+.bottom p {
+  font-size: 25px;
+  color: #888;
+}
 .bottom:hover{
   transition: 500ms;
   transform: translateY(-10px);

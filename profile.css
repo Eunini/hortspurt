@@ -175,18 +175,13 @@ span a:hover {
     background-color: #ddd;
 }
 footer {
-    margin-top: 30px;
     width: 100%;
-    max-width: 80%;
-    background-color: white;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-    border-top: 1px solid #ddd;
-    position: fixed;
-    bottom: 0;
+    justify-content: space-between;
+    margin: 120px 30px 0px 30px;
+    padding: 20px 12px;
+    background-color: white;
+    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5);
 }
 footer .bottom {
     display: flex;
@@ -204,6 +199,11 @@ footer .bottom p {
     font-size: 25px;
     color: #888;
 }
+.bottom:hover{
+    transition: 500ms;
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
 /* Media Queries for Responsive Design */
 
 @media (max-width: 768px) {
