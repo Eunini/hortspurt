@@ -41,7 +41,12 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin-bottom: 20px;
 }
-
+.title {
+    display: flex;
+    padding: 10px;
+    align-self: start;
+    flex: 1;
+}
 .profile-header h3 {
     font-weight: 400;
     text-align:left;
@@ -174,27 +179,39 @@ span a {
 span a:hover {
     background-color: #ddd;
 }
-footer {
+
+footer{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 80px 30px 0px 30px;
-    padding: 20px 12px;
+    align-items: baseline;
+    margin: 60px 0px 0px 0px;
+    padding: 13px 5px 0px 5px;
     background-color: white;
-    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5);
+   /* box-shadow: 0px -5px 5px -5px ; */
+    border-top: 1px solid #9955BB;
+    box-shadow: none;
 }
-footer .bottom {
+.bottom{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    margin: auto;
 }
-footer .bottom a {
-    text-decoration: none;
+.bottom img {
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
-footer .bottom img {
-    width: 32px;
-    height: 32px;
+.bottom p{
+    font-size: 12px;
 }
+
+.bottom:hover{
+    transform: none;
+}
+
 footer .bottom p {
     font-size: 25px;
     color: #888;
@@ -217,7 +234,12 @@ footer .bottom p {
     top: 0;
     right: 0;
 }
-
+.title {
+    display: flex;
+    padding: 10px;
+    align-self: start;
+    flex: 1;
+}
 /* Style the images */
 .nav-toggle img {
     position: absolute;
@@ -242,7 +264,7 @@ footer .bottom p {
         width: 30px;
         height: 30px;
         margin-top: 30px;
-        margin-right: 24px;
+        margin-right: 28px;
     }
     .profile-header h3 {
         font-size: 20px;
@@ -255,6 +277,8 @@ footer .bottom p {
         align-items: start;
     }
     #back {
+        margin-bottom: 10px;
+        align-items: center;
         justify-content: center;
         display:flex;
         margin: 10px;
