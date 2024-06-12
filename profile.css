@@ -208,6 +208,10 @@ footer .bottom p {
 
 @media (max-width: 768px) {
     /* Ensure the parent container is positioned relative */
+    .background {
+        width: 100%;
+        max-width: 100%;
+    }
 .nav-toggle {
     position: absolute; /* or fixed if you want it to stay at the top right corner even when scrolling */
     top: 0;
