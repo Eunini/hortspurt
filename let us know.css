@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap");
-
 * {
   box-sizing: border-box;
-  font-family: "Lexend Deca", sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 0;
   margin: 0;
   position: relative;
@@ -10,39 +8,193 @@
 html {
   scroll-behavior: smooth;
 }
-body {
-    background-color: #95f;
-    margin: auto;
+ body {
+  margin: 0 auto;
     justify-content: center;
     position: relative;
 }
-.holder {
-    width: 430px;
+a {
+  text-decoration: none;
+}
+  .holder {
+    width: 80%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+  }
+  .pic-container {
+    margin: 20px 0;
+    display: flex;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: rgb(223, 218, 218);
+  }
+  .pic-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  .intro {
+    font-size: 24px;
+    font-weight: 400;
+    margin: auto;
+    display: flex;
+    justify-content: start;
+    padding: 10px;
+  }
+  .pic-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .profile-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .profile-head #img{
+    width: 50px;
+    height: 50px;
+    margin: 50px auto;
+    justify-content: center;
+  }
+  section {
+    margin: 40px auto;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 25px;
+    border: 1px solid #95f;
+}
+  section p {
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 15px;
+    color: #969696;
+ }
+ section h6 {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding: 10px;
+    margin: 5px 55px;
+ }
+ input[type="radio"] {
+  display: none;
+}
+
+/* Styling the label to mimic a checkbox */
+label {
+  text-align: center;
+  display: block;
+  width: 85%;
+  height: 60px;
+  padding: 20px;
+  border: 2px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin:25px auto;
+  background: #D4D4D4;
+  color: #808080;
+  transition: .2s linear all;
+}
+
+/* Style the label when the checkbox is checked */
+input[type="radio"]:checked + label {
+  border: 2px solid #95F; 
+  color: #808080;
+
+}
+.note {
+  margin: 20px auto;
+  width: 85%;
+  height: 200px;
+  border-radius: 20px;
+  border: 2px solid #ccc;
+}
+.note input {
+  text-align: center;
+  display: flex;
+  position: inherit;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  padding: 10px;
+  width: 80%;
+  font-weight: 600;
+  color: #808080;
+  font-size: 17px;
+  overflow-x: scroll;
+  flex-wrap: wrap;
+  height: 100px;
+  margin: 30px auto 10px auto;
+}
+.note input::placeholder{
+  text-align: center;
+  color: #808080;
+  font-size: 18px;
+  font-weight: 600;
+}
+.note p {
+  text-align: left;
+}
+.submit-button {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  width: 70%;
+  margin: 10px auto;
+  height: 60px;
+  border-radius: 20px;
+  background-color: #9955BB;
+  color: var(--color-bg-background);
+  border: none;
+  outline: 0;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  color: #ffff;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+
+@media  (max-width:768px) {
+  body{
+    margin: 0 auto;
+  }
+  .holder {
+    width: 95%;
+    margin: 0 auto;
     justify-content: center;
     position: relative;
     margin: auto;
     background:#ffff;
 }
 .pic-container {
-    margin: 20px 0;
+    margin: 10px 0;
     display: flex;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     background-color: rgb(223, 218, 218);
   }
   .pic-container img {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
   }
   
   .profile-head {
     display: flex;
-    margin: 0 auto;
     align-items: center;
-    width: 370px;
-    justify-content: space-between;
+    width: 100%;
   }
   
   .intro {
@@ -50,13 +202,14 @@ body {
     justify-content: center;
     display: flex;
     font-size: 24px;
-    font-weight: 700;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-weight: bolder;
-    margin: 20px 8px;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
+    margin: 0;
   }
   
   a #img {
+    width: 35px;
+    height: 35px;
     display: flex;
     position: relative;
     margin: auto;
@@ -65,10 +218,11 @@ body {
 
 section {
     justify-content: center;
-    width: 430px;
     border-radius: 25px;
-    border-top: 1px solid #95f;
+    border-top: 1.5px solid #9955BB;
+    outline: 0;
 }
+
  section p {
     text-align: center;
     font-size: 16px;
@@ -78,7 +232,7 @@ section {
  }
  section h6 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 900;
     line-height: 15px;
     letter-spacing: 0em;
@@ -87,41 +241,82 @@ section {
  }
 
  /* Hide the default checkbox */
-input[type="radio"] {
+ input[type="radio"] {
     display: none;
 }
 
 /* Styling the label to mimic a checkbox */
-label {
-    
-    display: block;
-  width: 390px;
-  height: 45px;
-    padding: 5px 10px;
-    border: 2px;
+ label { 
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 55px;
+    padding: 15px;
+    border: 2px solid transparent;
     border-radius: 30px;
     cursor: pointer;
-  margin:25px auto;
- background: #D4D4D4;
-  color: black;
-  transition: .2s linear all;
+    margin:25px auto;
+    background: #D4D4D4;
+    color: #808080;
+    transition: .2s linear all;
 }
 
 /* Style the label when the checkbox is checked */
 input[type="radio"]:checked + label {
     border: 2px solid #95F; 
-    color: black;
+    color: #808080;
   
 }
-section #add-note {
-    display: block;
-    margin: auto;
-    width: 390px;
-    height: 200px;
-    background: #D9D9D9;
-    border: none;
+.note {
+  margin: 20px auto;
+  width: 90%;
+  height: 200px;
+  border-radius: 20px;
+  border: 2px solid #ccc;
+}
+.note input {
+  text-align: center;
+  display: flex;
+  position: inherit;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  padding: 10px;
+  width: 90%;
+  font-weight: 600;
+  color: #808080;
+  font-size: 17px;
+  overflow-x: scroll;
+  flex-wrap: wrap;
+  height: 80px;
+  margin: 30px auto 10px auto;
+}
+.note p {
+  text-align: left;
+  margin: 10px;
 }
 section #add-note::placeholder {
     color:#808080;
     text-align: center;
+}
+.submit-button {
+  cursor: pointer;
+  width: 90%;
+  margin: 10px 20px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: #9955BB;
+  color: var(--color-bg-background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  transition: 500ms;
+}
 }

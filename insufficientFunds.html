@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insufficient funds</title>
+
+    <link rel="stylesheet" href="css/dataPurchase.css">
+    <link rel="stylesheet" href="Insufficient.css">
+
+</head>
+<body>
+    
+
+    <div class="container">
+        <a href="#" class="cancelBtn">Cancel</a>
+
+<div class="amountInNaira">
+    NGN 500
+</div>
+
+<div class="networkType">
+    <div class="nt">
+        Network Type
+    </div>
+    <div class="networkAndImg">
+        <img src="images/image 6.png">
+        <span class="mb">Mobile Data</span>
+    </div>
+</div>
+
+<div class="amountToBuy">
+    <span>
+      Amount  
+    </span>
+    <span class="amt">
+        NGN 500
+    </span>
+</div>
+
+<div class="dataToPurchase">
+    <span>
+        Data To Purchase
+    </span>
+    <span class="gb">
+        1GB
+    </span>
+</div>
+
+<div class="paymentHeading">
+    Payment
+</div>
+
+<div class="walletBox">
+    <div class="walletB">
+        <img src="images/Group.png" alt=" ">
+        <span class="wb">
+           Wallet Balance
+        </span>
+        <img src="images/Show.png" alt="" id="invisible" onclick="hideBalance()">
+        <img src="images/Show (1).png" alt="" id="visible" onclick="showBalance()">
+    </div>
+
+    <div class="walletBalance" id="walletBalance">
+        NGN 150,000
+    </div>
+
+    <div class="walletBalanceHidden" id="walletBalanceHidden">
+       <img src="images/_.png" alt="">
+       <img src="images/_.png" alt="">
+       <img src="images/_.png" alt="">
+       <img src="images/_.png" alt="">
+    </div>
+    
+    <div class="approval">
+        Approved
+    </div>    
+</div>
+
+<div class="bhr">
+</div>
+
+<div class="numbbox">
+    <div class="netimg">
+        <img src="images/Frame 29.png" alt="">
+        <img src="images/Line 5.png" alt="">
+    </div>
+    <input type="text" class="phonenumb" value="+23480 3926 3055">
+</div>
+
+<a href="#" class="proceed">Proceed</a>
+
+
+<div class="centered-div">
+    <div class="content">
+        <h1> &#x1F622;</h1>
+        <h2>Oh no!</h2>
+        <p>You are out of balance</p>
+    </div>
+</div>
+
+<!---This div is just for navigating purpose during testing only-->
+<!---Any developer working on it, is free to delete it or modify it-->
+<br>
+<br>
+<br>
+<div class="control">
+    <a href="./deals.html" class="prev">previous</a>
+    <a href="./shoutout.html" class="next">next</a>
+</div>
+    </div>
+<!---End of div  just for navigating purpose during testing only-->
+
+
+
+
+
+
+<script>
+
+    function showBalance(){
+        document.getElementById("walletBalance").style.display = "block";
+        document.getElementById("walletBalanceHidden").style.display = "none";
+        document.getElementById("invisible").style.display = "block";
+        document.getElementById("visible").style.display = "none";
+    }
+
+    function hideBalance(){
+        document.getElementById("walletBalance").style.display = "none";
+        document.getElementById("walletBalanceHidden").style.display = "block";
+        document.getElementById("invisible").style.display = "none";
+        document.getElementById("visible").style.display = "block";
+    }
+
+
+</script>
+
+</body>
+</html>
