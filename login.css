@@ -1,11 +1,17 @@
-*{
-    position: relative;
-    box-sizing: border-box;
-    font-family: 'Lexend Deca', sans-serif;
-    padding: 0;
-    margin: 0;
+@font-face {
+    font-family: 'Lexend';
+    src: url('../fonts/Lexend-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+* {
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
 body {
     margin: auto;
     display: flex;

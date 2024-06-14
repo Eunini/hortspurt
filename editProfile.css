@@ -10,6 +10,7 @@
     font-family: 'Lexend', sans-serif;
     padding: 0;
     margin: 0;
+    position: relative;
 }
 html {
     scroll-behavior: smooth;
@@ -21,23 +22,34 @@ html {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-height: 140vh;
+    height: 100vh;
     max-width: 80%;
-    margin: 0 auto;
+    margin:10px auto;
     padding: 20px;
     background: white;
 }
-.header {
+.profile-header {
+    width: 100%;
+    background: white;
+    border-radius: 25px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
     align-items: center;
-    margin: 20px auto;
+    justify-content: space-between;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
+
+.profile-header h3 {
+    font-weight: 400;
+    color: rgb(53, 38, 47);
+    font-size: 27px;
+}
+
 .pic-container {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     background: white;
     border-radius: 50%;
     display: flex;
@@ -45,12 +57,16 @@ html {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 .pic-container img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: transparent;
 }
-
+#back {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+}
 .edit-body{
     display: flex;
     flex-direction: column;
@@ -63,36 +79,48 @@ html {
     margin: 10px auto;
     padding: 20px;
 }
-.edit {
-    display: flex;
+
+table {
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+table tr {
     justify-content: center;
     align-items: center;
     margin: 20px auto;
     padding: 10px;
 }
-.edit p{
-    text-align: right;
-    font-size: 24px;
-    margin-right: 20px;
-    font-weight: 600;
+table td {
+    padding: 5px 0;
+    font-size: 22px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin: 20px auto;
 }
-.edit p img{
+table td img{
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px;
     width: 30px;
     height: 30px;
 }
-.edit input {
-    height: 55px;
-    width: 300px;
-    border: 2px solid #9955bb;
+table td input {
+    font-weight: 500;
     border-radius: 10px;
-    font-size: 24px;
-    padding: 15px;
-    border: 2px solid #9955bb;
-    outline: #9955bb;
+    text-align: left;
+    font-size: 25px;
+    display: block;
+    padding: 10px;
+    color: rgb(53, 38, 47);
 }
 
 button{
-    width: 170px;
+    width: 200px;
     height: 65px;
     background: #9955bb;
     border: 0;
@@ -106,16 +134,94 @@ button{
 }
 
 @media (max-width: 768px){
-    .edit{
+    .container {
+        width: 100%;
+        padding: 30px;
+        background: white;
+    }
+    .profile-header {
+        width: 300px;
+        border-radius: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .profile-header h3 {
+        padding: 20px;
+        font-size: 20px;
+    }
+    
+    .pic-container {
+        width: 60px;
+        height: 60px;
+    }
+    .pic-container img {
+        width: 60px;
+        height: 60px;
+    }
+    #back {
+        padding: 5px;
+        width: 45px;
+        height: 45px;
+    }
+    .edit-body{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 150vh;
+        width: 150%;
+        margin: 10px auto;
+        padding: 10px;
     }
-    button {
-        width: 120px;
-        height: 50px;
+    
+    table {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        margin-top: 10px;
+        flex-direction: column;
+    }
+    table tr {
+        display: block;
+        margin: 5px;
+    }
+
+    table td {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+        margin: 5px auto;
+    }
+
+    td img {
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    td:first-child {
+        font-weight: bold;
+        padding-top: 20px;
+    }
+
+    td:last-child {
+        margin-top: 10px;
+    }
+    table td input {
+        font-weight: 400;
+        border-radius: 10px;
+        text-align: left;
         font-size: 18px;
     }
-    .container {
-        height: 150vh;
+    .buttons{
+        display: flex;
+        margin-top: 20px;
     }
+    button{
+        width: 150px;
+        height: 55px;
+        padding: 10px;
+        font-size: 17px;
+        margin: 10px;
+    }
+    
 }

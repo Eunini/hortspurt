@@ -1,9 +1,16 @@
-*{
+@font-face {
+    font-family: 'Lexend';
+    src: url('../fonts/Lexend-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
     box-sizing: border-box;
-    margin: 0;
+    font-family: 'Lexend', sans-serif;
     padding: 0;
+    margin: 0;
     position: relative;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .head{
     top: 0;
