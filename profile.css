@@ -41,17 +41,10 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin-bottom: 20px;
 }
-.title {
-    display: flex;
-    padding: 10px;
-    align-self: start;
-    flex: 1;
-}
+
 .profile-header h3 {
     font-weight: 400;
-    text-align:left;
     color: rgb(53, 38, 47);
-    flex-grow: 1;
     font-size: 27px;
 }
 .nav-toggle {
@@ -181,15 +174,12 @@ span a:hover {
 }
 
 footer{
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
     margin: 60px 0px 0px 0px;
-    padding: 13px 5px 0px 5px;
     background-color: white;
-   /* box-shadow: 0px -5px 5px -5px ; */
-    border-top: 1px solid #9955BB;
+    box-shadow: 4px 0 0 rgba(0,0,0,0.1);
     box-shadow: none;
 }
 .bottom{
@@ -226,25 +216,22 @@ footer .bottom p {
 @media (max-width: 768px) {
     /* Ensure the parent container is positioned relative */
     .background {
-        width: 100%;
+        width: 320px;
         max-width: 100%;
     }
 .nav-toggle {
-    position: absolute; /* or fixed if you want it to stay at the top right corner even when scrolling */
-    top: 0;
+    position: absolute; 
     right: 0;
+    top: 0;
 }
-.title {
-    display: flex;
-    padding: 10px;
-    align-self: start;
-    flex: 1;
+
+h3 {
+    font-size: 24px;
 }
 /* Style the images */
 .nav-toggle img {
     position: absolute;
-    top: 0;
-    right: 0;
+    margin: 80px 50px 10px 0;
 }
 
 /* Initially hide one of the images if needed */
@@ -256,7 +243,7 @@ footer .bottom p {
         width: 300px;
         max-width: 320px ;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
         padding: 10px;
         border-radius: 10px;
     }
@@ -268,7 +255,9 @@ footer .bottom p {
     }
     .profile-header h3 {
         font-size: 20px;
-        margin-bottom: 10px;
+        margin-right: 50px;
+        text-align: center;
+        align-items: center;
     }
     .nav-toggle {
         display: block;
@@ -277,11 +266,11 @@ footer .bottom p {
         align-items: start;
     }
     #back {
-        margin-bottom: 10px;
-        align-items: center;
-        justify-content: center;
+        position: relative;
+        align-items: start;
+        justify-content: start;
+        right: 40px;
         display:flex;
-        margin: 10px;
         width: 30px;
         height: 30px;
     }
@@ -382,6 +371,9 @@ footer .bottom p {
         font-size: 16px;
         padding: 5px 10px;
     }
+    .bottom{
+      margin: 10px; 
+    }
     footer .bottom img {
         width: 25px;
         height: 25px;
@@ -391,9 +383,8 @@ footer .bottom p {
     }
     footer {
         width: 320px;
-        max-width: 340px ;
+   
         flex-direction: row;
         align-items: center;
-        padding: 10px;
     }
 }
