@@ -6,4 +6,5 @@ from django.shortcuts import render
 app_name = 'buy'
 urlpatterns = [
     path('data/', views.BuyDataView.as_view(), name='buy_data'),
+    path('padi/', views.PadiView.as_view(), name='padi'),
 ]

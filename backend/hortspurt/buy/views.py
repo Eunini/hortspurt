@@ -114,6 +114,53 @@ class BuyDataView(View):
             msg = 'Purchase unsuccessful, insufficient balance'
             return HttpResponse(msg, status=402, content_type="text/html")
 
+class PadiView(View):
+    def get(self, request):
+        ctx = {'MTN_PLANS': MTN_PLANS, '9MOBILE_PLANS': MOBILE9_PLANS, 'GLO_PLANS': GLO_PLANS, 'AIRTEL_PLANS': AIRTEL_PLANS}
+        return render(request, 'padi.html', ctx)
+
+    def post(self, request):
+        endpoint_url = base_url+"/data/"
+        data = request.POST
+        print(data)
+        NP = data.get("NP")
+        phone_no = data.get("phonenofield")
+        try:
+            code = int(data.get("code"))
+        except ValueError as e:
+            print(e)
+            return HttpResponse(status=400)
+    
+        if (not NP or not phone_no or not code):
+            return HttpResponse(status=400)
+        data_is_valid = verify(NP, phone_no, code)
+        if (not data_is_valid):
+            print('Invalid data NP:', NP, ' phone_no:', phone_no, ' code:',code)
+            return HttpResponse(status=400)
+        service = NPS[NP]
+        print(service, phone_no, code)
+        data={"network": service, "mobile_number": phone_no, "plan": code, "Ported_number": False}
+        price = deduct_balance(request.user, NP, code)
+        if (price):
+            try:    
+                res = requests.post(endpoint_url, json=data, headers=headers)
+                print(res)
+                if (res.status_code == 201):
+                    res_data = res.json()
+                    print(res_data)
+                    if (res_data['Status'] == 'successful'):
+                        return render(request, 'success.html')
+                print(res.status_code)
+                refund(request.user, price)
+                return HttpResponse(status=500)
+            except (ConnectionError, KeyError, ValueError) as e:
+                print(e)
+                refund(request.user, price)
+                return HttpResponse(status=500)
+        else:
+            msg = 'Purchase unsuccessful, insufficient balance'
+            return HttpResponse(msg, status=402, content_type="text/html")
+
 # class BuyDataView(View):
 #     def get(self, request):
 #         ctx = {'MTN_PLANS': MTN_SME, '9MOBILE_PLANS': MOBILE9_GFT, 'AIRTEL_PLANS': AIRTEL_GFT, 'GLO_PLANS': GLO_GFT}
