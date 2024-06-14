@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit my Profile</title>
+    <link rel="stylesheet" href='{% static "editProfile.css" %}'>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href='{% static "./purchase.html" %}'><img src='{% static "images/11zon_17.jpeg" %}' alt="Back" id="back"></a>  
+            <h3 id="title">Edit Profile</h3>
+            <div class="pic-container">
+                <img src='{% static "images/icons8-person-64.png" %}' alt="User Profile Image">
+            </div>
+        </div>
+
+        <form class="edit-body" method="post" action="" id="editprofileform">
+            {% csrf_token %}
+            <div class="edit">
+                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">First Name</p>
+                <input type="text" name="first_name" id="" value="{{user.first_name}}">
+            </div>
+
+            <div class="edit">
+                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">Last Name</p>
+                <input type="text" name="last_name" id="" value="{{user.last_name}}">
+            </div>
+
+            <div class="edit">
+                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">Phone Number</p>
+                <input type="text" name="username" id="" value="{{user.username}}">
+            </div>
+
+            <div class="edit">
+                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">Email Address</p>
+                <input type="text" name="email" id="" value="{{user.email}}">
+            </div>
+        </form>
+
+        <div class="buttons">
+            <a href="/my-profile/"><button>Discard Changes</button></a>
+            <button type="submit" form="editprofileform" >Submit Changes</button>
+        </div>
+    </div>
+</body>
+</html>

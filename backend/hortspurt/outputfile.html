@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit my Profile</title>
+    <link rel="stylesheet" href='{% static "editProfile.css" %}'>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href='{% static "./purchase.html" %}'><img src='{% static "images/11zon_17.jpeg" %}' alt="Back" id="back"></a>  
+            <h3 id="title">Edit Profile</h3>
+            <div class="pic-container">
+                <img src='{% static "images/icons8-person-64.png" %}' alt="User Profile Image">
+            </div>
+        </div>
+
+        <div class="edit-body">
+            <div class="edit">
+                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">Full Name</p>
+                <input type="text" name="" id="" value="Inioluwa Atanda">
+            </div>
+
+            <div class="edit">
+                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">Username</p>
+                <input type="text" name="" id="" value="Eunini">
+            </div>
+
+            <div class="edit">
+                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">Phone Number</p>
+                <input type="text" name="" id="" value="+2368039213244">
+            </div>
+
+            <div class="edit">
+                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">Email Address</p>
+                <input type="text" name="" id="" value="a**ini@gmail.com">
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button>Discard Changes</button>
+            <button>Submit Changes</button>
+        </div>
+    </div>
+</body>
+</html>

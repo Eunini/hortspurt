@@ -12,5 +12,6 @@ urlpatterns = [
     path('coming-soon/', views.ComingSoonView.as_view(), name='comingsoon'),
     path('shoutout/', views.ShoutOutView.as_view(), name='shoutout'),
     path('my-profile/', views.ProfileView.as_view(), name='profile'),
+    path('my-profile/edit/', views.EditProfileView.as_view(), name='edit-profile'),
     path('support/', views.SupportView.as_view(), name='support'),
 ]
