@@ -69,7 +69,9 @@ def deduct_balance(user, NP, code):
 
 class BuyDataView(View):
     def get(self, request):
-        ctx = {'MTN_PLANS': MTN_PLANS, '9MOBILE_PLANS': MOBILE9_PLANS, 'GLO_PLANS': GLO_PLANS, 'AIRTEL_PLANS': AIRTEL_PLANS}
+        phone_number = request.user.username
+        phone_number = phone_number[1:]
+        ctx = {'MTN_PLANS': MTN_PLANS, '9MOBILE_PLANS': MOBILE9_PLANS, 'GLO_PLANS': GLO_PLANS, 'AIRTEL_PLANS': AIRTEL_PLANS, 'phone_number':phone_number}
         return render(request, 'buy_data.html', ctx)
 
     def post(self, request):
