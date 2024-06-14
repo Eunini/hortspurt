@@ -199,3 +199,204 @@ section .container {
       font-weight: 700;
   }
 }
+* {
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+html {
+  scroll-behavior: smooth;
+}
+ body {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.holder {
+    width: 80%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+  }
+.pic-container {
+  margin: 20px 0;
+  display: flex;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgb(223, 218, 218);
+}
+.pic-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.intro {
+    font-size: 24px;
+    font-weight: 400;
+    margin: auto;
+    display: flex;
+    justify-content: start;
+    padding: 10px;
+}
+.pic-container {
+  display: flex;
+}
+.profile-head {
+  display: flex;
+  justify-content: space-between;
+}
+.profile-head #img{
+  width: 50px;
+  height: 50px;
+  margin: 50px auto;
+  justify-content: center;
+}
+section {
+  margin: 40px auto;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  border-radius: 25px;
+  border: 1px solid #95f;
+}
+section img {
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    margin: 100px auto 30px auto;
+}
+section .container {
+    border: 2px solid #d9d9d9;
+    border-radius: 25px;
+    height: 300px;
+    width: 600px;
+    margin: auto;
+}
+.container .congrat-box {
+    width: 400px;
+    outline: none;
+    border: none;
+    height: 100px;
+    background: #d9d9d9;
+    position: relative;
+    display: flex;
+    margin: 50px auto 15px auto;
+    border-radius: 15px;
+}
+.container .congrat-box h2 {
+    color: #712199;
+    text-align: center;
+    padding: 10px;
+    margin: 20px auto;
+    justify-content: center;
+}
+.container p {
+    color: black;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    letter-spacing: .3px;
+    font-size: 22px;
+    line-height: 27px;
+    font-weight: 700;
+}
+
+@media  (max-width:768px) {
+  
+  .holder {
+    width: 95%;
+}
+.pic-container {
+    margin: 10px 0;
+    display: flex;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: rgb(223, 218, 218);
+  }
+  .pic-container img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  
+  .profile-head {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .intro {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+    
+    .profile-head #img{
+      display: flex;
+      width: 35px;
+      height: 35px;
+      margin: 10px; 
+    }
+  
+  section {
+      width: 95%;
+      justify-content: center;
+      border-radius: 25px;
+      border: none;
+  }
+  section img {
+      width: 80px;
+      height: 80px;
+      justify-content: center;
+      position: relative;
+      display: flex;
+      margin: 50px auto 30px auto;
+  }
+  section .container {
+      border: 2px solid #d9d9d9;
+      border-radius: 25px;
+      height: 350px;
+      width: 100%;
+      margin: auto;
+  }
+  .container .congrat-box {
+      width: 260px;
+      height: 100px;
+      margin: 50px auto 15px auto;
+      padding: 10px;
+  }
+  .container .congrat-box h2 {
+      color: #712199;
+      text-align: center;
+      padding: 10px;
+      margin: 20px auto;
+      justify-content: center;
+  }
+  .container p {
+      color: #141414;
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px;
+      display: flex;
+      letter-spacing: .3px;
+      font-size: 18px;
+      line-height: 27px;
+      font-weight: 700;
+  }
+}

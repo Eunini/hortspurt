@@ -104,7 +104,7 @@ body {
     table-layout: fixed;
     empty-cells: show;
   }
-  .table-content th,
+
 .table-content td {
   padding: 20px 0;
   border: 1px solid transparent;

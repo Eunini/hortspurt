@@ -7,6 +7,7 @@ class AddMoneyTransaction(models.Model):
 
     PAYMENT_METHODS = [
         ('U', 'USSD'),
+        ('T', 'Bank Transfer'),
     ]
     PAYMENT_STATUS = [
         ('P', 'PENDING'),

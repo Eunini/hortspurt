@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./purchase.css">
+    <link rel="stylesheet" href="./purchaseMobile.css">
+</head>
+<body>
+    
+    <!--First phase--->
+    <div class="profileHead">
+        <div class="profileAndName">
+            <img src="images/Ellipse 177.png" alt="user profile image" class="userProfileImage">
+            <h1 class="intro">
+                <span>Hi,</span>
+                <span class="customerName">Johnson</span>
+            </h1>
+        </div>
+        <div class="supportLogo">
+            <a href="./let us know.html" class=""><img src="images/Frame 28.png" alt="" class="support"></a>
+        </div>
+    </div>
+
+    <!--second phase-->
+    <div class="walletBox">
+        <div class="walletB">
+            <img src="images/Group.png" alt=" " class="walletImg">
+            <span class="wb">
+               Wallet Balance
+            </span>
+            <img src="images/Show.png" alt="" id="invisible" onclick="hideBalance()">
+            <img src="images/Show (1).png" alt="" id="visible" onclick="showBalance()">
+        </div>
+    
+        <div class="walletBalance" id="walletBalance">
+            NGN 150,000
+        </div>
+    
+        <div class="walletBalanceHidden" id="walletBalanceHidden">
+           <img src="images/hid.png" alt="">
+           <img src="images/hid.png" alt="">
+           <img src="images/hid.png" alt="">
+           <img src="images/hid.png" alt="">
+        </div>
+        
+        <a href="#" class="addMoney">+ add money</a>  
+    </div>
+
+     <!--Third phase-->
+     <h1 class="avail">Available Services</h1>
+     <div class="mainServices">
+        <a href="./BuyData.html"><img src="images/Frame 8.png" class="data"></a>
+        <a href="#"><img src="images/Frame 10.png" class="call"></a>
+        <a href="#"><img src="images/Frame 9.png" class="add"></a>
+     </div>
+
+     <!--Fourth phase-->
+     <h2 class="otherServ">Other Services(Coming Soon..)</h2>
+     <div class="otherServices">
+        <a href="#"><img src="images/Frame 20.png" id="others" onclick="viewMore()"></a>
+
+        <div class="moreServices" id="moreServices">
+            <img src="./images/Frame 11.png" alt="">
+            <img src="./images/Frame 12.png" alt="">
+            <img src="./images/Frame 13.png" alt="">
+            <img src="./images/Frame 14.png" alt="">
+            <img src="./images/Frame 15.png" alt="">
+            <img src="./images/Frame 16.png" alt="">
+            <img src="./images/Frame 17.png" alt="">
+            <img src="./images/f" alt="">
+        </div>
+     </div>
+
+
+    <!--Fifth phase-->
+    <div class="referral">
+        <div class="refertext">
+            <h3>Refer & Get Free Data</h3>
+            <p> Earn 1gb on Every One Person you refer</p>
+        </div>
+        <div class="rImg">
+            <img src="images/account-tie-voice-outline.png" alt=" " class="referimg">
+        </div>
+    </div>
+
+    <!--Sixth phase-->
+    <div class="buttons">
+        <div class="bottom">
+            <a href="./index.html" class="icon" id="myLink"><img src="./images/Group.svg"></a>
+            <p>Home</p>
+        </div>
+
+        <div class="bottom">
+            <a href="./shoutout.html" class="icon" id="myLink"><img src="./images/Vector (1).svg"></a>
+            <p>Shoutout</p>
+        </div>
+
+        <div class="bottom">
+            <a href="#" class="icon" id="myLink"><img src="./images/gift-outline.svg"></a>
+            <p>Bonus</p>
+        </div>
+
+        <div class="bottom">
+            <a href="#" class="icon" id="myLink"><img src="./images/clock.svg"></a>
+            <p>History</p>
+        </div>
+
+        <div class="bottom">
+            <a href="./profile.html" class="icon" id="myLink"><img src="./images/face-man.svg"></a>
+            <p>Me</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function showBalance(){
+            document.getElementById("walletBalance").style.display = "block";
+            document.getElementById("walletBalanceHidden").style.display = "none";
+            document.getElementById("invisible").style.display = "block";
+            document.getElementById("visible").style.display = "none";
+        }
+    
+        function hideBalance(){
+            document.getElementById("walletBalance").style.display = "none";
+            document.getElementById("walletBalanceHidden").style.display = "block";
+            document.getElementById("invisible").style.display = "none";
+            document.getElementById("visible").style.display = "block";
+        }
+    
+        function viewMore(){
+            document.getElementById("moreServices").style.display = "flex";
+            document.getElementById("others").style.display = "none";
+        }
+    
+    </script>
+</body>
+</html>

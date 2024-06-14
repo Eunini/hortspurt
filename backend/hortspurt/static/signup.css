@@ -1,252 +1,275 @@
 * {
     box-sizing: border-box;
-    font-family: 'Lexend Deca', sans-serif;
+    /* font-family: 'Times New Roman', Times, serif; */
     font-size: 16px;
     position: relative;
 }
+
 .body {
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .content-container {
-    
-    width: 45%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin: auto;
-}
-.content-container p.head {
-    position: relative;
-    font-size: 20px;
-    font-weight: bolder;
-    margin-left: 10px;
-}
-
-.content-container p.head span{
-   font-size: 17px;
-   font-weight: lighter;
-}
-
-.input{
-    width: 100%;
-    flex: 1;
-    border: 0;
-    outline: 0;
-    background-color: #D4D4D4;
-}
-.input-control {
-    z-index: 1;
     width: 100%;
     display: flex;
-    margin: 5px auto;
-    padding: 6px;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
 }
 
-.input::placeholder{
-    text-align: start;
-}
-
-.input-control input:hover {
-    border: 1.8px solid #9955BB;
-}
-label{
-    display: none;
-    width: 0;
-}
-/* Style the dropdown box */
-select {
-    width: 97%;
-    height: 55px;
-    background-color: #D4D4D4;
-    position: relative;
+.division {
     display: flex;
-    margin: 15px auto 0 10px;
-    padding: 10px;
-    justify-content: end;
+    width: 100%;
+    justify-content: space-around;
+}
+.welcome {
+    border-radius: 20px;
+    height: 100vh;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(images/Shiny\ Overlay.svg);
+
+    margin: auto 0;
+}
+.welcome h2{
+    font-size: 40px;
+    color: #fff;
+}
+.welcome span{
+    color: #45125f;
+    font-size: 50px;
+}
+.sign-up {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+p.head {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+p.head span {
+    font-size: 28px;
+    font-weight: normal;
+}
+
+.input-control {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+    font-size: 20px;
+    position: relative;
+}
+
+.input {
+    flex: 1;
+    padding: 20px;
+    background-color: #D4D4D4;
     border: none;
     outline: none;
+    font-size: 20px;
+    height: 60px;
     border-radius: 30px;
-  }
-  select::placeholder{
-    padding: 10px;
-    margin: 3px;
-    color: #9C9C9C;
-  }
-  select:hover {
-    border: 2px solid #9955BB;
-  }
-  /* Style the dropdown arrow */
-  select:after {
-    content: "\25BC"; /* Unicode character for down arrow */
-    position: absolute;
-    top: 50%;
-    right: 100px;
-    transform: translate(-50%, -50%); 
-    pointer-events: none; 
-  }
-  input{
-    padding: 10px;
-  }
-.input {
-    background-color: #D4D4D4;
-    border: none;
-    cursor: pointer;
-    height: 55px;
-    border-radius: 30px;
+    padding-right: 40px; /* Add space for the image */
 }
 
 .input::placeholder {
+    color: #9C9C9C;
+    font-size: 20px;
+}
+
+.input:hover,
+select:hover {
+    border: 1.8px solid #9955BB;
+}
+
+select {
+    width: 100%;
+    height: 55px;
+    background-color: #D4D4D4;
     padding: 10px;
-    margin: 3px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-size: 20px;
     color: #9C9C9C;
 }
 
+select:focus {
+    border: 1.8px solid #9955BB;
+}
+
+option[value="gender"] {
+    color: #9C9C9C;
+    font-size: 20px;
+}
+
 .submit-button {
     cursor: pointer;
-    margin: 10px;
-    height: 50px;
-    border-radius: 20px;
+    margin: 10px 0;
+    height: 60px;
+    border-radius: 30px;
     background-color: #9955BB;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
     padding: 10px;
-    font-size: large;
-    width: 95%;
+    font-size: 26px;
+    width: 100%;
     border: none;
-}
-button a {
-    text-decoration: none;
-    color: white;
     text-align: center;
-    margin: auto;
-    font-weight: bold;
-}
-.submit-button:hover {
-    transform: scale(1.03);
-    transition: 2s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.submit-button:hover,
 .submit-button:focus {
     transform: scale(1.03);
-    transition: 2s ease-out;
+    transition: transform 0.2s ease-out;
 }
-p.buttom {
-    position: relative;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin: auto;
-    font-size: 15px;
-}
-p.bottom a {
+
+.submit-button a {
     text-decoration: none;
+    color: white;
+    width: 100%;
     text-align: center;
-    justify-content: center;
+}
+.submit-button p {
+    font-size: 26px;
+}
+.text-container {
+    text-align: center;
+    font-size: 26px;
+}
+
+.text-container p.bottom {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.text-container p.bottom a {
+    text-decoration: none;
     color: #9955BB;
     font-weight: bold;
-
+    font-size: 26px;
 }
+
 .input-control img {
     position: absolute;
+    right: 15px; /* Position the image to the right */
     width: 23px;
     height: 23px;
-    margin-right: 10px;
     color: #999;
 }
-.input-control .eye{
-    position:absolute;
-    margin: 0px 40px 20px 0;
-}
-.input-control #hide1, .input-control #confirm-hide1 {
-    display: none;
-}
+
 .eye {
-    color: #D4D4D4;
     position: absolute;
-    margin-right: 3rem;
+    top: 10px;
+    right: 0px; 
     cursor: pointer;
 }
 
-
-.text-container {
-    text-align: center;
+#hide1,
+#confirm-hide1 {
+    display: none;
 }
 
-  .content-container {
-    width: 100%; /* Added media query for larger screens */
-  }
-  .division {
-    display: flex;
-  }
-  .sign-up {
-    flex: 1; /* Each child takes up equal space */
-    padding: 10px;
-  }
-  #welcome {
+#welcome {
     width: 180px;
     height: 100vh;
     background-color: #fafafa;
-    box-shadow: rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  #welcome h2 {
+}
+
+#welcome h2 {
     font-size: 30px;
     font-weight: 500;
-    margin: 150px auto;
-    justify-content: center;
+    margin: 20px 0;
     text-align: center;
-    display: flex;
-    line-height: 40px;
-  }
-  h2 span {
-    color: #9955BB;
-    font-size: 35px;
-    height: 60px;
-    padding: 30px 0 50px 10px;
-    border-left: 5px solid #9955BB;
-    margin: auto
 }
-#circle1, #circle2 {
+
+#welcome h2 span {
+    color: #9955BB;
+    font-size: 45px;
+    border-left: 5px solid #9955BB;
+    padding-left: 10px;
+}
+
+#circle1, 
+#circle2 {
     width: 60px;
     height: 60px;
+    margin: 10px 0;
 }
 
-
-.submit-button {
-    cursor: pointer;
-    margin: 10px;
-    height: 50px;
-    border-radius: 20px;
-    background-color: #9955BB;
-    color: var(--color-bg-background);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-}
-
+/* Media query for smaller screens */
 @media (max-width: 768px) {
-    .content-container{
+    .content-container {
         width: 100%;
     }
-    #welcome {
+    .welcome {
         display: none;
     }
-    #circle1, #circle2 {
+    .input-control {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+    p.head{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    p.head span {
+        font-size: 18px;
+    }
+    .input {
+        padding: 15px;      
+        font-size: 18px;
+        height: 55px;
+    }
+    
+    .input::placeholder{
+        font-size: 18px;
+    }
+    #circle1,
+    #circle2 {
         display: none;
     }
-    select{
-        width: 95%;
-        margin: 15px auto 0 10px;
-        padding: 10px;
+    select {
+        width: 100%;
+        margin: 10px 0;
     }
-    .submit-button{
-        margin: 15px;
-        width: 90%;
+    .submit-button {
+        margin: 20px 0;
+        width: 100%;
+    }
+    .submit-button p {
+        font-size: 20px;
+    }
+    .text-container p.bottom {
+        font-size: 18px;
+    }
+    .text-container p.bottom a {
+        font-size: 20px;
+    }
+    .sign-up {
+        width: 100%;
     }
 }

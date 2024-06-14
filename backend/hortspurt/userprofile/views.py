@@ -72,3 +72,4 @@ class SupportView(LoginRequiredMixin, View):
     
     def post(self, request):
         return render(request, 'we_know.html')
+

@@ -17,7 +17,7 @@ from .forms import AddMoneyTrForm
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.views import APIView
 from django.utils.decorators import method_decorator
-from .tasks import confirm_transaction, test
+from .tasks import confirm_transaction, test, confirm_transfer
 load_dotenv()
 # Create your views here.
 
@@ -27,6 +27,12 @@ headers = {
     "Authorization": bearer_token
 }
 
+class PaymentOptionsView(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'payment_options.html')
+    
+    def post(self, request):
+        return render(request, 'we_know.html')
 
 class PayWithPaystackView(View):
     def get(self, request):
@@ -71,7 +77,7 @@ class PayWithUssdView(LoginRequiredMixin, View):
                 msg = 'USSD payment service is currently unavailable. Please try again'
             else:
                 ctx['tr_id'] = res_data['data'].get("id")
-                new_add_money_tr_form = AddMoneyTrForm({'user':request.user, 'amount':res_data['data'].get("amount"), 'tr_id':res_data['data'].get("id"), 'method':'U', 'status':'P'})
+                new_add_money_tr_form = AddMoneyTrForm({'user':request.user, 'amount':res_data['data'].get("amount"), 'tr_id':str(res_data['data'].get("id")), 'method':'U', 'status':'P'})
                 if new_add_money_tr_form.is_valid():
                     new_add_money_tr_form.save()
                     ussdCode = res_data['meta']['authorization']['note']
@@ -90,6 +96,54 @@ class PayWithUssdView(LoginRequiredMixin, View):
 class UssdVerifyView(LoginRequiredMixin, View):
     def get(self, request, tr_id):
         status = confirm_transaction(tr_id)
+        print(status)
+        if (status):
+            return render(request, 'success.html')
+        else:
+            return HttpResponse('Transaction unsuccessful')
+
+
+class PayWithTransferView(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'pay_with_bank.html')
+
+    def post(self, request):
+        try:
+            ctx = {}
+            email = request.user.email
+            full_name = request.user.get_full_name()
+            amount = request.POST.get("amount")
+            tx_ref = generateTransactionReference('100580192')
+            data = {"amount":int(amount), "currency":'NGN', "email":email, "tx_ref": tx_ref}
+    
+            print('tx_ref: ',tx_ref)
+            res = requests.post('https://api.flutterwave.com/v3/charges?type=bank_transfer', json=data, headers=headers)
+            res_data = res.json()
+            print(res_data)
+            if (not res_data.get('status') or res_data['status'] != 'success'):
+                msg = 'Bank Transfer payment service is currently unavailable. Please try again'
+            else:
+                ctx['tr_id'] = res_data['meta']['authorization']['transfer_reference']
+                transferAmount = res_data['meta']['authorization']['transfer_amount']
+                new_add_money_tr_form = AddMoneyTrForm({'user':request.user, 'amount':transferAmount, 'tr_id':res_data['meta']['authorization']['transfer_reference'], 'method':'T', 'status':'P'})
+                if new_add_money_tr_form.is_valid():
+                    new_add_money_tr_form.save()
+                    transferBank = res_data['meta']['authorization']['transfer_bank']
+                    bankAccount = res_data['meta']['authorization']['transfer_account']
+                    msg = f"To complete the payment,  transfer {transferAmount} to this bank account {bankAccount} {transferBank}"
+                else:
+                    print("form errors: ", new_add_money_tr_form.errors)
+                    msg = 'something went wrong, please try again'
+            ctx['msg'] = msg
+            return render(request, 'bank_transfer.html', ctx)
+        except Exception as e:
+            print(f"An error occurres: {e}")
+            traceback.print_exc()
+        return HttpResponse('Something went wrong, please try again')
+
+class TransferVerifyView(LoginRequiredMixin, View):
+    def get(self, request, tr_id):
+        status = confirm_transfer(tr_id)
         print(status)
         if (status):
             return render(request, 'success.html')
@@ -118,6 +172,7 @@ class FlwWebhook(View):
             confirm_transaction.delay(tr_id)
             return HttpResponse(status=200)
         return HttpResponse(status=400)
+
 
 class FlwWebhookTest(View):
     def get(self, request):
