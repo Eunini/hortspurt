@@ -1,392 +1,390 @@
+@font-face {
+    font-family: 'Lexend';
+    src: url('../fonts/Lexend-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Lexend', sans-serif;
     padding: 0;
     margin: 0;
 }
 html {
     scroll-behavior: smooth;
+    font-family: 'Lexend', sans-serif;
 }
 body {
     margin: 0;
+    background-color: #f5f5f5;
 }
 .background {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 90%;
-    background-color: #f5f5f5;
-    margin:  auto;
+    width: 100%;
+    max-height: 140vh;
+    max-width: 80%;
+    margin: 0 auto;
     padding: 20px;
-    border: none;
-    outline: none;
-    height: 150vh;
-  }
-.profile-header{
-    height: 100px;
+}
+
+.profile-header {
     width: 100%;
     background: white;
-    border-radius:25px;
+    border-radius: 25px;
     display: flex;
     align-items: center;
-    margin: 0 auto;
-    flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-between;
     padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
 
-.profile-header .my-profile-pic{
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    padding: 20px;
-    align-items: center;
-}
 .profile-header h3 {
-    font-weight: 900;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    font-weight: 400;
+    color: rgb(53, 38, 47);
+    font-size: 27px;
+}
+.nav-toggle {
+    cursor: pointer;
+    font-size: 30px;
+    display: none;
+}
+#back {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+}
+.nav-menu {
     display: flex;
-    margin: auto;
+    align-items: center;
+    gap: 15px;
 }
-.profile-header .edit{
+.nav-menu ul {
+    display: block;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.nav-menu ul li a {
     text-decoration: none;
-    font-weight: 600;
+    padding: 0 15px;
+    font-size: 24px;
+    font-weight: 200;
     color: #9955BB;
-
-}
-
-.my-profile-pic img {
-    margin: 0 250px 0 0;
-    padding: 0 40px;
-    font-size: 20px;
 }
 .pic-container {
-    position: relative;
-    background: white;
     width: 100%;
-    margin: auto;
+    background: white;
     border-radius: 25px;
-    height: 130px;
-    padding: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-
 .pic-container img {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    justify-content: center;
-    display: flex;
-    margin: 5px auto;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
 }
-
-
 .table-content {
     width: 100%;
     background: white;
     border-radius: 25px;
-    justify-content: center;
-    display: flex;
-    margin: 20px auto;
     padding: 20px;
-    -ms-overflow-style: none; /* for Internet Explorer/Edge */
-    scrollbar-width: none; /* for Firefox */
-  }
-  
-  .table-content table {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.table-content table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
-    empty-cells: show;
-  }
-
+}
+.table-content tr {
+    margin: 20px 10px;
+    padding: 10px;
+}
 .table-content td {
-  padding: 20px 0;
-  border: 1px solid transparent;
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.table {
-    width: 100%;
-    margin-top: 2em;
-    display: inline-table;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    border: none;
-}
-
-td {
-    padding: 20px 0;
-    text-align: left;
-    border-bottom: 1px solid transparent;
+    padding: 5px 0;
     font-size: 16px;
+    font-size: 22px;
+    font-weight: 400;
 }
-
-td span {
-    font-weight: 800;
-    font-size: 15px;
+.table-content td img{
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+}
+.table-content td span {
+    font-weight: 500;
     text-align: right;
+    font-size: 25px;
     display: block;
-}
-td span input{
-    text-align: end;
-    border: none;
-    color: black;
-    font-weight: 800;
-    font-size: 16px;
-    outline: none;
-}
-
-td span input::placeholder{
-    color: black;
-    font-weight: 800;
-    font-size: 16px;
-}
-
-.content-container p.head {
-    position: relative;
-    font-size: 10px;
-    font-weight: bolder;
-    color: var(--color-bg-background);
-    margin-left: 10px;
-}
-
-.content-container p.head span{
-   font-size: 13px;
-   font-weight: lighter;
+    color: rgb(53, 38, 47);
 }
 
 .refer {
     width: 100%;
     height: 150px;
-    border: 0;
-    outline: 0;
+    max-height: 200px;
     background: white;
     border-radius: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px auto;
     padding: 20px;
-  }
-  
-  .refer .head {
-    margin-right: 10px;
-    font-size: 17px;
-  }
-  
-
-.refer .head span{
-    font-size: 20px;
-    font-weight: 900;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-.refer img{
-    width: 55px;
-    height: 55px;
-    padding: 2px, 2px, 4px, 2px;
+.refer .head {
+    font-size: 26px;
+    font-weight: 700;
+}
+.refer .head span {
+    display: block;
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+.refer img {
+    width: 100px;
+    height: 100px;
+    padding:10px;
 }
 span a {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
     text-decoration: none;
     font-size: 18px;
-    margin: auto;
-    z-index: 100;
-    padding: 20px;
-    color: #712199;
+    color: #9955BB;
     font-weight: 600;
-    line-height: 19.36px;
-    animation-duration: 0ms; 
+    background-color: #f5f5f5;
+    border-radius: 25px;
+    transition: background-color 0.3s;
 }
-footer {
-    position: relative;
-    pointer-events: all;
-    box-shadow:
-  13.4px 15.5px 35.4px rgba(0, 0, 0, 0.007),
-  19px 22px 80px rgba(0, 0, 0, 0.07)
-;
-    border-top: 1px solid #9955BB;
-    height: 70px;
-    margin: 0 auto;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    align-items: center;
-    width: 100%; /* Make the footer span the entire width of the container */
-    position: absolute;
-    bottom: 0; /* Position the footer at the bottom */
-    background-color: white;
-    border-top: 1px solid #ddd;
-    padding: auto; /* Adjust padding as needed */
+span a:hover {
+    background-color: #ddd;
 }
 
-  footer .bottom {
-    margin: 0 auto;
-    padding: 0 auto;
-    display: block;
-    justify-content: center;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  footer .bottom a {
-    text-align: center;
+footer{
+    width: 80%;
     display: flex;
+    justify-content: space-between;
+    margin: 60px 0px 0px 0px;
+    background-color: white;
+    box-shadow: 4px 0 0 rgba(0,0,0,0.1);
+    box-shadow: none;
+}
+.bottom{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2px;
-    cursor: pointer;
-    font-size: 20px;
-    text-decoration: none;
-  }
-footer .bottom p {
-    text-align: center;
-    display: flex;
+    margin: auto;
+}
+.bottom img {
     justify-content: center;
     align-items: center;
-    padding: 2px;
-    cursor: pointer;
-    font-weight: 700;
+    display: flex;
+}
+.bottom p{
     font-size: 12px;
-    margin-top: 8px;
-    color: #a7a7a7;
 }
-.active {
-    color: blueviolet;
+
+.bottom:hover{
+    transform: none;
 }
+
+footer .bottom p {
+    font-size: 25px;
+    color: #888;
+}
+.bottom:hover{
+    transition: 500ms;
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+/* Media Queries for Responsive Design */
 
 @media (max-width: 768px) {
+    /* Ensure the parent container is positioned relative */
     .background {
-        height: 180vh;
-        width: 100%;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr auto;
+        width: 320px;
+        max-width: 100%;
     }
-    .profile-header{
-        margin: 10px;
+.nav-toggle {
+    position: absolute; 
+    right: 0;
+    top: 0;
+}
+
+h3 {
+    font-size: 24px;
+}
+/* Style the images */
+.nav-toggle img {
+    position: absolute;
+    margin: 80px 50px 10px 0;
+}
+
+/* Initially hide one of the images if needed */
+#close {
+    display: none; /* Or however you want to manage the visibility */
+}
+
+    .profile-header {
+        width: 300px;
+        max-width: 320px ;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 10px;
+        border-radius: 10px;
     }
-    .profile-header h3, .profile-header .edit{
-        font-size: 16px;
-    }
-    b{
-        display: flex;
-        align-items: center;
-        letter-spacing: 1px;
-        justify-content: center;
-        margin: 10px auto;
-    }
-    .my-profile-pic {
-        width: 100%;
-    }
-    
-    .pic-container img {
-        width: 80px;
-        height: 80px;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        margin: auto;
-    }
-    
-    .table {
-        margin-top: 1em;
-    }
-    .table-content{
-        height: 100vh;
-        margin-top: 20px;
-    }
-    td {
-        padding: 10px 0;
-        font-size: 12px;
-    }
-    
-    td span {
-        font-weight: 600;
-        font-size: 14px;
-        text-align: right;
-    }
-    td span input{
-        width: 100%;
-        text-align: end;
-        border: none;
-        color: black;
-        font-weight: 800;
-        font-size: 15px;
-        outline: none;
-    }
-    td span input::placeholder {
-        font-size: 15px;
-        text-align: end;
-    }
-    .refer {
-        width: 100%;
-        margin-top: 1em;
-        margin-bottom: 4rem;
-    }
-    .refer .head {
-       padding: 10px 0;
-        font-size: 12px;
-      }
-      
-    
-    .refer .head span{
-        font-size: 14px;
-        font-weight: 900;
-    }
-    .refer img{
-        width: 50px;
-        height: 50px;
-       
-    }
-    .span a {
-        translate: -20px;
-    }
-    
-    footer .bottom {
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-top: 1em;
-        justify-content: space-around;
-    }
-    footer .bottom p{
-        font-size: 11px;
-        padding: 5px;
-    }
-    .my-profile-pic {
-        justify-content: space-around;
-        margin-bottom: 30px;
-        display: flex;
-    }
-    .my-profile-pic h3 {
-        display: flex;
-        justify-content: center;
-        margin: auto;
-        position: relative;
-        text-align: center;
-        bottom: 10px;
-    }
-    .my-profile-pic img {
-        translate: -4px;
-        font-size: 20px;
+    #open , #close {
+        width: 30px;
+        height: 30px;
+        margin-top: 30px;
+        margin-right: 28px;
     }
     .profile-header h3 {
-        font-weight: 800;
+        font-size: 20px;
+        margin-right: 50px;
+        text-align: center;
+        align-items: center;
+    }
+    .nav-toggle {
+        display: block;
+        width: 50px;
+        justify-content: left;
+        align-items: start;
+    }
+    #back {
+        position: relative;
+        align-items: start;
+        justify-content: start;
+        right: 40px;
+        display:flex;
+        width: 30px;
+        height: 30px;
+    }
+    .nav-menu {
+        display: none;
+        margin-top: 30px;        box-shadow: rgba(0,0,0,0.1);
+        flex-direction: column;
+        align-items: flex-start;
+        -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+      @-webkit-keyframes slide-top {
+        0% {
+          -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+        }
+        100% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes slide-top {
+        0% {
+          -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+        }
+        100% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+      }
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-menu ul li {
+        width: 100%;
+        list-style: none;
+    }
+    .nav-menu ul li a {
+        align-items: flex-start;
+        font-weight: 500;
+        display: block;
+        padding: 5px;
+        font-size: 18px;
+    }
+    
+    .nav-menu ul li a:hover {
+        border: 2px solid #9955BB;
+    }
+    .pic-container {
+        width: 300px;
+        max-width: 320px ;
+    }
+    .pic-container img {
+        width: 100px;
+        height: 100px;
+    }
+    .table-content td img{
+        margin-top: 0px;
+        padding: 0px;
+        width: 10px;
+        height: 10px;
+    }
+    .table-content {
+        width: 300px;
+        max-width: 320px ;
+    }
+    .table-content tr {
+        margin-top: 10px;
+        padding: 20px;
+    }
+    .table-content td {
+        margin-top: 10px;
+        font-size: 17px;
+    }
+    .table-content td span {
+        
+        font-size: 18px;
+    }
+    .refer {
+        width: 300px;
+        max-width: 320px ;
+        margin-bottom: 20px;
+    }
+    .refer .head {
+        font-size: 20px;
+    }
+    .refer .head span {
         font-size: 16px;
     }
-    .profile-header .edit{
+    .refer img {
+        width: 70px;
+        height: 70px;
+    }
+    span a {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+    .bottom{
+      margin: 10px; 
+    }
+    footer .bottom img {
+        width: 25px;
+        height: 25px;
+    }
+    footer .bottom p {
         font-size: 14px;
-        text-decoration: none;
-        font-weight: 500;
-        color: #9955BB;
-    
+    }
+    footer {
+        width: 320px;
+   
+        flex-direction: row;
+        align-items: center;
     }
 }
