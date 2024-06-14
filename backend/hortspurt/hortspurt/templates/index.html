@@ -9,6 +9,9 @@
     <link rel="stylesheet" href='{% static "./landingPage.css" %}'>
     <link rel="stylesheet" href='{% static "./mobile.css" %}'>
 
+    <!--Link to animate.css-->
+    <link rel="stylesheet" href='{% static "animate.min.css" %}'>
+
 </head>
 <body>
 
@@ -16,23 +19,23 @@
 <!--First Phase-->    
 <div class="firstPhase">
     <div class="logo">
-        <img src='{% static "images/NEW2 3.png" %}' alt="" />
+        <img src='{% static "images/NEW2 3.png" %}' class="rotateLogo" alt="" />
         <img src='{% static "images/NEW2 2.png" %}'  alt=""/>
     </div>
-    <div class="topDesign">
+    <div class="topDesign animate__animated animate__slideInDown">
         <img src='{% static "images/Group 1223.png" %}' alt="" class="circle" />
     </div>
     <div class="getIn">
-        <a href='/registration' class="signup">SIGNUP</a>
-        <a href='/accounts/login' class="login">LOGIN</a>
+        <a href='/registration/' class="signup">SignUp</a>
+        <a href='/accounts/login/' class="login">LOGIN</a>
     </div>
 </div>
 
 <!--Second Phase-->
 <div class="heroSection">
-    <div class="hero1">
+    <div class="hero1 animate__animated animate__fadeInLeft">
         <h1 class="welcome">
-            Welcome to Hortspurt
+            Welcome to Hortspurt 
         </h1>
         <h2 class="worry">
             No Data? Don’t Worry!
@@ -44,7 +47,7 @@
         </div>
         <br class="drp1">
         <br class="drp2">
-        <a href='/registration' class="cta">Get Started</a>
+        <a href='{% static "./login.html" %}' class="cta">Get Started</a>
 
         <!---This is included here intentionally for mobile view-->
         <div class="Mobilehero2">
@@ -70,7 +73,7 @@
             <img src='{% static "images/Group 19.png" %}' alt=" " class="inner" />
         </div>
     </div>
-    <div class="hero2">
+    <div class="hero2 animate__animated animate__fadeInRight">
         <img src='{% static "images/Rectangle 1241.png" %}' alt="" class="big" />
         <img src='{% static "images/Galaxy Note 20 Ultra.png" %}' class="small" alt=""/>
     </div>
@@ -88,17 +91,17 @@
 </div>
 <div class="reasons"> 
     <div class="greybox">
-        <img src='{% static "images/cloud-connection.png" %}' alt="" />
-        <h3>Zero Data Connection</h3>
+        <img src='{% static "images/cloud-connection.png" %}' class="zeroData" alt="" />
+        <h3 >Zero Data Connection</h3>
         <p class="our">Our service allows You To Buy Data<br class="brk">Without Data On Your Phone</p>
     </div>
     <div class="purplebox">
-        <img src='{% static "images/dollar-square.png" %}' alt="" />
+        <img src='{% static "images/dollar-square.png" %}' class="noData" alt="" />
         <h3>Cheap Data Connection</h3>
         <p class="our">Our service allows You To Buy Data <br class="brk"> at a very Cheap Price</p>
     </div>
-    <div class="greybox">
-        <img src='{% static "images/flash.png" %}' alt="" />
+    <div class="greybox2">
+        <img src='{% static "images/flash.png" %}' class="zeroData" alt="" />
         <h3>Fast Buying Service</h3>
         <p class="our2">Our service allows You To Buy Data/Airtime<br class="brk"> On the Go and Seamlessly</p>
     </div>
@@ -177,7 +180,7 @@
                 like airtime top<br class="break">-ups can sometimes be challenging, especially when
                 users face limitations<br class="break"> such as  lack of data subscriptions. Our
                 AirtimeTopUp app is designed to<br class="break"> address this issue by providing a
-                user-friendly and efficient solution for<br class="break"> purchasing airtime without
+                user-friendly and efficient solution for<br class="break"> purchasing airtime & data without
                 the need for an active data subscription.
               </p>
         </div>
@@ -205,24 +208,26 @@
 <div class="wavyLine2">
     <img src='{% static "images/Vector 179.png" %}' alt="" class="wavyImg2" />
 </div>
-<div class="footer">
-    <div class="contact">
-        <h3>Contact</h3>
-        <p>+2348039263055</p>
-        <p>+2348100772436</p>
-    </div>
-      <div class="mail">
-        <h3>Mail</h3>
-        <p><a href='{% static "#" %}' class="email">Hortspurt@gmail.com</a></p>
-      </div>
- 
-
-    <div class="support">
-      <a href='/support' class="foott"><h3 style="margin-bottom: 40px;">Support</h3></a>
-      <h3>Career</h3>
+<div class="foooter">
+    <div class="footer">
+        <div class="contact">
+            <h3>Contact</h3>
+            <p>+2348039263055</p>
+            <p>+2348100772436</p>
+        </div>
+          <div class="mail">
+            <h3>Mail</h3>
+            <p><a href='{% static "#" %}' class="email">Hortspurt@gmail.com</a></p>
+          </div>
+     
+    
+        <div class="support">
+          <a href='{% static "./let us know.html" %}' class="foott"><h3 style="margin-bottom: 40px;">Support</h3></a>
+          <h3>Career</h3>
+        </div>
     </div>
 </div>
 
-
+<script src='{% static "./script.js" %}'></script>
 </body>
 </html>

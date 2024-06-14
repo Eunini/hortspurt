@@ -1,47 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit my Profile</title>
-    <link rel="stylesheet" href='{% static "editProfile.css" %}'>
+    <title>Hotspurt Landing Page</title>
+
+    <link rel="stylesheet" href='{% static "./landingPage.css" %}'>
+    <link rel="stylesheet" href='{% static "./mobile.css" %}'>
+
+    <!--Link to animate.css-->
+    <link rel="stylesheet" href='{% static "animate.min.css" %}'>
+
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <a href='{% static "./purchase.html" %}'><img src='{% static "images/11zon_17.jpeg" %}' alt="Back" id="back"></a>  
-            <h3 id="title">Edit Profile</h3>
-            <div class="pic-container">
-                <img src='{% static "images/icons8-person-64.png" %}' alt="User Profile Image">
+
+
+<!--First Phase-->    
+<div class="firstPhase">
+    <div class="logo">
+        <img src='{% static "images/NEW2 3.png" %}' class="rotateLogo" alt="" />
+        <img src='{% static "images/NEW2 2.png" %}'  alt=""/>
+    </div>
+    <div class="topDesign animate__animated animate__slideInDown">
+        <img src='{% static "images/Group 1223.png" %}' alt="" class="circle" />
+    </div>
+    <div class="getIn">
+        <a href='/registration/' class="signup">SignUp</a>
+        <a href='/accounts/login/' class="login">LOGIN</a>
+    </div>
+</div>
+
+<!--Second Phase-->
+<div class="heroSection">
+    <div class="hero1 animate__animated animate__fadeInLeft">
+        <h1 class="welcome">
+            Welcome to Hortspurt 
+        </h1>
+        <h2 class="worry">
+            No Data? Don’t Worry!
+        </h2>
+        <div class="heroText">
+                We bring to you a <span class="pColor">Zero Data Connection</span><br>
+                service where you can buy data
+                while<br> you are out of Data.
+        </div>
+        <br class="drp1">
+        <br class="drp2">
+        <a href='{% static "./login.html" %}' class="cta">Get Started</a>
+
+        <!---This is included here intentionally for mobile view-->
+        <div class="Mobilehero2">
+            <img src='{% static "images/Rectangle 1241.png" %}' alt="" class="big" />
+            <img src='{% static "images/Galaxy Note 20 Ultra.png" %}' class="small" alt=""/>
+        </div>
+        <!---This was included here intentionally for mobile view-->
+
+        <!---This is included here intentionally for mobile view-->
+        <div class="mobileHero1">
+            <div class="MobileNetworkImages">
+                <img src='{% static "images/Rectangle 1242.png" %}' alt="" class="outer"/>
+                <img src='{% static "images/Group 19.png" %}' alt=" " class="Inner" />
+            </div>
+            <div class="purpleCircle">
+                
             </div>
         </div>
+        <!---This was included here intentionally for mobile view-->
 
-        <div class="edit-body">
-            <div class="edit">
-                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">Full Name</p>
-                <input type="text" name="" id="" value="Inioluwa Atanda">
-            </div>
-
-            <div class="edit">
-                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">Username</p>
-                <input type="text" name="" id="" value="Eunini">
-            </div>
-
-            <div class="edit">
-                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">Phone Number</p>
-                <input type="text" name="" id="" value="+2368039213244">
-            </div>
-
-            <div class="edit">
-                <p><img src='{% static "images/icons8-star-64.png" %}' alt="">Email Address</p>
-                <input type="text" name="" id="" value="a**ini@gmail.com">
-            </div>
-        </div>
-
-        <div class="buttons">
-            <button>Discard Changes</button>
-            <button>Submit Changes</button>
+        <div class="networkImages">
+            <img src='{% static "images/Rectangle 1242.png" %}' alt="" class="outer"/>
+            <img src='{% static "images/Group 19.png" %}' alt=" " class="inner" />
         </div>
     </div>
+    <div class="hero2 animate__animated animate__fadeInRight">
+        <img src='{% static "images/Rectangle 1241.png" %}' alt="" class="big" />
+        <img src='{% static "images/Galaxy Note 20 Ultra.png" %}' class="small" alt=""/>
+    </div>
+</div>
+
+<!--Third Phase-->
+<div class="whyUs">
+    <div class="spacetaker">
+        --JUST A SPACE-TAKER--
+    </div>
+    <h1 class="why">
+        Why Us?
+    </h1>
+    <img src='{% static "images/Group 1221.png" %}' alt="" class="up" />
+</div>
+<div class="reasons"> 
+    <div class="greybox">
+        <img src='{% static "images/cloud-connection.png" %}' class="zeroData" alt="" />
+        <h3 >Zero Data Connection</h3>
+        <p class="our">Our service allows You To Buy Data<br class="brk">Without Data On Your Phone</p>
+    </div>
+    <div class="purplebox">
+        <img src='{% static "images/dollar-square.png" %}' class="noData" alt="" />
+        <h3>Cheap Data Connection</h3>
+        <p class="our">Our service allows You To Buy Data <br class="brk"> at a very Cheap Price</p>
+    </div>
+    <div class="greybox2">
+        <img src='{% static "images/flash.png" %}' class="zeroData" alt="" />
+        <h3>Fast Buying Service</h3>
+        <p class="our2">Our service allows You To Buy Data/Airtime<br class="brk"> On the Go and Seamlessly</p>
+    </div>
+</div>
+
+<!--fourth phase-->
+<div class="services">
+    <div class="serviceImg">
+        <img src='{% static "images/OnePlus 10T.png" %}' alt="" class="serv"/>
+    </div>
+    <div class="serviceList">
+        <h2>Other Services</h2>
+
+        <div class="list">
+          <div class="item">
+            <img src='{% static "images/tick-circle.png" %}' alt="" />
+            <h3>Electricity Bill</h3>
+          </div>
+          <div class="item">
+            <img src='{% static "images/tick-circle.png" %}' alt="" />
+            <h3>Cable</h3>
+          </div>
+          <div class="item">
+            <img src='{% static "images/tick-circle.png" %}' alt="" />
+            <h3>Cryto Exchange</h3>
+          </div>
+          <div class="item">
+            <img src='{% static "images/tick-circle.png" %}' alt="" />
+            <h3>Logistics</h3>
+          </div>
+        </div>
+    </div>
+</div>
+<!--Another div for mobile devices (fourth phase)-->
+<div class="mobileServices">
+    <div class="otherServHeader">
+        <img src='{% static "images/Group 1222 (1).png" %}' alt="" class="ballon1" />
+        <div class="servhead">
+            <h2>Other Services</h2>
+        </div>
+    </div>
+    <div class="list2">
+        <div class="item">
+          <img src='{% static "images/tick-circle.png" %}' alt="" />
+          <h3>Electricity Bill</h3>
+        </div>
+        <div class="item">
+          <img src='{% static "images/tick-circle.png" %}' alt="" />
+          <h3>Cable</h3>
+        </div>
+        <div class="item">
+          <img src='{% static "images/tick-circle.png" %}' alt="" />
+          <h3>Cryto Exchange</h3>
+        </div>
+        <div class="item">
+          <img src='{% static "images/tick-circle.png" %}' alt="" />
+          <h3>Logistics</h3>
+        </div>
+      </div>
+</div>
+<!--End of another div for mobile devices-->
+
+<!--fifth phase-->
+<div class="mainCanopy">
+    <div class="aboutUs">
+        <h2>About Us</h2>
+    </div>
+    <div class="canopyContent1">
+        <div class="aboutImage">
+            <img src='{% static "images/Phone 1.png" %}' alt="" />
+        </div>
+        <div class="aboutContent">
+            <p class="aboutText">
+                In today's interconnected world, mobile phones have become an
+                essential<br class="break"> part of our daily lives. However, accessing basic services
+                like airtime top<br class="break">-ups can sometimes be challenging, especially when
+                users face limitations<br class="break"> such as  lack of data subscriptions. Our
+                AirtimeTopUp app is designed to<br class="break"> address this issue by providing a
+                user-friendly and efficient solution for<br class="break"> purchasing airtime & data without
+                the need for an active data subscription.
+              </p>
+        </div>
+    </div>
+
+    <div class="wavyLine">
+        <img src='{% static "images/Vector 179.png" %}' alt="" class="wavyImg" />
+    </div>
+</div>
+
+<!--div for mobile device-->
+<div class="Aboutcontent2">
+   <p class="AboutText2">
+                In today's interconnected world, mobile phones have become an
+                essential<br class="break"> part of our daily lives. However, accessing basic services
+                like airtime top<br class="break">-ups can sometimes be challenging, especially when
+                users face limitations<br class="break"> such as  lack of data subscriptions. Our
+                AirtimeTopUp app is designed to<br class="break"> address this issue by providing a
+                user-friendly and efficient solution for<br class="break"> purchasing airtime without
+                the need for an active data subscription.
+    </p>
+</div>
+
+<!--sixth phase-->
+<div class="wavyLine2">
+    <img src='{% static "images/Vector 179.png" %}' alt="" class="wavyImg2" />
+</div>
+<div class="foooter">
+    <div class="footer">
+        <div class="contact">
+            <h3>Contact</h3>
+            <p>+2348039263055</p>
+            <p>+2348100772436</p>
+        </div>
+          <div class="mail">
+            <h3>Mail</h3>
+            <p><a href='{% static "#" %}' class="email">Hortspurt@gmail.com</a></p>
+          </div>
+     
+    
+        <div class="support">
+          <a href='{% static "./let us know.html" %}' class="foott"><h3 style="margin-bottom: 40px;">Support</h3></a>
+          <h3>Career</h3>
+        </div>
+    </div>
+</div>
+
+<script src='{% static "./script.js" %}'></script>
 </body>
 </html>
