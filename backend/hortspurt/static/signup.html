@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get started</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+   <div class="body">
+      <div class="content-container">
+        <form id="form" action="/">
+
+          <div class="division">
+
+            <div class="welcome">
+              <h2>Get started now, with your reliable <span>HORTSPURT</span></h2>
+            </div>
+
+            <div class="sign-up">
+              <p class="head">Almost there! <br><span>Quickly set up your account in a second...</span></p>  
+              
+              <div class="input-control">
+                <input type="text" id="fullname" placeholder="Full Name" class="input" required>
+                <img src="images/Group 16 (1).png" alt="Icon">
+              </div>
+    
+              <div class="input-control">
+                <input type="text" id="lastname" placeholder="Username" class="input" required>
+                <img src="images/Group 16 (1).png" alt="Icon">    
+              </div>
+    
+              <div class="input-control">
+                <input type="email" id="gmail" placeholder="Email" class="input" required>
+                <img src="images/email-edit-outline.png" alt="Icon">
+              </div>
+    
+              <div class="input-control">
+                <input type="text" id="phonenumber" placeholder="Phone" class="input" required>
+                <img src="images/call.png" alt="Icon">
+              </div>
+    
+              <!-- The option to select gender -->
+              <div class="input-control">
+                <select id="gender" name="gender" required>
+                  <option value="gender" disabled selected>Select gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+          
+              <div class="input-control">
+                <input type="password" id="pin" placeholder="Pin" class="input">               
+                <span class="eye" onclick="passwordVisibility(false)">
+                  <img src="images/icons8-eye-24.png" class="eye" id="hide1" alt="Eye Icon">
+                  <img src="images/login show.png" class="eye" id="hide2" alt="Eye Slash Icon" style="width: 25px; height: 25px;">
+                </span>
+              </div>
+    
+              <div class="input-control">
+                <input type="password" id="confirm-pin" placeholder="Confirm Pin" class="input"> 
+                <span class="eye" onclick="passwordVisibility(true)">
+                  <img src="images/icons8-eye-24.png" id="confirm-hide1" class="eye" alt="Eye Icon">
+                  <img src="images/login show.png" id="confirm-hide2" class="eye" alt="Eye Slash Icon" style="width: 25px; height: 25px;">
+                </span>
+              </div> 
+    
+              <button type="submit" class="submit-button" id="btn"><a href="./purchase.html"><p>Sign Up</p></a></button>            
+              
+              <div class="text-container">
+                <p class="bottom">Have an account before? <a href="./login.html">Click here to sign in</a></p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+   </div>
+   <script>
+    const genderSelect = document.getElementById('gender');
+
+    function updateColor() {
+        const selectedOption = genderSelect.options[genderSelect.selectedIndex];
+        if (selectedOption.value === 'gender') {
+            genderSelect.style.color = '#9C9C9C';
+        } else {
+            genderSelect.style.color = 'black';
+        }
+    }
+
+    genderSelect.addEventListener('change', updateColor);
+    updateColor();
+
+    function passwordVisibility(isConfirmPassword) {
+        const pin = document.getElementById("pin");
+        const confirmPin = document.getElementById("confirm-pin");
+        const pinEye = document.getElementById("hide1");
+        const pinEyeSlash = document.getElementById("hide2");
+        
+        if (!isConfirmPassword) {
+            if (pin.type === 'password') {
+                pinEye.style.display = 'block';
+                pinEyeSlash.style.display = 'none';
+                pin.type = 'text';
+            } else {
+                pinEye.style.display = 'none';
+                pinEyeSlash.style.display = 'block';
+                pin.type = 'password';
+            }
+        } else {
+            const pinEyeConfirm = document.getElementById("confirm-hide1");
+            const pinEyeSlashConfirm = document.getElementById("confirm-hide2");
+            
+            if (confirmPin.type === 'password') {
+                confirmPin.type = 'text';
+                pinEyeConfirm.style.display = 'block';
+                pinEyeSlashConfirm.style.display = 'none';
+            } else {
+                confirmPin.type = 'password';
+                pinEyeConfirm.style.display = 'none';
+                pinEyeSlashConfirm.style.display = 'block';
+            }
+        }
+    }
+   </script>
+</body>
+</html>

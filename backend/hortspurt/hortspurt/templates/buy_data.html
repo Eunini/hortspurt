@@ -28,7 +28,7 @@
         </div>
     
         <div class="walletBalance" id="walletBalance">
-            NGN 150,000
+            NGN {{user.profile.wallet_balance}}
         </div>
     
         <div class="walletBalanceHidden" id="walletBalanceHidden">
@@ -52,7 +52,7 @@
             <div class="countryCode">+234</div>
             <img src='{% static "images/Line 5.png" %}' alt="">
         </div>
-        <input id="phoneno" type="text" class="phonenumb" value="8039263055">
+        <input id="phoneno" type="text" class="phonenumb" value="{{phone_number}}">
     </div>
 
 

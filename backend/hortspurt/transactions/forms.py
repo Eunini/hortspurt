@@ -7,5 +7,5 @@ class AddMoneyTrForm(forms.ModelForm):
 
     class Meta:
         model = AddMoneyTransaction
-        fields = ('user', 'tr_id', 'amount', 'method', 'status')
+        fields = ('user', 'tr_id', 'tr_ref', 'amount', 'method', 'status')
     

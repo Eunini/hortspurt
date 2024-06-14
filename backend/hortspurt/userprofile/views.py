@@ -3,11 +3,12 @@ from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from userprofile.models import Profile
 from django.contrib.auth.models import User
-from .forms import UserCreationForm, ProfileForm, RegisterForm
+from .forms import UserCreationForm, ProfileForm, RegisterForm, ProfileEditForm
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from django.http import JsonResponse
 from rest_framework.views import APIView
+from django.views.generic.edit import UpdateView 
 # Create your views here.
 
 class RegisterView(View):
@@ -66,9 +67,24 @@ class ProfileView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'profile.html')
 
+class EditProfileView(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'editProfile.html')
+    
+    def post(self, request):
+        form = ProfileEditForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('/my-profile/')
+        else:
+            print(form.errors)
+            return render(request, 'editProfile.html')
+
+
 class SupportView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'let_us_know.html')
     
     def post(self, request):
         return render(request, 'we_know.html')
+

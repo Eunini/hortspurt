@@ -1,164 +1,129 @@
+<!DOCTYPE html>
 <html lang="en">
 {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hortspot login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapicss2?famoda:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href='{% static "hortspot login.css" %}'>
-    <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
+    <title>Get started</title>
+    <link rel="stylesheet" href='{% static "signup.css" %}'>
 </head>
 <body>
    <div class="body">
       <div class="content-container">
         <form id="form" action="" method="post">
           {% csrf_token %}
-          <p class="head"> Almost there! <br> <span>  Quickly set up your account in a second... </span></p>  
-          <div class="input-control">
-            <input type="text" id="firstname" placeholder="First Name" class="input" name="first_name" required>
-            <i class="fa-regular fa-user"></i>
-          </div>
+          <div class="division">
 
-          <div class="input-control">
-            <input type="text" id="lastname" placeholder="Last Name" class="input" name="last_name" required>
-            <i class="fa-regular fa-user"></i>    
-          </div>
-
-          <div class="input-control">
-            <input type="email" id="gmail" placeholder="@ Email" class="input" name="email" required>
-            <i class="fa-regular fa-envelope"></i>
-          </div>
-
-          <div class="input-control">
-            <input type="text" id="phonenumber" placeholder="Phone" class="input" name="username" required>
-            <i class="fa-regular fa-phone"></i>
-          </div>
-
-          <!--The option to select gender-->
-        
-          <div class="dropdown">
-            <div class="input-control">
-              <input type="text" class="input" id="myGender" placeholder="Gender" onclick="toggleOptions()" name="gender">
-              <i class="fa-solid fa-angle-down"></i>
+            <div class="welcome">
+              <h2>Get started now, with your reliable <span>HORTSPURT</span></h2>
             </div>
-            <div class="options" id="dropdownOptions">
-              <select onchange="updateInputValue()">
-                <option value="M">Male</option>
-                <option value="F">Female</option>
-                <option value="P">I don't prefer to say</option>
-              </select>
+
+            <div class="sign-up">
+              <p class="head">Almost there! <br><span>Quickly set up your account in a second...</span></p>  
+              
+              <div class="input-control">
+                <input type="text" id="firstname" placeholder="First Name" class="input" name="first_name" required>
+                <img src='{% static "images/Group 16 (1).png" %}' alt="Icon">
+              </div>
+    
+              <div class="input-control">
+                <input type="text" id="lastname" placeholder="Last Name" class="input" name="last_name" required>
+                <img src='{% static "images/Group 16 (1).png" %}' alt="Icon">    
+              </div>
+    
+              <div class="input-control">
+                <input type="email" id="gmail" placeholder="Email" class="input" name="email" required>
+                <img src='{% static "images/email-edit-outline.png" %}' alt="Icon">
+              </div>
+    
+              <div class="input-control">
+                <input type="text" id="phonenumber" placeholder="Phone" class="input" name="username" required>
+                <img src='{% static "images/call.png" %}' alt="Icon">
+              </div>
+    
+              <!-- The option to select gender -->
+              <div class="input-control">
+                <select id="gender" name="gender" required>
+                  <option value="gender" disabled selected>Select gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+          
+              <div class="input-control">
+                <input type="password" id="pin" placeholder="Pin" class="input">               
+                <span class="eye" onclick="passwordVisibility(false)">
+                  <img src='{% static "images/icons8-eye-24.png" %}' class="eye" id="hide1" alt="Eye Icon">
+                  <img src='{% static "images/login show.png" %}' class="eye" id="hide2" alt="Eye Slash Icon" style="width: 25px; height: 25px;">
+                </span>
+              </div>
+    
+              <div class="input-control">
+                <input type="password" id="confirm-pin" placeholder="Confirm Pin" class="input"> 
+                <span class="eye" onclick="passwordVisibility(true)">
+                  <img src='{% static "images/icons8-eye-24.png" %}' id="confirm-hide1" class="eye" alt="Eye Icon">
+                  <img src='{% static "images/login show.png" %}' id="confirm-hide2" class="eye" alt="Eye Slash Icon" style="width: 25px; height: 25px;">
+                </span>
+              </div> 
+    
+              <button type="submit" class="submit-button" id="btn"><a href="#"><p>Sign Up</p></a></button>            
+              
+              <div class="text-container">
+                <p class="bottom">Have an account before? <a href="/accounts/login">Click here to sign in</a></p>
+              </div>
             </div>
-          </div>
-        
-          <div class="input-control pin-container">
-            <input type="password" name="password1" id="pin" placeholder="Pin" class="input" oninput="onPasswordInput(false)">
-            <span class="eye" onclick="passwordVisibility(false)">
-              <i id="hide1" class="fa-regular fa-eye"></i>
-              <i id="hide2" class="fa-regular fa-eye-slash disabled-icon"></i>
-            </span>
-          </div>
-
-          <div class="input-control pin-container">
-            <input type="password" name="password2" id="confirm-pin" placeholder="Confirm Pin" class="input" oninput="onPasswordInput(true)">
-            <span class="eye" onclick="passwordVisibility(true)">
-              <i id="confirm-hide1" class="fa-regular fa-eye disabled-icon"></i>
-              <i id="confirm-hide2" class="fa-regular fa-eye-slash disabled-icon"></i>
-            </span>
-          </div>
-        
-
-          <button type="submit" class="submit-button" id="btn"><b>Sign Up</b></button>
-          <div class="text-container">
-            <p class="bottom">Have an account before? <a href="/accounts/login">Click here to sign in</a></p>
           </div>
         </form>
       </div>
    </div>
    <script>
-    function toggleOptions() {
-      var options = document.getElementById("dropdownOptions");
-      options.style.display = (options.style.display === "block") ? "none" : "block";
+    const genderSelect = document.getElementById('gender');
+
+    function updateColor() {
+        const selectedOption = genderSelect.options[genderSelect.selectedIndex];
+        if (selectedOption.value === 'gender') {
+            genderSelect.style.color = '#9C9C9C';
+        } else {
+            genderSelect.style.color = 'black';
+        }
     }
 
-    function updateInputValue() {
-      var input = document.getElementById('myGender');
-      var select = document.querySelector('#dropdownOptions select');
-      input.value = select.value;
-      // Optionally hide the options after selection
-      toggleOptions();
-    }
+    genderSelect.addEventListener('change', updateColor);
+    updateColor();
 
-    /**
-     * Diasbles Eye Icons For Password And Confirm Password Field Based On Pin Input
-     */
-    const onPasswordInput = (isConfirmPassword) => {
-      if(!isConfirmPassword){
+    function passwordVisibility(isConfirmPassword) {
         const pin = document.getElementById("pin");
+        const confirmPin = document.getElementById("confirm-pin");
         const pinEye = document.getElementById("hide1");
         const pinEyeSlash = document.getElementById("hide2");
-        if(pin.value === ''){
-          pinEye.classList.add('disabled-icon')
-          pinEyeSlash.classList.add('disabled-icon')
-        } else {
-          pinEye.classList.remove('disabled-icon')
-          pinEyeSlash.classList.remove('disabled-icon')
-        }
-      } else {
-        const confirmPin = document.getElementById("confirm-pin");
-        const pinEye2 = document.getElementById("confirm-hide1");
-        const pinEyeSlash2 = document.getElementById("confirm-hide2");
-        if(confirmPin.value === ''){
-          pinEye2.classList.add('disabled-icon')
-          pinEyeSlash2.classList.add('disabled-icon')
-        } else {
-          pinEye2.classList.remove('disabled-icon')
-          pinEyeSlash2.classList.remove('disabled-icon')
-        }
-      }
-    }
-    
-    /**
-     * Will Toggle Password Eye Icon For Password And Confirm Password Input Field
-    */
-    function passwordVisibility(isConfirmPassword) {
-      const pin = document.getElementById("pin");
-      const confirmPin = document.getElementById("confirm-pin");
-      //const button = document.getElementById("btn");
-      const pinEye = document.getElementById("hide1");
-      const pinEyeSlash = document.getElementById("hide2");
-      
-      if(!isConfirmPassword){
-        if(pin.type === 'password') {
-          pinEye.style.display = 'block';
-          pinEyeSlash.style.display = 'none';
-          pin.type = 'text';
-        }
-        else {
-          pinEye.style.display = 'none';
-          pinEyeSlash.style.display = 'block';
-          pin.type = 'password';
-        }
-      } else {
-        const pinEyeConfirm = document.getElementById("confirm-hide1");
-        const pinEyeSlashConfirm = document.getElementById("confirm-hide2");
         
-        if(confirmPin.type === 'password') {
-          confirmPin.type = 'text';
-          pinEyeConfirm.style.display = 'block';
-          pinEyeSlashConfirm.style.display = 'none';
+        if (!isConfirmPassword) {
+            if (pin.type === 'password') {
+                pinEye.style.display = 'block';
+                pinEyeSlash.style.display = 'none';
+                pin.type = 'text';
+            } else {
+                pinEye.style.display = 'none';
+                pinEyeSlash.style.display = 'block';
+                pin.type = 'password';
+            }
+        } else {
+            const pinEyeConfirm = document.getElementById("confirm-hide1");
+            const pinEyeSlashConfirm = document.getElementById("confirm-hide2");
+            
+            if (confirmPin.type === 'password') {
+                confirmPin.type = 'text';
+                pinEyeConfirm.style.display = 'block';
+                pinEyeSlashConfirm.style.display = 'none';
+            } else {
+                confirmPin.type = 'password';
+                pinEyeConfirm.style.display = 'none';
+                pinEyeSlashConfirm.style.display = 'block';
+            }
         }
-        else {
-          confirmPin.type = 'password';
-          pinEyeConfirm.style.display = 'none';
-          pinEyeSlashConfirm.style.display = 'block';
-        }
-      }
     }
-    
-    
-  </script>
+   </script>
 </body>
 </html>

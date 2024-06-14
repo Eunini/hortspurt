@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hortspurt</title>
+  </head>
+    <body>
+        <div class="form-group">
+          <h3>{{ msg }}</h3>
+        </div>
+        {% if msg == 'Bank Transfer payment service is currently unavailable. Please try again' %}
+          <div class="form-submit">
+            <a href="/pay/transfer/"> Retry </a>
+          </div>
+        {% else %}
+          <div class="form-submit">
+            <a href="/pay/transfer/verify/{{tr_ref}}/"> Done </a>
+          </div>
+        {% endif %}
+    </body>
+</html>

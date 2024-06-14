@@ -1,0 +1,66 @@
+.mainbox{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 25px 12px;
+    border-radius: 5px;
+}
+
+.shouterDetails{
+    display: flex;
+    flex-direction: column;
+}
+
+.shouterNameAnGb{
+    color: #9955BB;
+    font-size: 20px;
+    padding-bottom: 7px;
+    font-weight: 600;
+}
+
+.shouterPhoneNo{
+    color: #434044;
+    font-weight: 500;
+    font-size: 18px;
+    padding-bottom: 7px;
+}
+
+.shoutNotif{
+    display: flex;
+    padding-left: 20px;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+#shoutoutLevel{
+    color:#9955BB;
+    padding-left: 6px;
+}
+
+
+
+
+@media screen and (max-width:600px){
+
+    .mainbox{
+        display: flex;
+        justify-content: space-between;
+        margin: 12px 3px;
+        border: 1px solid rgba(0,0,0,0.2);
+        border-radius: 5px;
+        padding: 25px 12px;
+        border-radius: 5px;
+    }
+
+    .shoutNotif{
+        display: flex;
+        padding-left: 20px;
+        justify-content: flex-end;
+        margin-right: 10px;
+    }
+
+
+
+}

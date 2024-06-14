@@ -1,0 +1,47 @@
+.container {
+    position: relative;
+opacity: .5;
+    z-index: 1;
+}
+
+.centered-div {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background-color: #fff;
+    z-index: 4;
+    opacity: 1; /* Ensure the centered div is fully opaque */
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    justify-content: center;
+    color: #000; /* Text color inside the centered div */
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add solid box shadow */
+}
+.centered-div h1{
+    font-size: 50px;
+    opacity: 1;
+}
+.centered-div p, .centered-div h2{
+    padding: 15px;
+    font-weight: 700;
+}
+.content {
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .centered-div {
+        width: 85%;
+        height: 40%;
+    }
+    .centered-div p, .centered-div h2{
+        padding: 5px;
+        font-weight: 700;
+    }
+}

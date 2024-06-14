@@ -1,0 +1,198 @@
+body{
+    margin: 20px 20px;
+}
+
+
+.numbbox{
+    display: flex;
+    align-content: center;
+    border: 1px solid #9955BB;
+    width: 95%;
+    padding: 10px 5px;
+    margin-top: 20px;
+    margin-left: 0px;
+    border-radius: 5px;
+}
+
+.netimg{
+    padding: 0px 15px;
+}
+
+.phonenumb{
+    margin-left: 10px;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    width: 70%;
+}
+
+.phonenumb:hover{
+    border-color: none;
+    outline-style: none;
+}
+
+.phonenumb:focus{
+    border-color: none;
+    outline-style: none;
+}
+
+.cardA{
+    text-align: center;
+    display: block;
+    padding: 30px 5px;
+    border: 1px solid #9955BB;
+    background-color:white;
+    border-radius: 10px;
+}
+
+.slider-container{
+    padding: 60px;
+    border: 1px solid #F8EBFF;
+    border-radius: 10px;
+    background-color: #F5E1FF ; /* #F8EBFF */
+}
+
+.slider-container1{
+    padding: 0px 60px;
+}
+
+
+
+.idanDeals{
+    background-color: #F5E1FF ;
+    border: 1px solid #F8EBFF;
+    border-radius: 10px;
+    margin-top:40px;
+}
+
+.dealsH{
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    width:inherit;
+    border-bottom: 3px solid #9955BB;
+}
+
+.idanDH{
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: #9955BB;
+    padding-bottom: 2px;
+    padding-top: 10px;
+    border-bottom: 3px solid #9955BB;
+    width: fit-content;
+}
+
+.cardB{
+    display: block;
+    width: fit-content;
+    padding: 35px 20px;
+    background-color:white;
+    border-radius: 15px;
+}
+
+.cr{
+    display: flex;
+    align-items: baseline;
+}
+
+.currency{
+    color: #9955BB;
+}
+
+.price{
+    color: #9955BB;
+    font-size: 24px;
+}
+
+.discount{
+    padding-top: 5px;
+    color: #9C9C9C;
+}
+
+.buyData{
+    text-decoration-line: none;
+    border: 1px solid #9955BB;
+    color: #9955BB;
+    padding: 10px 45px;
+    border-radius: 20px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.buyData:hover{
+    color: white;
+    background-color: #9955BB;
+    transition: 500ms;
+}
+
+.swiper-slide{
+    margin-bottom: 40px;
+}
+
+
+
+
+@media screen and (max-width:600px){
+
+    .netimg{
+        padding: 2px;
+    }
+
+    .phonenumb{
+        margin-left: 4px;
+        border: none;
+        font-size: 14px;
+        width: 80%;
+    }
+
+    .numbbox{
+        width: 93%;
+        padding: 10px 5px;
+        margin-top: 40px;
+        margin-left: 2px;
+        margin-right: 12px;
+    }
+
+    .line1{
+        width: 90%;
+    }
+
+    .line2{
+        width: 94%;
+    }
+
+
+    .dealsH{
+        margin-top: 30px;
+        margin-left: 12px;
+        margin-right: 15px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        width:inherit;
+        border-bottom: 3px solid #9955BB;
+    }
+
+    .idanDH{
+        margin-left: 12px;
+        margin-right: 15px;
+        margin-bottom: 20px;
+        font-size: 21px;
+        color: #9955BB;
+        padding-bottom: 2px;
+        padding-top: 10px;
+        border-bottom: 3px solid #9955BB;
+        width: fit-content;
+    }
+
+
+
+
+
+
+}
+

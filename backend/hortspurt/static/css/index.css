@@ -1,0 +1,55 @@
+.numbbox{
+    display: flex;
+    align-content: center;
+    border: 1px solid #9955BB;
+    width: fit-content;
+    padding: 10px 5px;
+    margin-top: 40px;
+}
+
+.cancel{
+    font-size: 28px;
+    padding: 20px;
+}
+
+.cancel:hover{
+    cursor: pointer;
+}
+
+.amount{
+    margin-top: 40px;
+    font-size: 25px;
+}
+
+.phonenumb{
+    margin-left: 10px;
+    border: none;
+    
+}
+
+.phonenumb:hover{
+    border-color: none;
+    outline-style: none;
+}
+
+.phonenumb:focus{
+    border-color: none;
+    outline-style: none;
+}
+
+.enterpin{
+    margin-top: 100px;
+}
+
+.pin{
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.firstcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
