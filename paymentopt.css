@@ -25,7 +25,7 @@
 .cancel{
     width: 25px;
     height: 25px;
-    background-color: #9955BB40;
+    background-color: none;
     margin: 20px 0 0 10px;
    
 }
@@ -62,8 +62,8 @@ h1{
     color: #4d4a4a;
 }
 .amount span {
-    font-weight: 900;
-    font-size: 23px;
+    font-weight: 600;
+    font-size: 20px;
 }
 .boxes {
     margin: 30px auto;
