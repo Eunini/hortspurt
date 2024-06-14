@@ -70,13 +70,13 @@ def confirm_transaction(tr_id):
 @shared_task
 def confirm_transfer(tr_ref):
     try:
-        confirmation_url = f'https://api.flutterwave.com/v3/transactions/verify_by_reference/?tx_ref={tr_ref}/'
+        confirmation_url = f'https://api.flutterwave.com/v3/transactions/verify_by_reference/?tx_ref={tr_ref}'
         try:
-            tr_obj = AddMoneyTransaction.objects.get(tr_id=tr_ref)
+            tr_obj = AddMoneyTransaction.objects.get(tr_ref=tr_ref)
             if (tr_obj.status == 'S'):
                 return True
 
-            print(f"Transaction with ID {tr_ref} found: {tr_obj}")
+            print(f"Transaction with ref {tr_ref} found: {tr_obj}")
 
             try:
                 response = requests.get(confirmation_url, headers=headers)
@@ -91,16 +91,18 @@ def confirm_transfer(tr_ref):
                             #print(res_data)
                             if (tr_obj.status != 'S'):
                                 tr_obj.status = 'S'
+                                tr_obj.tr_id = res_data['data']['id']
+                                tr_obj.full_clean()
                                 tr_obj.save()
                                 print(tr_obj.user.profile.wallet_balance, tr_obj.amount)
                                 tr_obj.user.profile.wallet_balance += tr_obj.amount
                                 print(tr_obj.user.profile.wallet_balance)
                                 tr_obj.user.profile.save()
                                 return True
-                            elif (res_data['data']['status'] == 'failed'):
-                                tr_obj.status = 'F'
-                                tr_obj.save()
-                                print(f"Transaction not confirmed: {res_data['data']['processor_response']}")
+                        elif (res_data['data']['status'] == 'failed'):
+                            tr_obj.status = 'F'
+                            tr_obj.save()
+                            print(f"Transaction not confirmed: {res_data['data']['processor_response']}")
                     else:
                         print(f"Transaction not verified: {res_data['status']}")
                 except (KeyError, json.JSONDecodeError) as e:
@@ -110,9 +112,10 @@ def confirm_transfer(tr_ref):
                 print(f"Error making request: {e}")
 
         except AddMoneyTransaction.DoesNotExist:
-            print(f"Transaction with ID {tr_id} not found.")
+            print(f"Transaction with ref {tr_ref} not found.")
     except Exception as e:
         print(f"An error occurred: {e}")
+        traceback.print_exc()
     return False
 
 #test.delay()

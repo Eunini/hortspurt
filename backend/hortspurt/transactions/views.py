@@ -77,7 +77,7 @@ class PayWithUssdView(LoginRequiredMixin, View):
                 msg = 'USSD payment service is currently unavailable. Please try again'
             else:
                 ctx['tr_id'] = res_data['data'].get("id")
-                new_add_money_tr_form = AddMoneyTrForm({'user':request.user, 'amount':res_data['data'].get("amount"), 'tr_id':str(res_data['data'].get("id")), 'method':'U', 'status':'P'})
+                new_add_money_tr_form = AddMoneyTrForm({'user':request.user, 'amount':res_data['data'].get("amount"), 'tr_id':str(res_data['data'].get("id")), 'tr_ref':str(res_data['data'].get("tx_ref")), 'method':'U', 'status':'P'})
                 if new_add_money_tr_form.is_valid():
                     new_add_money_tr_form.save()
                     ussdCode = res_data['meta']['authorization']['note']
@@ -123,9 +123,9 @@ class PayWithTransferView(LoginRequiredMixin, View):
             if (not res_data.get('status') or res_data['status'] != 'success'):
                 msg = 'Bank Transfer payment service is currently unavailable. Please try again'
             else:
-                ctx['tr_id'] = res_data['meta']['authorization']['transfer_reference']
+                ctx['tr_ref'] = tx_ref
                 transferAmount = res_data['meta']['authorization']['transfer_amount']
-                new_add_money_tr_form = AddMoneyTrForm({'user':request.user, 'amount':transferAmount, 'tr_id':res_data['meta']['authorization']['transfer_reference'], 'method':'T', 'status':'P'})
+                new_add_money_tr_form = AddMoneyTrForm({'user':request.user, 'amount':transferAmount, 'tr_ref':tx_ref, 'method':'T', 'status':'P'})
                 if new_add_money_tr_form.is_valid():
                     new_add_money_tr_form.save()
                     transferBank = res_data['meta']['authorization']['transfer_bank']
