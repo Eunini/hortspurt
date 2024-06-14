@@ -58,6 +58,9 @@ h1{
     display: flex;
     position: relative;
 }
+.amount P{
+    color: #4d4a4a;
+}
 .amount span {
     font-weight: 900;
     font-size: 23px;
