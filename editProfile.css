@@ -195,7 +195,7 @@ button{
     }
 .nav-toggle {
     position: absolute; 
-    right: 0;
+    right: 20px;
     top: 0;
 }
 
