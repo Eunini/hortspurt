@@ -23,9 +23,10 @@
     width: 100%;
 }
 .cancel{
-    width: 25px;
-    height: 25px;
-    background-color: none;
+    width: 40px;
+    height: 40px;
+    
+    background-color: #9955BB;
     margin: 20px 0 0 10px;
    
 }
@@ -99,16 +100,22 @@ h1{
         padding-top: 100px;
         margin: 10px auto;
     }
+    .cancel {
+        width: 25px;
+        height: 25px;
+        background-color: transparent;
+    }
     .amount{
-        width: 100vw;
+        width: 95%;
         margin: 10px;
         padding: 10px;
     }
     .boxes{
+        width: 95%;
         margin: 10px auto ;
     }
     .box {
-        width: 100vw;
+        width: 95%;
         height: 55px;
         padding: 5px;
         margin: 15px auto;

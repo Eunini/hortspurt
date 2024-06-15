@@ -17,15 +17,14 @@ html {
 }
 body {
     margin: 0;
+    padding: 0;
     background-color: #f5f5f5;
 }
 .background {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    max-height: 140vh;
-    max-width: 80%;
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -105,23 +104,23 @@ body {
     border-collapse: collapse;
 }
 .table-content tr {
-    margin: 20px 10px;
+    margin-bottom: 20px;
     padding: 10px;
 }
 .table-content td {
-    padding: 5px 0;
+    padding: 10px 0;
     font-size: 16px;
     font-size: 22px;
     font-weight: 400;
 }
 .table-content td img{
-    justify-content: center;
-    margin-top: 10px;
-    padding: 10px;
-    width: 30px;
-    height: 30px;
+    margin-top: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
 }
 .table-content td span {
+    padding-top: 30px;
     font-weight: 500;
     text-align: right;
     font-size: 25px;
@@ -174,8 +173,10 @@ span a:hover {
 }
 
 footer{
-    width: 80%;
+    bottom: 0;
+    width: 100%;
     display: flex;
+    border-top: 2px solid #9955BB;
     justify-content: space-between;
     margin: 60px 0px 0px 0px;
     background-color: white;
@@ -188,6 +189,7 @@ footer{
     justify-content: center;
     align-items: center;
     margin: auto;
+    padding: 30px 0;
 }
 .bottom img {
     justify-content: center;
@@ -275,9 +277,13 @@ h3 {
         height: 30px;
     }
     .nav-menu {
+        border-radius: 10px;
+        padding: 5px 20px;
+        background: #9955BB;
         display: none;
-        margin-top: 30px;        box-shadow: rgba(0,0,0,0.1);
+        margin-top: 30px;        
         flex-direction: column;
+        z-index: 1;
         align-items: flex-start;
         -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
         animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -315,12 +321,14 @@ h3 {
         align-items: flex-start;
         font-weight: 500;
         display: block;
+        color: white;
+        z-index: 2;
         padding: 5px;
         font-size: 18px;
     }
     
     .nav-menu ul li a:hover {
-        border: 2px solid #9955BB;
+        border: 2px solid #b28cc5;
     }
     .pic-container {
         width: 300px;
@@ -338,19 +346,28 @@ h3 {
     }
     .table-content {
         width: 300px;
+        padding: 10px;
         max-width: 320px ;
     }
     .table-content tr {
-        margin-top: 10px;
         padding: 20px;
+        margin-bottom: 10px;
     }
     .table-content td {
-        margin-top: 10px;
+       font-weight: 400;
+       margin-top: 20px;
+        font-size: 17px;
+    }
+    .table-content .title {
+        margin-top: 20px;
+        padding-top: 20px;
+        font-weight: 400;
         font-size: 17px;
     }
     .table-content td span {
-        
-        font-size: 18px;
+        padding-top: 10px;
+        margin-top:0px;
+        font-size: 17px;
     }
     .refer {
         width: 300px;
@@ -372,7 +389,8 @@ h3 {
         padding: 5px 10px;
     }
     .bottom{
-      margin: 10px; 
+      margin: 10px;
+      padding: 10px 0; 
     }
     footer .bottom img {
         width: 25px;
@@ -380,10 +398,10 @@ h3 {
     }
     footer .bottom p {
         font-size: 14px;
+        padding: 10px 0;
     }
     footer {
         width: 320px;
-   
         flex-direction: row;
         align-items: center;
     }

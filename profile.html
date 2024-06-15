@@ -12,19 +12,18 @@
             <a href="./purchase.html"><img src="images/11zon_17.jpeg" alt="Back" id="back"></a>
             <h3 id="title">My Profile</h3>
 
-            <div class="nav-toggle" id="nav-toggle" >
-                <img src="images/11zon_1.jpeg" alt="" id="open">
-                <img src="images/11zon_17.jpeg" alt="" id="close">
+            <div class="nav-toggle" id="nav-toggle">
+                <img src="images/11zon_1.jpeg" alt="Open" id="open">
+                <img src="images/11zon_17.jpeg" alt="Close" id="close">
             </div>
 
             <nav class="nav-menu" id="nav-menu">
                 <ul>
-                    <li><a href=".index.html">Logout</a></li>
+                    <li><a href="index.html">Logout</a></li>
                     <li><a href="editProfile.html">Edit Profile</a></li>
                     <li><a href="delete.html">Delete Account</a></li>
                 </ul>
             </nav>
-            <!-- <a href="./purchase.html"><img src="images/11zon_17.jpeg" alt="Back"></a> -->
         </div>
         
         <div class="pic-container">
@@ -34,26 +33,22 @@
         <div class="table-content">
             <table>
                 <tr>
-                    <td> <img src="images/icons8-star-64.png" alt="">Full Name</td>
+                    <td class="title"><img src="images/icons8-star-64.png" alt="">Full Name</td>
                     <td><span>Inioluwa Atanda</span></td>
                 </tr>
-
                 <tr>
-                    <td> <img src="images/icons8-star-64.png" alt="">Username</td>
+                    <td class="title"><img src="images/icons8-star-64.png" alt="">Username</td>
                     <td><span>Eunini</span></td>
                 </tr>
-
-                <tr>
+                <tr class="title">
                     <td><img src="images/icons8-star-64.png" alt="">Phone</td>
                     <td><span>+2368039213244</span></td>
                 </tr>
-
-                <tr>
+                <tr class="title">
                     <td><img src="images/icons8-star-64.png" alt="">Gender</td>
                     <td><span>Female</span></td>
                 </tr>
-
-                <tr>
+                <tr class="title">
                     <td><img src="images/icons8-star-64.png" alt="">Email</td>
                     <td><span>a**ini@gmail.com</span></td>
                 </tr>
@@ -91,7 +86,6 @@
     </div>
 
     <script>
-        
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const openIcon = document.getElementById('open');
@@ -115,9 +109,6 @@
         }
     });
     closeIcon.style.display = 'none';
-
-    
-   
     </script>
 </body>
 </html>

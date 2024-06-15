@@ -10,30 +10,31 @@
     font-family: 'Lexend', sans-serif;
     padding: 0;
     margin: 0;
-    position: relative;
 }
 html {
     scroll-behavior: smooth;
     font-family: 'Lexend', sans-serif;
 }
-
-.container {
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+}
+.background {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    max-height: 140vh;
     max-width: 80%;
-    margin:10px auto;
+    margin: 0 auto;
     padding: 20px;
-    background: white;
 }
+
 .profile-header {
     width: 100%;
     background: white;
     border-radius: 25px;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
@@ -46,182 +47,336 @@ html {
     color: rgb(53, 38, 47);
     font-size: 27px;
 }
-
-.pic-container {
-    width: 80px;
-    height: 80px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.pic-container img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: transparent;
+.nav-toggle {
+    cursor: pointer;
+    font-size: 30px;
+    display: none;
 }
 #back {
     padding: 5px;
     width: 50px;
     height: 50px;
 }
-.edit-body{
+.nav-menu {
+    border-radius: 10px;
+        padding: 5px 20px;
+        background: #9955BB;
     display: flex;
-    flex-direction: column;
-    height: 450px;
-    width: 100%;
-    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.1);
-    border-radius: 20px;
-    justify-content: center;
     align-items: center;
-    margin: 10px auto;
-    padding: 20px;
+    gap: 15px;
+}
+.nav-menu ul {
+    display: block;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.nav-menu ul li a {
+    text-decoration: none;
+    align-items: flex-start;
+    font-weight: 500;
+    display: block;
+    color: white;
+    z-index: 2;
+    padding: 5px;
+    font-size: 18px;
 }
 
-table {
+.nav-menu ul li a:hover {
+    border: 2px solid #b28cc5;
+}
+.pic-container {
+    width: 100%;
+    background: white;
+    border-radius: 25px;
+    padding: 15px;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 10px auto;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.pic-container img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+.table-content {
+    width: 100%;
+    background: white;
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.table-content table {
     width: 100%;
     border-collapse: collapse;
 }
-table tr {
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto;
+.table-content tr {
+    margin: 20px 10px;
     padding: 10px;
 }
-table td {
-    padding: 5px 0;
+.table-content td {
+    padding: 10px 0;
+    font-size: 16px;
     font-size: 22px;
     font-weight: 400;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    margin: 20px auto;
 }
-table td img{
-    justify-content: center;
-    margin-top: 10px;
-    padding: 10px;
-    width: 30px;
-    height: 30px;
+.table-content td img{
+    margin-top: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
 }
-table td input {
+.table-content td span {
+    padding-top: 30px;
     font-weight: 500;
-    border-radius: 10px;
-    text-align: left;
+    text-align: right;
     font-size: 25px;
     display: block;
-    padding: 10px;
     color: rgb(53, 38, 47);
 }
-
-button{
-    width: 200px;
-    height: 65px;
-    background: #9955bb;
-    border: 0;
+.table-content  input {
+    padding-top: 30px;
+    font-weight: 500;
+    text-align: right;
+    justify-content: right;
+    width: 100%;
+    font-size: 25px;
+    display: flex;
+    background: transparent;
     outline: 0;
-    border-radius: 10px;
+    border: 0;
+    color: rgb(53, 38, 47);
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    margin: 10px;
+}
+button{
+    margin: 10px;
+    font-size: 18px;
+    width: 170px;
+    height: 65px;
+    text-align: center;
     color: white;
-    padding: 10px;
-    font-size: 20px;
-    margin: 20px;
-    cursor: pointer;
+    background: #9955BB;
+    outline: 0;
+    border: 0;
+    border-radius: 20px;
+}
+footer{
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    border-top: 2px solid #9955BB;
+    justify-content: space-between;
+    margin: 60px 0px 0px 0px;
+    background-color: white;
+    box-shadow: 4px 0 0 rgba(0,0,0,0.1);
+    box-shadow: none;
+}
+.bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 30px 0;
+}
+.bottom img {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.bottom p{
+    font-size: 12px;
 }
 
-@media (max-width: 768px){
-    .container {
-        width: 100%;
-        padding: 30px;
-        background: white;
+.bottom:hover{
+    transform: none;
+}
+
+footer .bottom p {
+    font-size: 25px;
+    color: #888;
+}
+.bottom:hover{
+    transition: 500ms;
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+    /* Ensure the parent container is positioned relative */
+    .background {
+        width: 320px;
+        max-width: 100%;
     }
+.nav-toggle {
+    position: absolute; 
+    right: 0;
+    top: 0;
+}
+
+h3 {
+    font-size: 24px;
+}
+/* Style the images */
+.nav-toggle img {
+    position: absolute;
+    margin: 80px 50px 10px 0;
+}
+
+/* Initially hide one of the images if needed */
+#close {
+    display: none; /* Or however you want to manage the visibility */
+}
+
     .profile-header {
         width: 300px;
-        border-radius: 22px;
-        margin-bottom: 20px;
+        max-width: 320px ;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 10px;
+        border-radius: 10px;
     }
-    
+    #open , #close {
+        width: 30px;
+        height: 30px;
+        margin-top: 30px;
+        margin-right: 32px;
+    }
     .profile-header h3 {
-        padding: 20px;
         font-size: 20px;
+        margin-right: 50px;
+        text-align: center;
+        align-items: center;
     }
-    
-    .pic-container {
-        width: 60px;
-        height: 60px;
-    }
-    .pic-container img {
-        width: 60px;
-        height: 60px;
+    .nav-toggle {
+        display: block;
+        width: 50px;
+        justify-content: left;
+        align-items: start;
     }
     #back {
+        position: relative;
+        align-items: start;
+        justify-content: start;
+        right: 40px;
+        display:flex;
+        width: 30px;
+        height: 30px;
+    }
+    .nav-menu {
+        display: none;
+        margin-top: 30px;        box-shadow: rgba(0,0,0,0.1);
+        flex-direction: column;
+        align-items: flex-start;
+        -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+      @-webkit-keyframes slide-top {
+        0% {
+          -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+        }
+        100% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes slide-top {
+        0% {
+          -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+        }
+        100% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+      }
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-menu ul li {
+        width: 100%;
+        list-style: none;
+    }
+    .nav-menu ul li a {
+        align-items: flex-start;
+        font-weight: 500;
+        display: block;
         padding: 5px;
-        width: 45px;
-        height: 45px;
-    }
-    .edit-body{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 150vh;
-        width: 150%;
-        margin: 10px auto;
-        padding: 10px;
-    }
-    
-    table {
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        margin-top: 10px;
-        flex-direction: column;
-    }
-    table tr {
-        display: block;
-        margin: 5px;
-    }
-
-    table td {
-        display: block;
-        width: 100%;
-        padding: 5px 0;
-        margin: 5px auto;
-    }
-
-    td img {
-        vertical-align: middle;
-        margin-right: 10px;
-    }
-
-    td:first-child {
-        font-weight: bold;
-        padding-top: 20px;
-    }
-
-    td:last-child {
-        margin-top: 10px;
-    }
-    table td input {
-        font-weight: 400;
-        border-radius: 10px;
-        text-align: left;
         font-size: 18px;
     }
-    .buttons{
-        display: flex;
-        margin-top: 20px;
+    
+    .nav-menu ul li a:hover {
+        border: 2px solid #9955BB;
+    }
+    .pic-container {
+        width: 300px;
+        max-width: 320px ;
+    }
+    .pic-container img {
+        width: 100px;
+        height: 100px;
+    }
+    .table-content td img{
+        margin-top: 0px;
+        padding: 0px;
+        width: 10px;
+        height: 10px;
+    }
+    .table-content {
+        width: 300px;
+        max-width: 320px ;
+    }
+    .table-content tr {
+        margin-top: 10px;
+        padding: 17px;
+    }
+    .table-content td {
+        padding-top: 10px;
+        margin-top: 10px;
+        font-size: 17px;
+    }
+    .table-content td span {
+        padding-top: 10px;
+        font-size: 17px;
+    }
+    .table-content input{
+        padding-top: 10px;
+        font-size: 17px;
     }
     button{
-        width: 150px;
-        height: 55px;
-        padding: 10px;
-        font-size: 17px;
         margin: 10px;
+        font-size: 17px;
+        width: 150px;
+        font-weight: 300;
+        padding: 5px;
     }
-    
+    .bottom{
+        margin: 10px;
+        padding: 10px 0; 
+      }
+      footer .bottom img {
+          width: 25px;
+          height: 25px;
+      }
+      footer .bottom p {
+          font-size: 14px;
+          padding: 10px 0;
+      }
+      footer {
+          width: 320px;
+          flex-direction: row;
+          align-items: center;
+      }
 }
