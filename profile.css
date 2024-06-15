@@ -24,7 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -73,6 +73,9 @@ body {
     font-size: 24px;
     font-weight: 200;
     color: #9955BB;
+}
+.nav-menu ul li a:hover {
+    border: 2px solid #b28cc5;
 }
 .pic-container {
     width: 100%;
@@ -172,43 +175,26 @@ span a:hover {
     background-color: #ddd;
 }
 
-footer{
-    bottom: 0;
-    width: 100%;
+.buttons{
     display: flex;
-    border-top: 2px solid #9955BB;
     justify-content: space-between;
-    margin: 60px 0px 0px 0px;
+    margin: 120px 30px 0px 30px;
+    padding: 20px 12px;
     background-color: white;
-    box-shadow: 4px 0 0 rgba(0,0,0,0.1);
-    box-shadow: none;
-}
-.bottom{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    padding: 30px 0;
-}
-.bottom img {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-.bottom p{
-    font-size: 12px;
-}
-
-.bottom:hover{
-    transform: none;
-}
-
-footer .bottom p {
+    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5);
+  }
+  .bottom img{
+    width: 40px;
+    height: 40px;
+  }
+  .bottom{
+    text-align: center;
+  }
+  .bottom p {
     font-size: 25px;
     color: #888;
-}
-.bottom:hover{
+  }
+  .bottom:hover{
     transition: 500ms;
     transform: translateY(-10px);
     cursor: pointer;
@@ -216,29 +202,23 @@ footer .bottom p {
 /* Media Queries for Responsive Design */
 
 @media (max-width: 768px) {
-    /* Ensure the parent container is positioned relative */
+
     .background {
-        width: 320px;
-        max-width: 100%;
+      
     }
 .nav-toggle {
     position: absolute; 
-    right: 0;
+    right: 20px;
     top: 0;
 }
 
 h3 {
     font-size: 24px;
 }
-/* Style the images */
-.nav-toggle img {
-    position: absolute;
-    margin: 80px 50px 10px 0;
-}
 
 /* Initially hide one of the images if needed */
 #close {
-    display: none; /* Or however you want to manage the visibility */
+    display: none; 
 }
 
     .profile-header {
@@ -388,21 +368,27 @@ h3 {
         font-size: 16px;
         padding: 5px 10px;
     }
-    .bottom{
-      margin: 10px;
-      padding: 10px 0; 
+    .buttons{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 60px 0px 0px 0px;
+        padding: 13px 5px 0px 5px;
+        background-color: white;
+       /* box-shadow: 0px -5px 5px -5px ; */
+        border-top: 1px solid #9955BB;
+        box-shadow: none;
     }
-    footer .bottom img {
-        width: 25px;
-        height: 25px;
+    .bottom img{
+        width: 24px;
+        height: 24px;
+      }
+    .bottom p{
+        font-size: 12px;
     }
-    footer .bottom p {
-        font-size: 14px;
-        padding: 10px 0;
-    }
-    footer {
-        width: 320px;
-        flex-direction: row;
-        align-items: center;
+
+    .bottom:hover{
+        transform: none;
     }
 }
