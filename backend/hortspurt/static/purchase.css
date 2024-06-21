@@ -1,457 +1,187 @@
-@import "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Lexend+Deca:wght@200&family=Lexend:wght@200;400;600&family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto+Mono:ital,wght@1,100&display=swap";
+@font-face {
+  font-family: 'Lexend';
+  src: url('../fonts/Lexend-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
-  font-family: "Lexend Deca", sans-serif;
-  position: relative;
+  font-family: 'Lexend', sans-serif;
   padding: 0;
   margin: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: auto;
-  background-color: #ffffff;
-}
-.content-box {
-  width: 80%;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  margin: 10px auto;
+  position: relative;
 }
 /* first phase */
 
 body{
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 .profileHead{
-    display: flex;
-    justify-content: space-between;
-    padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
 }
 
 .profileAndName{
-    display: flex;
+  display: flex;
 }
 
 .intro{
-    padding-left: 7px;
+  padding-left: 7px;
 }
 
 
 /* second phase */
 
 .walletBox{
-    border-radius: 10px;
-    background-color: #9955BB;
-    padding: 25px 15px;
-    margin: 2px 26px;
-    color: white;
+  border-radius: 10px;
+  background-color: #9955BB;
+  padding: 25px 15px;
+  margin: 2px 26px;
+  color: white;
 }
 
 #walletBalanceHidden{
-    display: none;
-}
-.pic-container {
-  margin: 20px 0;
-  display: flex;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  background-color: rgb(223, 218, 218);
+  display: none;
 }
 
 #invisible{
-    display: block;
-}
-
-.pic-container img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  display: block;
 }
 
 #visible{
-    display: none;
-}
-
-.intro {
-  display: flex;
-  justify-content: center;
-  padding: 25px;
-}
-
-.profile-head {
-  display: flex;
-  justify-content: space-between;
+  display: none;
 }
 
 .walletB{
-    display: flex;
-    padding: 15px 5px;
-    align-items: center;
+  display: flex;
+  padding: 15px 5px;
+  align-items: center;
 }
 
 .walletImg{
-    width: 2.3%;
-}
-.profile-head #mysupport{
-  width: 50px;
-  height: 50px;
-  margin: 50px auto;
-  justify-content: center;
+  width: 2.3%;
 }
 
 .wb{
-    padding: 0px 8px;
-    font-size: 22px;
+  padding: 0px 8px;
+  font-size: 22px;
 }
 
 #invisible:hover, #visible:hover{
-    cursor: pointer;
-}
-
-.profile-info {
-  border-radius: 10px;
-  background-color: #9955BB;
-  height: 240px;
-  padding: 25px 15px;
-  margin: 10px;
-  color: white;
-}
-.profile-info #circle1 {
-  position: absolute;
-  width: 150px;
-  width: 150px;
-  margin-left: 480px;
-  margin-top: 30px;
-}
-.profile-info #circle2 {
-  position: absolute;
-  width: 150px;
-  width: 150px;
-  margin-left: 600px;
-  margin-top: 10px;
-}
-.profile-info-content {
-  display: block;
-  position: relative;
-  color: white;
-}
-
-.profile-info-content .wallet {
-  display: flex;
-  margin: 20px;
-  position: relative;
-  color: white;
-}
-.profile-info-content .wallet svg {
-  margin-top: 20px;
-  color: white;
-}
-.icon-container {
-  display: flex;
   cursor: pointer;
-  font-size: 18px;
-  color: white;
-  background: #9955BB;
-}
-#walletbalance {
-  margin: 10px;
-  padding: 10px;
-  font-size: 20px;
-}
-#walletBalanceHidden{
-  padding: 10px;
-  margin: 10px;
-  display: none;
-}
-#visible, #invisible {
-  display: flex;
-  margin-top: 12px;
-  width: 30px;
-  height: 30px;
-}
-#visible{
- display: none;
-}
-#invisble {
-  display: block;
-}
-
-.profile-info-content .wallet p {
-  font-weight: 300;
-  font-size: 25px;
-  margin-top:5px;
-  padding: 5px;
-}
-.profile-info-content .wallet-balance {
-  font-weight: bold;
-  font-size: 30px;
-  letter-spacing: 15px;
-  margin: 20px 13px 0px 13px;
 }
 
 .walletBalance{
-    font-size: 20px;
-    padding: 15px 5px;
-    font-weight: 700;
+  font-size: 20px;
+  padding: 15px 5px;
+  font-weight: 700;
 }
 
 .walletBalanceHidden{
-    padding: 15px 5px;
+  padding: 15px 5px;
 }
 
-.profile-info-content a {
-  text-decoration: none;
-}
-.profile-info-content .add-cash {
-  width: 170px;
-  height: 50px;
-  background-color: white;
-  margin: 15px 13px;
-  border-radius: 30px;
-  display: flex;
-}
-.profile-info-content .add-cash p {
-  color: blueviolet;
-  font-size: 18px;
-  display: flex;
-  margin: auto;
-  position: relative;
-  text-align: center;
-  justify-content: center;
-}
 .addMoney{
-    font-size: 18px;
-    background-color: white;
-    border: 1px solid white;
-    margin: 20px 2.5px;
-    padding: 7px 20px 7px 10px;
-    border-radius: 22px;
-    color: #9955BB;
-    max-width: max-content;
-    text-decoration-line: none;
+  font-size: 18px;
+  background-color: white;
+  border: 1px solid white;
+  margin: 20px 2.5px;
+  padding: 7px 20px 7px 10px;
+  border-radius: 22px;
+  color: #9955BB;
+  max-width: max-content;
+  text-decoration-line: none;
 }
 
 .addMoney:hover{
-    transition: 400ms;
-    opacity: 0.8;
-    padding-right: 30px;
-    cursor: pointer;
+  transition: 400ms;
+  opacity: 0.8;
+  padding-right: 30px;
+  cursor: pointer;
 }
-.section-main h2 {
-  font-size: 28px;
-  margin: 30px;
-  /* border-bottom: 4px solid #9955BB; */
-}
-.main-service {
-  width: 95%;
-  height: 170px;
-  background-image: url("images/Rectangle 5.png");
-  background-size: cover;
-  background-position: center;
-  justify-content: space-around;
-  border-radius: 10px;
-  margin: 20px auto;
-}
-.main-content {
-  width: 100%;
-  justify-content: space-around;
-}
-.main-content .data {
-  height: 160px;
-  width: 160px;
-  margin: 0 50px;
-}
+
 /* third phase */
 
 .mainServices{
-    display: flex;
-    justify-content: space-between;
-    background-image: url("images/Rectangle 5.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 18px 5px;
-    margin: 0px 20px 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  background-image: url("images/Rectangle 5.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 18px 5px;
+  margin: 0px 20px 15px 20px;
 }
 
 .avail{
-    padding-left: 30px;
-    padding-top: 25px;
+  padding-left: 30px;
+  padding-top: 25px;
 }
 
-#others {
-  display: none;
-}
+
 /* fourth phase */
 .otherServ{
-    padding-left: 30px;
-    padding-top: 25px;
+  padding-left: 30px;
+  padding-top: 25px;
 }
 
-.other-services-container {
-  width: 95%;
-  background-image: url("images/Rectangle 5.png");
-  background-size: cover;
-  background-position: center;
-  justify-content: space-between;
-  padding: 20px;
-  margin: 20px auto;
-}
-.other-services-container p {
-  padding: 10px;
-  font-size: 20px;
-  color: black;
-  margin: 15px 10px;
-  border-bottom: 4px solid #9955BB;
-}
-
-.other-container {
-  width: 100%;
-  display: block;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-}
 .otherServices{
-    background: rgba(245, 225, 255, 0.6117647059);
-    border-bottom: 1px solid blueviolet;
-    border-radius: 8px;
-    box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
-    padding: 10px 0px;
-    margin: 50px 37px 30px 30px;
-}
-
-.moreServices{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-#moreServices{
-    display: none;
-}
-.other-container img {
-  width: 160px;
-  height: 160px;
-}
-.refer {
-  display: flex;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 10px;
-  margin: 0 auto;
-  gap: 10px;
-  width: 100%;
-}
-.refer .head {
-  font-size: 30px;
-  margin-top: 15px;
-  font-weight: bold;
-}
-.refer .head span {
-  font-size: 20px;
-  padding-top: 10px;
-}
-.refer #person-add {
-  font-size: 60px;
-}
-
-.refer-get-container {
   background: rgba(245, 225, 255, 0.6117647059);
-  width: 95%;
-  height: 155px;
-  box-sizing: border-box;
-  border-top: none;
-  border-left: none;
-  border-right: 1px solid blueviolet;
   border-bottom: 1px solid blueviolet;
   border-radius: 8px;
   box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
-  padding: 20px;
-  margin: 20px auto;
+  padding: 10px 0px;
+  margin: 50px 37px 30px 30px;
 }
+
+.moreServices{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#moreServices{
+  display: none;
+}
+
 /* fifth phase */
 .referral{
-    display: flex;
-    background: rgba(245, 225, 255, 0.6117647059);
-    border-bottom: 1px solid blueviolet;
-    border-radius: 8px;
-    box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
-    padding: 30px;
-    margin: 50px 37px 30px 30px;
-}
-
-footer {
-  display: inline-flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0 auto;
-  background: #FFFFFF;
-  width: 95%;
-}
-footer .bottom {
-  margin: 10px auto;
-  padding: 0 auto;
-  display: block;
-  justify-content: space-between;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-footer .bottom a {
-  text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-  cursor: pointer;
-  font-size: 20px;
-  text-decoration: none;
-  color: black;
-}
-
-footer .bottom p {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 12px;
-  margin-top: 8px;
-  color: #a7a7a7;
+  background: rgba(245, 225, 255, 0.6117647059);
+  border-bottom: 1px solid blueviolet;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
+  padding: 30px;
+  margin: 50px 37px 30px 30px;
 }
 
 .rImg{
-    padding-top: 20px;
-    padding-left: 30px;
+  padding-top: 20px;
+  padding-left: 30px;
 }
 
 
 /* sixth phase */
 .buttons{
-    display: flex;
-    justify-content: space-between;
-    margin: 120px 30px 0px 30px;
-    padding: 20px 12px;
-    background-color: white;
-    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  margin: 120px 30px 0px 30px;
+  padding: 20px 12px;
+  background-color: white;
+  box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5);
 }
 
 .bottom{
-    text-align: center;
+  text-align: center;
 }
-
+.bottom p {
+  font-size: 25px;
+  color: #888;
+}
 .bottom:hover{
-    transition: 500ms;
-    transform: translateY(-10px);
-    cursor: pointer;
+  transition: 500ms;
+  transform: translateY(-10px);
+  cursor: pointer;
 }

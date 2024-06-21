@@ -1,9 +1,16 @@
-*{
+@font-face {
+    font-family: 'Lexend';
+    src: url('../fonts/Lexend-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
     box-sizing: border-box;
-    margin: 0;
+    font-family: 'Lexend', sans-serif;
     padding: 0;
+    margin: 0;
     position: relative;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .head{
     top: 0;
@@ -16,9 +23,10 @@
     width: 100%;
 }
 .cancel{
-    width: 25px;
-    height: 25px;
-    background-color: #9955BB40;
+    width: 40px;
+    height: 40px;
+    
+    background-color: #9955BB;
     margin: 20px 0 0 10px;
    
 }
@@ -51,9 +59,12 @@ h1{
     display: flex;
     position: relative;
 }
+.amount P{
+    color: #4d4a4a;
+}
 .amount span {
-    font-weight: 900;
-    font-size: 23px;
+    font-weight: 600;
+    font-size: 20px;
 }
 .boxes {
     margin: 30px auto;
@@ -89,16 +100,22 @@ h1{
         padding-top: 100px;
         margin: 10px auto;
     }
+    .cancel {
+        width: 25px;
+        height: 25px;
+        background-color: transparent;
+    }
     .amount{
-        width: 100vw;
+        width: 95%;
         margin: 10px;
         padding: 10px;
     }
     .boxes{
+        width: 95%;
         margin: 10px auto ;
     }
     .box {
-        width: 100vw;
+        width: 95%;
         height: 55px;
         padding: 5px;
         margin: 15px auto;

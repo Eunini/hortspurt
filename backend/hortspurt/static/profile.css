@@ -17,6 +17,7 @@ html {
 }
 body {
     margin: 0;
+    padding: 0;
     background-color: #f5f5f5;
 }
 .background {
@@ -24,8 +25,6 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-height: 140vh;
-    max-width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -75,6 +74,9 @@ body {
     font-weight: 200;
     color: #9955BB;
 }
+.nav-menu ul li a:hover {
+    border: 2px solid #b28cc5;
+}
 .pic-container {
     width: 100%;
     background: white;
@@ -105,23 +107,23 @@ body {
     border-collapse: collapse;
 }
 .table-content tr {
-    margin: 20px 10px;
+    margin-bottom: 20px;
     padding: 10px;
 }
 .table-content td {
-    padding: 5px 0;
+    padding: 10px 0;
     font-size: 16px;
     font-size: 22px;
     font-weight: 400;
 }
 .table-content td img{
-    justify-content: center;
-    margin-top: 10px;
-    padding: 10px;
-    width: 30px;
-    height: 30px;
+    margin-top: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
 }
 .table-content td span {
+    padding-top: 30px;
     font-weight: 500;
     text-align: right;
     font-size: 25px;
@@ -173,40 +175,23 @@ span a:hover {
     background-color: #ddd;
 }
 
-footer{
-    width: 80%;
+.buttons{
     display: flex;
     justify-content: space-between;
-    margin: 60px 0px 0px 0px;
+    margin: 120px 30px 0px 30px;
+    padding: 20px 12px;
     background-color: white;
-    box-shadow: 4px 0 0 rgba(0,0,0,0.1);
-    box-shadow: none;
-}
-.bottom{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-.bottom img {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-.bottom p{
-    font-size: 12px;
-}
-
-.bottom:hover{
-    transform: none;
-}
-
-footer .bottom p {
+    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .bottom{
+    text-align: center;
+  }
+  .bottom p {
     font-size: 25px;
     color: #888;
-}
-.bottom:hover{
+  }
+  .bottom:hover{
     transition: 500ms;
     transform: translateY(-10px);
     cursor: pointer;
@@ -214,29 +199,23 @@ footer .bottom p {
 /* Media Queries for Responsive Design */
 
 @media (max-width: 768px) {
-    /* Ensure the parent container is positioned relative */
+
     .background {
-        width: 320px;
-        max-width: 100%;
+      
     }
 .nav-toggle {
     position: absolute; 
-    right: 0;
+    right: 20px;
     top: 0;
 }
 
 h3 {
     font-size: 24px;
 }
-/* Style the images */
-.nav-toggle img {
-    position: absolute;
-    margin: 80px 50px 10px 0;
-}
 
 /* Initially hide one of the images if needed */
 #close {
-    display: none; /* Or however you want to manage the visibility */
+    display: none; 
 }
 
     .profile-header {
@@ -275,9 +254,13 @@ h3 {
         height: 30px;
     }
     .nav-menu {
+        border-radius: 10px;
+        padding: 5px 20px;
+        background: #9955BB;
         display: none;
-        margin-top: 30px;        box-shadow: rgba(0,0,0,0.1);
+        margin-top: 30px;        
         flex-direction: column;
+        z-index: 1;
         align-items: flex-start;
         -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
         animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -315,12 +298,14 @@ h3 {
         align-items: flex-start;
         font-weight: 500;
         display: block;
+        color: white;
+        z-index: 2;
         padding: 5px;
         font-size: 18px;
     }
     
     .nav-menu ul li a:hover {
-        border: 2px solid #9955BB;
+        border: 2px solid #b28cc5;
     }
     .pic-container {
         width: 300px;
@@ -338,19 +323,28 @@ h3 {
     }
     .table-content {
         width: 300px;
+        padding: 10px;
         max-width: 320px ;
     }
     .table-content tr {
-        margin-top: 10px;
         padding: 20px;
+        margin-bottom: 10px;
     }
     .table-content td {
-        margin-top: 10px;
+       font-weight: 400;
+       margin-top: 20px;
+        font-size: 17px;
+    }
+    .table-content .title {
+        margin-top: 20px;
+        padding-top: 20px;
+        font-weight: 400;
         font-size: 17px;
     }
     .table-content td span {
-        
-        font-size: 18px;
+        padding-top: 10px;
+        margin-top:0px;
+        font-size: 17px;
     }
     .refer {
         width: 300px;
@@ -371,20 +365,24 @@ h3 {
         font-size: 16px;
         padding: 5px 10px;
     }
-    .bottom{
-      margin: 10px; 
+    .buttons{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 60px 0px 0px 0px;
+        padding: 13px 5px 0px 5px;
+        background-color: white;
+       /* box-shadow: 0px -5px 5px -5px ; */
+        border-top: 1px solid #9955BB;
+        box-shadow: none;
     }
-    footer .bottom img {
-        width: 25px;
-        height: 25px;
+
+    .bottom p{
+        font-size: 12px;
     }
-    footer .bottom p {
-        font-size: 14px;
-    }
-    footer {
-        width: 320px;
-   
-        flex-direction: row;
-        align-items: center;
+
+    .bottom:hover{
+        transform: none;
     }
 }
