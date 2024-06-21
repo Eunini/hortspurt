@@ -219,10 +219,10 @@ body,html{
     }
 }    
 
-     @media screen and (max-width:380px){
+     @media screen and (max-width:390px){
 
         .buttons{
-           margin-bottom: -15px;
+           margin-top: 30px;
         }
 
 
