@@ -1,3 +1,4 @@
+/*
 @font-face {
     font-family: 'Lexend';
     src: url('../fonts/Lexend-Regular.ttf') format('truetype');
@@ -12,6 +13,23 @@
     margin: 0;
     position: relative;
 }
+*/
+
+/*
+
+    @font-face {
+    font-family: 'Poppins';
+    src: url('./css/Poppins') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+*/
+
+
 body{
     margin-top: -10px;
     margin-right: 0px;
@@ -118,6 +136,10 @@ body{
 
 .welcome, .worry, .heroText{
     padding-left: 30px;
+}
+
+.worry{
+    margin-top: -30px;
 }
 
 .cta{
@@ -353,6 +375,7 @@ body{
     display: flex;
     width: 100%;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .mobileServices{
