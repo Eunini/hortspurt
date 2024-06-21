@@ -202,7 +202,8 @@
         position: absolute;
         z-index: 100;
         width:90%;
-        bottom:0;
+        bottom:0px!important;
+        top: 100%;
         box-shadow: none;
     }
 
