@@ -278,9 +278,22 @@ option[value="gender"] {
   /* Media query for responsiveness */
   @media screen and (max-width: 768px) {
     .modal-content {
-      width: 90%; /* Adjust width for smaller screens */
+      width: 80%; /* Adjust width for smaller screens */
+      height: 55%;
       max-width: 100%; /* Ensure it can expand to full width if needed */
       padding: 15px; /* Adjust padding as needed */
+      font-size: 18px;
+    }
+    .modal-content button{
+        width: 180px;
+        height: 55px;
+        font-size: 18px;
+      }
+      
+      .modal-content p {
+
+        font-size: 18px; /* Example paragraph font size */
+       
     }
   }
   
