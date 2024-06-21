@@ -185,6 +185,7 @@ body{
         margin: 3px 8px 0px 8px;
         padding: 0px;
         border-bottom: 1px solid #d4d4d4;
+        overflow-y: scroll;
     }
    
     .historyMainText{
@@ -204,14 +205,14 @@ body{
         justify-content: space-between;
         align-items: baseline;
         margin: 10px 7px 0px 7px;
-        padding: 5px 5px 0px 5px;
+        padding: 5px 8px 0px 5px;
         background-color: white;
        /* box-shadow: 0px -5px 5px -5px ; */
         border-top: 1px solid #9955BB;
-        position: absolute;
+        position: fixed;
         z-index: 100;
         bottom: 0;
-        width: 90%;
+        width: 100%;
         box-shadow: none;
     }
 
