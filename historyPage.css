@@ -204,11 +204,11 @@ body{
         justify-content: space-between;
         align-items: baseline;
         margin: 10px 7px 0px 7px;
-        padding: 13px 5px 0px 5px;
+        padding: 5px 5px 0px 5px;
         background-color: white;
        /* box-shadow: 0px -5px 5px -5px ; */
         border-top: 1px solid #9955BB;
-        position: fixed;
+        position: absolute;
         z-index: 100;
         bottom: 0;
         width: 90%;
