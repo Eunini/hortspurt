@@ -1,0 +1,226 @@
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header{
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: 35px;
+}
+
+.todayHeader{
+    text-align: left;
+    padding: 10px 0px 6px 20px;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.today{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px; 
+    margin-bottom: 0px;  
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px;
+    padding: 0px 5px;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.boxA{
+    display: flex;
+    align-items: center;
+}
+
+.handImg{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moneyImg{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circleBack{
+    position: relative;
+    display: flex;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.historyMainText{
+    margin-left: 12px;
+}
+
+.bigText a{
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 600;
+    color: #000000;
+    text-decoration-line: none;
+}
+
+.dateOfTransaction{
+    margin-top: -5px;
+    font-size: 10px;
+    line-height: 12.5px;
+    font-weight: 500;
+    color: #9c9c9c;
+}
+
+.amountStatus{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.amountRed{
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 800;
+    color: #921717;
+}
+
+.amountGreen{
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 800;
+    color: #008751;
+}
+
+.statusGreen{
+    font-size: 10px;
+    line-height: 12.5px;
+    font-weight: 500;
+    color: #008751;
+    margin-top: -10px;
+}
+
+.statusYellow{
+    font-size: 10px;
+    line-height: 12.5px;
+    font-weight: 500;
+    color: #ffc85d;
+    margin-top: -10px;
+}
+
+.previousDayHeader{
+    text-align: left;
+    padding: 10px 0px 6px 20px;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.previous{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;   
+    margin-bottom: 0px; 
+}
+
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin: 120px 30px 0px 30px;
+    padding: 20px 12px;
+    background-color: white;
+    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .bottom{
+    text-align: center;
+  }
+  .bottom p {
+    font-size: 25px;
+    color: #888;
+  }
+  .bottom:hover{
+    transition: 500ms;
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+  @media screen and (max-width:600px){
+  
+   .header{
+    font-size: 19px;
+    margin-top: 2.5px;
+    }
+
+    .todayHeader{
+        padding: 0px 0px 6px 10px;
+    }
+    
+    .today{
+        font-size: 15px; 
+    }
+   
+    .box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 3px 8px 0px 8px;
+        padding: 0px;
+        border-bottom: 1px solid #d4d4d4;
+        overflow-y: scroll;
+    }
+   
+    .historyMainText{
+        margin-left: 5px;
+    }
+   
+    .previousDayHeader{
+        padding: 0px 0px 6px 10px;
+    }
+    
+    .previous{
+        font-size: 15px;
+     }
+   
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 10px 7px 0px 7px;
+        padding: 5px 10px 0px 5px;
+        background-color: white;
+       /* box-shadow: 0px -5px 5px -5px ; */
+        border-top: 1px solid #9955BB;
+        position: fixed;
+        bottom: 0;
+        width: 94%;
+        box-shadow: none;
+    }
+
+    .bottom p{
+        font-size: 12px;
+    }
+
+    .bottom:hover{
+        transform: none;
+    }
+
+    }
