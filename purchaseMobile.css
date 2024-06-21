@@ -1,8 +1,6 @@
 @media screen and (max-width:600px){
 
-    body,html{
-        overflow-y: scroll;
-    }
+
 
     /* first phase */
 
@@ -205,8 +203,8 @@
         border-top: 1px solid #9955BB;
         position: fixeď;
         z-index: 100;
-        width:90%;
-        bottom:0px!important;
+        width:94%;
+        bottom:0!important;
         box-shadow: none;
     }
 
