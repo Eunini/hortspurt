@@ -218,3 +218,17 @@ body,html{
         transform: none;
     }
 }    
+
+     @media screen and (max-width:360px){
+
+        .buttons{
+           margin-bottom: -15px;
+        }
+
+
+     }
+
+
+
+
+
