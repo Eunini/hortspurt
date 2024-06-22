@@ -8,6 +8,7 @@ from django.http import JsonResponse, HttpResponse
 from transactions.utils import generateTransactionReference
 from django.core.exceptions import ValidationError
 from .husmo import MTN_PLANS, MOBILE9_PLANS, GLO_PLANS, AIRTEL_PLANS
+from .models import BuyAirtimeData
 load_dotenv()
 # Create your views here.
 
@@ -85,7 +86,7 @@ class BuyDataView(View):
         except ValueError as e:
             print(e)
             return HttpResponse(status=400)
-    
+
         if (not NP or not phone_no or not code):
             return HttpResponse(status=400)
         data_is_valid = verify(NP, phone_no, code)
@@ -104,6 +105,7 @@ class BuyDataView(View):
                     res_data = res.json()
                     print(res_data)
                     if (res_data['Status'] == 'successful'):
+
                         return render(request, 'success.html')
                 print(res.status_code)
                 refund(request.user, price)

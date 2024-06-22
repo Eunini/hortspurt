@@ -9,6 +9,10 @@ from django.shortcuts import redirect
 from django.http import JsonResponse
 from rest_framework.views import APIView
 from django.views.generic.edit import UpdateView 
+from transactions.models import AddMoneyTransaction
+from buy.models import BuyAirtimeData
+from django.db.models import Q
+from itertools import chain
 # Create your views here.
 
 class RegisterView(View):
@@ -88,3 +92,25 @@ class SupportView(LoginRequiredMixin, View):
     def post(self, request):
         return render(request, 'we_know.html')
 
+class HistoryView(LoginRequiredMixin, View):
+    def get(self, request):
+        # Combine transactions into a single queryset
+        add_moneytr = AddMoneyTransaction.objects.filter(user=request.user)
+        airtime_datatr = BuyAirtimeData.objects.filter(Q(buyer=request.user) | Q(receiver=request.user))
+        if add_moneytr or airtime_datatr:
+            transactions = sorted(chain(add_moneytr, airtime_datatr), key=lambda feedobj: feedobj.updated_at, reverse=True)
+        else:
+            transactions = []
+        transactions_by_date = {}
+        for transaction in transactions:
+            transaction_date = transaction.updated_at.date()  # Extract date from updated_at
+            if transaction_date not in transactions_by_date:
+                transactions_by_date[transaction_date] = []
+            transactions_by_date[transaction_date].append(transaction)
+
+        ctx = {'transactions': transactions_by_date}
+        print(ctx)
+        return render(request, 'history.html', ctx)
+    
+    def post(self, request):
+        return render(request, 'transaction_detail.html')

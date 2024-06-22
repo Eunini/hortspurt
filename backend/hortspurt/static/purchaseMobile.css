@@ -1,12 +1,16 @@
 @media screen and (max-width:600px){
 
+body,html{
+    overflow-y: none;
+}
+
     /* first phase */
 
     .profileHead{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 10px 20px 10px;
+        padding: 6px 10px 10px 10px;
     }
 
     .profileAndName{
@@ -24,14 +28,18 @@
         font-size: 12px;
     }
 
+    .walletBalanceHidden{
+        margin-top: -13px;
+    }
+
     
     /* second phase */
 
     .walletBox{
         border-radius: 10px;
         background-color: #9955BB;
-        padding:15px 15px 30px 10px;
-        margin: 2px 7px;
+        padding:5px 15px 30px 10px;
+        margin: 0px 7px;
         color: white;
     }
 
@@ -53,6 +61,7 @@
         font-size: 18px;
         font-weight: 700;
         padding-left: 7px;
+        padding-top: 4px;
     }
 
     .addMoney{
@@ -66,27 +75,85 @@
 
     .avail{
         padding-left: 10px;
-        padding-top: 25px;
+        padding-top: 10px;
         font-size: 17px;
     }
 
     .mainServices{
-        background: rgba(245, 225, 255, 0.6117647059);
         border-bottom: 1px solid blueviolet;
         border-radius: 8px;
         box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
-        padding: 0px;
-        margin: 10px 7px;
+        padding: 10px 10px;
+        margin: 5px 10px;
         flex-wrap: wrap;
-        align-items:baseline;
+        align-items:center;
+    }
+
+    .getAirtime{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .getData{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;  
+    }
+
+    .forPadi{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;  
+    }
+
+    .morre{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: max-content;
+        margin: 0px;
+        padding: 5px 15px;  
+    }
+
+    .optional{
+        background-color: #9955BB;
+        border: 1px solid white;
+        border-radius: 6px;
+        height: 45px;
+        width: 49px;
+        text-align: center;
+    }
+
+    .servText{
+        font-size: 12px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 300;
+        line-height: 15px;
+    }
+
+    .optional img{
+        width: auto;
+        margin-top: 8.5px;
     }
 
 
     /* fourth phase */
     .otherServ{
         padding-left: 10px;
-        padding-top: 35px;
-        font-size: 17px;
+        padding-top: 10px;
+        font-size: 15px;
+    }
+
+    .otherServi{
+        padding-top: 10px;
+        padding-bottom: 2.5px;
+        margin-right: 13px;
+        margin-left: 15px;
+        font-size: 12px;
     }
 
     
@@ -96,19 +163,26 @@
         border-radius: 8px;
         box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
         padding: 0px;
-        margin: 10px 7px;
+        margin: 15px 10px;
+    }
+
+    .moreServices, #others{
+        margin-top: -20px;
+        margin-left: -12px;
     }
 
 
     /* fifth phase */
     .referral{
         display: flex;
+        justify-content: space-between;
+        align-items:start;
         background: rgba(245, 225, 255, 0.6117647059);
         border-bottom: 1px solid blueviolet;
         border-radius: 8px;
         box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
-        padding: 10px 29px;
-        margin: 50px 7px 10px 7px;
+        padding: 10px 20px;
+        margin: 12px 10px 10px 10px;
     }
 
     .refertext h3{
@@ -124,11 +198,15 @@
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        margin: 60px 0px 0px 0px;
-        padding: 13px 5px 0px 5px;
+        margin: 10px 7px 0px 7px;
+        padding: 5px 11px 0px 3.5px;
         background-color: white;
        /* box-shadow: 0px -5px 5px -5px ; */
         border-top: 1px solid #9955BB;
+        position: fixeď;
+        z-index: 100;
+        width:100%;
+        bottom:0!important;
         box-shadow: none;
     }
 
@@ -140,3 +218,10 @@
         transform: none;
     }
 }    
+
+     
+
+
+
+
+

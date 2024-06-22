@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load custom_tags %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href='{% static "./historyPage.css" %}'>
+</head>
+<body>
+    <!---Header-->
+    <div class="header">
+        <h2>
+            Transactions
+        </h2>
+    </div>
+
+    {% for date, transactions in transactions.items %}
+    <!--Begining of Previous Days History-->
+    <div class="previousDayHeader">
+        {% if date|is_today %}
+        <p class="previous">
+            Today
+        </p>
+        {% else %}
+        <p class="previous">
+            {{date}}
+        </p>
+        {% endif %}
+    </div>
+    {% for transaction in transactions %}
+        {% if transaction|has_field:'action' %}
+        <div class="box">
+            <div class="boxA">
+                {% if transaction.action == 'Received'%}
+                <div class="handImg">
+                    <img src='{% static "./images/Group 1251 (4).png" %}' alt="" class="circleBack">
+                    <img src='{% static "./images/Frame (95).png" %}' alt="" class="hand">
+                </div>
+                {% else %}
+                <img src='{% static "./images/Group 1251.png" %}' alt="">
+                {% endif %}
+                <div class="historyMainText">
+                    <p class="bigText">
+                    <a href='{% static "./transactionDetails.html" %}'>{{transaction.action}} {{transaction.np}} {{transaction.service}}</a>
+                    </p>
+                    <p class="dateOfTransaction">
+                        {{transaction.updated_at}}
+                    </p>
+                </div>
+            </div>
+            <div class="boxB">
+                <div class="amountStatus">
+                    {% if transaction.action == 'Received'%}
+                    <p class="amountGreen"> + NGN {{transaction.price}} </p>
+                    {% else %}
+                    <p class="amountRed"> - NGN {{transaction.price}} </p>
+                    {%endif%}
+                    <p class="statusGreen"> successful </p>
+                </div>
+            </div>
+        </div>
+        {% else %}
+
+        <div class="box">
+            <div class="boxA">
+                <div class="moneyImg">
+                    <img src='{% static "./images/Group 1251 (4).png" %}' alt="" class="circleBack">
+                    <img src='{% static "./images/Vector (73).png" %}' alt="" class="hand" >
+                </div>
+                <div class="historyMainText">
+                    <p class="bigText">
+                        <a href='{% static "./transactionDetails.html" %}'> Added Money </a>
+                    </p>
+                    <p class="dateOfTransaction">
+                        {{transaction.updated_at}}
+                    </p>
+                </div>
+            </div>
+            <div class="boxB">
+                <div class="amountStatus">
+                    <p class="amountGreen"> + NGN {{transaction.amount}} </p>
+                    {% if transaction.status == 'S' %}
+                    <p class="statusGreen"> successful </p>
+                    {% elif transaction.status == 'P' %}
+                    <p class="statusYellow"> pending </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    <!--The End of Previous Days History-->
+    {% endfor %}
+    {% endfor %}
+
+    <div class="buttons">
+        <div class="bottom">
+            <a href='{% static "./index.html" %}' class="icon" id="myLink"><img src='{% static "./images/Group.svg" %}'></a>
+            <p>Home</p>
+        </div>
+
+        <div class="bottom">
+            <a href='{% static "./shoutout.html" %}' class="icon" id="myLink"><img src='{% static "./images/Vector (1).svg" %}'></a>
+            <p>Shoutout</p>
+        </div>
+
+        <div class="bottom">
+            <a href='{% static "#" %}' class="icon" id="myLink"><img src='{% static "./images/gift-outline.svg" %}'></a>
+            <p>Bonus</p>
+        </div>
+
+        <div class="bottom">
+            <a href='{% static "./historyPage.html" %}' class="icon" id="myLink"><img src='{% static "./images/clock.svg" %}'></a>
+            <p>History</p>
+        </div>
+
+        <div class="bottom">
+            <a href='{% static "./profile.html" %}' class="icon" id="myLink"><img src='{% static "./images/face-man.svg" %}'></a>
+            <p>Me</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -228,6 +228,76 @@ option[value="gender"] {
     margin: 10px 0;
 }
 
+/* Modal content */
+.modal-content {
+    height: 70%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    justify-content: center;
+    align-items: center;
+    display: none;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 80%; /* Adjust as needed */
+    max-width: 600px; /* Example maximum width */
+    background-color: white; /* Optional */
+    z-index: 1000; /* Ensure modal is on top of other elements */
+    border-radius: 20px;
+  }
+  .modal-content a{
+    text-decoration: none;
+  }
+  .modal-content .emoji{
+    font-size: 35px;
+  }
+  .modal-content button{
+    width: 220px;
+    height: 70px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background: #9955bb;
+    color: #fff;
+    font-size: 20px;
+  }
+  .modal-content h2{
+    font-size: 32px;
+  }
+  .modal-content p {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px; /* Example paragraph font size */
+    padding: 20px;
+}
+  
+  /* Media query for responsiveness */
+  @media screen and (max-width: 768px) {
+    .modal-content {
+      width: 80%; /* Adjust width for smaller screens */
+      height: 55%;
+      max-width: 100%; /* Ensure it can expand to full width if needed */
+      padding: 15px; /* Adjust padding as needed */
+      font-size: 18px;
+    }
+    .modal-content button{
+        width: 180px;
+        height: 55px;
+        font-size: 18px;
+      }
+      
+      .modal-content p {
+
+        font-size: 18px; /* Example paragraph font size */
+       
+    }
+  }
+  
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .content-container {

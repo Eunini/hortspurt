@@ -1,0 +1,158 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.headerAndNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todayHeader{
+    text-align: left;
+    padding: 10px 0px 6px 20px;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.today{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px; 
+    margin-bottom: 0px;  
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px;
+    padding: 0px 5px;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.boxA{
+    display: flex;
+    align-items: center;
+}
+
+.historyMainText{
+    margin-left: 12px;
+}
+
+.bigText a{
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 600;
+    color: #000000;
+    text-decoration-line: none;
+}
+
+.dateOfTransaction{
+    margin-top: -12px;
+    font-size: 10px;
+    line-height: 12.5px;
+    font-weight: 500;
+    color: #9c9c9c;
+}
+
+.amountStatus{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.amountRed{
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 800;
+    color: #921717;
+}
+
+.amountGreen{
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 800;
+    color: #008751;
+}
+
+.statusGreen{
+    font-size: 10px;
+    line-height: 12.5px;
+    font-weight: 500;
+    color: #008751;
+    margin-top: -10px;
+}
+
+.statusYellow{
+    font-size: 10px;
+    line-height: 12.5px;
+    font-weight: 500;
+    color: #ffc85d;
+    margin-top: -10px;
+}
+
+.purpleBox{
+    background-color: rgba(245,225,255,0.61);
+    box-shadow: 1px 1px 4px 0 rgba(153,85,187,0.61);
+    margin: 10px 20px ;
+    padding: 3px 13px 7px 13px;
+}
+
+.transDetHeader{
+    font-weight: 900;
+    font-size: 13.5px;
+    line-height: 15px;
+    color: #434044;
+    margin-bottom: 15px;
+}
+
+.transactionNumber, .thePhoneNumb{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 400;
+    color: #434044;
+    font-size: 12px;
+}
+
+.No, .theNumb{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    color: #000000;
+}
+
+
+
+@media screen and (max-width:600px){
+ 
+     .todayHeader{
+         padding: 0px 0px 6px 10px;
+     }
+     
+     .today{
+         font-size: 15px; 
+     }
+    
+     .box{
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin: 3px 13px 0px 13px;
+         padding: 0px 5px 0px 0px;
+         border-bottom: 1px solid #d4d4d4;
+     }
+    
+     .historyMainText{
+         margin-left: 5px;
+     }
+
+     .purpleBox{
+        background-color: rgba(245,225,255,0.61);
+        box-shadow: 1px 1px 4px 0 rgba(153,85,187,0.61);
+        margin: 7px 13px ;
+        padding: 7px;
+    }
+
+}    

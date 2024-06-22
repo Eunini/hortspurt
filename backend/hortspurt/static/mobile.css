@@ -66,6 +66,7 @@
 
     .worry{
         font-size: 17px;
+        margin-top: -10px;
     }
 
     .heroText{
@@ -313,6 +314,14 @@
     color: white;
     padding: 20px 0px!important;
     margin-bottom: -10px;
+}
+
+.contactNumber{
+    margin-top: -9px;
+}
+
+.mail p{
+    margin-top: -10px; 
 }
 
 .wavyLine2{
