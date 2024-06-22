@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import uuid
 # Create your models here.
 
 class BuyAirtimeData(models.Model):
@@ -20,7 +21,9 @@ class BuyAirtimeData(models.Model):
         ('Data', 'Data'),
         ('Airtime', 'Airtime'),
     ]
+    #id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     buyer = models.ForeignKey(User, on_delete=models.PROTECT)
+    tr_id = models.CharField(max_length=200, blank=True, null=True)
     receiver = models.ForeignKey(User, on_delete=models.PROTECT, related_name='sponsor', null=True, blank=True)
     phone_no = models.CharField(max_length=11)
     price = models.PositiveIntegerField()

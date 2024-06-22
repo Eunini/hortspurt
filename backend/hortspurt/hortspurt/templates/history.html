@@ -44,7 +44,7 @@
                 {% endif %}
                 <div class="historyMainText">
                     <p class="bigText">
-                    <a href='{% static "./transactionDetails.html" %}'>{{transaction.action}} {{transaction.np}} {{transaction.service}}</a>
+                    <a href='/history/ADT{{transaction.id}}'>{{transaction.action}} {{transaction.np}} {{transaction.service}}</a>
                     </p>
                     <p class="dateOfTransaction">
                         {{transaction.updated_at}}
@@ -72,7 +72,7 @@
                 </div>
                 <div class="historyMainText">
                     <p class="bigText">
-                        <a href='{% static "./transactionDetails.html" %}'> Added Money </a>
+                        <a href='/history/ADM{{transaction.id}}/'> Added Money </a>
                     </p>
                     <p class="dateOfTransaction">
                         {{transaction.updated_at}}
@@ -97,27 +97,27 @@
 
     <div class="buttons">
         <div class="bottom">
-            <a href='{% static "./index.html" %}' class="icon" id="myLink"><img src='{% static "./images/Group.svg" %}'></a>
+            <a href='/' class="icon" id="myLink"><img src='{% static "./images/Group.svg" %}'></a>
             <p>Home</p>
         </div>
 
         <div class="bottom">
-            <a href='{% static "./shoutout.html" %}' class="icon" id="myLink"><img src='{% static "./images/Vector (1).svg" %}'></a>
+            <a href='/shoutout/' class="icon" id="myLink"><img src='{% static "./images/Vector (1).svg" %}'></a>
             <p>Shoutout</p>
         </div>
 
         <div class="bottom">
-            <a href='{% static "#" %}' class="icon" id="myLink"><img src='{% static "./images/gift-outline.svg" %}'></a>
+            <a href='/coming-soon/' class="icon" id="myLink"><img src='{% static "./images/gift-outline.svg" %}'></a>
             <p>Bonus</p>
         </div>
 
         <div class="bottom">
-            <a href='{% static "./historyPage.html" %}' class="icon" id="myLink"><img src='{% static "./images/clock.svg" %}'></a>
+            <a href='#' class="icon" id="myLink"><img src='{% static "./images/clock.svg" %}'></a>
             <p>History</p>
         </div>
 
         <div class="bottom">
-            <a href='{% static "./profile.html" %}' class="icon" id="myLink"><img src='{% static "./images/face-man.svg" %}'></a>
+            <a href='/my-profile/' class="icon" id="myLink"><img src='{% static "./images/face-man.svg" %}'></a>
             <p>Me</p>
         </div>
     </div>

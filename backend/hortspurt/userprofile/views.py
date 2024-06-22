@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from .forms import UserCreationForm, ProfileForm, RegisterForm, ProfileEditForm
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from rest_framework.views import APIView
 from django.views.generic.edit import UpdateView 
 from transactions.models import AddMoneyTransaction
@@ -111,6 +111,34 @@ class HistoryView(LoginRequiredMixin, View):
         ctx = {'transactions': transactions_by_date}
         print(ctx)
         return render(request, 'history.html', ctx)
+    
+    def post(self, request):
+        return render(request, 'transaction_detail.html')
+
+
+class TransactionDetailView(LoginRequiredMixin, View):
+    def get(self, request, trid):
+        category =  trid[:3]
+        transaction_id = trid[3:]
+        print(category, transaction_id)
+        if (category == 'ADM'):
+            tr_obj = AddMoneyTransaction.objects.get(id=transaction_id)
+            if not tr_obj:
+                return render(request, 'error404.html')
+            if tr_obj.user != request.user:
+                msg = 'You do not have access to this resource'
+                return HttpResponse(msg, status=403, content_type="text/html")
+
+        elif (category == 'ADT'):
+            tr_obj = BuyAirtimeData.objects.get(id=transaction_id)
+            if not tr_obj:
+                return render(request, 'error404.html')
+            if tr_obj.buyer != request.user:
+                msg = 'You do not have access to this resource'
+                return HttpResponse(msg, status=403, content_type="text/html")
+
+        ctx = {'transaction': tr_obj}
+        return render(request, 'transaction_detail.html', ctx)
     
     def post(self, request):
         return render(request, 'transaction_detail.html')

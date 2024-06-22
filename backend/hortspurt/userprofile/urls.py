@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.LandingView.as_view(), name='landing'),
     path('data/', csrf_exempt(views.DataView.as_view()), name='data'),
     path('history/', views.HistoryView.as_view(), name='history'),
+    path('history/<str:trid>/', views.TransactionDetailView.as_view(), name='tr-history'),
     path('registration/', views.RegisterView.as_view(), name='registration'),
     path('coming-soon/', views.ComingSoonView.as_view(), name='comingsoon'),
     path('shoutout/', views.ShoutOutView.as_view(), name='shoutout'),

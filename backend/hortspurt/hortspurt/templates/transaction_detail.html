@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+{% load custom_tags %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction Details History</title>
 
-    <link rel="stylesheet" href="./transactionDetails.css">
+    <link rel="stylesheet" href='{% static "./transactionDetails.css" %}'>
 </head>
 <body>
     <!--header-->
     <div class="headerAndNav">
         <div class="arrow">
-            <a href="./historyPage.html"><img src="./images/Vector-arrow.png" alt=""></a>
+            <a href='/history/'><img src='{% static "./images/Vector-arrow.png" %}' alt=""></a>
         </div>
         <h2 class="transactHeader">
             Transaction Details
@@ -23,26 +25,43 @@
 
     <!--Transaction Detail---->
     <div class="todayHeader">
+        {% if date|is_today %}
         <p class="today">
             Today
         </p>
+        {% else %}
+        <p class="today">
+            {{date}}
+        </p>
+        {% endif %}
     </div>
-
+    {% if transaction|has_field:'action' %}
     <div class="box">
         <div class="boxA">
-            <img src="./images/Group 1251.png" alt="">
+            {% if transaction.action == 'Received'%}
+                <div class="handImg">
+                    <img src='{% static "./images/Group 1251 (4).png" %}' alt="" class="circleBack">
+                    <img src='{% static "./images/Frame (95).png" %}' alt="" class="hand">
+                </div>
+            {% else %}
+                <img src='{% static "./images/Group 1251.png" %}' alt="">
+            {% endif %}
             <div class="historyMainText">
                 <p class="bigText">
-                   <a href="#"> Gift MTN/Airtel/Glo/Etisalat Data </a>
+                   <a href='{% static "#" %}'> {{transaction.action}} {{transaction.np}} {{transaction.service}} </a>
                 </p>
                 <p class="dateOfTransaction">
-                    June 17th, 2024 2:55PM
+                    {{transaction.updated_at}}
                 </p>
             </div>
         </div>
         <div class="boxB">
             <div class="amountStatus">
-                <p class="amountRed"> - NGN 5000 </p>
+                {% if transaction.action == 'Received'%}
+                    <p class="amountGreen"> + NGN {{transaction.price}} </p>
+                {% else %}
+                    <p class="amountRed"> - NGN {{transaction.price}} </p>
+                {%endif%}
                 <p class="statusGreen"> successful </p>
             </div>
         </div>
@@ -55,13 +74,51 @@
         </p>
         <div class="transactionNumber">
             <span class="tranNo">Transaction Number</span>
-            <span class="No">12345678910</span>
+            <span class="No">{{transaction.id}}</span>
         </div>
         <div class="thePhoneNumb">
             <span>To/From</span>
-            <span class="theNumb">+2349045977499</span>
+            <span class="theNumb">{{transaction.phone_no}}</span>
         </div>
     </div>
-    
+    {% else %}
+    <div class="box">
+        <div class="boxA">
+            <div class="moneyImg">
+                <img src='{% static "./images/Group 1251 (4).png" %}' alt="" class="circleBack">
+                <img src='{% static "./images/Vector (73).png" %}' alt="" class="hand" >
+            </div>
+            <div class="historyMainText">
+                <p class="bigText">
+                   <a href='{% static "#" %}'> Added Money </a>
+                </p>
+                <p class="dateOfTransaction">
+                    {{transaction.updated_at}}
+                </p>
+            </div>
+        </div>
+        <div class="boxB">
+            <div class="amountStatus">
+                    <p class="amountGreen"> + NGN {{transaction.amount}} </p>
+                <p class="statusGreen"> successful </p>
+            </div>
+        </div>
+    </div>
+
+    <!--Further Transaction Detail-->
+    <div class="purpleBox">
+        <p class="transDetHeader">
+            Transaction Details
+        </p>
+        <div class="transactionNumber">
+            <span class="tranNo">Transaction Number</span>
+            <span class="No">{{transaction.id}}</span>
+        </div>
+        <div class="thePhoneNumb">
+            <span>Payment Method</span>
+            <span class="theNumb">{{transaction.method}}</span>
+        </div>
+    </div>
+    {% endif %}
 </body>
 </html>

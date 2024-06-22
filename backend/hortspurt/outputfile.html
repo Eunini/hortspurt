@@ -3,218 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Transaction Details History</title>
 
-    <link rel="stylesheet" href='{% static "./historyPage.css" %}'>
+    <link rel="stylesheet" href='{% static "./transactionDetails.css" %}'>
 </head>
 <body>
-    <!---Header-->
-    <div class="header">
-        <h2>
-            Transactions
+    <!--header-->
+    <div class="headerAndNav">
+        <div class="arrow">
+            <a href='{% static "./historyPage.html" %}'><img src='{% static "./images/Vector-arrow.png" %}' alt=""></a>
+        </div>
+        <h2 class="transactHeader">
+            Transaction Details
         </h2>
+        <div>
+            <!--just a space holder to achieve frontend design-->
+        </div>
     </div>
 
-    <!---Today's History-->
+    <!--Transaction Detail---->
     <div class="todayHeader">
         <p class="today">
             Today
         </p>
     </div>
-    <!--Begining of Today's History-->
-    <div class="box">
-        <div class="boxA">
-            <img src='{% static "./images/Group 1251.png" %}' alt="">
-            <div class="historyMainText">
-                <p class="bigText">
-                   <a href='{% static "./transactionDetails.html" %}'> Gift MTN/Airtel/Glo/9mobile Data </a>
-                </p>
-                <p class="dateOfTransaction">
-                    June 17th, 2024 2:55PM
-                </p>
-            </div>
-        </div>
-        <div class="boxB">
-            <div class="amountStatus">
-                <p class="amountRed"> - NGN 5000 </p>
-                <p class="statusGreen"> successful </p>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="box">
-        <div class="boxA">
-            <div class="handImg">
-                <img src='{% static "./images/Group 1251 (4).png" %}' alt="" class="circleBack">
-                <img src='{% static "./images/Frame (95).png" %}' alt="" class="hand">
-            </div>
-            <div class="historyMainText">
-                <p class="bigText">
-                    <a href='{% static "./transactionDetails.html" %}'>Received MTN/Airtel/Glo Airtime</a>
-                </p>
-                <p class="dateOfTransaction">
-                    June 17th, 2024 2:55PM
-                </p>
-            </div>
-        </div>
-        <div class="boxB">
-            <div class="amountStatus">
-                <p class="amountGreen"> + NGN 5000 </p>
-                <p class="statusGreen"> successful </p>
-            </div>
-        </div>
-    </div>
-
 
     <div class="box">
         <div class="boxA">
             <img src='{% static "./images/Group 1251.png" %}' alt="">
             <div class="historyMainText">
                 <p class="bigText">
-                    <a href='{% static "./transactionDetails.html" %}'> Self MTN/Airtel/Glo/Etisalat Data </a>
+                   <a href='{% static "#" %}'> {{transaction.action}} {{transaction.np}} {{transaction.service}} </a>
                 </p>
                 <p class="dateOfTransaction">
-                    June 17th, 2024 2:55PM
+                    {{transaction.updated_at}}
                 </p>
             </div>
         </div>
         <div class="boxB">
             <div class="amountStatus">
-                <p class="amountRed"> - NGN 5000 </p>
-                <p class="statusYellow"> pending </p>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="box">
-        <div class="boxA">
-            <div class="moneyImg">
-                <img src='{% static "./images/Group 1251 (4).png" %}' alt="" class="circleBack">
-                <img src='{% static "./images/Vector (73).png" %}' alt="" class="hand" >
-            </div>
-            <div class="historyMainText">
-                <p class="bigText">
-                    <a href='{% static "./transactionDetails.html" %}'> Added Money </a>
-                </p>
-                <p class="dateOfTransaction">
-                    June 17th, 2024 2:55PM
-                </p>
-            </div>
-        </div>
-        <div class="boxB">
-            <div class="amountStatus">
-                <p class="amountGreen"> + NGN 5000 </p>
+                <p class="amountRed"> - NGN {{transaction.price}} </p>
                 <p class="statusGreen"> successful </p>
             </div>
         </div>
     </div>
 
-
-    <div class="box">
-        <div class="boxA">
-            <img src='{% static "./images/Group 1251.png" %}' alt="">
-            <div class="historyMainText">
-                <p class="bigText">
-                   <a href='{% static "./transactionDetails.html" %}'> Gift MTN/Airtel/Glo/Etisalat Airtime </a>
-                </p>
-                <p class="dateOfTransaction">
-                    June 17th, 2024 2:55PM
-                </p>
-            </div>
-        </div>
-        <div class="boxB">
-            <div class="amountStatus">
-                <p class="amountRed"> - NGN 5000 </p>
-                <p class="statusGreen"> successful </p>
-            </div>
-        </div>
-    </div>
-    <!--The End of Today's History-->
-
-    <!--Begining of Previous Days History-->
-    <div class="previousDayHeader">
-        <p class="previous">
-            17-04-2024
+    <!--Further Transaction Detail-->
+    <div class="purpleBox">
+        <p class="transDetHeader">
+            Transaction Details
         </p>
-    </div>
-
-    <div class="box">
-        <div class="boxA">
-            <img src='{% static "./images/Group 1251.png" %}' alt="">
-            <div class="historyMainText">
-                <p class="bigText">
-                   <a href='{% static "./transactionDetails.html" %}'> Gift MTN/Airtel/Glo/Etisalat Data </a>
-                </p>
-                <p class="dateOfTransaction">
-                    June 17th, 2024 2:55PM
-                </p>
-            </div>
+        <div class="transactionNumber">
+            <span class="tranNo">Transaction Number</span>
+            <span class="No">{{transaction.id}}</span>
         </div>
-        <div class="boxB">
-            <div class="amountStatus">
-                <p class="amountRed"> - NGN 5000 </p>
-                <p class="statusGreen"> successful </p>
-            </div>
+        <div class="thePhoneNumb">
+            <span>To/From</span>
+            <span class="theNumb">{{transaction.phone_no}}</span>
         </div>
     </div>
-
-    <div class="box">
-        <div class="boxA">
-            <div class="handImg">
-                <img src='{% static "./images/Group 1251 (4).png" %}' alt="" class="circleBack">
-                <img src='{% static "./images/Frame (95).png" %}' alt="" class="hand">
-            </div>
-            <div class="historyMainText">
-                <p class="bigText">
-                    <a href='{% static "./transactionDetails.html" %}'>Received MTN/Airtel/Glo Airtime</a>
-                </p>
-                <p class="dateOfTransaction">
-                    June 17th, 2024 2:55PM
-                </p>
-            </div>
-        </div>
-        <div class="boxB">
-            <div class="amountStatus">
-                <p class="amountGreen"> + NGN 5000 </p>
-                <p class="statusGreen"> successful </p>
-            </div>
-        </div>
-    </div>
-    <!--The End of Previous Days History-->
-
-
-    <div class="buttons">
-        <div class="bottom">
-            <a href='{% static "./index.html" %}' class="icon" id="myLink"><img src='{% static "./images/Group.svg" %}'></a>
-            <p>Home</p>
-        </div>
-
-        <div class="bottom">
-            <a href='{% static "./shoutout.html" %}' class="icon" id="myLink"><img src='{% static "./images/Vector (1).svg" %}'></a>
-            <p>Shoutout</p>
-        </div>
-
-        <div class="bottom">
-            <a href='{% static "#" %}' class="icon" id="myLink"><img src='{% static "./images/gift-outline.svg" %}'></a>
-            <p>Bonus</p>
-        </div>
-
-        <div class="bottom">
-            <a href='{% static "./historyPage.html" %}' class="icon" id="myLink"><img src='{% static "./images/clock.svg" %}'></a>
-            <p>History</p>
-        </div>
-
-        <div class="bottom">
-            <a href='{% static "./profile.html" %}' class="icon" id="myLink"><img src='{% static "./images/face-man.svg" %}'></a>
-            <p>Me</p>
-        </div>
-    </div>
-
-
-
-
-
+    
 </body>
 </html>
