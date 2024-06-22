@@ -240,7 +240,6 @@ option[value="gender"] {
     justify-content: center;
     align-items: center;
     display: none;
-    display: flex;
     flex-direction: column;
     margin: auto;
     width: 80%; /* Adjust as needed */
