@@ -239,7 +239,7 @@ option[value="gender"] {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
     justify-content: center;
     align-items: center;
-    display: none;
+    display: flex;
     flex-direction: column;
     margin: auto;
     width: 80%; /* Adjust as needed */
