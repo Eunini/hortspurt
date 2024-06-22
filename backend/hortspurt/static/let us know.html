@@ -10,51 +10,81 @@
     <div class="holder">
         <div class="profile-head">
             <div class="pic-container">
-                <img src="./images/profile image hortspurt.png" alt="user profile image">
+                <img src="./images/icons8-person-64.png" alt="user profile image">
             </div>
-               <h1 class="intro">Hi Becca</h1>
-               <a href="./let us know.html"><img src="./images/Frame 28.png" id="img"></a>
+            <h1 class="intro">Hi Becca</h1>
+            <a href="./purchase.html"><img src="./images/Shop.png" id="img"></a>
         </div>
         <section>
             <p>Let us know your query</p>
-            <h6>select issue type</h6>
+            <h6>Select issue type</h6>
 
-            <!--complaints-->
-            <input type="radio" id="checkbox1" class="custom-checkbox">
-        <label for="checkbox1">failed transaction</label>
+            <!-- Complaints -->
+            <input type="radio" id="checkbox1" class="custom-checkbox" name="issue">
+            <label for="checkbox1">Failed transaction</label>
 
-        <input type="radio" id="checkbox2" class="custom-checkbox">
-        <label for="checkbox2"> long pending transaction</label>
+            <input type="radio" id="checkbox2" class="custom-checkbox" name="issue">
+            <label for="checkbox2">Long pending transaction</label>
 
-        <input type="radio" id="checkbox3" class="custom-checkbox">
-        <label for="checkbox3">Failed transaction but no refund</label>
+            <input type="radio" id="checkbox3" class="custom-checkbox" name="issue">
+            <label for="checkbox3">Failed transaction but no refund</label>
 
-        <input type="radio" id="checkbox4" class="custom-checkbox">
-        <label for="checkbox4"> Successful transaction but no data</label>
+            <input type="radio" id="checkbox4" class="custom-checkbox" name="issue">
+            <label for="checkbox4">Successful transaction but no data</label>
         
-        <div class="note">
-            <input type="text" placeholder="add note" id="add-note">
-            <p style="color: #878787;">write here</p>
-        </div>
+            <div class="note">
+                <input type="text" placeholder="Add note" id="add-note">
+                <p style="color: #878787;">Write here</p>
+            </div>
 
-       <a href="./we know.html"> <input type="submit" value="submit" class="submit-button"></a>
-    </section>
+            <!-- Use a regular <form> element to handle form submission -->
+            <form id="query-form" action="we know.html" method="GET">
+                <input type="submit" value="Submit" class="submit-button" id="submit-button" disabled>
+            </form>
+        </section>
     </div>
+    <script>
+        const checkboxes = document.querySelectorAll('.custom-checkbox');
+        const noteInput = document.getElementById('add-note');
+        const form = document.getElementById('query-form');
+        const submitButton = document.getElementById('submit-button');
 
-<script>
-    const checkboxes = document.querySelectorAll('.custom-checkbox');
+        function validateForm(event) {
+            let isCheckboxChecked = false;
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    isCheckboxChecked = true;
+                }
+            });
 
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('click', function() {
-        // Uncheck siblings
-        checkboxes.forEach(sibling => {
-            if (sibling !== checkbox) {
-                sibling.checked = false;
+            const isNoteFilled = noteInput.value.trim() !== '';
+            const isFormValid = isCheckboxChecked || isNoteFilled;
+
+            // Enable or disable the submit button based on form validity
+            submitButton.disabled = !isFormValid;
+
+            if (isFormValid) {
+                submitButton.classList.remove('disabled');
+            } else {
+                submitButton.classList.add('disabled');
             }
-        });
-    });
-});
 
-</script>
+            return isFormValid;
+        }
+
+        form.addEventListener('submit', function(event) {
+            validateForm(event);
+        });
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', validateForm);
+        });
+
+        noteInput.addEventListener('input', validateForm);
+
+        // Initial validation check on page load
+        validateForm();
+    </script>
 </body>
-</html> 
+</html>
+

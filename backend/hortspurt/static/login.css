@@ -108,7 +108,7 @@ form {
 }
 .input-field input{
     flex: 5;
-    background: none;
+    background: transparent;
     border: none;
     outline: none;
     width: 100%;

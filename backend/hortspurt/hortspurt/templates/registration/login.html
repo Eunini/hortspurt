@@ -4,48 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hortspot login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapicss2?famoda:ital@1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href='{% static "stylesheet.css" %}'>
-    <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
+    <title>hortspot login</title> 
+    <link rel="stylesheet" href='{% static "./login.css" %}'>
 </head>
 <body>
-    <div class="form_box">
-        <section>
-         <h1>Welcome back</h1> <i class="fa-solid fa-user" style="color: #9955bc;"></i>
-            <form method="post">
-			    {% csrf_token %}
-                <div class="input_group"></div>
-                <div class="input_field">
-                    <i class="fa-solid fa-user" style="color: #999;"></i>
-                    <input type="text", placeholder="Username" name="username">
-                </div>
-                <div class="input_field">
-                    <i><ion-icon name="lock-closed-outline" color="#999" ></ion-icon></i>
-                    <input type="password", placeholder="Pin" name="password">
-                </div>
-                <div class="button">
-                    <button type="submit">Sign In</button>
-                </div>
-                
-                    <label class="Save_info">Save login info
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-        
-                </div>    
-            </form>
-        </section>
-    </div>    
+    <div class="container">
+        <div class="signin-signup">
+            <form action="" class="sign-in-form" method="post">
+                {% csrf_token %}
+                <div class="head-container">
+                    <h1>Welcome back</h1>
+                    <img src='{% static "images/smileys.png" %}' alt="" class="smiley">
+                 </div>
+                <!--<p class="miss"> we miss you!! </p>--> 
 
-    <section>
-        <div class="no-acct">
-         <p>Don't have an account? <a href="/registration">Click here to sign up</a></p>
+                <div class="my-inputs">
+                    <div class="input-field">
+                      <img src='{% static "images/face-man.svg" %}' alt="">
+                      <input type="text" placeholder="username" id="username" name="username">
+                    </div>
+
+                    <div class="input-field">
+                            <img src='{% static "images/key-square.png" %}' alt="">
+                            <input type="password" id="pin" placeholder="Pin" class="input" oninput="onPasswordInput(false)" name="password">
+                            <span class="eye" onclick="passwordVisibility(false)">
+                              <img src='{% static "images/icons8-eye-24.png" %}' alt="" id="hide1">
+                              <img src='{% static "images/login show.png" %}' alt="" id="hide2">
+                            </span>
+                    </div>
+
+                    <div class="submit">
+                      <button type="submit" class="loginBtn">Login</button>
+                      <!---<input type="submit" value="Login" class="btn">-->
+                    </div>
+                </div>         
+
+                <div class="forgot">
+                    <p style="color: #9955bc; text-align: center;">Forgot password?</p>
+                </div>
+                <div class="no-acct">
+                 <p>Don't have an account? <a href='/registration/'>Click here to sign up</a></p>
+                </div>
+            </form>
         </div>
-    </section>    
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
-</html>
+    </div>
+    
+
+
+    <script>
+        function passwordVisibility(isConfirmPassword) {
+      const pin = document.getElementById("pin");
+      const confirmPin = document.getElementById("confirm-pin");
+      //const button = document.getElementById("btn");
+      const pinEye = document.getElementById("hide1");
+      const pinEyeSlash = document.getElementById("hide2");
+      
+      if(!isConfirmPassword){
+        if(pin.type === 'password') {
+          pinEye.style.display = 'block';
+          pinEyeSlash.style.display = 'none';
+          pin.type = 'text';
+        }
+        else {
+          pinEye.style.display = 'none';
+          pinEyeSlash.style.display = 'block';
+          pin.type = 'password';
+        }
+      } else {
+        const pinEyeConfirm = document.getElementById("confirm-hide1");
+        const pinEyeSlashConfirm = document.getElementById("confirm-hide2");
+        
+        if(confirmPin.type === 'password') {
+          confirmPin.type = 'text';
+          pinEyeConfirm.style.display = 'block';
+          pinEyeSlashConfirm.style.display = 'none';
+        }
+        else {
+          confirmPin.type = 'password';
+          pinEyeConfirm.style.display = 'none';
+          pinEyeSlashConfirm.style.display = 'block';
+        }
+      }
+    }
+    </script>

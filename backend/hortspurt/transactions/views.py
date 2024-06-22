@@ -100,7 +100,7 @@ class UssdVerifyView(LoginRequiredMixin, View):
         if (status):
             return render(request, 'success.html')
         else:
-            return HttpResponse('Transaction unsuccessful')
+            return render(request, 'paymenterror.html')
 
 
 class PayWithTransferView(LoginRequiredMixin, View):
@@ -148,7 +148,7 @@ class TransferVerifyView(LoginRequiredMixin, View):
         if (status):
             return render(request, 'success.html')
         else:
-            return HttpResponse('Transaction unsuccessful')
+            return render(request, 'paymenterror.html')
 
 @method_decorator(csrf_exempt, name='dispatch')
 class FlwWebhook(View):
