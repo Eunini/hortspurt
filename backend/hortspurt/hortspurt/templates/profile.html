@@ -10,12 +10,12 @@
 <body>
     <div class="background">
         <div class="profile-header"> 
-            <a href='/'><img src='{% static "images/11zon_17.jpeg" %}' alt="Back" id="back"></a>
+            <a href='{% static "./purchase.html" %}'><img src='{% static "images/11zon_17.jpeg" %}' alt="Back" id="back"></a>
             <h3 id="title">My Profile</h3>
 
-            <div class="nav-toggle" id="nav-toggle" >
-                <img src='{% static "images/11zon_1.jpeg" %}' alt="" id="open">
-                <img src='{% static "images/11zon_17.jpeg" %}' alt="" id="close">
+            <div class="nav-toggle" id="nav-toggle">
+                <img src='{% static "images/11zon_1.jpeg" %}' alt="Open" id="open">
+                <img src='{% static "images/11zon_17.jpeg" %}' alt="Close" id="close">
             </div>
 
             <nav class="nav-menu" id="nav-menu">
@@ -26,7 +26,6 @@
                     <li><a href='{% static "delete.html" %}'>Delete Account</a></li>
                 </ul>
             </nav>
-            <!-- <a href='{% static "./purchase.html" %}'><img src='{% static "images/11zon_17.jpeg" %}' alt="Back"></a> -->
         </div>
         
         <div class="pic-container">
@@ -36,26 +35,22 @@
         <div class="table-content">
             <table>
                 <tr>
-                    <td> <img src='{% static "images/icons8-star-64.png" %}' alt="">First Name</td>
+                    <td class="title"><img src='{% static "images/icons8-star-64.png" %}' alt="">First Name</td>
                     <td><span>{{user.first_name}}</span></td>
                 </tr>
-
                 <tr>
-                    <td> <img src='{% static "images/icons8-star-64.png" %}' alt="">Last Name</td>
+                    <td class="title"><img src='{% static "images/icons8-star-64.png" %}' alt="">Last name</td>
                     <td><span>{{user.last_name}}</span></td>
                 </tr>
-
-                <tr>
+                <tr class="title">
                     <td><img src='{% static "images/icons8-star-64.png" %}' alt="">Phone</td>
                     <td><span>{{user.username}}</span></td>
                 </tr>
-
-                <tr>
+                <tr class="title">
                     <td><img src='{% static "images/icons8-star-64.png" %}' alt="">Gender</td>
                     <td><span>{{user.profile.gender}}</span></td>
                 </tr>
-
-                <tr>
+                <tr class="title">
                     <td><img src='{% static "images/icons8-star-64.png" %}' alt="">Email</td>
                     <td><span>{{user.email}}</span></td>
                 </tr>
@@ -66,34 +61,35 @@
             <p class="head">Refer & Get Free Data<br><span>Earn 1GB on every person you refer</span></p>
             <img src='{% static "images/acct-outline.png" %}' alt="Refer">
         </div>
-        
-        <!-- Footer Navigation -->
-        <footer>
-            <div class="bottom">
-                <a href='/' class="icon"><img src='{% static "images/Group 18/Group.jpg" %}' alt="Home"></a>
-                <p>Home</p>
-            </div>
-            <div class="bottom">
-                <a href="/shoutout.html" class="icon"><img src='{% static "images/Group 18/account-tie-voice-outline.jpg" %}' alt="Shoutout"></a>
-                <p>Shoutout</p>
-            </div>
-            <div class="bottom">
-                <a href="/coming-soon" class="icon"><img src='{% static "images/Group 18/gift-outline.jpg" %}' alt="Bonus"></a>
-                <p>Bonus</p>
-            </div>
-            <div class="bottom">
-                <a href="/history/" class="icon"><img src='{% static "images/Group 18/clock.jpg" %}' alt="History"></a>
-                <p>History</p>
-            </div>
-            <div class="bottom">
-                <a href="#" class="icon"><img src='{% static "images/Group 18/face-man.jpg" %}' alt="Me"></a>
-                <p style="color:#9955BB;">Me</p>
-            </div>
-        </footer>
+    </div>
+<!-- footer navigation here -->
+<div class="buttons">
+    <div class="bottom">
+        <a href='/' class="icon" id="myLink"><img src='{% static "images/Group 18/Group.jpg" %}' alt="Home"></a>
+        <p>Home</p>
     </div>
 
+    <div class="bottom">
+        <a href='/shoutout/' class="icon" id="myLink"><img src='{% static "./images/Vector (1).svg" %}'></a>
+        <p>Shoutout</p>
+    </div>
+
+    <div class="bottom">
+        <a href='/coming-soon/' class="icon" id="myLink"><img src='{% static "./images/gift-outline.svg" %}'></a>
+        <p>Bonus</p>
+    </div>
+
+    <div class="bottom">
+        <a href='/history/' class="icon" id="myLink"><img src='{% static "./images/clock.svg" %}'></a>
+        <p>History</p>
+    </div>
+
+    <div class="bottom">
+        <a href='/my-profile/' class="icon" id="myLink"><img src='{% static "images/Group 18/face-man.jpg" %}' alt="Me"></a>
+        <p>Me</p>
+    </div>
+</div>
     <script>
-        
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const openIcon = document.getElementById('open');
@@ -117,7 +113,6 @@
         }
     });
     closeIcon.style.display = 'none';
-
     function logout() {
         token = document.getElementsByName('csrfmiddlewaretoken')[0]
         const form = document.createElement('form');
@@ -127,7 +122,6 @@
         document.body.appendChild(form);
         form.submit();
     }
-   
     </script>
 </body>
 </html>
