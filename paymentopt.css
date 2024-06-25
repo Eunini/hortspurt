@@ -127,6 +127,7 @@ h1{
     .amount .value {
         font-weight: 900;
         font-size: 20px;
+        color: #ccc;
         text-align: center;
         width: 80px;
         border: 2px solid #9955BB;
