@@ -111,9 +111,6 @@ class HistoryView(LoginRequiredMixin, View):
         ctx = {'transactions': transactions_by_date}
         print(ctx)
         return render(request, 'history.html', ctx)
-    
-    def post(self, request):
-        return render(request, 'transaction_detail.html')
 
 
 class TransactionDetailView(LoginRequiredMixin, View):
@@ -133,12 +130,9 @@ class TransactionDetailView(LoginRequiredMixin, View):
             tr_obj = BuyAirtimeData.objects.get(id=transaction_id)
             if not tr_obj:
                 return render(request, 'error404.html')
-            if tr_obj.buyer != request.user:
+            if tr_obj.buyer != request.user and tr_obj.receiver != request.user:
                 msg = 'You do not have access to this resource'
                 return HttpResponse(msg, status=403, content_type="text/html")
 
         ctx = {'transaction': tr_obj}
         return render(request, 'transaction_detail.html', ctx)
-    
-    def post(self, request):
-        return render(request, 'transaction_detail.html')

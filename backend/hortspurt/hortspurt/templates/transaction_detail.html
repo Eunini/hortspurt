@@ -77,7 +77,11 @@
             <span class="No">{{transaction.id}}</span>
         </div>
         <div class="thePhoneNumb">
-            <span>To/From</span>
+            {% if transaction.action == 'Received'%}
+            <span>From</span>
+            {% else %}
+            <span>To</span>
+            {% endif %}
             <span class="theNumb">{{transaction.phone_no}}</span>
         </div>
     </div>
@@ -90,7 +94,7 @@
             </div>
             <div class="historyMainText">
                 <p class="bigText">
-                   <a href='{% static "#" %}'> Added Money </a>
+                   <a> Added Money </a>
                 </p>
                 <p class="dateOfTransaction">
                     {{transaction.updated_at}}

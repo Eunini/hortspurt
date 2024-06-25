@@ -56,6 +56,32 @@ body{
     color: #9c9c9c;
 }
 
+.handImg{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moneyImg{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circleBack{
+    position: relative;
+    display: flex;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .amountStatus{
     display: flex;
     flex-direction: column;
