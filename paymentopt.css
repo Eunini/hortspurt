@@ -62,9 +62,13 @@ h1{
 .amount P{
     color: #4d4a4a;
 }
-.amount span {
-    font-weight: 600;
-    font-size: 20px;
+.amount .value {
+    font-weight: 900;
+    font-size: 23px;
+    text-align: right;
+    border: none;
+    outline: none;
+    background: transparent;
 }
 .boxes {
     margin: 30px auto;
