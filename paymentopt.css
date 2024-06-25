@@ -60,8 +60,9 @@ h1{
 .myinput{
     display: flex;
 }
-.myinput h2{
-    padding: 10px 5px;
+.myinput p{
+    padding: 20px 5px;
+    color: #ccc;
 }
 .amount .value {
     font-weight: 900;
@@ -113,10 +114,13 @@ h1{
         margin: 10px;
         padding: 10px;
     }
+    .amount p{
+        padding-top: 10px;
+    }
     .myinput{
         display: flex;
     }
-    .myinput h2{
+    .myinput p{
         padding:10px 5px;
         font-size: 18px;
     }
