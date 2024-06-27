@@ -9,6 +9,8 @@ from transactions.utils import generateTransactionReference
 from django.core.exceptions import ValidationError
 from .husmo import MTN_PLANS, MOBILE9_PLANS, GLO_PLANS, AIRTEL_PLANS
 from .models import BuyAirtimeData
+from .forms import BuyAirtimeDataForm
+from django.contrib.auth.models import User
 load_dotenv()
 # Create your views here.
 
@@ -41,7 +43,7 @@ def verify(NP, phone_no, code):
         return False
     return True
 
-def deduct_balance(user, NP, code):
+def deduct_balance(user, NP, code, phone_no):
     print(NP, code)
     if (NP == 'MTN'):
         plans = MTN_PLANS
@@ -57,13 +59,26 @@ def deduct_balance(user, NP, code):
     for plan in plans:
         if plan['data_id'] == code:
             price = int(plan['amount'])
+            size = plan['size']
             print(price, user.profile.wallet_balance)
     if ( price <= user.profile.wallet_balance):
         try:
+            receiver = User.objects.get(username=phone_no)
+            if request.user.username == phone_no:
+                action = 'Self'
+            else:
+                action = 'Gift'
+            if receiver:
+                adt_form = BuyAirtimeDataForm({'buyer': request.user, 'receiver': receiver, 'phone_no': phone_no, 'price': price, 'amount': size, 'np': NP, 'action': action, 'service': 'Data', 'status': 'pending'})
+            else:
+                adt_form = BuyAirtimeDataForm({'buyer': request.user, 'phone_no': phone_no, 'price': price, 'amount': size, 'np': NP, 'action': action, 'service': 'Data', 'status': 'pending'})
+            if adt_form.is_valid():
+                adt_tr = adt_form.save()
+
             user.profile.wallet_balance -= price
             user.profile.full_clean()  # This will trigger the validation
             user.profile.save()
-            return price
+            return (price, adt_tr)
         except ValidationError as e:
             print(f"ValidationError: {e}")
     return False
@@ -96,22 +111,27 @@ class BuyDataView(View):
         service = NPS[NP]
         print(service, phone_no, code)
         data={"network": service, "mobile_number": phone_no, "plan": code, "Ported_number": False}
-        price = deduct_balance(request.user, NP, code)
+        price, adt_tr = deduct_balance(request.user, NP, code, phone_no)
         if (price):
-            try:    
+            try:
                 res = requests.post(endpoint_url, json=data, headers=headers)
                 print(res)
                 if (res.status_code == 201):
                     res_data = res.json()
                     print(res_data)
                     if (res_data['Status'] == 'successful'):
-
+                        adt_tr.status = 'successful'
+                        adt_tr.save()
                         return render(request, 'success.html')
                 print(res.status_code)
+                adt_tr.status = 'failed'
+                adt_tr.save()
                 refund(request.user, price)
                 return HttpResponse(status=500)
             except (ConnectionError, KeyError, ValueError) as e:
                 print(e)
+                adt_tr.status = 'failed'
+                adt_tr.save()
                 refund(request.user, price)
                 return HttpResponse(status=500)
         else:

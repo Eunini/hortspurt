@@ -9,17 +9,21 @@ class BuyAirtimeData(models.Model):
     NETWORK_PROVIDER = [
         ('MTN', 'MTN'),
         ('GLO', 'GLO'),
-        ('Airtel', 'Airtel'),
-        ('9mobile', '9mobile'),
+        ('AIRTEL', 'AIRTEL'),
+        ('9MOBILE', '9MOBILE')
     ]
     BUY_ACTION = [
-        ('Received', 'Received'),
         ('Self', 'Self'),
         ('Gift', 'Gift')
     ]
     SERVICE = [
         ('Data', 'Data'),
-        ('Airtime', 'Airtime'),
+        ('Airtime', 'Airtime')
+    ]
+    PAYMENT_STATUS = [
+        ('pending', 'pending'),
+        ('successful', 'successful'),
+        ('failed', 'failed')
     ]
     #id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     buyer = models.ForeignKey(User, on_delete=models.PROTECT)
@@ -31,5 +35,6 @@ class BuyAirtimeData(models.Model):
     np = models.CharField(max_length=7, choices=NETWORK_PROVIDER)
     action = models.CharField(max_length=8, choices=BUY_ACTION)
     service = models.CharField(max_length=8, choices=SERVICE)
+    status = models.CharField(max_length=10, choices=PAYMENT_STATUS, default='pending')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
