@@ -30,7 +30,7 @@ class BuyAirtimeData(models.Model):
     tr_id = models.CharField(max_length=200, blank=True, null=True)
     receiver = models.ForeignKey(User, on_delete=models.PROTECT, related_name='sponsor', null=True, blank=True)
     phone_no = models.CharField(max_length=11)
-    price = models.PositiveIntegerField()
+    price = models.FloatField()
     amount = models.CharField(max_length=5)
     np = models.CharField(max_length=7, choices=NETWORK_PROVIDER)
     action = models.CharField(max_length=8, choices=BUY_ACTION)

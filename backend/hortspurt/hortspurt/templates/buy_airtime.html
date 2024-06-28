@@ -28,7 +28,7 @@
         </div>
     
         <div class="walletBalance" id="walletBalance">
-            NGN 150,000
+            NGN {{user.profile.wallet_balance}}
         </div>
     
         <div class="walletBalanceHidden" id="walletBalanceHidden">
@@ -37,7 +37,7 @@
            <img src='{% static "images/hid.png" %}' alt="">
            <img src='{% static "images/hid.png" %}' alt="">
         </div>
-        <a href='{% static "#" %}' class="addMoney">+ add money</a>  
+        <a href="#" class="addMoney">+ add money</a>  
     </div>
 
     <!--envelope -->
@@ -52,7 +52,7 @@
             <div class="countryCode">+234</div>
             <img src='{% static "images/Line 5.png" %}' alt="">
         </div>
-        <input type="text" class="phonenumb" value="08039263055">
+        <input id="phoneno" type="text" class="phonenumb" value="{{phone_number}}">
     </div>
 
 
@@ -111,7 +111,7 @@
     </div>
 
     <!--Fifth phase-->
-    <a class="proceed"  onclick="revealProviderPlans()"   href='{% static "#" %}'>Proceed</a>
+    <a class="proceed"  onclick="revealProviderPlans()">Proceed</a>
     </div>
 
     <!--Sixth Phase || ---API PHASE FOR DATA PLANS--- || -->
@@ -124,7 +124,7 @@
         <div class="providerPlans">
             <div class="providerPlanX" id="providerPlan1">
                 <div class="pp">
-                    <p class="dataPrice" id=" ">N50</p>
+                    <a onclick="submit('50')" class=""><p class="dataPrice" id=" ">N50</p></a>
                     <span>pay ₦50</span>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
@@ -132,45 +132,45 @@
             <div class="providerPlanX" id="providerPlan2">
                 <div class="pp">
                 
-                    <p class="dataPrice" id=" ">N50</p>
-                    <span>pay ₦50</span>
+                    <a onclick="submit('100')" class=""><p class="dataPrice" id=" ">N100</p></a>
+                    <span>pay ₦100</span>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
             <div class="providerPlanX" id="providerPlan3">
                 <div class="pp">
                     
-                    <p class="dataPrice" id=" ">N100</p>
-                    <span>pay ₦100</span>
+                    <a href="#" onclick="submit('200')" class=""><p class="dataPrice" id=" ">N200</p></a>
+                    <span>pay ₦200</span>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
             <div class="providerPlanX" id="providerPlan4">
                 <div class="pp">
                     
-                    <p class="dataPrice" id=" ">N200</p>
-                    <span>pay ₦200</span>
-                </div>
-                <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
-            </div>
-            <div class="providerPlanX" id="providerPlan5">
-                <div class="pp">
-                    <p class="dataPrice" id=" ">N500</p>
+                    <a href="#" onclick="submit('500')" class=""><p class="dataPrice" id=" ">N500</p></a>
                     <span>pay ₦500</span>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
             <div class="providerPlanX" id="providerPlan5">
                 <div class="pp">
-                    <p class="dataPrice" id=" ">N1000</p>
+                    <a href="#" onclick="submit('1000')" class=""><p class="dataPrice" id=" ">N1000</p></a>
                     <span>pay ₦1000</span>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
             <div class="providerPlanX" id="providerPlan5">
                 <div class="pp">
-                    <p class="dataPrice" id=" ">N2000</p>
+                    <a href="#" onclick="submit('2000')" class=""></a><p class="dataPrice" id=" ">N2000</p>
                     <span>pay ₦2000</span>
+                </div>
+                <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
+            </div>
+            <div class="providerPlanX" id="providerPlan5">
+                <div class="pp">
+                    <a href="#" onclick="submit('5000')" class=""><p class="dataPrice" id=" ">N5000</p></a>
+                    <span>pay ₦5000</span>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
@@ -184,8 +184,14 @@
                 <button type="submit" id="submitBtn">buy</button>
             </div>
         </div>
+        <form method="post" url="" id="buy_airtime_form">
+            {% csrf_token %}
+            <input type="hidden" id="NP" name="NP" value="">
+            <input type="hidden" id="amount" name="amount" value="">
+            <input type="hidden" id="phonenofield" name="phonenofield" value="">
+        </form>
     </div>
-    
+  
   
 
 
@@ -216,6 +222,7 @@
             document.getElementById("overlay2").style.opacity = 0;
             document.getElementById("overlay3").style.opacity = 0;
             document.getElementById("overlay4").style.opacity = 0;
+            document.getElementById("NP").value = "MTN";
         }
 
         function change2(){
@@ -224,6 +231,7 @@
             document.getElementById("overlay1").style.opacity = 0;
             document.getElementById("overlay3").style.opacity = 0;
             document.getElementById("overlay4").style.opacity = 0;
+            document.getElementById("NP").value = "GLO";
         }
 
         function change3(){ 
@@ -231,6 +239,7 @@
             document.getElementById("overlay1").style.opacity = 0;
             document.getElementById("overlay2").style.opacity = 0;
             document.getElementById("overlay4").style.opacity = 0;
+            document.getElementById("NP").value = "9MOBILE";
         }
 
         function change4(){
@@ -239,6 +248,7 @@
             document.getElementById("overlay1").style.opacity = 0;
             document.getElementById("overlay2").style.opacity = 0;
             document.getElementById("overlay3").style.opacity = 0;
+            document.getElementById("NP").value = "AIRTEL";
         }
 
         function revealProviderPlans(){
@@ -251,27 +261,36 @@
         function cancelPlan(){
             document.getElementById("bigEnvelope").style.display = 'block';
             document.getElementById("dataPlans").style.display = 'none';
+            providerPlan = document.getElementById("NP").value;
+            document.getElementById(providerPlan+"_plans").style.display = 'none';
         }
         //to make the user input numeric only
         const numberInput = document.getElementById('numberInput');
 
-numberInput.addEventListener('input', function (event) {
-  // Remove any non-numeric characters
-  this.value = this.value.replace(/[^0-9]/g, '');
-});
+        numberInput.addEventListener('input', function (event) {
+        // Remove any non-numeric characters
+        this.value = this.value.replace(/[^0-9]/g, '');
+        });
 
 
-const submitBtn = document.getElementById('submitBtn');
+        const submitBtn = document.getElementById('submitBtn');
 
-    numberInput.addEventListener('input', function () {
-      if (numberInput.value.trim() !== "") {
-        submitBtn.classList.add('active');
-        submitBtn.disabled = false;
-      } else {
-        submitBtn.classList.remove('active');
-        submitBtn.disabled = true;
-      }
-    });
+        numberInput.addEventListener('input', function () {
+            if (numberInput.value.trim() !== "") {
+                submitBtn.classList.add('active');
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.classList.remove('active');
+                submitBtn.disabled = true;
+            }
+        });
+
+        function submit(amount){
+            phoneno = '0' + document.getElementById("phoneno").value;
+            document.getElementById("amount").value = amount;
+            document.getElementById("phonenofield").value = phoneno;
+            document.getElementById("buy_airtime_form").submit();
+        }
     </script>
 </body>
 </html>
