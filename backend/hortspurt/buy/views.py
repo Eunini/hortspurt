@@ -140,10 +140,8 @@ class BuyDataView(View):
         ctx = {'MTN_PLANS': MTN_PLANS, '9MOBILE_PLANS': MOBILE9_PLANS, 'GLO_PLANS': GLO_PLANS, 'AIRTEL_PLANS': AIRTEL_PLANS, 'phone_number':phone_number}
         return render(request, 'buy_data.html', ctx)
 
-
-class BuyDataCheckoutView(View):
-    def get(self, request):
-        data = request.POST
+    def post(self, request):
+        data = request.GET
         NP = data.get("NP")
         phone_no = data.get("phonenofield")
         code = data.get("code")
@@ -155,6 +153,7 @@ class BuyDataCheckoutView(View):
         print (ctx)
         return (request, "data_checkout.html", ctx)
 
+class BuyDataCheckoutView(View):
     def post(self, request):
         endpoint_url = base_url+"/data/"
         data = request.POST
@@ -211,8 +210,7 @@ class BuyAirtimeView(View):
         ctx = {'phone_number':phone_number}
         return render(request, 'buy_airtime.html', ctx)
 
-class BuyAirtimeCheckoutView(View):
-    def get(self, request):
+    def post(self, request):
         data = request.POST
         NP = data.get("NP")
         phone_no = data.get("phonenofield")
@@ -223,6 +221,7 @@ class BuyAirtimeCheckoutView(View):
         print (ctx)
         return (request, "airtime_checkout.html", ctx)
 
+class BuyAirtimeCheckoutView(View):
     def post(self, request):
         endpoint_url = base_url+"/topup/"
         data = request.POST

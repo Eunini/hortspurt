@@ -87,7 +87,7 @@
 </div>
 
 <a onclick="submit('{{phone_no}}')" class="proceed">Proceed</a>
-<form method="post" url="" id="buy_data_form">
+<form method="post" url="/buy/data/checkout/" id="buy_data_form">
     {% csrf_token %}
     <input type="hidden" id="NP" name="NP" value="{{NP}}">
     <input type="hidden" id="code" name="code" value="{{code}}">
