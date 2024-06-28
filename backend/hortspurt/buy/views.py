@@ -141,7 +141,7 @@ class BuyDataView(View):
         return render(request, 'buy_data.html', ctx)
 
     def post(self, request):
-        data = request.GET
+        data = request.POST
         NP = data.get("NP")
         phone_no = data.get("phonenofield")
         code = data.get("code")
