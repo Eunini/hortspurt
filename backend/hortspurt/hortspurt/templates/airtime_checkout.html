@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out Page</title>
+
+    <link rel="stylesheet" href='{% static "./checkOutPage.css" %}'>
+
+</head>
+<body>
+    
+<a href='{% static "./BuyData.html" %}' class="cancelBtn">Cancel</a>
+
+<div class="amountInNaira">
+    NGN {{amount}}
+</div>
+
+<div class="networkType">
+    <div class="nt">
+        Network Type
+    </div>
+    <div class="networkAndImg">
+        <img src='{% static "images/image 6.png" %}'>
+        <span class="mb">Airtime</span>
+    </div>
+</div>
+
+<div class="amountToBuy">
+    <span>
+      Amount  
+    </span>
+    <span class="amt">
+        NGN {{amount}}
+    </span>
+</div>
+
+<div class="paymentHeading">
+    Payment
+</div>
+
+<div class="walletBox">
+    <div class="walletB">
+        <img src='{% static "images/Group.png" %}' alt=" ">
+        <span class="wb">
+           Wallet Balance
+        </span>
+        <img src='{% static "images/Show.png" %}' alt="" id="invisible" onclick="hideBalance()">
+        <img src='{% static "images/Show (1).png" %}' alt="" id="visible" onclick="showBalance()">
+    </div>
+
+    <div class="walletBalance" id="walletBalance">
+        NGN {{user.profile.wallet_balance}}
+    </div>
+
+    <div class="walletBalanceHidden" id="walletBalanceHidden">
+       <img src='{% static "images/hid.png" %}' alt="">
+       <img src='{% static "images/hid.png" %}' alt="">
+       <img src='{% static "images/hid.png" %}' alt="">
+       <img src='{% static "images/hid.png" %}' alt="">
+    </div>
+    
+    <div class="approval">
+        Approved
+    </div>    
+</div>
+
+<div class="bhr">
+</div>
+
+<div class="numbbox">
+    <div class="netimg">
+        <img src='{% static "images/Group.jpg" %}' alt="">
+        <img src='{% static "images/Line 5.png" %}' alt="">
+    </div>
+    <input type="text" class="phonenumb" value="+234{{phone_no}}"  readonly>
+</div>
+
+<a onclick="submit('{{phone_no}}')" class="proceed">Proceed</a>
+<form method="post" url="/buy/airtime/checkout/" id="buy_airtime_form">
+    {% csrf_token %}
+    <input type="hidden" id="NP" name="NP" value="{{NP}}">
+    <input type="hidden" id="amount" name="amount" value="{{amount}}">
+    <input type="hidden" id="phonenofield" name="phonenofield" value="{{phone_no}}">
+</form>
+
+
+
+
+<script>
+
+    function showBalance(){
+        document.getElementById("walletBalance").style.display = "block";
+        document.getElementById("walletBalanceHidden").style.display = "none";
+        document.getElementById("invisible").style.display = "block";
+        document.getElementById("visible").style.display = "none";
+    }
+
+    function hideBalance(){
+        document.getElementById("walletBalance").style.display = "none";
+        document.getElementById("walletBalanceHidden").style.display = "block";
+        document.getElementById("invisible").style.display = "none";
+        document.getElementById("visible").style.display = "block";
+    }
+
+    function submit(phoneno){
+        phoneno = '0' + phoneno;
+        document.getElementById("buy_airtime_form").submit();
+    }
+</script>
+
+</body>
+</html>

@@ -211,6 +211,18 @@ class BuyAirtimeView(View):
         ctx = {'phone_number':phone_number}
         return render(request, 'buy_airtime.html', ctx)
 
+class BuyAirtimeCheckoutView(View):
+    def get(self, request):
+        data = request.POST
+        NP = data.get("NP")
+        phone_no = data.get("phonenofield")
+        amount = data.get("amount")
+        if (not NP or not phone_no or not amount):
+            return HttpResponse(status=400)
+        ctx = {"NP": NP, "amount": amount, "phone_no": phone_no}
+        print (ctx)
+        return (request, "airtime_checkout.html", ctx)
+
     def post(self, request):
         endpoint_url = base_url+"/topup/"
         data = request.POST
