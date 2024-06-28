@@ -66,7 +66,7 @@ def deduct_balance(user, NP, code, phone_no):
     elif (NP == '9MOBILE'):
         plans = MOBILE9_PLANS
     else:
-        return False
+        return (False, False)
     for plan in plans:
         if plan['data_id'] == code:
             price = int(plan['amount'])
@@ -92,7 +92,7 @@ def deduct_balance(user, NP, code, phone_no):
             return (price, adt_tr)
         except ValidationError as e:
             print(f"ValidationError: {e}")
-    return False
+    return (False, False)
 
 def deduct_balance_airtime(user, NP, amount, phone_no, int_amount):
     print(NP, amount)
@@ -139,6 +139,21 @@ class BuyDataView(View):
         phone_number = phone_number[1:]
         ctx = {'MTN_PLANS': MTN_PLANS, '9MOBILE_PLANS': MOBILE9_PLANS, 'GLO_PLANS': GLO_PLANS, 'AIRTEL_PLANS': AIRTEL_PLANS, 'phone_number':phone_number}
         return render(request, 'buy_data.html', ctx)
+
+
+class BuyDataCheckoutView(View):
+    def get(self, request):
+        data = request.POST
+        NP = data.get("NP")
+        phone_no = data.get("phonenofield")
+        code = data.get("code")
+        data_price = data.get("data_price")
+        data_size = data.get("data_size")
+        if (not NP or not phone_no or not code):
+            return HttpResponse(status=400)
+        ctx = {"NP": NP, "code": code, "phone_no": phone_no, "data_price": data_price, "data_size": data_size}
+        print (ctx)
+        return (request, "data_checkout.html", ctx)
 
     def post(self, request):
         endpoint_url = base_url+"/data/"

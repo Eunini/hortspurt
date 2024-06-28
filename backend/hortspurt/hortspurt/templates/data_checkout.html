@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
 <a href='{% static "./BuyData.html" %}' class="cancelBtn">Cancel</a>
 
 <div class="amountInNaira">
-    NGN 500
+    NGN {{data_price}}
 </div>
 
 <div class="networkType">
@@ -31,7 +32,7 @@
       Amount  
     </span>
     <span class="amt">
-        NGN 500
+        NGN {{data_price}}
     </span>
 </div>
 
@@ -40,7 +41,7 @@
         Data To Purchase
     </span>
     <span class="gb">
-        1GB
+        {{data_size}}
     </span>
 </div>
 
@@ -59,7 +60,7 @@
     </div>
 
     <div class="walletBalance" id="walletBalance">
-        NGN 150,000
+        NGN {{user.profile.wallet_balance}}
     </div>
 
     <div class="walletBalanceHidden" id="walletBalanceHidden">
@@ -82,13 +83,18 @@
         <img src='{% static "images/Group.jpg" %}' alt="">
         <img src='{% static "images/Line 5.png" %}' alt="">
     </div>
-    <input type="text" class="phonenumb" value="+23480 3926 3055"  readonly>
+    <input type="text" class="phonenumb" value="+234{{phone_no}}"  readonly>
 </div>
 
-<a href='{% static "./success.html" %}' class="proceed">Proceed</a>
-
-
-
+<a onclick="submit('{{phone_no}}')" class="proceed">Proceed</a>
+<form method="post" url="" id="buy_data_form">
+    {% csrf_token %}
+    <input type="hidden" id="NP" name="NP" value="{{NP}}">
+    <input type="hidden" id="code" name="code" value="{{code}}">
+    <input type="hidden" id="data_size" name="data_size" value="{{data_size}}">
+    <input type="hidden" id="data_price" name="data_price" value="{{data_price}}">
+    <input type="hidden" id="phonenofield" name="phonenofield" value="{{phone_no}}">
+</form>
 
 
 
@@ -109,7 +115,10 @@
         document.getElementById("visible").style.display = "block";
     }
 
-
+    function submit(phoneno){
+        phoneno = '0' + phoneno;
+        document.getElementById("buy_data_form").submit();
+    }
 </script>
 
 </body>
