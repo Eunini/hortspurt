@@ -3,90 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>user profile</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapicss2?famoda:ital@1&display=swap" rel="stylesheet">
+    <title>User Profile</title>
     <link rel="stylesheet" href="profile.css">
-    <script src="https://kit.fontawesome.com/b6f8d1705f.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-
 </head>
 <body>
     <div class="background">
-  
-        <div class="profile-header">    
-            <a href="#"><img src="images/Vector.png" alt=""></a>
-            <h3><b>My profile</b></h3>
-            <a href="edit" class="edit">Delete</a>
+        <div class="profile-header"> 
+            <a href="./purchase.html"><img src="images/11zon_17.jpeg" alt="Back" id="back"></a>
+            <h3 id="title">My Profile</h3>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <img src="images/11zon_1.jpeg" alt="Open" id="open">
+                <img src="images/11zon_17.jpeg" alt="Close" id="close">
+            </div>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Logout</a></li>
+                    <li><a href="editProfile.html">Edit Profile</a></li>
+                    <li><a href="delete.html">Delete Account</a></li>
+                </ul>
+            </nav>
         </div>
         
         <div class="pic-container">
-            <img src="profile image hortspurt.png" alt="user profile image">
+            <img src="images/icons8-person-64.png" alt="User Profile Image">
         </div>
 
         <div class="table-content">
             <table>
                 <tr>
-                    <td>Full Name</td>
-                    <td><span>BECCA WILLIAMS</span></td>
+                    <td class="title"><img src="images/icons8-star-64.png" alt="">Full Name</td>
+                    <td><span>Inioluwa Atanda</span></td>
                 </tr>
                 <tr>
-                    <td>Phone Number</td>
+                    <td class="title"><img src="images/icons8-star-64.png" alt="">Username</td>
+                    <td><span>Eunini</span></td>
+                </tr>
+                <tr class="title">
+                    <td><img src="images/icons8-star-64.png" alt="">Phone</td>
                     <td><span>+2368039213244</span></td>
                 </tr>
-                <tr>
-                    <td>Gender</td>
+                <tr class="title">
+                    <td><img src="images/icons8-star-64.png" alt="">Gender</td>
                     <td><span>Female</span></td>
                 </tr>
-                <tr>
-                    <td>Email</td>
-                    <td><span><input type="text" placeholder="B*@gmail.com"></span></td>
-                </tr>
-                <tr>
-                    <td>Address</td>
-                    <td><span><input type="text" name="" id="" placeholder="Add address"></span></td>
-                </tr>
-                <tr>
-                    <td>Date of Birth</td>
-                    <td><span><input type="text" name="" id="" placeholder="Add D.O.B"></span></td>
+                <tr class="title">
+                    <td><img src="images/icons8-star-64.png" alt="">Email</td>
+                    <td><span>a**ini@gmail.com</span></td>
                 </tr>
             </table>
         </div>
+        
         <div class="refer">
-            <p class="head"> Refer & Get Free Data<br> <span>  Earn 1gb on Every One Person you refer</span></p>
-           <img src="images/acct-outline.png" alt="account-outline">
+            <p class="head">Refer & Get Free Data<br><span>Earn 1GB on every person you refer</span></p>
+            <img src="images/acct-outline.png" alt="Refer">
         </div>
-        <span><a href=".index.html">log out</a></span>
-
-        <!-- footer navigation -->
-        <footer>
-            <div class="bottom">
-                <a href="purchase.html" class="icon" id="myLink"><img src="./images/Group (1).png"></a>
-                <p>Home</p>
-            </div>
-
-            <div class="bottom">
-                <a href="shoutout.html" class="icon" id="myLink"><img src="./images/gift-outline.png"></a>
-                <p>Shoutout</p>
-            </div>
-            
-            <div class="bottom">
-                <a href="shoutout.html" class="icon" id="myLink"><img src="./images/account-tie-voice-outline.png"></a>
-                <p>Bonus</p>
-            </div>
-
-
-            <div class="bottom">
-                <a href="default.html" class="icon" id="myLink"><img src="./images/clock.png"></a>
-                <p>History</p>
-            </div>
-
-            <div class="bottom">
-                <a href="./profile.html" class="icon" id="myLink"><img src="./images/face-man.png"></a>
-                <p style="color:#9955BB;">Me</p>
-            </div>
-        </footer>
     </div>
+<!-- footer navigation here -->
+<div class="buttons">
+    <div class="bottom">
+        <a href="./index.html" class="icon" id="myLink"><img src="images/Group 18/Group.jpg" alt="Home"></a>
+        <p>Home</p>
+    </div>
+
+    <div class="bottom">
+        <a href="./shoutout.html" class="icon" id="myLink"><img src="./images/Vector (1).svg"></a>
+        <p>Shoutout</p>
+    </div>
+
+    <div class="bottom">
+        <a href="#" class="icon" id="myLink"><img src="./images/gift-outline.svg"></a>
+        <p>Bonus</p>
+    </div>
+
+    <div class="bottom">
+        <a href="#" class="icon" id="myLink"><img src="./images/clock.svg"></a>
+        <p>History</p>
+    </div>
+
+    <div class="bottom">
+        <a href="./profile.html" class="icon" id="myLink"><img src="images/Group 18/face-man.jpg" alt="Me"></a>
+        <p>Me</p>
+    </div>
+</div>
+    <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const openIcon = document.getElementById('open');
+    const closeIcon = document.getElementById('close');
+    const title = document.getElementById("title");
+    const back = document.getElementById("back");
+
+    navToggle.addEventListener('click', function() {
+        if (navMenu.style.display === 'flex') {
+            navMenu.style.display = 'none';
+            openIcon.style.display = 'block';
+            closeIcon.style.display = 'none';
+            title.style.display = 'block'
+            back.style.display = 'block';
+        } else {
+            navMenu.style.display = 'flex';
+            openIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+            title.style.display = 'none';
+            back.style.display = 'none';
+        }
+    });
+    closeIcon.style.display = 'none';
+    </script>
 </body>
 </html>
