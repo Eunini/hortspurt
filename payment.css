@@ -97,8 +97,6 @@ input{
 @media screen and (max-width:768px) {
     .head{
         height: 250px;
-        width: 100%;
-        background-position: center;
     }
     h1{
         font-size: 30px;
