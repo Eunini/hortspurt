@@ -136,7 +136,7 @@
   border-radius: 8px;
   box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
   padding: 30px;
-  margin: 20px auto;
+  margin: 30px;
   justify-content: space-between;
   align-items: center;
 }
@@ -153,7 +153,7 @@
   align-items: center;
   justify-content: center;
   padding: 30px;
-  margin: 20px auto;
+  margin: 30px;
   background: rgba(245, 225, 255, 0.6117647059);
   border-bottom: 1px solid blueviolet;
   border-radius: 8px;
