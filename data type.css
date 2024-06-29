@@ -31,7 +31,26 @@ body{
     margin: 20px;
 }
 /* second phase */
+.second-half {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100px;
+}
 
+.second-half img {
+    position: relative; 
+    display: block;
+    margin-top: -25px; 
+    width: 80px;
+    height: 80px; 
+    z-index: 1; 
+}
+
+.second-half .second {
+    margin-top: -20px; 
+    z-index: 2; 
+}
 .walletBox{
     border-radius: 10px;
     background-color: #9955BB;
@@ -118,7 +137,7 @@ body{
     width: 90vw;
     padding: 10px;
     border-radius: 5px;
-    margin: 10px;
+    margin: 10px auto;
 }
 
 
@@ -134,14 +153,15 @@ body{
 }
 
 .countryCode{
-    padding: 0px 5px;
+    padding: 0px 10px;
 }
 
 .phonenumb{
-    margin-left: 0px;
+   display: flex;
+   margin: auto;
     border: none;
     font-size: 20px;
-    width: 70%;
+    width: 80vw;
 }
 
 .phonenumb:hover{
@@ -188,6 +208,91 @@ input[type="radio"] {
     color: #808080;
   
   }
+  .proceed{
+    cursor: pointer;
+  position: relative;
+  display: flex;
+  width: 85vw;
+  margin: 10px auto;
+  height: 65px;
+  border-radius: 30px;
+  background-color: #9955BB;
+  color: var(--color-bg-background);
+  border: none;
+  outline: 0;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.proceed:hover{
+    transition: 500ms;
+}
+
+/* Style for disabled submit button */
+.proceed.disabled {
+    opacity: 0.6; 
+    cursor: not-allowed; 
+}
+/* sixth phase */
+
+.dataPlans{
+    background-color: rgba(0,0,0,0.03);
+    border-top-right-radius: 80px;
+    border-top-left-radius: 80px;
+    padding-top: 30px;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    display:none;
+}
+
+.selectHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 35px;
+}
+
+.cancelBtn{
+    background-color: #9955BB;
+    border-radius: 20px;
+    padding: 7px 22px;
+    color:white;
+}
+
+.cancelBtn:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    padding: 7px 25px;
+    transition: 500ms;
+}
+
+.providerPlans{
+    padding: 20px 30px 5px 30px;
+}
+
+.providerPlanX{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+
+.providerPlanX:hover{
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.dataPrice{
+    color: grey;
+}
+
+.pImg{
+    width: max-content;
+}
 
   @media screen and (max-width:600px){
 
@@ -273,5 +378,8 @@ input[type="radio"] {
     }
     label{
         margin: 10px;
+    }
+    .naija{
+     padding: 0px 0px 0px 15px; 
     }
   }

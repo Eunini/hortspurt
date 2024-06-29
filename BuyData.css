@@ -96,9 +96,26 @@ body{
     padding-right: 30px;
     cursor: pointer;
 }
+.second-half {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100px;
+}
 
+.second-half img {
+    position: relative; 
+    display: block;
+    margin-top: -25px; 
+    width: 80px;
+    height: 80px; 
+    z-index: 1; 
+}
 
-
+.second-half .second {
+    margin-top: -20px; 
+    z-index: 2; 
+}
 /* third phase */
 .instruct{
     margin-top: 40px;
