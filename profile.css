@@ -176,6 +176,8 @@ span a:hover {
 }
 
 .buttons{
+    position: fixed;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
     margin: 120px 30px 0px 30px;
@@ -199,10 +201,6 @@ span a:hover {
 /* Media Queries for Responsive Design */
 
 @media (max-width: 768px) {
-
-    .background {
-      
-    }
 .nav-toggle {
     position: absolute; 
     right: 20px;
@@ -219,8 +217,6 @@ h3 {
 }
 
     .profile-header {
-        width: 300px;
-        max-width: 320px ;
         flex-direction: row;
         justify-content: space-evenly;
         padding: 10px;
@@ -276,16 +272,6 @@ h3 {
         }
       }
       
-      @keyframes slide-top {
-        0% {
-          -webkit-transform: translateY(100px);
-          transform: translateY(100px);
-        }
-        100% {
-          -webkit-transform: translateY(0);
-          transform: translateY(0);
-        }
-      }
     .nav-menu ul {
         flex-direction: column;
         width: 100%;
@@ -307,10 +293,7 @@ h3 {
     .nav-menu ul li a:hover {
         border: 2px solid #b28cc5;
     }
-    .pic-container {
-        width: 300px;
-        max-width: 320px ;
-    }
+    
     .pic-container img {
         width: 100px;
         height: 100px;
@@ -322,9 +305,7 @@ h3 {
         height: 10px;
     }
     .table-content {
-        width: 300px;
         padding: 10px;
-        max-width: 320px ;
     }
     .table-content tr {
         padding: 20px;
@@ -347,8 +328,6 @@ h3 {
         font-size: 17px;
     }
     .refer {
-        width: 300px;
-        max-width: 320px ;
         margin-bottom: 20px;
     }
     .refer .head {
@@ -366,6 +345,8 @@ h3 {
         padding: 5px 10px;
     }
     .buttons{
+        position: fixed;
+        bottom: 0;
         width: 100%;
         display: flex;
         justify-content: space-between;
