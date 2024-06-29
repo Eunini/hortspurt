@@ -124,8 +124,8 @@
             {% for mtn_plan in MTN_PLANS %}
             <div class="providerPlanX" id="providerPlan{{mtn_plan.code}}">
                 <div class="pp">
-                    <a onclick="submit('{{mtn_plan.data_id}}','{{mtn_plan.amount}}','{{mtn_plan.size}}')" class="">{{mtn_plan.type}} N{{mtn_plan.amount}} {{mtn_plan.size}} {{mtn_plan.validity}}</a>
-                    <p class="dataPrice" id=" ">N{{mtn_plan.amount}}</p>
+                    <a onclick="submit('{{mtn_plan.data_id}}','{{mtn_plan.price}}','{{mtn_plan.size}}')" class="">{{mtn_plan.type}} {{mtn_plan.size}} {{mtn_plan.validity}}</a>
+                    <p class="dataPrice" id=" ">N{{mtn_plan.price}}</p>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
@@ -135,8 +135,8 @@
             {% for glo_plan in GLO_PLANS %}
             <div class="providerPlanX" id="providerPlan1">
                 <div class="pp">
-                    <a onclick="submit('{{glo_plan.data_id}}','{{glo_plan.amount}}','{{glo_plan.size}}')" class="">{{glo_plan.type}} N{{glo_plan.amount}} {{glo_plan.size}} {{glo_plan.validity}}</a>
-                    <p class="dataPrice" id=" ">N{{glo_plan.amount}}</p>
+                    <a onclick="submit('{{glo_plan.data_id}}','{{glo_plan.price}}','{{glo_plan.size}}')" class="">{{glo_plan.type}} {{glo_plan.size}} {{glo_plan.validity}}</a>
+                    <p class="dataPrice" id=" ">N{{glo_plan.price}}</p>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
@@ -146,8 +146,8 @@
             {% for mobile9_plan in MOBILE9_PLANS %}
             <div class="providerPlanX" id="providerPlan{{mobile9_plan.code}}">
                 <div class="pp">
-                    <a onclick="submit('{{mobile9_plan.data_id}}','{{mobile9_plan.amount}}','{{mobile9_plan.size}}')" class="">{{mobile9_plan.type}} N{{mobile9_plan.amount}} {{mobile9_plan.size}} {{mobile9_plan.validity}}</a>
-                    <p class="dataPrice" id=" ">N{{mobile9_plan.amount}}</p>
+                    <a onclick="submit('{{mobile9_plan.data_id}}','{{mobile9_plan.price}}','{{mobile9_plan.size}}')" class="">{{mobile9_plan.type}} {{mobile9_plan.size}} {{mobile9_plan.validity}}</a>
+                    <p class="dataPrice" id=" ">N{{mobile9_plan.price}}</p>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
@@ -157,15 +157,15 @@
             {% for airtel_plan in AIRTEL_PLANS %}
             <div class="providerPlanX" id="providerPlan{{airtel_plan.code}}">
                 <div class="pp">
-                    <a onclick="submit('{{airtel_plan.data_id}}','{{airtel_plan.amount}}','{{airtel_plan.size}}')" class="">{{airtel_plan.type}} N{{airtel_plan.amount}} {{airtel_plan.size}} {{airtel_plan.validity}}</a>
-                    <p class="dataPrice" id=" ">N{{airtel_plan.amount}}</p>
+                    <a onclick="submit('{{airtel_plan.data_id}}','{{airtel_plan.price}}','{{airtel_plan.size}}')" class="">{{airtel_plan.type}} {{airtel_plan.size}} {{airtel_plan.validity}}</a>
+                    <p class="dataPrice" id=" ">N{{airtel_plan.price}}</p>
                 </div>
                 <img src='{% static "images/lamp.png" %}' alt="" class="pImg">
             </div>
             {% endfor %}
         </div>
     </div>
-    <form method="post" url="/buy/data/" id="buy_data_form">
+    <form method="post" action="/buy/data/" id="buy_data_form">
         {% csrf_token %}
         <input type="hidden" id="NP" name="NP" value="">
         <input type="hidden" id="code" name="code" value="">
@@ -247,7 +247,7 @@
         }
 
         function submit(code, price, size){
-            phoneno = '0' + document.getElementById("phoneno").value;
+            phoneno = document.getElementById("phoneno").value;
             document.getElementById("code").value = code;
             document.getElementById("phonenofield").value = phoneno;
             document.getElementById("data_price").value = price;

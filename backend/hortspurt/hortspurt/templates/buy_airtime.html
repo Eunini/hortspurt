@@ -184,7 +184,7 @@
                 <button type="submit" id="submitBtn">buy</button>
             </div>
         </div>
-        <form method="post" url="/buy/airtime/" id="buy_airtime_form">
+        <form method="post" action="/buy/airtime/" id="buy_airtime_form">
             {% csrf_token %}
             <input type="hidden" id="NP" name="NP" value="">
             <input type="hidden" id="amount" name="amount" value="">
@@ -286,7 +286,7 @@
         });
 
         function submit(amount){
-            phoneno = '0' + document.getElementById("phoneno").value;
+            phoneno = document.getElementById("phoneno").value;
             document.getElementById("amount").value = amount;
             document.getElementById("phonenofield").value = phoneno;
             document.getElementById("buy_airtime_form").submit();

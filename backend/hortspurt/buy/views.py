@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from .params import MTN_SME, MOBILE9_GFT, AIRTEL_GFT, GLO_GFT
 import requests
@@ -17,7 +17,7 @@ load_dotenv()
 
 base_url = "https://www.husmodata.com/api"
 NPS = {'MTN':1, 'GLO':2, 'AIRTEL':4, '9MOBILE':3}
-CODES = [13, 14, 234, 255]
+CODES = [13, 14, 234, 255, 216, 296, 258, 262, 263, 297, 265]
 HUSMO_API_KEY = os.getenv('HUSMO_API_KEY')
 headers = {"Content-Type": "application/json", "Authorization": "Token 7714689b20c84d918f3f96e7e16fcf291fb7bc4e"}
 
@@ -69,12 +69,15 @@ def deduct_balance(user, NP, code, phone_no):
         return (False, False)
     for plan in plans:
         if plan['data_id'] == code:
-            price = int(plan['amount'])
+            price = int(plan['price'])
             size = plan['size']
             print(price, user.profile.wallet_balance)
     if ( price <= user.profile.wallet_balance):
         try:
-            receiver = User.objects.get(username=phone_no)
+            try:
+                receiver = User.objects.get(username=phone_no)
+            except User.DoesNotExist:
+                receiver = None
             if user.username == phone_no:
                 action = 'Self'
             else:
@@ -85,11 +88,11 @@ def deduct_balance(user, NP, code, phone_no):
                 adt_form = BuyAirtimeDataForm({'buyer': user, 'phone_no': phone_no, 'price': price, 'amount': size, 'np': NP, 'action': action, 'service': 'Data', 'status': 'pending'})
             if adt_form.is_valid():
                 adt_tr = adt_form.save()
-
-            user.profile.wallet_balance -= price
-            user.profile.full_clean()  # This will trigger the validation
-            user.profile.save()
-            return (price, adt_tr)
+                user.profile.wallet_balance -= price
+                user.profile.full_clean()  # This will trigger the validation
+                user.profile.save()
+                return (price, adt_tr)
+            print(adt_form.errors)
         except ValidationError as e:
             print(f"ValidationError: {e}")
     return (False, False)
@@ -147,21 +150,36 @@ class BuyDataView(View):
         code = data.get("code")
         data_price = data.get("data_price")
         data_size = data.get("data_size")
-        if (not NP or not phone_no or not code):
+        try:
+            print("data_price: ", data_price)
+            int_price = int(data_price)
+        except (ValueError, OverflowError, TypeError) as e:
+            print(e)
+            return HttpResponse(status=400)
+        print(data, NP, phone_no, code, data_price, data_size, int_price)
+        if (not NP or not phone_no or not code or not data_price or not data_size):
             return HttpResponse(status=400)
         ctx = {"NP": NP, "code": code, "phone_no": phone_no, "data_price": data_price, "data_size": data_size}
         print (ctx)
-        return (request, "data_checkout.html", ctx)
+        if (request.user.profile.wallet_balance < int_price):
+            return render(request, "insufficient_funds.html", ctx)
+        return render(request, "data_checkout.html", ctx)
 
 class BuyDataCheckoutView(View):
+    def get(self, request):
+        return redirect("/buy/data/")
+
     def post(self, request):
         endpoint_url = base_url+"/data/"
         data = request.POST
         print(data)
         NP = data.get("NP")
         phone_no = data.get("phonenofield")
+        data_price = data.get("data_price")
+        data_size = data.get("data_size")
         try:
             code = int(data.get("code"))
+            int_price = int(data_price)
         except (ValueError, OverflowError, TypeError) as e:
             print(e)
             return HttpResponse(status=400)
@@ -178,16 +196,16 @@ class BuyDataCheckoutView(View):
         price, adt_tr = deduct_balance(request.user, NP, code, phone_no)
         if (price):
             try:
+                print("post request data: ", data)
                 res = requests.post(endpoint_url, json=data, headers=headers)
-                print(res)
+                print(res, res.status_code)
+                res_data = res.json()
+                print(res_data)
                 if (res.status_code == 201):
-                    res_data = res.json()
-                    print(res_data)
                     if (res_data['Status'] == 'successful'):
                         adt_tr.status = 'successful'
                         adt_tr.save()
                         return render(request, 'success.html')
-                print(res.status_code)
                 adt_tr.status = 'failed'
                 adt_tr.save()
                 refund(request.user, price)
@@ -199,9 +217,12 @@ class BuyDataCheckoutView(View):
                 refund(request.user, price)
                 return HttpResponse(status=500)
         else:
-            msg = 'Purchase unsuccessful, insufficient balance'
-            return HttpResponse(msg, status=402, content_type="text/html")
-
+            # msg = 'Purchase unsuccessful, insufficient balance'
+            # return HttpResponse(msg, status=402, content_type="text/html")
+            ctx = {"NP": NP, "code": code, "phone_no": phone_no, "data_price": data_price, "data_size": data_size}
+            print (ctx)
+            if (request.user.profile.wallet_balance < int_price):
+                return render(request, "insufficient_funds.html", ctx)
 
 class BuyAirtimeView(View):
     def get(self, request):
@@ -214,12 +235,17 @@ class BuyAirtimeView(View):
         data = request.POST
         NP = data.get("NP")
         phone_no = data.get("phonenofield")
-        amount = data.get("amount")
+        try:
+            amount = str(data.get("amount"))
+            int_amount = int(amount)
+        except (ValueError, OverflowError, TypeError) as e:
+            print(e)
+            return HttpResponse(status=400)
         if (not NP or not phone_no or not amount):
             return HttpResponse(status=400)
         ctx = {"NP": NP, "amount": amount, "phone_no": phone_no}
         print (ctx)
-        return (request, "airtime_checkout.html", ctx)
+        return render(request, "airtime_checkout.html", ctx)
 
 class BuyAirtimeCheckoutView(View):
     def post(self, request):

@@ -11,7 +11,7 @@
 </head>
 <body>
     
-<a href='{% static "./BuyData.html" %}' class="cancelBtn">Cancel</a>
+<a href='/' class="cancelBtn">Cancel</a>
 
 <div class="amountInNaira">
     NGN {{amount}}
@@ -78,11 +78,11 @@
 </div>
 
 <a onclick="submit('{{phone_no}}')" class="proceed">Proceed</a>
-<form method="post" url="/buy/airtime/checkout/" id="buy_airtime_form">
+<form method="post" action="/buy/airtime/checkout/" id="buy_airtime_form">
     {% csrf_token %}
     <input type="hidden" id="NP" name="NP" value="{{NP}}">
     <input type="hidden" id="amount" name="amount" value="{{amount}}">
-    <input type="hidden" id="phonenofield" name="phonenofield" value="{{phone_no}}">
+    <input type="hidden" id="phonenofield" name="phonenofield" value="0{{phone_no}}">
 </form>
 
 

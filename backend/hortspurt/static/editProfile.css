@@ -143,25 +143,19 @@ body {
     border: 0;
     color: rgb(53, 38, 47);
 }
-.buttons{
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin: 10px;
-}
+
 button{
-    margin: 10px;
-    font-size: 20px;
-    width: 180px;
+    width: 200px;
     height: 65px;
-    text-align: center;
-    color: white;
-    background: #9955BB;
-    outline: 0;
+    background: #9955bb;
     border: 0;
-    border-radius: 20px;
-}
+    outline: 0;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
 
 .nav-bottom{
     display: flex;
@@ -339,11 +333,11 @@ h3 {
         font-size: 17px;
     }
     button{
-        margin: 10px;
-        font-size: 17px;
         width: 150px;
-        font-weight: 300;
-        padding: 5px;
+        height: 55px;
+        padding: 10px;
+        font-size: 17px;
+        margin: 10px;
     }
     .nav-bottom{
         width: 100%;

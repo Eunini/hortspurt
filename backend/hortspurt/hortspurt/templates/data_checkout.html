@@ -11,7 +11,7 @@
 </head>
 <body>
     
-<a href='{% static "./BuyData.html" %}' class="cancelBtn">Cancel</a>
+<a href='/' class="cancelBtn">Cancel</a>
 
 <div class="amountInNaira">
     NGN {{data_price}}
@@ -86,21 +86,20 @@
     <input type="text" class="phonenumb" value="+234{{phone_no}}"  readonly>
 </div>
 
-<a onclick="submit('{{phone_no}}')" class="proceed">Proceed</a>
-<form method="post" url="/buy/data/checkout/" id="buy_data_form">
+<a onclick="checkout()" class="proceed">Proceed</a>
+<form method="post" action="/buy/data/checkout/" id="buy_data_form">
     {% csrf_token %}
     <input type="hidden" id="NP" name="NP" value="{{NP}}">
     <input type="hidden" id="code" name="code" value="{{code}}">
     <input type="hidden" id="data_size" name="data_size" value="{{data_size}}">
     <input type="hidden" id="data_price" name="data_price" value="{{data_price}}">
-    <input type="hidden" id="phonenofield" name="phonenofield" value="{{phone_no}}">
+    <input type="hidden" id="phonenofield" name="phonenofield" value="0{{phone_no}}">
 </form>
 
 
 
 
 <script>
-
     function showBalance(){
         document.getElementById("walletBalance").style.display = "block";
         document.getElementById("walletBalanceHidden").style.display = "none";
@@ -115,10 +114,10 @@
         document.getElementById("visible").style.display = "block";
     }
 
-    function submit(phoneno){
-        phoneno = '0' + phoneno;
+    function checkout(){
         document.getElementById("buy_data_form").submit();
     }
+
 </script>
 
 </body>

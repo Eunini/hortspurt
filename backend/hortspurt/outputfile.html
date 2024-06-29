@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Out Page</title>
+    <title>Insufficient funds</title>
 
-    <link rel="stylesheet" href='{% static "./checkOutPage.css" %}'>
+    <link rel="stylesheet" href='{% static "css/dataPurchase.css" %}'>
+    <link rel="stylesheet" href='{% static "Insufficient.css" %}'>
 
 </head>
 <body>
     
-<a href='{% static "./BuyData.html" %}' class="cancelBtn">Cancel</a>
+
+    <div class="container">
+        <a href='{% static "#" %}' class="cancelBtn">Cancel</a>
 
 <div class="amountInNaira">
     NGN 500
@@ -63,10 +66,10 @@
     </div>
 
     <div class="walletBalanceHidden" id="walletBalanceHidden">
-       <img src='{% static "images/hid.png" %}' alt="">
-       <img src='{% static "images/hid.png" %}' alt="">
-       <img src='{% static "images/hid.png" %}' alt="">
-       <img src='{% static "images/hid.png" %}' alt="">
+       <img src='{% static "images/_.png" %}' alt="">
+       <img src='{% static "images/_.png" %}' alt="">
+       <img src='{% static "images/_.png" %}' alt="">
+       <img src='{% static "images/_.png" %}' alt="">
     </div>
     
     <div class="approval">
@@ -79,14 +82,34 @@
 
 <div class="numbbox">
     <div class="netimg">
-        <img src='{% static "images/Group.jpg" %}' alt="">
+        <img src='{% static "images/Frame 29.png" %}' alt="">
         <img src='{% static "images/Line 5.png" %}' alt="">
     </div>
-    <input type="text" class="phonenumb" value="+23480 3926 3055"  readonly>
+    <input type="text" class="phonenumb" value="+23480 3926 3055">
 </div>
 
-<a href='{% static "./success.html" %}' class="proceed">Proceed</a>
+<a href='{% static "#" %}' class="proceed" id="proceed">Proceed</a>
 
+  <!-- The Modal -->
+  <div id="welcomeModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="close">&times;</span>
+      <h1> &#x1F622;</h1>
+      <h2>Oh no!</h2>
+      <p>You are out of balance</p>
+    </div>
+<!---This div is just for navigating purpose during testing only-->
+<!---Any developer working on it, is free to delete it or modify it-->
+<br>
+<br>
+<br>
+<div class="control">
+    <a href='{% static "./deals.html" %}' class="prev">previous</a>
+    <a href='{% static "./shoutout.html" %}' class="next">next</a>
+</div>
+    </div>
+<!---End of div  just for navigating purpose during testing only-->
 
 
 
@@ -109,7 +132,45 @@
         document.getElementById("visible").style.display = "block";
     }
 
+    document.addEventListener('DOMContentLoaded', function() {
+    // Get the modal element
+    var modal = document.getElementById('welcomeModal');
 
+    // Get the button that opens the modal
+    var span = document.getElementById('close');
+    var btn = document.getElementById('proceed');
+    modal.style.display = 'none';
+
+    // Function to open the modal
+    function openModal() {
+        modal.style.display = 'flex';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // When the user clicks on the button, open the modal
+    btn.addEventListener('click', openModal);
+
+    // When the user clicks on <span> (x), close the modal
+    span.addEventListener('click', closeModal);
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    });
+
+    // Optional: If you want to close the modal when the user presses the Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+});
 </script>
 
 </body>

@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insufficient funds</title>
 
-    <link rel="stylesheet" href="css/dataPurchase.css">
-    <link rel="stylesheet" href="Insufficient.css">
+    <link rel="stylesheet" href='{% static "css/dataPurchase.css" %}'>
+    <link rel="stylesheet" href='{% static "Insufficient.css" %}'>
 
 </head>
 <body>
     
 
     <div class="container">
-        <a href="#" class="cancelBtn">Cancel</a>
+        <a href='/' class="cancelBtn">Cancel</a>
 
 <div class="amountInNaira">
-    NGN 500
+    NGN {{data_price}}
 </div>
 
 <div class="networkType">
@@ -24,7 +25,7 @@
         Network Type
     </div>
     <div class="networkAndImg">
-        <img src="images/image 6.png">
+        <img src='{% static "images/image 6.png" %}'>
         <span class="mb">Mobile Data</span>
     </div>
 </div>
@@ -34,7 +35,7 @@
       Amount  
     </span>
     <span class="amt">
-        NGN 500
+        NGN {{data_price}}
     </span>
 </div>
 
@@ -43,7 +44,7 @@
         Data To Purchase
     </span>
     <span class="gb">
-        1GB
+        {{data_size}}
     </span>
 </div>
 
@@ -53,23 +54,23 @@
 
 <div class="walletBox">
     <div class="walletB">
-        <img src="images/Group.png" alt=" ">
+        <img src='{% static "images/Group.png" %}' alt=" ">
         <span class="wb">
            Wallet Balance
         </span>
-        <img src="images/Show.png" alt="" id="invisible" onclick="hideBalance()">
-        <img src="images/Show (1).png" alt="" id="visible" onclick="showBalance()">
+        <img src='{% static "images/Show.png" %}' alt="" id="invisible" onclick="hideBalance()">
+        <img src='{% static "images/Show (1).png" %}' alt="" id="visible" onclick="showBalance()">
     </div>
 
     <div class="walletBalance" id="walletBalance">
-        NGN 150,000
+        NGN {{user.profile.wallet_balance}}
     </div>
 
     <div class="walletBalanceHidden" id="walletBalanceHidden">
-       <img src="images/_.png" alt="">
-       <img src="images/_.png" alt="">
-       <img src="images/_.png" alt="">
-       <img src="images/_.png" alt="">
+       <img src='{% static "images/_.png" %}' alt="">
+       <img src='{% static "images/_.png" %}' alt="">
+       <img src='{% static "images/_.png" %}' alt="">
+       <img src='{% static "images/_.png" %}' alt="">
     </div>
     
     <div class="approval">
@@ -82,13 +83,13 @@
 
 <div class="numbbox">
     <div class="netimg">
-        <img src="images/Frame 29.png" alt="">
-        <img src="images/Line 5.png" alt="">
+        <img src='{% static "images/Frame 29.png" %}' alt="">
+        <img src='{% static "images/Line 5.png" %}' alt="">
     </div>
-    <input type="text" class="phonenumb" value="+23480 3926 3055">
+    <input type="text" class="phonenumb" value="+234{{phone_no}}">
 </div>
 
-<a href="#" class="proceed" id="proceed">Proceed</a>
+<a onclick="checkout()" class="proceed" id="proceed">Proceed</a>
 
   <!-- The Modal -->
   <div id="welcomeModal" class="modal">
@@ -99,17 +100,16 @@
       <h2>Oh no!</h2>
       <p>You are out of balance</p>
     </div>
-<!---This div is just for navigating purpose during testing only-->
-<!---Any developer working on it, is free to delete it or modify it-->
-<br>
-<br>
-<br>
-<div class="control">
-    <a href="./deals.html" class="prev">previous</a>
-    <a href="./shoutout.html" class="next">next</a>
-</div>
     </div>
 <!---End of div  just for navigating purpose during testing only-->
+    <form method="post" action="/buy/data/checkout/" id="buy_data_form">
+        {% csrf_token %}
+        <input type="hidden" id="NP" name="NP" value="{{NP}}">
+        <input type="hidden" id="code" name="code" value="{{code}}">
+        <input type="hidden" id="data_size" name="data_size" value="{{data_size}}">
+        <input type="hidden" id="data_price" name="data_price" value="{{data_price}}">
+        <input type="hidden" id="phonenofield" name="phonenofield" value="0{{phone_no}}">
+    </form>
 
 
 
@@ -138,7 +138,6 @@
 
     // Get the button that opens the modal
     var span = document.getElementById('close');
-    var btn = document.getElementById('proceed');
     modal.style.display = 'none';
 
     // Function to open the modal
@@ -151,8 +150,7 @@
         modal.style.display = 'none';
     }
 
-    // When the user clicks on the button, open the modal
-    btn.addEventListener('click', openModal);
+    openModal();
 
     // When the user clicks on <span> (x), close the modal
     span.addEventListener('click', closeModal);
@@ -171,6 +169,9 @@
         }
     });
 });
+    function checkout(){
+        document.getElementById("buy_data_form").submit();
+    }
 </script>
 
 </body>

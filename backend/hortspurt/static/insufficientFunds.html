@@ -88,17 +88,17 @@
     <input type="text" class="phonenumb" value="+23480 3926 3055">
 </div>
 
-<a href="#" class="proceed">Proceed</a>
+<a href="#" class="proceed" id="proceed">Proceed</a>
 
-
-<div class="centered-div">
-    <div class="content">
-        <h1> &#x1F622;</h1>
-        <h2>Oh no!</h2>
-        <p>You are out of balance</p>
+  <!-- The Modal -->
+  <div id="welcomeModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="close">&times;</span>
+      <h1> &#x1F622;</h1>
+      <h2>Oh no!</h2>
+      <p>You are out of balance</p>
     </div>
-</div>
-
 <!---This div is just for navigating purpose during testing only-->
 <!---Any developer working on it, is free to delete it or modify it-->
 <br>
@@ -132,7 +132,45 @@
         document.getElementById("visible").style.display = "block";
     }
 
+    document.addEventListener('DOMContentLoaded', function() {
+    // Get the modal element
+    var modal = document.getElementById('welcomeModal');
 
+    // Get the button that opens the modal
+    var span = document.getElementById('close');
+    var btn = document.getElementById('proceed');
+    modal.style.display = 'none';
+
+    // Function to open the modal
+    function openModal() {
+        modal.style.display = 'flex';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // When the user clicks on the button, open the modal
+    btn.addEventListener('click', openModal);
+
+    // When the user clicks on <span> (x), close the modal
+    span.addEventListener('click', closeModal);
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    });
+
+    // Optional: If you want to close the modal when the user presses the Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+});
 </script>
 
 </body>
