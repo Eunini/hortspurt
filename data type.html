@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy Data</title>
+    <title>Select Data Categpry</title>
 
     <link rel="stylesheet" href="data type.css">
 </head>
 <body>
     
     <!--first phase-->
-    <a href="/purchase.html" class="cancel">&times;</a>
+    <a href="./BuyData.html" class="cancel">&times;</a>
 
     <!--second phase-->
     <div class="walletBox">
@@ -60,26 +60,163 @@
 
 <div class="select">
     <input type="radio" id="checkbox1" class="custom-checkbox">
-        <label for="checkbox1">SME</label>
+    <label for="checkbox1">SME</label>
 
-        <input type="radio" id="checkbox2" class="custom-checkbox">
-        <label for="checkbox2">Corporate</label>
+    <input type="radio" id="checkbox2" class="custom-checkbox">
+    <label for="checkbox2">Corporate</label>
 </div>
+<!-- Use a regular <form> element to handle form submission -->
+    <form id="query-form" action="#" method="GET" onclick="revealProviderPlans()">
+        <input type="submit" value="Proceed" class="proceed" id="submit-button" onclick="revealProviderPlans()" disabled>
+    </form>
+
+</div>
+
+<!--Sixth Phase || ---API PHASE FOR DATA PLANS--- || -->
+<div class="dataPlans" id="dataPlans">
+    <div class="selectHeader">
+        <h1 class="spp">Select Provider Plan</h1>
+        <h3 class="cancelBtn" id="cancelBtn" onclick="cancelPlan()">cancel</h3>
+    </div>
+    <div class="providerPlans">
+        <div class="providerPlanX" id="providerPlan1">
+            <div class="pp">
+                <a href="./checkoutPage.html" class="">Airtel Data - 50 Naira - 40MB - 1Day</a>
+                <p class="dataPrice" id=" ">N50</p>
+            </div>
+            <img src="images/lamp.png" alt="" class="pImg">
+        </div>
+        <div class="providerPlanX" id="providerPlan2">
+            <div class="pp">
+                <a href="./checkoutPage.html" class="">Airtel Data - 100MB - CG - 7Days</a>
+                <p class="dataPrice" id=" ">N50</p>
+            </div>
+            <img src="images/lamp.png" alt="" class="pImg">
+        </div>
+        <div class="providerPlanX" id="providerPlan3">
+            <div class="pp">
+                <a href="./checkoutPage.html" class=" ">Airtel Data - 100 Naira - 100MB - 1Day</a>
+                <p class="dataPrice" id=" ">N100</p>
+            </div>
+            <img src="images/lamp.png" alt="" class="pImg">
+        </div>
+        <div class="providerPlanX" id="providerPlan4">
+            <div class="pp">
+                <a href="./checkoutPage.html" class="">Airtel Data - 300MB - CG - 30Days</a>
+                <p class="dataPrice" id=" ">N100</p>
+            </div>
+            <img src="images/lamp.png" alt="" class="pImg">
+        </div>
+        <div class="providerPlanX" id="providerPlan5">
+            <div class="pp">
+                <a href="./checkoutPage.html" class="">Airtel Data - 500MB - CG - 30Days</a>
+                <p class="dataPrice" id=" ">N150</p>
+            </div>
+            <img src="images/lamp.png" alt="" class="pImg">
+        </div>
+    </div>
 </div>
 <script>
-    const checkboxes = document.querySelectorAll('.custom-checkbox');
+    function showBalance(){
+        document.getElementById("walletBalance").style.display = "block";
+        document.getElementById("walletBalanceHidden").style.display = "none";
+        document.getElementById("invisible").style.display = "block";
+        document.getElementById("visible").style.display = "none";
+    }
 
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('click', function() {
-        // Uncheck siblings
-        checkboxes.forEach(sibling => {
-            if (sibling !== checkbox) {
-                sibling.checked = false;
+    function hideBalance(){
+        document.getElementById("walletBalance").style.display = "none";
+        document.getElementById("walletBalanceHidden").style.display = "block";
+        document.getElementById("invisible").style.display = "none";
+        document.getElementById("visible").style.display = "block";
+    }
+
+    function viewMore(){
+        document.getElementById("moreServices").style.display = "flex";
+        document.getElementById("others").style.display = "none";
+    }
+
+
+    function change1(){
+       
+        document.getElementById("overlay1").style.opacity = 0.8;
+        document.getElementById("overlay2").style.opacity = 0;
+        document.getElementById("overlay3").style.opacity = 0;
+        document.getElementById("overlay4").style.opacity = 0;
+    }
+
+    function change2(){
+      
+        document.getElementById("overlay2").style.opacity = 0.8;
+        document.getElementById("overlay1").style.opacity = 0;
+        document.getElementById("overlay3").style.opacity = 0;
+        document.getElementById("overlay4").style.opacity = 0;
+    }
+
+    function change3(){ 
+        document.getElementById("overlay3").style.opacity = 0.8;
+        document.getElementById("overlay1").style.opacity = 0;
+        document.getElementById("overlay2").style.opacity = 0;
+        document.getElementById("overlay4").style.opacity = 0;
+    }
+
+    function change4(){
+        
+        document.getElementById("overlay4").style.opacity = 0.8;
+        document.getElementById("overlay1").style.opacity = 0;
+        document.getElementById("overlay2").style.opacity = 0;
+        document.getElementById("overlay3").style.opacity = 0;
+    }
+
+    function revealProviderPlans(){
+        document.getElementById("dataPlans").style.display = 'block';
+        document.getElementById("bigEnvelope").style.display = 'none';
+        document.getElementById("dataPlans").style.transitionDuration = '1000ms';
+        document.getElementById("bigEnvelope").style.transitionDuration = '1000ms';
+    }
+    
+    function cancelPlan(){
+        document.getElementById("bigEnvelope").style.display = 'block';
+        document.getElementById("dataPlans").style.display = 'none';
+    }
+
+    //to validate the box is selected before proceeding
+        const checkboxes = document.querySelectorAll('.custom-checkbox');
+        const form = document.getElementById('query-form');
+        const submitButton = document.getElementById('submit-button');
+
+        function validateForm(event) {
+            let isCheckboxChecked = false;
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    isCheckboxChecked = true;
+                }
+            });
+
+            const isFormValid = isCheckboxChecked;
+
+            // Enable or disable the submit button based on form validity
+            submitButton.disabled = !isFormValid;
+
+            if (isFormValid) {
+                submitButton.classList.remove('disabled');
+            } else {
+                submitButton.classList.add('disabled');
             }
-        });
-    });
-});
 
+            return isFormValid;
+        }
+
+        form.addEventListener('submit', function(event) {
+            validateForm(event);
+        });
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', validateForm);
+        });
+
+        // Initial validation check on page load
+        validateForm();
 </script>
 
 </body>
