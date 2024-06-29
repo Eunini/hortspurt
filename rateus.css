@@ -1,0 +1,360 @@
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('./css/Lexend') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Lexend', sans-serif;
+}
+
+
+/* first phase */
+
+.profileHead{
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.profileAndName{
+  display: flex;
+}
+.pic-container {
+  background: white;
+  border-radius: 50%;
+}
+.pic-container img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.intro{
+  display: flex;
+  padding-left: 7px;
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.level {
+  padding: 5px;
+  color: #712199;
+  display: flex;
+
+}
+.supportLogo {
+  padding: 20px;
+}
+.supportLogo img{
+  width: 50px;
+  height: 50px;
+}
+/* second phase */
+
+.walletBox{
+  border-radius: 10px;
+  background-color: #9955BB;
+  padding: 25px 15px;
+  margin: 2px 26px;
+  color: white;
+}
+
+#walletBalanceHidden{
+  display: none;
+}
+
+#invisible{
+  display: block;
+}
+
+#visible{
+  display: none;
+}
+
+.walletB{
+  display: flex;
+  padding: 15px 5px;
+  align-items: center;
+}
+
+.walletImg{
+  width: 2.3%;
+}
+
+.wb{
+  padding: 0px 8px;
+  font-size: 22px;
+}
+
+#invisible:hover, #visible:hover{
+  cursor: pointer;
+}
+
+.walletBalance{
+  font-size: 20px;
+  padding: 15px 5px;
+  font-weight: 700;
+}
+
+.walletBalanceHidden{
+  padding: 15px 5px;
+}
+
+.addMoney{
+  font-size: 18px;
+  background-color: white;
+  border: 1px solid white;
+  margin: 20px 2.5px;
+  padding: 7px 20px 7px 10px;
+  border-radius: 22px;
+  color: #9955BB;
+  max-width: max-content;
+  text-decoration-line: none;
+}
+
+.addMoney:hover{
+  transition: 400ms;
+  opacity: 0.8;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+/* fifth phase */
+.referral{
+  display: flex;
+  background: rgba(245, 225, 255, 0.6117647059);
+  border-bottom: 1px solid blueviolet;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
+  padding: 30px;
+  margin: 20px auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.referText{
+  font-size: 32px;
+}
+.rImg img{
+ width:50px;
+ height: 50px;
+}
+
+.refer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  margin: 20px auto;
+  background: rgba(245, 225, 255, 0.6117647059);
+  border-bottom: 1px solid blueviolet;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
+}
+.refer .head {
+  font-size: 26px;
+  font-weight: 700;
+}
+.refer .head span {
+  display: block;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.refer img {
+  width: 100px;
+  height: 100px;
+  padding:10px;
+}
+span a {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #9955BB;
+  font-weight: 600;
+  background-color: #f5f5f5;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+span a:hover {
+  background-color: #ddd;
+}
+
+/* sixth phase */
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #9955BB;
+  padding: 20px 12px;
+  background-color: white;
+}
+
+.bottom{
+  text-align: center;
+}
+.bottom p {
+  font-size: 25px;
+  color: #888;
+}
+.bottom:hover{
+  transition: 500ms;
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+@media screen and (max-width:768px){
+
+  /* first phase */
+  .supportLogo {
+    padding: 10px;
+  }
+  .supportLogo img{
+    width: 35px;
+    height: 35px;
+  }
+  .block{
+    padding: 5px;
+  }
+  .level{
+    font-size: 12px;
+    padding: 5px;
+  }
+  .pic-container {
+    background: white;
+    border-radius: 50%;
+  }
+  .pic-container img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+  .profileHead{
+    padding: 10px;
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .profileAndName{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .userProfileImage{
+      width: 30px;
+      height: 30px;
+  }
+
+  .intro{
+      font-size: 12px;
+  }
+
+  
+  /* second phase */
+
+  .walletBox{
+      border-radius: 10px;
+      background-color: #9955BB;
+      padding:15px 15px 30px 10px;
+      margin: 2px 7px;
+      color: white;
+  }
+
+  .walletImg{
+      width: 8%;
+  }
+
+  .wb{
+      font-size: 14px;
+      padding: 0px 6px;
+  }
+
+  .walletB{
+      display: flex;
+      align-items: center;
+  }
+
+  .walletBalance{
+      font-size: 18px;
+      font-weight: 700;
+      padding-left: 7px;
+  }
+
+  .addMoney{
+      font-size: 17px;
+      padding: 6px 17px 7px 10px;
+  }    
+  /* fourth phase */
+  .refer {
+    margin: 20px 10px;
+  }
+  .refer .head {
+      font-size: 18px;
+  }
+  .refer .head span {
+      font-size: 16px;
+  }
+  .refer img {
+      width: 70px;
+      height: 70px;
+  }
+  span a {
+      font-size: 16px;
+      padding: 5px 10px;
+  }
+
+  /* fifth phase */
+  .referral{
+      display: flex;
+      background: rgba(245, 225, 255, 0.6117647059);
+      border-bottom: 1px solid blueviolet;
+      border-radius: 8px;
+      box-shadow: 1px 1px 4px 0px rgba(153, 85, 187, 0.6117647059);
+      padding: 10px;
+      margin: 10px;
+  }
+
+  .refertext h1{
+      font-size: 20px;
+      padding: 10px;
+  }
+  .rImg img{
+    width: 40px;
+    height: 40px;
+  }
+  /* sixth phase */
+  .buttons{
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 60px 0px 0px 0px;
+      padding: 13px 5px 0px 5px;
+      background-color: white;
+     /* box-shadow: 0px -5px 5px -5px ; */
+      border-top: 1px solid #9955BB;
+      box-shadow: none;
+  }
+
+  .bottom p{
+      font-size: 12px;
+  }
+
+  .bottom:hover{
+      transform: none;
+  }
+  }
