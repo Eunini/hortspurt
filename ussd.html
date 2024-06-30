@@ -14,23 +14,74 @@
 
         <div class="div">
             <input type="text" value="NGN 500" >
-            <div class="box">
-                <div class="bank">
+
+            <div class="box" id="options-box">
+                <div class="bank" id="bank-selector">
                     <img src="images/Group 18/Frame.png" class="bank-img">
                     <p>U.B.A</p>
                 </div>
                 <img src="images/right-arrow.png" class="right-arrow">
             </div>
 
-            <div class="ussd">
+            <div class="options" id="options-menu">
+                <div class="option" data-value="option1"><img src="images/image 8.png" alt="">Option 1</div>
+                <div class="option" data-value="option2"><img src="images/image 8.png" alt="">Option 2</div>
+                <div class="option" data-value="option3"><img src="images/image 8.png" alt="">Option 3</div>
+            </div>
+
+            <div class="ussd" id="ussd">
                 <div class="dail">
                     <img src="images/Group 1243.png" alt="">
                     <p>Dail</p>
                 </div>
-                 <p class="code">*767*500*1248#</p>
+                <p class="code">*767*500*1248#</p>
                 <button class="pay">Pay</button>
             </div>
         </div>
     </div>
+
+    <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.getElementById('options-box');
+            const optionsMenu = document.getElementById('options-menu');
+            const ussd = document.getElementById('ussd');
+            const selectedOptionText = document.querySelector('.dropdown .bank p');
+
+            // Toggle options menu visibility on dropdown click
+            dropdown.addEventListener('click', function() {
+                optionsMenu.style.display = (optionsMenu.style.display === 'block') ? 'none' : 'block';
+                ussd.style.display = 'none';
+            });
+
+            // Close options menu if clicked outside
+            document.addEventListener('click', function(event) {
+                if (!dropdown.contains(event.target) && !optionsMenu.contains(event.target)) {
+                    optionsMenu.style.display = 'none';
+                }
+            });
+
+            // Handle option selection
+            optionsMenu.addEventListener('click', function(event) {
+                if (event.target.classList.contains('option')) {
+                    // Reset all circles
+                    const circles = document.querySelectorAll('.option-circle');
+                    circles.forEach(circle => circle.innerHTML = '');
+
+                    // Select clicked option
+                    const option = event.target;
+                    const circle = option.querySelector('.option-circle');
+                    circle.innerHTML = '<div class="inner-circle"></div>';
+
+                    const selectedValue = option.dataset.value;
+                    const selectedText = option.textContent.trim();
+                    selectedOptionText.textContent = selectedText;
+                    console.log('Selected option:', selectedValue);
+
+                    optionsMenu.style.display = 'none';
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>
