@@ -78,7 +78,7 @@ body {
     border: 2px solid #b28cc5;
 }
 a{
-    
+    text-decoration:none;
 }
 .pic-container {
     width: 100%;
