@@ -218,6 +218,8 @@
 
 /* sixth phase */
 .buttons{
+  position: fixed;
+  bottom:0;
   display: flex;
   justify-content: space-between;
   margin: 120px 30px 0px 30px;
