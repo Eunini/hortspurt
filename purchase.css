@@ -220,12 +220,11 @@
 .buttons{
   position: fixed;
   bottom:0;
+  width:100%;
   display: flex;
   justify-content: space-between;
-  margin: 120px 30px 0px 30px;
   padding: 20px 12px;
   background-color: white;
-  box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5);
 }
 
 .bottom{
