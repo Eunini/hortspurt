@@ -77,6 +77,9 @@ body {
 .nav-menu ul li a:hover {
     border: 2px solid #b28cc5;
 }
+a{
+    
+}
 .pic-container {
     width: 100%;
     background: white;
@@ -176,14 +179,12 @@ span a:hover {
 }
 
 .buttons{
-    position: fixed;
-    bottom: 0;
     display: flex;
     justify-content: space-between;
-    margin: 120px 30px 0px 30px;
+    margin-top: 120px;
     padding: 20px 12px;
     background-color: white;
-    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid #9955BB;
   }
   
   .bottom{
@@ -198,9 +199,71 @@ span a:hover {
     transform: translateY(-10px);
     cursor: pointer;
   }
+
+  /* Modal styles */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: 15% auto; /* Adjust vertical position */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 600px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    position: relative;
+}
+.sad{
+    font-size: 36px;
+}
+.ss {
+    padding: 10px;
+    color: #921717;
+    font-size: 28px;
+    text-align: a
+    center;
+}
+.modal-content .decision {
+    display: flex;
+    flex-direction: column;
+}
+.modal-content .close, .modal-content .confirm{
+    color: #fff;
+    float: center;
+    text-align: center;
+    margin: 10px 0;
+    outline: 0;
+    border: 0;
+    font-size: 18px;
+    border-radius: 16px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #9955BB;
+}
+
 /* Media Queries for Responsive Design */
 
 @media (max-width: 768px) {
+    .modal-content{
+        width: 90%;
+    }
 .nav-toggle {
     position: absolute; 
     right: 20px;
