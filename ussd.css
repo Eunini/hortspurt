@@ -123,6 +123,21 @@ input{
 .code {
     font-size: 32px;
 }
+.pay{
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    width: 80px;
+    height: 45px;
+    color: white;
+    padding: 20px;
+    background-color: #9955BB;
+    border: 0;
+    outline: 0;
+    border-radius: 16px;
+}
 @media screen and (max-width:768px) {
     .head{
         height: 300px;
