@@ -305,8 +305,6 @@ h3 {
     }
     #back {
         position: relative;
-        align-items: start;
-        justify-content: start;
         right: 40px;
         display:flex;
         width: 30px;
