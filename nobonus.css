@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'Lexend';
+    src: url('../fonts/Lexend-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5d8ed;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.container {
+    background-color: white;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 25px;
+    border: 1px solid #9955bf;
+    padding: 20px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.sad{
+    font-size: 30px;
+}
+h2{
+    font-size: 28px;
+    padding: 10px;
+}
+.link{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 16px;
+    padding: 20px;
+    height: 55px;
+    background: #9955bb;
+    color: #fff;
+    outline: 0;
+    border: 0;
+    width: 50vw;
+}
+.link .small-box{
+    margin: 10px;
+    width: 11px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    height: 11px;
+    outline: 0;
+    border: 0;
+    background-color: white;
+}
+.buttons{
+    position: fixed;
+        bottom: 0;
+        width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px;
+    padding: 20px 12px;
+    background-color: white;
+    border-top: 1px solid #9955BB;
+  }
+  
+  .bottom{
+    text-align: center;
+  }
+  .bottom p {
+    font-size: 25px;
+    color: #888;
+  }
+  .bottom:hover{
+    transition: 500ms;
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+
+@media screen and (max-width:768px) {
+    .link{
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+    }
+    .container{
+        width: 100%;
+        height: 40vh;
+    }
+    .buttons{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 60px 0px 0px 0px;
+        padding: 13px 5px 0px 5px;
+        background-color: white;
+       /* box-shadow: 0px -5px 5px -5px ; */
+        border-top: 1px solid #9955BB;
+        box-shadow: none;
+    }
+
+    .bottom p{
+        font-size: 12px;
+    }
+
+    .bottom:hover{
+        transform: none;
+    }
+}
