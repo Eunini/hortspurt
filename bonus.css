@@ -25,7 +25,6 @@ html{
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100vw;
 }
 .box{
     display: flex;
@@ -72,11 +71,6 @@ html{
 }
 a {
     text-decoration: none;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    display: flex;
 }
 .link{
     cursor: pointer;
@@ -92,6 +86,7 @@ a {
     color: #fff;
     outline: 0;
     border: 0;
+    width: 50vw;
 }
 .link .small-box{
     margin: 10px;
@@ -103,13 +98,60 @@ a {
     border: 0;
     background-color: white;
 }
-@media screen and (width:768px) {
+
+/* navigation styling */
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px;
+    padding: 20px 12px;
+    background-color: white;
+    border-top: 1px solid #9955BB;
+  }
+  
+  .bottom{
+    text-align: center;
+  }
+  .bottom p {
+    font-size: 25px;
+    color: #888;
+  }
+  .bottom:hover{
+    transition: 500ms;
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+
+@media screen and (max-width:768px) {
     .link{
-        width: 100vw;
+        width: 100%;
         display: flex;
         margin: 5px auto;
         justify-content: center;
         align-items: center;
         text-align: center;
+    }
+    .buttons{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 60px 0px 0px 0px;
+        padding: 13px 5px 0px 5px;
+        background-color: white;
+        border-top: 1px solid #9955BB;
+        box-shadow: none;
+    }
+    .bottom{
+        padding-bottom: 10px;
+    }
+    .bottom p{
+        font-size: 12px;
+    }
+
+    .bottom:hover{
+        transform: none;
     }
 }
