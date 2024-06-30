@@ -78,7 +78,7 @@ body {
     border: 2px solid #b28cc5;
 }
 a{
-    text-decoration:none;
+    
 }
 .pic-container {
     width: 100%;
@@ -391,7 +391,7 @@ h3 {
         font-size: 17px;
     }
     .refer {
-        margin-bottom: 20px;
+        margin-bottom: 70px;
     }
     .refer .head {
         font-size: 20px;
