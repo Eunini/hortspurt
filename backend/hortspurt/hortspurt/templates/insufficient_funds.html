@@ -25,7 +25,15 @@
         Network Type
     </div>
     <div class="networkAndImg">
-        <img src='{% static "images/image 6.png" %}'>
+        {% if NP == 'MTN' %}
+        <img src='{% static "images/npminilogos/mtn mini logo.png" %}'>
+        {% elif NP == 'GLO' %}
+        <img src='{% static "images/npminilogos/glo mini logo.png" %}'>
+        {% elif NP == 'AIRTEL' %}
+        <img src='{% static "images/npminilogos/airtel mini logo.png" %}'>
+        {% elif NP == '9MOBILE' %}
+        <img src='{% static "images/npminilogos/9mobile mini logo.png" %}'>
+        {% endif %}
         <span class="mb">Mobile Data</span>
     </div>
 </div>
@@ -83,7 +91,15 @@
 
 <div class="numbbox">
     <div class="netimg">
-        <img src='{% static "images/Frame 29.png" %}' alt="">
+        {% if NP == 'MTN' %}
+        <img src='{% static "images/npminilogos/mtn mini logo.png" %}'>
+        {% elif NP == 'GLO' %}
+        <img src='{% static "images/npminilogos/glo mini logo.png" %}'>
+        {% elif NP == 'AIRTEL' %}
+        <img src='{% static "images/npminilogos/airtel mini logo.png" %}'>
+        {% elif NP == '9MOBILE' %}
+        <img src='{% static "images/npminilogos/9mobile mini logo.png" %}'>
+        {% endif %}
         <img src='{% static "images/Line 5.png" %}' alt="">
     </div>
     <input type="text" class="phonenumb" value="+234{{phone_no}}">

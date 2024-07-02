@@ -211,19 +211,21 @@
 }
 
 .rImg{
-  padding-top: 20px;
-  padding-left: 30px;
+   width: 100px;
+    height: 100px;
+    padding:10px;
 }
 
 
 /* sixth phase */
 .buttons{
+  position: fixed;
+  bottom:0;
+  width:100%;
   display: flex;
   justify-content: space-between;
-  margin: 120px 30px 0px 30px;
   padding: 20px 12px;
   background-color: white;
-  box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5);
 }
 
 .bottom{

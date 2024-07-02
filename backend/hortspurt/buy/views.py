@@ -136,7 +136,7 @@ def deduct_balance_airtime(user, NP, amount, phone_no, int_amount):
     return (False, False)
 
 
-class BuyDataView(View):
+class BuyDataView(LoginRequiredMixin, View):
     def get(self, request):
         phone_number = request.user.username
         phone_number = phone_number[1:]
@@ -165,7 +165,7 @@ class BuyDataView(View):
             return render(request, "insufficient_funds.html", ctx)
         return render(request, "data_checkout.html", ctx)
 
-class BuyDataCheckoutView(View):
+class BuyDataCheckoutView(LoginRequiredMixin, View):
     def get(self, request):
         return redirect("/buy/data/")
 
@@ -192,7 +192,7 @@ class BuyDataCheckoutView(View):
             return HttpResponse(status=400)
         service = NPS[NP]
         print(service, phone_no, code)
-        data={"network": service, "mobile_number": phone_no, "plan": code, "Ported_number": False}
+        data={"network": service, "mobile_number": phone_no, "plan": code, "Ported_number": True}
         price, adt_tr = deduct_balance(request.user, NP, code, phone_no)
         if (price):
             try:
@@ -224,7 +224,7 @@ class BuyDataCheckoutView(View):
             if (request.user.profile.wallet_balance < int_price):
                 return render(request, "insufficient_funds.html", ctx)
 
-class BuyAirtimeView(View):
+class BuyAirtimeView(LoginRequiredMixin, View):
     def get(self, request):
         phone_number = request.user.username
         phone_number = phone_number[1:]
@@ -245,9 +245,11 @@ class BuyAirtimeView(View):
             return HttpResponse(status=400)
         ctx = {"NP": NP, "amount": amount, "phone_no": phone_no}
         print (ctx)
+        if (request.user.profile.wallet_balance < int_amount):
+            return render(request, "insufficient_funds_airtime.html", ctx)
         return render(request, "airtime_checkout.html", ctx)
 
-class BuyAirtimeCheckoutView(View):
+class BuyAirtimeCheckoutView(LoginRequiredMixin, View):
     def post(self, request):
         endpoint_url = base_url+"/topup/"
         data = request.POST
@@ -268,7 +270,7 @@ class BuyAirtimeCheckoutView(View):
             return HttpResponse(status=400)
         service = NPS[NP]
         print(service, phone_no, amount)
-        data={"network": service, "mobile_number": phone_no, "amount": int_amount, "Ported_number": False, "airtime_type": 'VTU'}
+        data={"network": service, "mobile_number": phone_no, "amount": int_amount, "Ported_number": True, "airtime_type": 'VTU'}
         price, adt_tr = deduct_balance_airtime(request.user, NP, amount, phone_no, int_amount)
         if (price):
             try:
@@ -294,8 +296,10 @@ class BuyAirtimeCheckoutView(View):
         else:
             msg = 'Purchase unsuccessful, insufficient balance'
             return HttpResponse(msg, status=402, content_type="text/html")
+            if (request.user.profile.wallet_balance < int_amount):
+                return render(request, "insufficient_funds.html", ctx)
 
-class PadiView(View):
+class PadiView(LoginRequiredMixin, View):
     def get(self, request):
         ctx = {'MTN_PLANS': MTN_PLANS, '9MOBILE_PLANS': MOBILE9_PLANS, 'GLO_PLANS': GLO_PLANS, 'AIRTEL_PLANS': AIRTEL_PLANS}
         return render(request, 'padi.html', ctx)
@@ -320,7 +324,7 @@ class PadiView(View):
             return HttpResponse(status=400)
         service = NPS[NP]
         print(service, phone_no, code)
-        data={"network": service, "mobile_number": phone_no, "plan": code, "Ported_number": False}
+        data={"network": service, "mobile_number": phone_no, "plan": code, "Ported_number": True}
         price = deduct_balance(request.user, NP, code)
         if (price):
             try:    

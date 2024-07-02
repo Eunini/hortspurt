@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Out Page</title>
+    <title>Insufficient funds</title>
 
-    <link rel="stylesheet" href='{% static "./checkOutPage.css" %}'>
+    <link rel="stylesheet" href='{% static "css/dataPurchase.css" %}'>
+    <link rel="stylesheet" href='{% static "Insufficient.css" %}'>
 
 </head>
 <body>
@@ -14,7 +15,7 @@
 <a href='/' class="cancelBtn">Cancel</a>
 
 <div class="amountInNaira">
-    NGN {{data_price}}
+    NGN {{amount}}
 </div>
 
 <div class="networkType">
@@ -31,7 +32,7 @@
         {% elif NP == '9MOBILE' %}
         <img src='{% static "images/npminilogos/9mobile mini logo.png" %}'>
         {% endif %}
-        <span class="mb">Mobile Data</span>
+        <span class="mb">Airtime</span>
     </div>
 </div>
 
@@ -40,16 +41,7 @@
       Amount  
     </span>
     <span class="amt">
-        NGN {{data_price}}
-    </span>
-</div>
-
-<div class="dataToPurchase">
-    <span>
-        Data To Purchase
-    </span>
-    <span class="gb">
-        {{data_size}}
+        NGN {{amount}}
     </span>
 </div>
 
@@ -103,12 +95,20 @@
 </div>
 
 <a onclick="checkout()" class="proceed">Proceed</a>
-<form method="post" action="/buy/data/checkout/" id="buy_data_form">
+<!-- The Modal -->
+<div id="welcomeModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="close">&times;</span>
+      <h1> &#x1F622;</h1>
+      <h2>Oh no!</h2>
+      <p>You are out of balance</p>
+    </div>
+</div>
+<form method="post" action="/buy/airtime/checkout/" id="buy_airtime_form">
     {% csrf_token %}
     <input type="hidden" id="NP" name="NP" value="{{NP}}">
-    <input type="hidden" id="code" name="code" value="{{code}}">
-    <input type="hidden" id="data_size" name="data_size" value="{{data_size}}">
-    <input type="hidden" id="data_price" name="data_price" value="{{data_price}}">
+    <input type="hidden" id="amount" name="amount" value="{{amount}}">
     <input type="hidden" id="phonenofield" name="phonenofield" value="0{{phone_no}}">
 </form>
 
@@ -116,6 +116,7 @@
 
 
 <script>
+
     function showBalance(){
         document.getElementById("walletBalance").style.display = "block";
         document.getElementById("walletBalanceHidden").style.display = "none";
@@ -129,11 +130,46 @@
         document.getElementById("invisible").style.display = "none";
         document.getElementById("visible").style.display = "block";
     }
+    document.addEventListener('DOMContentLoaded', function() {
+    // Get the modal element
+    var modal = document.getElementById('welcomeModal');
 
-    function checkout(){
-        document.getElementById("buy_data_form").submit();
+    // Get the button that opens the modal
+    var span = document.getElementById('close');
+    modal.style.display = 'none';
+
+    // Function to open the modal
+    function openModal() {
+        modal.style.display = 'flex';
     }
 
+    // Function to close the modal
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    openModal();
+
+    // When the user clicks on <span> (x), close the modal
+    span.addEventListener('click', closeModal);
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    });
+
+    // Optional: If you want to close the modal when the user presses the Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+    });
+    function checkout(){
+        document.getElementById("buy_airtime_form").submit();
+    }
 </script>
 
 </body>

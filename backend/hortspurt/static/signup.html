@@ -78,17 +78,30 @@
       </div>
    </div>
 
-   <!-- The Modal -->
+   <!-- welcome signup Modal -->
 <div id="welcomeModal" class="modal">
   <!-- Modal content -->
-  <div class="modal-content">
-      <span class="close">&times;</span>
+  <div class="modal-content" id="welcomeModal">
+    <span class="close">&times;</span>
     <p class="emoji">&#x1F600;</p>
     <h2>Welcome!</h2>
     <p>Thank you for signing up. Check you mail to complete registration</p>
     <a href="purchase.html"><button>Click to Proceed</button></a>
   </div>
 </div>
+
+<!-- account exsted modal -->
+<div id="existedModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content" id="existedModal">
+    <span class="close">&times;</span>
+    <p class="emoji">&#x1F622;</p>
+    <h2>Oh No!</h2>
+    <p>Account existed before</p>
+    <a href="login.html" style="color: #9955bb;"><button>Click here to sign in</button></a>
+  </div>
+</div>
+
 
    <script>
     const genderSelect = document.getElementById('gender');
@@ -140,11 +153,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get the modal element
     var modal = document.getElementById('welcomeModal');
-
+    var existedModal = document.getElementById('existedModal');
     // Get the button that opens the modal
     var btn = document.getElementById('signupBtn');
     modal.style.display = 'none';
-
+    existedModal.style.display = 'none';
     // Function to open the modal
     function openModal() {
         modal.style.display = 'flex';
@@ -163,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener('click', function(event) {
-        if (event.target == modal) {
+        if (event.target == modal || event.target == existedModal){
             closeModal();
         }
     });

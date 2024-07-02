@@ -9,7 +9,7 @@
 <body>
     <div class="background">
         <div class="profile-header"> 
-            <a href="./purchase.html"><img src="images/11zon_17.jpeg" alt="Back" id="back"></a>
+            <a href="./purchase.html"  id="back"><img src="images/11zon_17.jpeg" alt="Back"></a>
             <h3 id="title">Edit Profile</h3>
 
             <div class="nav-toggle" id="nav-toggle" >
@@ -19,16 +19,18 @@
 
             <nav class="nav-menu" id="nav-menu">
                 <ul>
-                    <li><a href="login.html">Logout</a></li>
-                    <li><a href="delete.html">Delete Account</a></li>
+                    <li><a href="index.html">Logout</a></li>
+                    <li><a href="#" id="delete-account-btn">Delete Account</a></li>
                 </ul>
             </nav>
             <!-- <a href="./purchase.html"><img src="images/11zon_17.jpeg" alt="Back"></a> -->
         </div>
         
-        <div class="pic-container">
-            <img src="images/icons8-person-64.png" alt="User Profile Image">
-        </div>
+        <a href="./profile">
+            <div class="pic-container">
+                <img src="images/icons8-person-64.png" alt="User Profile Image">
+            </div>
+        </a>
 
         <div class="table-content">
             <table>
@@ -102,7 +104,50 @@
         </div>
     </div>
 
+     <!-- Modal -->
+     <div id="modal" class="modal">
+        <div class="modal-content">       
+            <p class="sad">&#x1F622;</p>
+            <p class="ss">Close account?</p>
+            <div class="decision">
+                <a href="./confirmdelete.html"><button id="confirm-delete" class="confirm">Proceed</button></a>
+                <button class="close">This was a mistake</button>
+            </div>
+        </div>
+    </div>
     <script>
+        // Get the modal
+var modal = document.getElementById('modal');
+
+// Get the button that opens the modal
+var btn = document.getElementById('delete-account-btn');
+
+// Get the <span> element that closes the modal
+var span = modal.querySelector('.close');
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Additional: Handle confirm delete button
+var confirmDeleteBtn = document.getElementById('confirm-delete');
+confirmDeleteBtn.onclick = function() {
+    // Perform delete account action here
+    // For demonstration, we just close the modal
+    modal.style.display = "none";
+}
         
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
@@ -127,9 +172,6 @@
         }
     });
     closeIcon.style.display = 'none';
-
-    
-   
     </script>
 </body>
 </html>

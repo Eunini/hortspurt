@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'Lexend';
+    src: url('../fonts/Lexend-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+body{
+    background-color: #e5d8ed;
+}
+html{
+    scroll-behavior: smooth;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.box{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #9955bf;
+    border-radius: 10px;
+    padding: 15px;
+    color: #9955bb;
+    margin: 20px auto 15px auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+}
+
+.box h2{
+    width: 50%;
+    max-width: 70%;
+    margin-right: 100px;
+    text-align: justify;
+    font-size: 18px;
+    background: white;
+    font-weight: 500;
+}
+
+.box button {
+    display: flex;
+    margin: auto;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 100px;
+    padding: 10px;
+    outline: 0;
+    text-align: center;
+    align-items: end;
+    text-decoration: none;
+    justify-content: center;
+    background: #9955bb;
+    border: 2px solid transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+a {
+    text-decoration: none;
+}
+.link{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 16px;
+    padding: 20px;
+    height: 55px;
+    background: #9955bb;
+    color: #fff;
+    outline: 0;
+    border: 0;
+    width: 50vw;
+}
+.link .small-box{
+    margin: 10px;
+    width: 11px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    height: 11px;
+    outline: 0;
+    border: 0;
+    background-color: white;
+}
+
+/* navigation styling */
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px;
+    padding: 20px 12px;
+    background-color: white;
+    border-top: 1px solid #9955BB;
+  }
+  
+  .bottom{
+    text-align: center;
+  }
+  .bottom p {
+    font-size: 25px;
+    color: #888;
+  }
+  .bottom:hover{
+    transition: 500ms;
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+
+@media screen and (max-width:768px) {
+    .link{
+        width: 100%;
+        display: flex;
+        margin: 5px auto;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .buttons{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 60px 0px 0px 0px;
+        padding: 13px 5px 0px 5px;
+        background-color: white;
+        border-top: 1px solid #9955BB;
+        box-shadow: none;
+    }
+    .bottom{
+        padding-bottom: 10px;
+    }
+    .bottom p{
+        font-size: 12px;
+    }
+
+    .bottom:hover{
+        transform: none;
+    }
+}
